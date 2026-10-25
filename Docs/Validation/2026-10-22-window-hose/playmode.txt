@@ -1,0 +1,52 @@
+WINDOW_HOSE_PLAYMODE_PASS
+Actual command-path checks=50
+PASS A window cannot route an unconnected hose.
+PASS Fixture player connects before testing route limits.
+PASS A window beyond the 1.8m interaction range is rejected without routing.
+PASS A reachable connected hose routes through its selected window.
+PASS A reachable source-window-player polyline longer than 13m is rejected while preserving its prior route.
+PASS Routed UsedLength uses the XZ polyline and constrains around the final window while preserving requested Y.
+PASS Each player owns an independent active window route.
+PASS Changing source clears only that player's route.
+PASS Disconnect clears only that player's route.
+PASS Fixture route is restored before disabled-window fallback.
+PASS A disabled window falls back to the established direct hose length.
+PASS A re-enabled window can be selected again before destruction fallback is tested.
+PASS A deleted window also falls back to the established direct hose length.
+PASS Saved residential layout contains the window fixture, real player command stack, water source, exterior fire, and Game camera.
+PASS Saved fixture positions, window anchors, ordinary target fire, and stable target collider match the window-hose contract.
+PASS Enter the front door from the outdoor spawn: real LocalPlayerInput reached (5.74, 0.02, -4.92).
+PASS Cross the main room toward the bathroom: real LocalPlayerInput reached (0.26, 0.02, -4.60).
+PASS Reach the bathroom doorway: real LocalPlayerInput reached (0.20, 0.02, 2.34).
+PASS Reach the real toilet water source: real LocalPlayerInput reached (-2.24, 0.02, 2.41).
+PASS F connects water through the real LocalPlayerInput command path without an initial route.
+PASS Return through the bathroom doorway with water connected: real LocalPlayerInput reached (0.10, 0.02, 2.40).
+PASS Approach the south side of the kitchen counter: real LocalPlayerInput reached (2.22, 0.02, 2.64).
+PASS Move east of the counter and dry-powder source: real LocalPlayerInput reached (4.89, 0.02, 2.65).
+PASS Enter the rear room through its existing opening: real LocalPlayerInput reached (4.99, 0.02, 6.85).
+PASS Reach the rear exterior door approach: real LocalPlayerInput reached (2.61, 0.02, 7.20).
+PASS Pass through the rear door into the courtyard: real LocalPlayerInput reached (0.21, 0.02, 7.20).
+PASS Cross the open courtyard south of the annex to the west exterior: real LocalPlayerInput reached (-8.79, 0.02, 7.20).
+PASS Reach the exterior side of the bathroom window: real LocalPlayerInput reached (-8.90, 0.02, 2.53).
+PASS The direct hose remains connected while following the real exterior route to the window.
+PASS F at the window fixes the connected hose through that window.
+PASS At the nearly collinear window position, UsedLength exactly equals the routed XZ source-window-player polyline.
+PASS The routed HoseView uses the expanded two-segment line resolution.
+PASS The rendered hose line contains the exact HoseWindow.RoutePosition vertex.
+PASS The rendered cable clears the solid wall and window sill near the fixed route point.
+PASS A second F at the active window releases only the route.
+PASS F fixes the same window again after release.
+PASS Disabling the replaceable window Visual does not prevent clearing and fixing the route.
+PASS The hidden-window route still applies its remaining hose-length limit.
+PASS Existing bathroom wall collision prevents the player from walking directly through the window toward +X.
+PASS Step back from the solid window wall without teleporting: real LocalPlayerInput reached (-8.80, 0.02, 2.40).
+PASS Move outside with the route fixed through the window: real LocalPlayerInput reached (-8.90, 0.02, 5.40).
+PASS Outside movement keeps the routed polyline materially longer than the direct line while respecting 13m.
+PASS The routed HoseView uses the expanded two-segment line resolution.
+PASS The rendered hose line contains the exact HoseWindow.RoutePosition vertex.
+PASS The rendered cable clears the solid wall and window sill near the fixed route point.
+PASS The Game camera screen-point aim resolves to the exterior fire's stable receiver collider.
+PASS RMB through the real camera screen-aim and input command path carries routed water outside and extinguishes the ordinary target; release stops it.
+PASS Walk the open exterior toward z=12: movement was constrained before the requested open-exterior goal at (-8.82, 0.02, 10.63).
+PASS Open exterior travel reaches the routed 13m hose circle, rather than an exterior boundary collider.
+PASS F away from sources and windows disconnects the hose and clears its route.

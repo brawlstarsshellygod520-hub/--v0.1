@@ -1,0 +1,34 @@
+CHARACTER_ANIMATION_PLAYMODE_PASS
+PASS: Residential scene exposes its real fire field, firefighter and resident.
+PASS: The firefighter has a presentation component, skinned leg mesh and the authored Root/Hips/Chest/Head rig bones.
+PASS: The firefighter scene persists its actor root and 4m/s animation reference speed.
+PASS: The firefighter uses a valid Generic avatar with root motion disabled.
+PASS: The firefighter model is imported as a Generic animated rig.
+PASS: The firefighter Animator Controller exposes Speed and CycleSpeed parameters.
+PASS: The firefighter has non-empty looping Idle and Run clips.
+PASS: The firefighter Run state uses CycleSpeed as its playback-speed parameter.
+PASS: The firefighter Idle/Run transitions use the 0.06 and 0.04 Speed hysteresis.
+PASS: The firefighter Run clip changes the left boot/shoe skinned pose.
+PASS: The firefighter Run clip's 0-to-length pose loop and root stay within 0.025m.
+PASS: The real firefighter nozzle mesh follows the animated Chest, not a stationary actor socket.
+PASS: The real running firefighter keeps its nozzle grip within 7cm of the two-hand midpoint.
+PASS: The resident has a presentation component, skinned leg mesh and the authored Root/Hips/Chest/Head rig bones.
+PASS: The resident scene persists its actor root and 2.15m/s animation reference speed.
+PASS: The resident uses a valid Generic avatar with root motion disabled.
+PASS: The resident model is imported as a Generic animated rig.
+PASS: The resident Animator Controller exposes Speed and CycleSpeed parameters.
+PASS: The resident has non-empty looping Idle and Run clips.
+PASS: The resident Run state uses CycleSpeed as its playback-speed parameter.
+PASS: The resident Idle/Run transitions use the 0.06 and 0.04 Speed hysteresis.
+PASS: The resident Run clip changes the left boot/shoe skinned pose.
+PASS: The resident Run clip's 0-to-length pose loop and root stay within 0.025m.
+PASS: Actual FirefighterMotor movement drives the firefighter Animator into Run.
+PASS: Stopping actual FirefighterMotor movement returns the firefighter Animator to Idle.
+PASS: A physical blocking wall keeps the actual firefighter stationary and Idle.
+PASS: Disabling presentation immediately sets Animator Speed to zero.
+PASS: Enable and teleport reset sampling to Idle without a spawn-motion spike.
+PASS: Water clears both authored fire cells before the resident escapes.
+PASS: The resident can be calmed from its own nearby position.
+PASS: The real autonomous resident route drives its Animator into Run within one second.
+PASS: The resident reaches the real exit within twelve seconds.
+PASS: After rescue disables it, the resident re-enables in a stable Idle animation state.

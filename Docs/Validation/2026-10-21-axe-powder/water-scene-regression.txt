@@ -1,0 +1,29 @@
+WATER_GAMEPLAY_PLAYMODE_PASS
+Actual command-path checks=27
+PASS Persisted residential gameplay layout is active.
+PASS Player input, hose, emitter, fire field, toilet water source, movable coffee table, and Game camera are wired.
+PASS Real command input is enabled, with only hardware polling disabled.
+PASS Fresh persisted scene starts with exactly three water-gameplay fire seeds.
+PASS Initial fire seed is burning at (2.25, 0.00, 0.75).
+PASS Initial fire seed is burning at (2.75, 0.00, 0.75).
+PASS Initial fire seed is burning at (2.25, 0.00, 1.25).
+PASS Coffee table is the authored movable water-push target.
+PASS Enter the front door from outdoor spawn: real camera-relative input reached (5.74, 0.02, -4.92).
+PASS Cross the main room toward the bathroom: real camera-relative input reached (0.26, 0.02, -4.60).
+PASS Reach the bathroom doorway: real camera-relative input reached (0.20, 0.02, 2.34).
+PASS Reach the toilet water source: real camera-relative input reached (-2.24, 0.02, 2.41).
+PASS F connects the hose to the actual toilet cistern water source.
+PASS Pull the connected hose back through the bathroom doorway: real camera-relative input reached (0.10, 0.02, 2.40).
+PASS Reach a clear water-spray position near the fire: real camera-relative input reached (0.21, 0.02, 0.83).
+PASS Hose remains connected while the player walks away from the source.
+PASS Held RMB uses the connected hose and produces an actual water impact.
+PASS Sustained real water spray lowers the initial fire intensity.
+PASS Continuous connected water spray extinguishes the complete initial fire patch.
+PASS Releasing RMB stops the water stream.
+PASS Move beside the coffee table with the hose still connected: real camera-relative input reached (1.37, 0.02, -2.41).
+PASS Water source stays connected before the push interaction.
+PASS Water actually hits the table above floor level before measuring its motion.
+PASS Observed 4 fixed physics steps for water impulse.
+PASS Water pushes the grounded table >0.1m: (3.500, 0.000, -2.500) -> (4.493, 0.000, -2.473).
+PASS F away from a reachable source disconnects the hose.
+PASS Disconnected RMB cannot start a water stream.

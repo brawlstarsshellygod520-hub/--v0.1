@@ -1,0 +1,2 @@
+Firefighter | triangles=9024 | bounds=Center: (0.00, 0.77, 0.01), Extents: (0.45, 0.83, 0.43)
+Resident | triangles=8448 | bounds=Center: (0.00, 0.77, -0.01), Extents: (0.50, 0.83, 0.36)

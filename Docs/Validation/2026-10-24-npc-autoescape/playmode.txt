@@ -1,0 +1,20 @@
+NPC_AUTOESCAPE_PLAYMODE_PASS
+Checks=18
+PASS The current user layout is active, not an archived Step2/Step3 assembly.
+PASS TutorialGreybox contains its authored resident and fire field.
+PASS The saved resident enables autonomous Update without test activation.
+PASS Tutorial resident enters Escaping from a safe authored route without player proximity or E input.
+PASS Tutorial resident reaches the authored exit with input disabled and no interaction command.
+PASS A resident with a clear route enters Escaping without any player object or interaction.
+PASS Clear-route resident self-evacuates and RescueGameManager completion fires exactly once.
+PASS Repeated Tick after rescue cannot increment rescue count or completion event.
+PASS An initial fire blocks the route and leaves the resident waiting without a player command.
+PASS Extinguishing the blocking fire lets the resident discover the route on its own.
+PASS After water clears the initial fire, the resident actually reaches the exit without interaction.
+PASS A real layer-8 wall blocks BFS and leaves the resident waiting without player interaction.
+PASS Removing the physical wall lets the resident resume route discovery on its own.
+PASS After the wall is removed, the resident actually walks to the exit without interaction.
+PASS Resident begins moving along a clear route before the dynamic-fire check.
+PASS A new fire on the remaining route stops the escaping resident without player input.
+PASS Clearing the new fire makes the resident resume the route automatically.
+PASS Recovered resident completes one autonomous rescue even with its Visual disabled.

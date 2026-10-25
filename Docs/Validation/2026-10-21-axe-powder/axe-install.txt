@@ -1,0 +1,4 @@
+USER_AXE_INSTALL_PASS
+Unity 6000.5.0b9
+Existing gameplay serialization unchanged; imported model only; no model physics; saved scene reload; idempotent install PASS
+Model world bounds Center: (6.04, 1.16, -7.23), Extents: (0.04, 0.36, 0.20)

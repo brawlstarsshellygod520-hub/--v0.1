@@ -1,0 +1,20 @@
+Unity 6000.5.0b9; target StandaloneWindows64
+Scope: step 1 scaffold only; no player, tools or tutorial gameplay.
+Created new scene: True
+PASS 1 TutorialGreybox scene exists
+PASS 2 Unity-generated scene metadata exists
+PASS 3 Tutorial scene GUID resolves
+PASS 4 Independent scene root
+PASS 5 All five organizational sections exist
+PASS 6 Gameplay and map sections remain empty for later phases
+PASS 7 Tutorial scene has no missing scripts
+PASS 8 No premature gameplay or input components
+PASS 9 One active MainCamera
+PASS 10 Angled orthographic camera scaffold
+PASS 11 One listener and one light
+PASS 12 Scaffold does not depend on formal models or prefabs
+PASS 13 Repeated creation preserves existing scene bytes
+PASS 14 Original ResidentialFire loads without missing scripts
+PASS 15 Original scene and GUID metadata unchanged
+PASS 16 Build scene order and enabled flags unchanged
+TUTORIAL_STEP1_PASS checks=16

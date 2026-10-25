@@ -6,7 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/Main.unity
-    guid: 113f8b36579a5cb42a19b4dbbebe24c8
+    path: Assets/FireRescue/Scenes/ResidentialFire.unity
+    guid: 8ce6e3641ef6811468c3da7f41d6c192
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0

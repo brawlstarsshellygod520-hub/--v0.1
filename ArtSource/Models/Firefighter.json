@@ -1,0 +1,25 @@
+{
+  "asset": "Firefighter",
+  "triangles": 4388,
+  "meshes": 28,
+  "dimensions_xyz": [
+    0.94,
+    0.94,
+    1.6
+  ],
+  "min_xyz": [
+    -0.47,
+    -0.47,
+    0.0
+  ],
+  "materials": [
+    "FR_Charcoal",
+    "FR_Eye",
+    "FR_Hair",
+    "FR_Helmet",
+    "FR_Reflector",
+    "FR_Skin",
+    "FR_Uniform",
+    "FR_White"
+  ]
+}

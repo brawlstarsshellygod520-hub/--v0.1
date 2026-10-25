@@ -1,0 +1,164 @@
+GREYBOX_SEPARATION_PLAYMODE_PASS
+Actual Play Mode checks: 161
+PASS: CreateTestAssembly returns an active fresh assembly.
+PASS: Player motor exists on the created test assembly.
+PASS: Player hose exists on the created test assembly.
+PASS: Player spray emitter exists on the created test assembly.
+PASS: Player controller exists on the Player motor root.
+PASS: FireField exists on the created test assembly.
+PASS: ElementReaction exists on the created test assembly.
+PASS: Resident exists on the created test assembly.
+PASS: RescueGameManager exists on the created test assembly.
+PASS: Assembly contains both real water and oil FluidSource components.
+PASS: Validation assembly has no LocalPlayerInput; commands are supplied directly.
+PASS: Assembly exposes gameplay colliders outside all Visual roots.
+PASS: Assembly exposes Nozzle, interaction, outlet, and exit anchors outside models.
+PASS: Original primitive Visual assembly exposes direct Visual roots for all greybox prefabs.
+PASS: Original primitive Visual preserves gameplay collider Ground(Clone).
+PASS: Original primitive Visual preserves gameplay collider Resident(Clone).
+PASS: Original primitive Visual preserves gameplay collider Player(Clone).
+PASS: Original primitive Visual preserves gameplay collider WaterSource(Clone).
+PASS: Original primitive Visual preserves gameplay collider OilSource(Clone).
+PASS: Original primitive Visual preserves gameplay collider Pushable(Clone).
+PASS: Original primitive Visual preserves gameplay collider FixedObstacle(Clone).
+PASS: Original primitive Visual preserves gameplay anchor Arrival.
+PASS: Original primitive Visual preserves gameplay anchor Nozzle.
+PASS: Original primitive Visual preserves gameplay anchor Interaction.
+PASS: Original primitive Visual preserves gameplay anchor Outlet.
+PASS: Original primitive Visual preserves gameplay anchor Interaction.
+PASS: Original primitive Visual preserves gameplay anchor Outlet.
+PASS: Original primitive Visual preserves gameplay anchor Interaction.
+PASS: Original primitive Visual preserves water, oil, and nozzle exposed connection endpoints.
+PASS: FireFieldView exists on the created test assembly.
+PASS: Original primitive Visual FireFieldView generates a visible fire Renderer from the bound field.
+PASS: Original primitive Visual visual leaves the real FirefighterMotor movable.
+PASS: Original primitive Visual player can connect the actual hose to water.
+PASS: Original primitive Visual motor movement obeys the real 13m hose limit.
+PASS: Original primitive Visual motor actually reached the hose-limit boundary rather than only evaluating it.
+PASS: Original primitive Visual reconnects water before live spraying.
+PASS: Original primitive Visual begins with the authored floor fire burning.
+PASS: Original primitive Visual SprayEmitter raycasts to the actual ground collider.
+PASS: Original primitive Visual water spray actually extinguishes the floor fire to a safe state.
+PASS: Original primitive Visual player can switch the live hose to oil.
+PASS: Original primitive Visual oil spray hits ground and puts the real motor into slipping state.
+PASS: Original primitive Visual player can calm the real resident through its interaction rules.
+PASS: Original primitive Visual calmed resident autonomously reaches the real exit.
+PASS: Original primitive Visual RescueGameManager records exactly one actual rescue.
+PASS: CreateTestAssembly returns an active fresh assembly.
+PASS: Player motor exists on the created test assembly.
+PASS: Player hose exists on the created test assembly.
+PASS: Player spray emitter exists on the created test assembly.
+PASS: Player controller exists on the Player motor root.
+PASS: FireField exists on the created test assembly.
+PASS: ElementReaction exists on the created test assembly.
+PASS: Resident exists on the created test assembly.
+PASS: RescueGameManager exists on the created test assembly.
+PASS: Assembly contains both real water and oil FluidSource components.
+PASS: Validation assembly has no LocalPlayerInput; commands are supplied directly.
+PASS: Assembly exposes gameplay colliders outside all Visual roots.
+PASS: Assembly exposes Nozzle, interaction, outlet, and exit anchors outside models.
+PASS: Disabled Visual assembly exposes direct Visual roots for all greybox prefabs.
+PASS: Disabled Visual preserves gameplay collider Ground(Clone).
+PASS: Disabled Visual preserves gameplay collider Resident(Clone).
+PASS: Disabled Visual preserves gameplay collider Player(Clone).
+PASS: Disabled Visual preserves gameplay collider WaterSource(Clone).
+PASS: Disabled Visual preserves gameplay collider OilSource(Clone).
+PASS: Disabled Visual preserves gameplay collider Pushable(Clone).
+PASS: Disabled Visual preserves gameplay collider FixedObstacle(Clone).
+PASS: Disabled Visual preserves gameplay anchor Arrival.
+PASS: Disabled Visual preserves gameplay anchor Nozzle.
+PASS: Disabled Visual preserves gameplay anchor Interaction.
+PASS: Disabled Visual preserves gameplay anchor Outlet.
+PASS: Disabled Visual preserves gameplay anchor Interaction.
+PASS: Disabled Visual preserves gameplay anchor Outlet.
+PASS: Disabled Visual preserves gameplay anchor Interaction.
+PASS: Disabled Visual preserves water, oil, and nozzle exposed connection endpoints.
+PASS: FireFieldView exists on the created test assembly.
+PASS: Disabled Visual does not stop the FireField simulation from stepping.
+PASS: Disabled Visual visual leaves the real FirefighterMotor movable.
+PASS: Disabled Visual player can connect the actual hose to water.
+PASS: Disabled Visual motor movement obeys the real 13m hose limit.
+PASS: Disabled Visual motor actually reached the hose-limit boundary rather than only evaluating it.
+PASS: Disabled Visual reconnects water before live spraying.
+PASS: Disabled Visual begins with the authored floor fire burning.
+PASS: Disabled Visual SprayEmitter raycasts to the actual ground collider.
+PASS: Disabled Visual water spray actually extinguishes the floor fire to a safe state.
+PASS: Disabled Visual player can switch the live hose to oil.
+PASS: Disabled Visual oil spray hits ground and puts the real motor into slipping state.
+PASS: Disabled Visual player can calm the real resident through its interaction rules.
+PASS: Disabled Visual calmed resident autonomously reaches the real exit.
+PASS: Disabled Visual RescueGameManager records exactly one actual rescue.
+PASS: CreateTestAssembly returns an active fresh assembly.
+PASS: Player motor exists on the created test assembly.
+PASS: Player hose exists on the created test assembly.
+PASS: Player spray emitter exists on the created test assembly.
+PASS: Player controller exists on the Player motor root.
+PASS: FireField exists on the created test assembly.
+PASS: ElementReaction exists on the created test assembly.
+PASS: Resident exists on the created test assembly.
+PASS: RescueGameManager exists on the created test assembly.
+PASS: Assembly contains both real water and oil FluidSource components.
+PASS: Validation assembly has no LocalPlayerInput; commands are supplied directly.
+PASS: Disabled Visual still leaves the FixedObstacle collider blocking real motor movement.
+PASS: Hidden-Visual water setup connects before obstacle tests.
+PASS: Blocked-spray target resolves to a real FireField cell.
+PASS: Disabled Visual wall blocks spray, so fire behind its collider is not hit.
+PASS: Hidden-Visual pushable setup connects water.
+PASS: Hidden-Visual spray hits the actual Pushable collider before measuring its motion.
+MEASURE: hidden-Visual push displacement=0.2254m; physics duration=0.1400s.
+PASS: Physics advanced before Pushable displacement was evaluated.
+PASS: Water spray still imparts physical movement to Pushable when Visual is disabled.
+PASS: CreateTestAssembly returns an active fresh assembly.
+PASS: Player motor exists on the created test assembly.
+PASS: Player hose exists on the created test assembly.
+PASS: Player spray emitter exists on the created test assembly.
+PASS: Player controller exists on the Player motor root.
+PASS: FireField exists on the created test assembly.
+PASS: ElementReaction exists on the created test assembly.
+PASS: Resident exists on the created test assembly.
+PASS: RescueGameManager exists on the created test assembly.
+PASS: Assembly contains both real water and oil FluidSource components.
+PASS: Validation assembly has no LocalPlayerInput; commands are supplied directly.
+PASS: Assembly exposes gameplay colliders outside all Visual roots.
+PASS: Assembly exposes Nozzle, interaction, outlet, and exit anchors outside models.
+PASS: Renamed replacement renderer Visual assembly exposes direct Visual roots for all greybox prefabs.
+PASS: Replacement renderer 'RendererOnly_Ground(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_FireSystem(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_Exit(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_Resident(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_Player(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_WaterSource(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_OilSource(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_Pushable(Clone)' has no Collider.
+PASS: Replacement renderer 'RendererOnly_FixedObstacle(Clone)' has no Collider.
+PASS: Renamed replacement renderer Visual preserves gameplay collider Ground(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider Resident(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider Player(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider WaterSource(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider OilSource(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider Pushable(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay collider FixedObstacle(Clone).
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Arrival.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Nozzle.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Interaction.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Outlet.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Interaction.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Outlet.
+PASS: Renamed replacement renderer Visual preserves gameplay anchor Interaction.
+PASS: Renamed replacement renderer Visual preserves water, oil, and nozzle exposed connection endpoints.
+PASS: FireFieldView exists on the created test assembly.
+PASS: Renamed replacement renderer Visual FireFieldView generates a visible fire Renderer from the bound field.
+PASS: Replacement Visual keeps FireFieldView under a replacement renderer hierarchy after Initialize(field).
+PASS: Renamed replacement renderer Visual visual leaves the real FirefighterMotor movable.
+PASS: Renamed replacement renderer Visual player can connect the actual hose to water.
+PASS: Renamed replacement renderer Visual motor movement obeys the real 13m hose limit.
+PASS: Renamed replacement renderer Visual motor actually reached the hose-limit boundary rather than only evaluating it.
+PASS: Renamed replacement renderer Visual reconnects water before live spraying.
+PASS: Renamed replacement renderer Visual begins with the authored floor fire burning.
+PASS: Renamed replacement renderer Visual SprayEmitter raycasts to the actual ground collider.
+PASS: Renamed replacement renderer Visual water spray actually extinguishes the floor fire to a safe state.
+PASS: Renamed replacement renderer Visual player can switch the live hose to oil.
+PASS: Renamed replacement renderer Visual oil spray hits ground and puts the real motor into slipping state.
+PASS: Renamed replacement renderer Visual player can calm the real resident through its interaction rules.
+PASS: Renamed replacement renderer Visual calmed resident autonomously reaches the real exit.
+PASS: Renamed replacement renderer Visual RescueGameManager records exactly one actual rescue.

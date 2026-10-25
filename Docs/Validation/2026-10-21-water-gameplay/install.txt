@@ -1,0 +1,3 @@
+WATER_GAMEPLAY_INSTALL_PASS
+Unity 6000.5.0b9
+Three flammable ignition seeds; movable furniture; slow-spread parameters; water push 48; persisted reload; scene/prefab idempotent install PASS

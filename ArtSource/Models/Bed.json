@@ -1,0 +1,21 @@
+{
+  "asset": "Bed",
+  "triangles": 880,
+  "meshes": 6,
+  "dimensions_xyz": [
+    1.4,
+    2.1,
+    0.7
+  ],
+  "min_xyz": [
+    -0.7,
+    -1.05,
+    0.0
+  ],
+  "materials": [
+    "FR_Blanket",
+    "FR_Cream",
+    "FR_Pillow",
+    "FR_Wood"
+  ]
+}

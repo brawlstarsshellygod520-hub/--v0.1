@@ -1,0 +1,38 @@
+POWDER_GAMEPLAY_PLAYMODE_PASS
+Actual command-path checks=36
+PASS Active persisted layout contains the marker, player command path, oil pan, water source, powder source, and Game camera.
+PASS Persisted pan and dry-powder fixture match their authored gameplay configuration.
+PASS Oil pan has the stable authored receiver hit volume, independent of Visual/Flames.
+PASS Real input adapter is active while physical-device polling is disabled.
+PASS Water lowers ordinary object fire by 0.5 per unit without prematurely extinguishing it.
+PASS Oil, unknown elements, zero, NaN, and Infinity do not alter object fire.
+PASS Dry powder reaches exactly zero and extinguishes ordinary object fire.
+PASS Water cannot suppress cooking-oil object fire.
+PASS ElementReaction routes dry powder to an ElementReceiver even with no FireField.
+PASS Powder suppresses reachable floor fire without creating wetness.
+PASS Powder reaction does not add a rigidbody push impulse after physics advances.
+PASS Thin layer-8 wall blocks powder suppression from reaching fire behind it.
+PASS Enter front door from outdoor spawn: real camera-relative input reached (5.74, 0.02, -4.92).
+PASS Cross main room toward bathroom: real camera-relative input reached (0.26, 0.02, -4.60).
+PASS Reach bathroom doorway: real camera-relative input reached (0.20, 0.02, 2.34).
+PASS Reach toilet cistern water source: real camera-relative input reached (-2.24, 0.02, 2.41).
+PASS F connects to the real toilet water source.
+PASS Pull connected water hose through bathroom doorway: real camera-relative input reached (0.10, 0.02, 2.40).
+PASS Reach a clear water position before the oil pan: real camera-relative input reached (1.43, 0.02, 2.40).
+PASS Connected water hose visibly changes its used length along the playable route.
+PASS Camera screen-point aim resolves to the oil pan ElementReceiver hit volume.
+PASS F-connected water impacts the pan through the real aim path but cannot extinguish cooking oil.
+PASS Walk around counter to dry-powder source: real camera-relative input reached (3.36, 0.02, 4.25).
+PASS F swaps the hose from water to the real dry-powder extinguisher source.
+PASS Carry the connected powder hose back to the pan: real camera-relative input reached (1.56, 0.02, 2.46).
+PASS Powder hose remains connected and changes length while returning to the pan.
+PASS Camera screen-point aim resolves to the oil pan ElementReceiver hit volume.
+PASS A solid wall stops the real powder jet before the oil pan; fire behind the wall is unchanged.
+PASS Continuous dry-powder spray progressively lowers oil-pan fire before it is extinguished.
+PASS Releasing RMB mid-fire stops suppression immediately without altering remaining intensity.
+PASS Sustained real dry-powder spray extinguishes the oil-pan fire at zero intensity.
+PASS Releasing RMB stops the powder stream.
+PASS Disabling the complete replaceable pan Visual does not stop powder gameplay from extinguishing the fire.
+PASS Step out of all source interaction ranges: real camera-relative input reached (2.60, 0.02, 1.75).
+PASS F away from all sources disconnects the hose.
+PASS Without any connected source, RMB cannot emit powder or alter object fire.

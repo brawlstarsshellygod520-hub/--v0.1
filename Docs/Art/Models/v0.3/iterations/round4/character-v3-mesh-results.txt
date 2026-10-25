@@ -1,0 +1,19 @@
+CHARACTER_MESH_FAIL
+PASS: Firefighter: two feet and hip attachment joints
+PASS: Firefighter: closed hat/hair shells have outward face winding; no double-sided shader workaround
+FAIL: Firefighter: baked height=1.562m, head fraction=0.349
+MEASURE: Firefighter Idle surfaces: Firefighter_Body=0.5248..1.0329; Firefighter_Boot_L=0.0108..0.1544; Firefighter_Boot_R=0.0108..0.1544; Firefighter_EyeMesh_L=1.0940..1.1756; Firefighter_EyeMesh_R=1.0940..1.1756; Firefighter_Forearm_L=0.6777..0.8710; Firefighter_Forearm_R=0.6777..0.8710; Firefighter_Glove_L=0.6614..0.8424; Firefighter_Glove_R=0.6614..0.8424; Firefighter_HeadMesh=0.8452..1.3896; Firefighter_HelmetBrim=1.0639..1.1319; Firefighter_HelmetCrown=1.2098..1.5728; Firefighter_Leg_L=0.1072..0.4928; Firefighter_Leg_R=0.1072..0.4928; Firefighter_Nose=1.0512..1.0966; Firefighter_UpperArm_L=0.7077..0.9673; Firefighter_UpperArm_R=0.7077..0.9673
+PASS: Firefighter: Idle feet contact ground, upper min=0.0108m
+PASS: Firefighter: Run baked meshes do not penetrate floor, min=0.0133m
+PASS: Firefighter: Run has visible ground contact in 24/24 sampled poses
+FAIL: Firefighter: hip origins remain inside torso silhouette envelope, gap=0.0396m
+PASS: Firefighter: reflector colour belongs to skinned surface triangles (288)
+PASS: Resident: two feet and hip attachment joints
+PASS: Resident: closed hat/hair shells have outward face winding; no double-sided shader workaround
+PASS: Resident: baked height=1.577m, head fraction=0.382
+MEASURE: Resident Idle surfaces: Resident_Body=0.5406..1.1024; Resident_Ear_L=1.0889..1.2059; Resident_Ear_R=1.0889..1.2059; Resident_EyeMesh_L=1.1597..1.2449; Resident_EyeMesh_R=1.1597..1.2449; Resident_Forearm_L=0.4877..0.7644; Resident_Forearm_R=0.4877..0.7644; Resident_HairCap=1.2500..1.5843; Resident_Hand_L=0.4646..0.6318; Resident_Hand_R=0.4646..0.6318; Resident_HeadMesh=0.8876..1.4895; Resident_Nose=1.1157..1.1609; Resident_PantsLeg_L=0.1064..0.5244; Resident_PantsLeg_R=0.1064..0.5244; Resident_Shoe_L=0.0074..0.1663; Resident_Shoe_R=0.0074..0.1663; Resident_UpperArm_L=0.6307..0.9876; Resident_UpperArm_R=0.6307..0.9876
+PASS: Resident: Idle feet contact ground, upper min=0.0074m
+PASS: Resident: Run baked meshes do not penetrate floor, min=0.0101m
+PASS: Resident: Run has visible ground contact in 24/24 sampled poses
+FAIL: Resident: hip origins remain inside torso silhouette envelope, gap=0.0288m
+Mesh quality criteria failed; full measurements in Logs/character-v3-mesh-results.txt.

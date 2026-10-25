@@ -1,0 +1,30 @@
+WINDOW_HOSE_PLAYMODE_FAIL
+Checks passed before failure=23
+PASS A window cannot route an unconnected hose.
+PASS Fixture player connects before testing route limits.
+PASS A window beyond the 1.8m interaction range is rejected without routing.
+PASS A reachable connected hose routes through its selected window.
+PASS A reachable source-window-player polyline longer than 13m is rejected while preserving its prior route.
+PASS Routed UsedLength uses the XZ polyline and constrains around the final window while preserving requested Y.
+PASS Each player owns an independent active window route.
+PASS Changing source clears only that player's route.
+PASS Disconnect clears only that player's route.
+PASS Fixture route is restored before disabled-window fallback.
+PASS A disabled window falls back to the established direct hose length.
+PASS A re-enabled window can be selected again before destruction fallback is tested.
+PASS A deleted window also falls back to the established direct hose length.
+PASS Saved residential layout contains the window fixture, real player command stack, water source, exterior fire, and Game camera.
+PASS Saved fixture positions, window anchors, ordinary target fire, and stable target collider match the window-hose contract.
+PASS Enter the front door from the outdoor spawn: real LocalPlayerInput reached (5.74, 0.02, -4.92).
+PASS Cross the main room toward the bathroom: real LocalPlayerInput reached (0.26, 0.02, -4.60).
+PASS Reach the bathroom doorway: real LocalPlayerInput reached (0.20, 0.02, 2.34).
+PASS Reach the real toilet water source: real LocalPlayerInput reached (-2.24, 0.02, 2.41).
+PASS F connects water through the real LocalPlayerInput command path without an initial route.
+PASS Return through the bathroom doorway with water connected: real LocalPlayerInput reached (0.10, 0.02, 2.40).
+PASS Approach the south side of the kitchen counter: real LocalPlayerInput reached (2.22, 0.02, 2.64).
+PASS Walk around the counter's east side: real LocalPlayerInput reached (2.31, 0.02, 4.42).
+FAIL Reach the rear-room approach with water connected: real LocalPlayerInput reached (3.90, 0.02, 4.47).
+System.InvalidOperationException: Reach the rear-room approach with water connected: real LocalPlayerInput reached (3.90, 0.02, 4.47).
+  at FireRescue.Editor.WindowHoseValidationDriver.Check (System.Boolean condition, System.String message) [0x00019] in D:\Documents\畢專\Assets\FireRescue\Editor\WindowHoseValidation.cs:494 
+  at FireRescue.Editor.WindowHoseValidationDriver+<Walk>d__26.MoveNext () [0x000b8] in D:\Documents\畢專\Assets\FireRescue\Editor\WindowHoseValidation.cs:357 
+  at FireRescue.Editor.WindowHoseValidationDriver.Update () [0x0002a] in D:\Documents\畢專\Assets\FireRescue\Editor\WindowHoseValidation.cs:141 

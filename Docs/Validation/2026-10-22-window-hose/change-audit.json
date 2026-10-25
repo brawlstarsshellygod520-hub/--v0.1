@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-23",
+  "baselineCount": 402,
+  "unchanged": 398,
+  "changed": [
+    "Assets/FireRescue/Runtime/Hose/HoseConnection.cs",
+    "Assets/FireRescue/Runtime/Hose/HoseView.cs",
+    "Assets/FireRescue/Runtime/Player/LocalPlayerInput.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "missing": [],
+  "new": [
+    "Assets/FireRescue/Editor/WindowHoseBuilder.cs",
+    "Assets/FireRescue/Editor/WindowHoseBuilder.cs.meta",
+    "Assets/FireRescue/Editor/WindowHoseValidation.cs",
+    "Assets/FireRescue/Editor/WindowHoseValidation.cs.meta",
+    "Assets/FireRescue/Greybox/Window.meta",
+    "Assets/FireRescue/Greybox/Window/HoseWindow.prefab",
+    "Assets/FireRescue/Greybox/Window/HoseWindow.prefab.meta",
+    "Assets/FireRescue/Greybox/Window/TestFlame.mat",
+    "Assets/FireRescue/Greybox/Window/TestFlame.mat.meta",
+    "Assets/FireRescue/Greybox/Window/TestWood.mat",
+    "Assets/FireRescue/Greybox/Window/TestWood.mat.meta",
+    "Assets/FireRescue/Greybox/Window/WindowFrame.mat",
+    "Assets/FireRescue/Greybox/Window/WindowFrame.mat.meta",
+    "Assets/FireRescue/Greybox/Window/WindowTarget.prefab",
+    "Assets/FireRescue/Greybox/Window/WindowTarget.prefab.meta",
+    "Assets/FireRescue/Runtime/Hose/HoseWindow.cs",
+    "Assets/FireRescue/Runtime/Hose/HoseWindow.cs.meta"
+  ],
+  "missingMeta": []
+}

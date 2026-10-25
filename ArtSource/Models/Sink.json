@@ -1,0 +1,22 @@
+{
+  "asset": "Sink",
+  "triangles": 652,
+  "meshes": 9,
+  "dimensions_xyz": [
+    0.6,
+    0.45,
+    0.8475
+  ],
+  "min_xyz": [
+    -0.3,
+    -0.225,
+    0.0
+  ],
+  "materials": [
+    "FR_Charcoal",
+    "FR_Cream",
+    "FR_Metal",
+    "FR_Water",
+    "FR_White"
+  ]
+}

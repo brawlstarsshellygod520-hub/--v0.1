@@ -1,0 +1,22 @@
+{
+  "asset": "KitchenCounter",
+  "triangles": 716,
+  "meshes": 9,
+  "dimensions_xyz": [
+    2.3,
+    0.7,
+    0.91
+  ],
+  "min_xyz": [
+    -1.15,
+    -0.35,
+    0.0
+  ],
+  "materials": [
+    "FR_Charcoal",
+    "FR_Cream",
+    "FR_Metal",
+    "FR_Water",
+    "FR_Wood"
+  ]
+}

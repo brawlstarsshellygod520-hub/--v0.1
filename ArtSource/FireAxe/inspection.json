@@ -1,0 +1,435 @@
+{
+  "source": "D:\\Documents\\畢專\\ArtSource\\FireAxe\\消防斧.blend",
+  "scene": "Scene",
+  "unit_system": "METRIC",
+  "unit_scale": 1.0,
+  "mesh_count": 6,
+  "objects": [
+    {
+      "name": "柄",
+      "mesh": "平面.001",
+      "vertices": 9,
+      "edges": 8,
+      "triangles": 0,
+      "evaluated_vertices": 4226,
+      "evaluated_triangles": 8448,
+      "materials": [
+        "材質.003"
+      ],
+      "location": [
+        -0.090783,
+        -0.0,
+        -1.788034
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_dimensions": [
+        0.42279,
+        0.326447,
+        2.440351
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "皮膚",
+          "type": "SKIN",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "頭",
+      "mesh": "立方體",
+      "vertices": 298,
+      "edges": 600,
+      "triangles": 592,
+      "evaluated_vertices": 1202,
+      "evaluated_triangles": 2400,
+      "materials": [
+        "材質.002"
+      ],
+      "location": [
+        -0.024209,
+        -1e-06,
+        2.460614
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.225227,
+        0.225227,
+        0.225227
+      ],
+      "local_dimensions": [
+        1.558091,
+        0.325588,
+        0.780779
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "柄.001",
+      "mesh": "平面.003",
+      "vertices": 6,
+      "edges": 5,
+      "triangles": 0,
+      "evaluated_vertices": 2434,
+      "evaluated_triangles": 4864,
+      "materials": [
+        "材質.004"
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_dimensions": [
+        0.433926,
+        0.335045,
+        1.343883
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "皮膚",
+          "type": "SKIN",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "頭.001",
+      "mesh": "立方體.006",
+      "vertices": 90,
+      "edges": 173,
+      "triangles": 158,
+      "evaluated_vertices": 347,
+      "evaluated_triangles": 652,
+      "materials": [
+        "材質.005"
+      ],
+      "location": [
+        -0.024209,
+        -1e-06,
+        2.460614
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.225227,
+        0.228602,
+        0.225896
+      ],
+      "local_dimensions": [
+        0.249562,
+        0.113504,
+        0.7831
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "頭.002",
+      "mesh": "立方體.007",
+      "vertices": 50,
+      "edges": 93,
+      "triangles": 78,
+      "evaluated_vertices": 187,
+      "evaluated_triangles": 332,
+      "materials": [
+        "材質.006"
+      ],
+      "location": [
+        -0.024209,
+        -1e-06,
+        2.460614
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.225199,
+        0.23619,
+        0.225869
+      ],
+      "local_dimensions": [
+        0.103432,
+        0.037354,
+        0.783006
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "頭.003",
+      "mesh": "立方體.008",
+      "vertices": 24,
+      "edges": 43,
+      "triangles": 34,
+      "evaluated_vertices": 87,
+      "evaluated_triangles": 148,
+      "materials": [
+        "材質.006"
+      ],
+      "location": [
+        -0.024209,
+        -1e-06,
+        2.460614
+      ],
+      "rotation_euler_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.225608,
+        0.225608,
+        0.225608
+      ],
+      "local_dimensions": [
+        0.228484,
+        0.155877,
+        0.211722
+      ],
+      "hide_viewport": false,
+      "hide_render": false,
+      "visible_get": true,
+      "selected": false,
+      "parent": null,
+      "collections": [
+        "消防斧"
+      ],
+      "modifiers": [
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    }
+  ],
+  "active_object": "柄.001",
+  "materials": [
+    "材質.002",
+    "材質.003",
+    "材質.004",
+    "材質.005",
+    "材質.006"
+  ],
+  "world_bounds_min": [
+    -0.824294,
+    -0.162795,
+    -0.00094
+  ],
+  "world_bounds_max": [
+    0.723774,
+    0.162794,
+    2.824067
+  ],
+  "world_dimensions": [
+    1.548067,
+    0.325588,
+    2.825007
+  ],
+  "world_centroid": [
+    -0.04032,
+    -0.0,
+    1.256369
+  ],
+  "principal_axis_unsigned": [
+    0.127428,
+    -0.0,
+    0.991848
+  ],
+  "orientation_note": "PCA direction is unsigned; endpoint/forward direction requires visual review before export transform.",
+  "planned_unity_export": {
+    "source_length_z": 2.825007,
+    "unity_length_y_target": 0.72,
+    "uniform_scale": 0.254867,
+    "source_grip_pivot": [
+      -0.147553,
+      0.0,
+      0.469895
+    ],
+    "unity_grip_pivot": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "axis_mapping": {
+      "source_x": "unity_z (blade forward)",
+      "source_y": "negative unity_x",
+      "source_z": "unity_y (handle up)"
+    },
+    "expected_y_bounds": [
+      -0.12,
+      0.6
+    ]
+  },
+  "export": {
+    "source_length_z": 2.825007,
+    "unity_length_y_target": 0.72,
+    "uniform_scale": 0.254867,
+    "source_grip_pivot": [
+      -0.147553,
+      0.0,
+      0.469895
+    ],
+    "unity_grip_pivot": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "axis_mapping": {
+      "source_x": "unity_z (blade forward)",
+      "source_y": "negative unity_x",
+      "source_z": "unity_y (handle up)"
+    },
+    "expected_y_bounds": [
+      -0.12,
+      0.6
+    ],
+    "fbx": "D:\\Documents\\畢專\\ArtSource\\FireAxe\\fire_axe.fbx",
+    "exported_mesh_objects": 1,
+    "exported_vertices": 8483,
+    "exported_triangles": 16844,
+    "material_colors": {
+      "材質.003": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "材質.002": [
+        1.0,
+        0.0032151625491678715,
+        0.0,
+        1.0
+      ],
+      "材質.004": [
+        0.05880792811512947,
+        0.05880792811512947,
+        0.05880792811512947,
+        1.0
+      ],
+      "材質.005": [
+        0.195360466837883,
+        0.195360466837883,
+        0.195360466837883,
+        1.0
+      ],
+      "材質.006": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "export_bounds_min": [
+      -0.041491,
+      -0.172479,
+      -0.12
+    ],
+    "export_bounds_max": [
+      0.041491,
+      0.222072,
+      0.6
+    ],
+    "export_dimensions": [
+      0.082982,
+      0.394551,
+      0.72
+    ],
+    "export_coordinate_system": "Blender Z-up; FBX axis_up=Y converts once"
+  }
+}

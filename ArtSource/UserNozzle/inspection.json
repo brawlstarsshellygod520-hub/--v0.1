@@ -1,0 +1,346 @@
+{
+  "source": "D:\\Documents\\畢專\\ArtSource\\UserNozzle\\source.blend",
+  "source_sha256": "158D98C1380AA118DD0ABA11284F557CA032111BFF707B0F69DE36004ADA67B1",
+  "scene": "Scene",
+  "unit_system": "METRIC",
+  "unit_scale": 1.0,
+  "mesh_count": 7,
+  "objects": [
+    {
+      "name": "圓柱體",
+      "mesh": "圓柱體.001",
+      "vertices": 154,
+      "triangles": 304,
+      "evaluated_vertices": 308,
+      "evaluated_triangles": 608,
+      "materials": [
+        "材質.001"
+      ],
+      "world_location": [
+        -0.000129,
+        -0.194645,
+        0.877235
+      ],
+      "local_dimensions": [
+        0.067949,
+        0.393695,
+        0.067257
+      ],
+      "modifiers": [
+        {
+          "name": "布林",
+          "type": "BOOLEAN",
+          "show_render": true
+        },
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "噴嘴",
+      "mesh": "圓柱體",
+      "vertices": 802,
+      "triangles": 1498,
+      "evaluated_vertices": 1393,
+      "evaluated_triangles": 2867,
+      "materials": [
+        "材質"
+      ],
+      "world_location": [
+        0.0,
+        0.004655,
+        0.014982
+      ],
+      "local_dimensions": [
+        0.461279,
+        0.871579,
+        2.098288
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        },
+        {
+          "name": "布林",
+          "type": "BOOLEAN",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "噴嘴.001",
+      "mesh": "圓柱體.002",
+      "vertices": 24,
+      "triangles": 22,
+      "evaluated_vertices": 44,
+      "evaluated_triangles": 44,
+      "materials": [
+        "材質.001"
+      ],
+      "world_location": [
+        0.0,
+        0.24408,
+        0.821785
+      ],
+      "local_dimensions": [
+        0.331041,
+        0.338443,
+        0.058056
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "噴嘴.002",
+      "mesh": "圓柱體.003",
+      "vertices": 24,
+      "triangles": 22,
+      "evaluated_vertices": 44,
+      "evaluated_triangles": 44,
+      "materials": [
+        "材質.001"
+      ],
+      "world_location": [
+        0.0,
+        0.004655,
+        0.799653
+      ],
+      "local_dimensions": [
+        0.33571,
+        0.34299,
+        0.069275
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "噴嘴.003",
+      "mesh": "圓柱體.004",
+      "vertices": 24,
+      "triangles": 22,
+      "evaluated_vertices": 44,
+      "evaluated_triangles": 44,
+      "materials": [
+        "材質.001"
+      ],
+      "world_location": [
+        0.0,
+        -0.450052,
+        0.837881
+      ],
+      "local_dimensions": [
+        0.328496,
+        0.336224,
+        0.013939
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "立方體.001",
+      "mesh": "立方體.001",
+      "vertices": 118,
+      "triangles": 232,
+      "evaluated_vertices": 236,
+      "evaluated_triangles": 464,
+      "materials": [
+        "材質"
+      ],
+      "world_location": [
+        -0.001299,
+        -0.197785,
+        0.880785
+      ],
+      "local_dimensions": [
+        0.349866,
+        0.376612,
+        0.196261
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        }
+      ]
+    },
+    {
+      "name": "噴嘴.004",
+      "mesh": "圓柱體.006",
+      "vertices": 72,
+      "triangles": 110,
+      "evaluated_vertices": 132,
+      "evaluated_triangles": 220,
+      "materials": [
+        "材質.001"
+      ],
+      "world_location": [
+        0.0,
+        0.571357,
+        0.818099
+      ],
+      "local_dimensions": [
+        0.403316,
+        0.418465,
+        0.138868
+      ],
+      "modifiers": [
+        {
+          "name": "鏡像",
+          "type": "MIRROR",
+          "show_render": true
+        },
+        {
+          "name": "細分",
+          "type": "SUBSURF",
+          "show_render": true
+        },
+        {
+          "name": "布林",
+          "type": "BOOLEAN",
+          "show_render": true
+        }
+      ]
+    }
+  ],
+  "materials": [
+    "材質",
+    "材質.001"
+  ],
+  "world_bounds_min": [
+    -0.230639,
+    -1.23817,
+    0.190516
+  ],
+  "world_bounds_max": [
+    0.230639,
+    0.860119,
+    1.126251
+  ],
+  "world_dimensions": [
+    0.461279,
+    2.098288,
+    0.935735
+  ],
+  "world_triangles_evaluated": 4291,
+  "orientation_status": "reviewed source preview and exported",
+  "source_orientation": {
+    "nozzle_direction": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "up_direction": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "grip_point": [
+      0.0,
+      -0.2,
+      0.48
+    ]
+  },
+  "export": {
+    "fbx": "D:\\Documents\\畢專\\Assets\\FireRescue\\Art\\UserNozzle\\nozzle.fbx",
+    "metadata": "D:\\Documents\\畢專\\ArtSource\\UserNozzle\\nozzle-metadata.json",
+    "target_length_metres": 0.55,
+    "source_axis_length": 2.098288,
+    "uniform_scale": 0.262118,
+    "unity_axes": {
+      "nozzle": "+Z",
+      "up": "+Y"
+    },
+    "export_bounds_blender": {
+      "min": [
+        -0.060455,
+        -0.277877,
+        -0.075879
+      ],
+      "max": [
+        0.060455,
+        0.272123,
+        0.169394
+      ],
+      "dimensions": [
+        0.12091,
+        0.55,
+        0.245273
+      ]
+    },
+    "muzzle_unity_local": [
+      0.0,
+      0.090184,
+      0.270324
+    ],
+    "hose_inlet_unity_local": [
+      -0.0,
+      0.090183,
+      -0.277877
+    ],
+    "vertices": 2201,
+    "triangles": 4291
+  },
+  "fbx_reimport_validation": {
+    "mesh_count": 1,
+    "triangles": 4247,
+    "bounds_blender": {
+      "min": [
+        -0.060455,
+        -0.277877,
+        -0.075879
+      ],
+      "max": [
+        0.060455,
+        0.272123,
+        0.169394
+      ],
+      "dimensions": [
+        0.12091,
+        0.55,
+        0.245273
+      ]
+    },
+    "preview": "D:\\Documents\\畢專\\ArtSource\\UserNozzle\\fbx_reimport_preview.png"
+  }
+}

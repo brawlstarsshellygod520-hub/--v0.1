@@ -1,0 +1,21 @@
+WATER_REACTIONS_PLAYMODE_FAIL
+Actual checks passed before failure: 12
+PASS: Real prefab player, emitter, reaction, water source, rigidbody, floor, and fixed obstacle are available.
+PASS: Real prefab fixture includes physical colliders.
+PASS: Real player can connect its real hose to the moved real water source.
+PASS: Disconnected right spray has no active stream or impact.
+PASS: Disconnected spray cannot wet or extinguish the fire field while simulation is disabled.
+PASS: Disconnected spray cannot push a real Rigidbody.
+PASS: Test reconnects the real water source.
+PASS: Connected stream reaches the real prefab floor directly, not a source or support in its beam.
+PASS: Continuous direct floor water decreases fire intensity and increases wetness.
+PASS: Continuous direct floor water extinguishes the targeted fire.
+PASS: Test reconnects the real water source.
+PASS: Connected stream directly impacts the actual dynamic Rigidbody fixture.
+DIAGNOSTIC grounded push coefficient 24: distance=0.0027
+DIAGNOSTIC grounded push coefficient 36: distance=0.0488
+DIAGNOSTIC grounded push coefficient 48: distance=0.4670
+DIAGNOSTIC grounded push coefficient 72: distance=1.2521
+System.InvalidOperationException: Grounded push calibration failed at original coefficient 18
+  at FireRescue.Editor.WaterReactionValidationDriver+<VerifyWaterImpulseUsesFixedPhysics>d__25.MoveNext () [0x0044e] in D:\Documents\畢專\Assets\FireRescue\Editor\WaterReactionValidation.cs:306 
+  at FireRescue.Editor.WaterReactionValidationDriver.Update () [0x0002a] in D:\Documents\畢專\Assets\FireRescue\Editor\WaterReactionValidation.cs:156 

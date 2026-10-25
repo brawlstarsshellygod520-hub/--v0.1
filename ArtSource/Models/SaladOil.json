@@ -1,0 +1,20 @@
+{
+  "asset": "SaladOil",
+  "triangles": 512,
+  "meshes": 5,
+  "dimensions_xyz": [
+    0.17,
+    0.175,
+    0.39
+  ],
+  "min_xyz": [
+    -0.085,
+    -0.09,
+    0.0
+  ],
+  "materials": [
+    "FR_Label",
+    "FR_Oil",
+    "FR_Plastic"
+  ]
+}

@@ -1,0 +1,70 @@
+GREYBOX_LAYOUT_PLAYMODE_PASS
+Actual checks: 68
+PASS: Persisted Step3 layout is active.
+PASS: Original Step2 assembly remains present and inactive.
+PASS: Exactly one active firefighter.
+PASS: Exactly one resident.
+PASS: Only household water and oil sources.
+PASS: Step4 device input was not added early.
+PASS: No permanent world text or UI.
+PASS: Eight named authoring areas exist without world labels.
+PASS: Area exists: Bedroom 1
+PASS: Area exists: Bedroom 2
+PASS: Area exists: Bedroom 3
+PASS: Area exists: Living Room
+PASS: Area exists: Kitchen
+PASS: Area exists: Bathroom
+PASS: Area exists: Corridor
+PASS: Area exists: Exterior
+PASS: Every map Visual is replaceable without removing physics; no missing scripts.
+PASS: Saved tutorial scene has no formal FBX dependency.
+PASS: Map-only step begins without future lesson fires.
+PASS: Wall-overlapping cells are authored nonflammable even when the wall is between cell centres.
+PASS: Every house wall is a permanently visible .72m cutaway with full authored collision.
+PASS: Existing Main Camera has the existing smooth follow component.
+PASS: Persisted camera target is the gameplay actor, not its Visual.
+PASS: Local room-sized orthographic framing.
+PASS: Fixed 50 degree pitch / 40 degree yaw.
+PASS: Routes are exercised with the real .56m-wide controller.
+PASS: Front door actual collider clearance=1.80m.
+PASS: Bedroom 1 door actual collider clearance=1.80m.
+PASS: Bedroom 2 door actual collider clearance=1.80m.
+PASS: Bedroom 3 door actual collider clearance=1.80m.
+PASS: Bathroom door actual collider clearance=1.80m.
+PASS: Clear corridor actual collider clearance=2.08m.
+PASS: Outside through front doorway reached by actual Motor.Move: (0.50, 0.02, -4.08)
+PASS: Living room clear approach reached by actual Motor.Move: (0.50, 0.02, -0.55)
+PASS: Game Camera does not reveal the whole house from the living room.
+PASS: Living opening to corridor reached by actual Motor.Move: (0.50, 0.02, 2.12)
+PASS: Corridor to bedroom 1 reached by actual Motor.Move: (-5.41, 0.02, 2.20)
+PASS: Bedroom 1 doorway reached by actual Motor.Move: (-5.50, 0.02, 4.44)
+PASS: Game Camera shows a bedroom and nearby area, not the full floor plan.
+PASS: Bedroom 1 back to corridor reached by actual Motor.Move: (-5.50, 0.02, 2.28)
+PASS: Corridor to bedroom 2 reached by actual Motor.Move: (0.41, 0.02, 2.20)
+PASS: Bedroom 2 doorway reached by actual Motor.Move: (0.50, 0.02, 4.45)
+PASS: Bedroom 2 back to corridor reached by actual Motor.Move: (0.50, 0.02, 2.28)
+PASS: Corridor to bedroom 3 reached by actual Motor.Move: (5.41, 0.02, 2.20)
+PASS: Bedroom 3 doorway reached by actual Motor.Move: (5.50, 0.02, 4.45)
+PASS: Bedroom 3 back to corridor reached by actual Motor.Move: (5.50, 0.02, 2.28)
+PASS: Bathroom approach reached by actual Motor.Move: (4.53, 0.02, 2.20)
+PASS: Bathroom doorway reached by actual Motor.Move: (4.50, 0.02, 0.05)
+PASS: Bathroom interior reached by actual Motor.Move: (4.50, 0.02, -2.21)
+PASS: Toilet cistern approach reached by actual Motor.Move: (5.25, 0.02, -3.43)
+PASS: Toilet source is reachable with existing distance and obstruction rules.
+PASS: Leave toilet reached by actual Motor.Move: (4.53, 0.02, -2.35)
+PASS: Bathroom to corridor reached by actual Motor.Move: (4.50, 0.02, 2.15)
+PASS: Return through corridor reached by actual Motor.Move: (0.52, 0.02, 2.20)
+PASS: Return to living room reached by actual Motor.Move: (0.50, 0.02, -0.45)
+PASS: Living room to open kitchen reached by actual Motor.Move: (-5.94, 0.02, -0.80)
+PASS: Countertop oil bottle is reachable under the existing source rules.
+PASS: Moving actor stays near screen centre; maximum viewport offset=0.058
+PASS: Head/chest visibility sampled along all room routes: 1039
+PASS: Living/bathroom wall blocks the real controller.
+PASS: Map collision still works with every Visual disabled.
+PASS: Camera smooths a target step rather than snapping: 0.0149m.
+PASS: Camera settles on the player.
+PASS: Stopped camera has no measurable >5mm drift.
+PASS: Actor turning does not rotate Camera.
+PASS: Existing resident can be approached in bedroom 2.
+PASS: Existing NPC autonomously traverses bedroom, corridor, living room and front door to the outdoor exit.
+PASS: All authored map renderers remain visible; no foreground wall is hidden.

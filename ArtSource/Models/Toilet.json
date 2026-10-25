@@ -1,0 +1,19 @@
+{
+  "asset": "Toilet",
+  "triangles": 1428,
+  "meshes": 10,
+  "dimensions_xyz": [
+    0.65,
+    0.92,
+    1.045
+  ],
+  "min_xyz": [
+    -0.325,
+    -0.49,
+    0.0
+  ],
+  "materials": [
+    "FR_Water",
+    "FR_White"
+  ]
+}

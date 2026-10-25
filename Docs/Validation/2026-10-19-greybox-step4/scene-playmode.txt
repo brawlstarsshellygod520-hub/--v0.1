@@ -1,0 +1,42 @@
+USER_LEVEL_ONE_PLAYMODE_PASS
+Checks=40
+PASS Saved user layout is active.
+PASS Old map preserved but inactive.
+PASS One active player, no overlapping old scene actors.
+PASS All 11 source architecture meshes have independent physics.
+PASS No permanent text or UI added.
+PASS No missing scripts; Visual owns no colliders.
+PASS Half-metre navigation/fire grid, no future lesson seeds.
+PASS Front door from outdoor spawn: actual command/controller at (5.74, 0.02, -4.85)
+PASS Main room to left doorway: actual command/controller at (0.26, 0.02, -4.64)
+PASS Left room door: actual command/controller at (-2.67, 0.02, -4.64)
+PASS Existing resident approachable in left room.
+PASS Left door return: actual command/controller at (0.16, 0.02, -4.64)
+PASS Main room to bathroom door: actual command/controller at (0.20, 0.02, 2.36)
+PASS Bathroom door: actual command/controller at (-2.27, 0.02, 2.40)
+PASS F attaches to actual toilet source through reachable room.
+PASS Right hold equips hose and sprays connected water in saved scene.
+PASS Right release stops stream.
+PASS Pull connected hose back through bathroom doorway: actual command/controller at (0.16, 0.02, 2.40)
+PASS Hose stays connected while moving away.
+PASS Counter approach: actual command/controller at (0.66, 0.02, 2.58)
+PASS F swaps water for countertop salad oil.
+PASS F on current source disconnects.
+PASS Cross main room: actual command/controller at (4.45, 0.02, 4.47)
+PASS Wide source-model passage to rear room: actual command/controller at (4.99, 0.02, 6.94)
+PASS Rear exterior door approach: actual command/controller at (2.53, 0.02, 7.20)
+PASS Rear door to courtyard: actual command/controller at (0.13, 0.02, 7.20)
+PASS Courtyard to detached annex: actual command/controller at (-3.35, 0.02, 10.35)
+PASS Annex doorway: actual command/controller at (-5.77, 0.02, 10.40)
+PASS Annex return: actual command/controller at (-3.48, 0.02, 10.40)
+PASS Courtyard return: actual command/controller at (0.07, 0.02, 7.23)
+PASS Rear door return: actual command/controller at (2.43, 0.02, 7.20)
+PASS Rear room across: actual command/controller at (4.95, 0.02, 7.00)
+PASS Main room return: actual command/controller at (5.01, 0.02, 4.58)
+PASS Open axe test position: actual command/controller at (3.02, 0.02, 1.04)
+PASS Held left repeats axe cycles, never sprays.
+PASS Release stops action and retains equipped axe.
+PASS Existing NPC autonomously traverses actual imported doorway and exits outside.
+PASS Imported exterior mesh blocks real player.
+PASS Source-model collision survives all architecture Visuals being disabled.
+PASS Chest visibility and fixed Camera verified on 1005 moving frames.

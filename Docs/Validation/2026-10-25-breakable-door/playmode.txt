@@ -1,0 +1,23 @@
+BREAKABLE_DOOR_PLAYMODE_PASS
+Checks=21
+PASS The first axe click equips only; it does not swing or damage a door.
+PASS A subsequent press/release stroke performs exactly one logical axe hit.
+PASS Holding the armed axe repeats complete swings and applies one hit per swing.
+PASS The closest solid wall receives the cast, so a door behind it takes no axe damage.
+PASS Three actual tool strikes break the active gameplay root once and disable only its blocking collider.
+PASS The disabled route collider lets a CharacterController pass through the broken doorway.
+PASS Extra hits after break are ignored and cannot emit another break event or disable the gameplay root.
+PASS A burning floor cell alone prevents all-fires-out completion.
+PASS An explicit burning ObjectFire is counted after the floor fire is out.
+PASS Disabling a separate ObjectFireView hides presentation only; its active gameplay fire still counts.
+PASS A burning ObjectFire blocks the NPC's one-row route without any player command.
+PASS Null and duplicate explicit fire entries do not block completion once the unique floor and object fires are out.
+PASS Extinguishing the object hazard resumes automatic route discovery even while its view stays disabled.
+PASS Re-igniting an object hazard during escape rechecks the remaining route and stops the NPC.
+PASS A second extinguish lets the stopped NPC resume without an interaction command.
+PASS Duplicate and null survivor entries still produce one automatic rescue completion event.
+PASS Repeated post-rescue ticks cannot duplicate the rescue completion event.
+PASS Short-hose fixture connects a reachable source
+PASS Closer valid window takes priority over disconnecting the same source
+PASS F on the same routed window clears only the route
+PASS Reachable but overlength window falls back to source disconnect instead of swallowing F

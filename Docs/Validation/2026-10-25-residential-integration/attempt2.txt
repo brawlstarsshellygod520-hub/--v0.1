@@ -1,0 +1,57 @@
+
+FAIL
+PASS Fresh door starts closed with 3 durability
+PASS NPC initially waits; rescue state starts clean
+PASS Both floor and two authored object fires start burning
+PASS Spawn and disconnected 3m hose start clean
+PASS Walk reached (5.74, 0.00, -4.80) actual=(5.74, 0.02, -4.92)
+PASS Walk reached (0.20, 0.00, -4.60) actual=(0.26, 0.02, -4.60)
+PASS Walk reached (0.00, 0.00, 2.40) actual=(0.00, 0.02, 2.35)
+PASS First LMB only equips axe
+PASS One clicked stroke produces exactly one door hit: 1
+PASS One clicked stroke produces exactly one door hit: 2
+PASS One clicked stroke produces exactly one door hit: 3
+PASS Broken door opens only gameplay collision, root stays alive
+PASS Door open alone is insufficient while escape route still burns
+PASS Walk reached (-2.30, 0.00, 2.40) actual=(-2.24, 0.02, 2.40)
+PASS Player physically crossed the broken doorway
+PASS Separate RMB equip then connect water without auto-spray
+PASS Walk reached (-2.40, 0.00, 2.00) actual=(-2.48, 0.02, 2.09)
+System.Exception: Floor spray could not clear region; player=(-2.42, 0.02, 1.95) impact=(-2.79, 1.07, 2.48)
+  at FireRescue.Editor.ResidentialIntegrationDriver+<ClearFloor>d__12.MoveNext () [0x00160] in D:\Documents\畢專\Assets\FireRescue\Editor\ResidentialIntegrationValidation.cs:183 
+  at FireRescue.Editor.ResidentialIntegrationDriver.Update () [0x0002a] in D:\Documents\畢專\Assets\FireRescue\Editor\ResidentialIntegrationValidation.cs:79 
+FAIL
+PASS Fresh door starts closed with 3 durability
+PASS NPC initially waits; rescue state starts clean
+PASS Both floor and two authored object fires start burning
+PASS Spawn and disconnected 3m hose start clean
+PASS Walk reached (5.74, 0.00, -4.80) actual=(5.74, 0.02, -4.92)
+PASS Walk reached (0.20, 0.00, -4.60) actual=(0.26, 0.02, -4.60)
+PASS Walk reached (0.00, 0.00, 2.40) actual=(0.00, 0.02, 2.35)
+PASS First LMB only equips axe
+PASS One clicked stroke produces exactly one door hit: 1
+PASS One clicked stroke produces exactly one door hit: 2
+PASS One clicked stroke produces exactly one door hit: 3
+PASS Broken door opens only gameplay collision, root stays alive
+PASS Door open alone is insufficient while escape route still burns
+PASS Walk reached (-2.30, 0.00, 2.40) actual=(-2.24, 0.02, 2.40)
+PASS Player physically crossed the broken doorway
+PASS Separate RMB equip then connect water without auto-spray
+PASS Walk reached (-2.40, 0.00, 2.00) actual=(-2.48, 0.02, 2.09)
+PASS Walk reached (-4.90, 0.00, 2.00) actual=(-4.81, 0.02, 1.99)
+PASS NPC discovers the opened, extinguished route without E or calming
+PASS Walk reached (-4.80, 0.00, 2.10) actual=(-4.90, 0.02, 2.06)
+PASS Walk reached (-5.10, 0.00, 2.80) actual=(-5.04, 0.02, 2.73)
+PASS F routes through closer window instead of disconnecting nearby water; folded length 2.87m
+PASS Routed movement retains exact 3m cap
+PASS Real spray extinguishes outdoor target through north window while routed
+PASS Second F releases window but keeps water connected
+PASS Walk reached (-4.80, 0.00, 2.00) actual=(-4.82, 0.02, 2.06)
+PASS Walk reached (-2.30, 0.00, 2.00) actual=(-2.38, 0.02, 1.99)
+PASS Walk reached (-0.55, 0.00, 2.40) actual=(-0.63, 0.02, 2.38)
+PASS Floor clear still does not hide burning oil pan from manager
+PASS Water remains ineffective against cooking-oil object fire
+System.Exception: F disconnects water for free movement
+  at FireRescue.Editor.ResidentialIntegrationDriver.Check (System.Boolean ok, System.String text) [0x00020] in D:\Documents\畢專\Assets\FireRescue\Editor\ResidentialIntegrationValidation.cs:207 
+  at FireRescue.Editor.ResidentialIntegrationDriver+<Scenario>d__11.MoveNext () [0x00c8d] in D:\Documents\畢專\Assets\FireRescue\Editor\ResidentialIntegrationValidation.cs:161 
+  at FireRescue.Editor.ResidentialIntegrationDriver.Update () [0x0002a] in D:\Documents\畢專\Assets\FireRescue\Editor\ResidentialIntegrationValidation.cs:79 

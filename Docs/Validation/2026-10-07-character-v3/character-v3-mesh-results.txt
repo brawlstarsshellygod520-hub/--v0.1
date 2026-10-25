@@ -1,0 +1,20 @@
+CHARACTER_MESH_PASS
+PASS: Firefighter: two feet and hip attachment joints
+PASS: Firefighter: closed hat/hair shells have outward face winding; no double-sided shader workaround
+PASS: Firefighter: baked height=1.600m, head fraction=0.403
+MEASURE: Firefighter Idle surfaces: Firefighter_Body=0.4303..1.1115; Firefighter_Boot_L=0.0000..0.1703; Firefighter_Boot_R=0.0000..0.1703; Firefighter_EyeMesh_L=1.1213..1.2182; Firefighter_EyeMesh_R=1.1213..1.2182; Firefighter_Forearm_L=0.6823..0.9115; Firefighter_Forearm_R=0.6823..0.9115; Firefighter_Glove_L=0.6658..0.8803; Firefighter_Glove_R=0.6658..0.8803; Firefighter_HeadMesh=0.8291..1.4745; Firefighter_HelmetBrim=1.2863..1.3257; Firefighter_HelmetCrown=1.3132..1.6000; Firefighter_Leg_L=0.0807..0.5378; Firefighter_Leg_R=0.0807..0.5378; Firefighter_Nose=1.0801..1.1339; Firefighter_UpperArm_L=0.7092..1.0170; Firefighter_UpperArm_R=0.7092..1.0170
+MEASURE: Firefighter renderer scales: Firefighter_Body=(0.8964, 0.8964, 0.8964); Firefighter_Boot_L=(0.8964, 0.8964, 0.8964); Firefighter_Boot_R=(0.8964, 0.8964, 0.8964); Firefighter_EyeMesh_L=(0.8964, 0.8964, 0.8964); Firefighter_EyeMesh_R=(0.8964, 0.8964, 0.8964); Firefighter_Forearm_L=(0.8964, 0.8964, 0.8964); Firefighter_Forearm_R=(0.8964, 0.8964, 0.8964); Firefighter_Glove_L=(0.8964, 0.8964, 0.8964); Firefighter_Glove_R=(0.8964, 0.8964, 0.8964); Firefighter_HeadMesh=(0.8964, 0.8964, 0.8964); Firefighter_HelmetBrim=(0.8964, 0.8964, 0.8964); Firefighter_HelmetCrown=(0.8964, 0.8964, 0.8964); Firefighter_Leg_L=(0.8964, 0.8964, 0.8964); Firefighter_Leg_R=(0.8964, 0.8964, 0.8964); Firefighter_Nose=(0.8964, 0.8964, 0.8964); Firefighter_UpperArm_L=(0.8964, 0.8964, 0.8964); Firefighter_UpperArm_R=(0.8964, 0.8964, 0.8964)
+PASS: Firefighter: Idle feet contact ground, upper min=0.0000m
+PASS: Firefighter: Run baked meshes do not penetrate floor, min=0.0029m
+PASS: Firefighter: Run has visible ground contact in 24/24 sampled poses
+PASS: Firefighter: hip origins remain inside torso silhouette envelope, gap=0.0000m
+PASS: Firefighter: reflector colour belongs to skinned surface triangles (288)
+PASS: Resident: two feet and hip attachment joints
+PASS: Resident: closed hat/hair shells have outward face winding; no double-sided shader workaround
+PASS: Resident: baked height=1.600m, head fraction=0.411
+MEASURE: Resident Idle surfaces: Resident_Body=0.4389..1.1337; Resident_Ear_L=1.0834..1.2114; Resident_Ear_R=1.0834..1.2114; Resident_EyeMesh_L=1.1557..1.2489; Resident_EyeMesh_R=1.1557..1.2489; Resident_Forearm_L=0.4747..0.7774; Resident_Forearm_R=0.4747..0.7774; Resident_HairCap=1.2343..1.6000; Resident_Hand_L=0.4567..0.6396; Resident_Hand_R=0.4567..0.6396; Resident_HeadMesh=0.8594..1.5177; Resident_Nose=1.1136..1.1630; Resident_PantsLeg_L=0.0869..0.5440; Resident_PantsLeg_R=0.0869..0.5440; Resident_Shoe_L=0.0000..0.1737; Resident_Shoe_R=0.0000..0.1737; Resident_UpperArm_L=0.6140..1.0043; Resident_UpperArm_R=0.6140..1.0043
+MEASURE: Resident renderer scales: Resident_Body=(0.9143, 0.9143, 0.9143); Resident_Ear_L=(0.9143, 0.9143, 0.9143); Resident_Ear_R=(0.9143, 0.9143, 0.9143); Resident_EyeMesh_L=(0.9143, 0.9143, 0.9143); Resident_EyeMesh_R=(0.9143, 0.9143, 0.9143); Resident_Forearm_L=(0.9143, 0.9143, 0.9143); Resident_Forearm_R=(0.9143, 0.9143, 0.9143); Resident_HairCap=(0.9143, 0.9143, 0.9143); Resident_Hand_L=(0.9143, 0.9143, 0.9143); Resident_Hand_R=(0.9143, 0.9143, 0.9143); Resident_HeadMesh=(0.9143, 0.9143, 0.9143); Resident_Nose=(0.9143, 0.9143, 0.9143); Resident_PantsLeg_L=(0.9143, 0.9143, 0.9143); Resident_PantsLeg_R=(0.9143, 0.9143, 0.9143); Resident_Shoe_L=(0.9143, 0.9143, 0.9143); Resident_Shoe_R=(0.9143, 0.9143, 0.9143); Resident_UpperArm_L=(0.9143, 0.9143, 0.9143); Resident_UpperArm_R=(0.9143, 0.9143, 0.9143)
+PASS: Resident: Idle feet contact ground, upper min=0.0000m
+PASS: Resident: Run baked meshes do not penetrate floor, min=0.0029m
+PASS: Resident: Run has visible ground contact in 24/24 sampled poses
+PASS: Resident: hip origins remain inside torso silhouette envelope, gap=0.0000m

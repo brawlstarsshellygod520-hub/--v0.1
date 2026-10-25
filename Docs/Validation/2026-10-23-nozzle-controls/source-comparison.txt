@@ -1,0 +1,10 @@
+NOZZLE_SOURCE_GEOMETRY_COMPARE_PASS
+Checked 2026-10-24 using Blender 5.2.2, read-only open, load_ui=False/use_scripts=False; no save.
+Snapshot file SHA256: 158D98C1380AA118DD0ABA11284F557CA032111BFF707B0F69DE36004ADA67B1
+Current download file SHA256: 2A096C28F51585842E3E5403C0D1AAF89302AB106E08408457C179B1D0591B3B
+The external file was saved after the initial copied snapshot; binary hashes are not equal.
+Both contain 7 visible meshes and have identical evaluated geometry, polygon/material indices,
+smooth flags, world transforms, unit scale, viewport colors and Principled base color/metallic/roughness.
+Both evaluated payload SHA256: 36f62c7820dffda60dc94f0d0953a7ba13bc5e427cdd1fa3efe4119e9aeddbfb
+Reproduction: ArtSource/UserNozzle/compare_source.py
+Existing exported nozzle remains geometrically consistent. Original and copied source are not overwritten.

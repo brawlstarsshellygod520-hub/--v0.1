@@ -1,0 +1,13 @@
+Unity 6000.5.0b9
+PASS Player: gameplay/physics outside Visual; primitive assets; GUID=d348d935ff2c9974fbc2a951de9d6eb3
+PASS Resident: gameplay/physics outside Visual; primitive assets; GUID=391f94b53b15fba4c84feb424e3c0060
+PASS WaterSource: gameplay/physics outside Visual; primitive assets; GUID=e6651adc15751874db4b5ae80f8b3e41
+PASS OilSource: gameplay/physics outside Visual; primitive assets; GUID=69c05a1abe23bd54ab8c1027dd6e2b2a
+PASS Pushable: gameplay/physics outside Visual; primitive assets; GUID=293cc4a78e119c54f81482ad65a85932
+PASS FixedObstacle: gameplay/physics outside Visual; primitive assets; GUID=dc750bffa3789f64b8731c43308f6f43
+PASS Ground: gameplay/physics outside Visual; primitive assets; GUID=eb2c113f84acc384997c1cee841e4fb6
+PASS FireSystem: gameplay/physics outside Visual; primitive assets; GUID=2eaeb0ce848df8445b8bf33ef49b1ca3
+PASS Exit: gameplay/physics outside Visual; primitive assets; GUID=641b642d37838f048b08e04c61a47129
+PASS tutorial assembly: scene-owned references stay outside Visual
+PASS saved scene reload: motor, emitter, source, views, NPC exit and rescue manager references resolve
+GREYBOX_PREFAB_CONTRACT_PASS prefabs=9

@@ -1,0 +1,142 @@
+{
+  "version": "v0.3",
+  "reference": "user-supplied rounded fire-rescue plan image",
+  "orientation": "-Y forward, Z up",
+  "characters": [
+    {
+      "asset": "Firefighter",
+      "triangles": 8136,
+      "mesh_count": 17,
+      "bone_count": 18,
+      "height_m": 1.6,
+      "min_z": 0.0,
+      "valid_weighted_meshes": true,
+      "invalid_meshes": [],
+      "actions": {
+        "Idle": {
+          "range": [
+            0.0,
+            60.0
+          ],
+          "slots": 1,
+          "has_animation_data": true,
+          "loop_endpoints_match": true,
+          "root_stable": true
+        },
+        "Run": {
+          "range": [
+            0.0,
+            24.0
+          ],
+          "slots": 1,
+          "has_animation_data": true,
+          "loop_endpoints_match": true,
+          "root_stable": true
+        }
+      },
+      "root_stable": true,
+      "loop_endpoints_match": true,
+      "marker_world_locations": {
+        "Firefighter_Head": [
+          0.0,
+          -0.0506,
+          1.138
+        ],
+        "Firefighter_Eye_L": [
+          -0.1255,
+          -0.3369,
+          1.1129
+        ]
+      },
+      "eye_marker_is_in_front_of_head": true,
+      "run_geometry_checks": [
+        {
+          "frame": 6,
+          "max_joint_gap_m": 0.0,
+          "min_mesh_z_m": 0.003
+        },
+        {
+          "frame": 12,
+          "max_joint_gap_m": 0.0,
+          "min_mesh_z_m": 0.003
+        }
+      ],
+      "fbx_reimport": {
+        "height_m": 1.6,
+        "min_z": 0.0,
+        "mesh_count": 17
+      }
+    },
+    {
+      "asset": "Resident",
+      "triangles": 8664,
+      "mesh_count": 18,
+      "bone_count": 18,
+      "height_m": 1.6,
+      "min_z": 0.0,
+      "valid_weighted_meshes": true,
+      "invalid_meshes": [],
+      "actions": {
+        "Idle": {
+          "range": [
+            0.0,
+            60.0
+          ],
+          "slots": 1,
+          "has_animation_data": true,
+          "loop_endpoints_match": true,
+          "root_stable": true
+        },
+        "Run": {
+          "range": [
+            0.0,
+            24.0
+          ],
+          "slots": 1,
+          "has_animation_data": true,
+          "loop_endpoints_match": true,
+          "root_stable": true
+        }
+      },
+      "root_stable": true,
+      "loop_endpoints_match": true,
+      "marker_world_locations": {
+        "Resident_Head": [
+          0.0,
+          -0.0516,
+          1.1603
+        ],
+        "Resident_Eye_L": [
+          -0.128,
+          -0.3436,
+          1.1347
+        ]
+      },
+      "eye_marker_is_in_front_of_head": true,
+      "run_geometry_checks": [
+        {
+          "frame": 6,
+          "max_joint_gap_m": 0.0,
+          "min_mesh_z_m": 0.003
+        },
+        {
+          "frame": 12,
+          "max_joint_gap_m": 0.0,
+          "min_mesh_z_m": 0.003
+        }
+      ],
+      "fbx_reimport": {
+        "height_m": 1.6,
+        "min_z": -0.0,
+        "mesh_count": 18
+      }
+    }
+  ],
+  "previews": [
+    "blender-characters.png",
+    "blender-run-00.png",
+    "blender-run-06.png",
+    "blender-run-12.png",
+    "blender-run-18.png"
+  ]
+}

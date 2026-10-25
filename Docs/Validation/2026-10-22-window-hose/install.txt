@@ -1,0 +1,3 @@
+WINDOW_HOSE_INSTALL_PASS
+Unity 6000.5.0b9
+Scene/prefab save-reload; source-independent window anchor; input reference; Visual separation; idempotence PASS

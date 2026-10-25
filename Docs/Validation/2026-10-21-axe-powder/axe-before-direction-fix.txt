@@ -1,0 +1,18 @@
+USER_AXE_PLAYMODE_PASS
+Actual command-path checks=16
+PASS Persisted active layout exposes the real player, tool core, axe presentation, hose nozzle, and Game camera.
+PASS Input command adapter is active while hardware reads are disabled.
+PASS Axe Pivot retains the authored gameplay mount position.
+PASS Legacy Handle and Head stay disabled but preserved below the pivot.
+PASS User Fire Axe prefab provides a renderable model.
+PASS Axe visual spans approximately 0.72m with handle bottom 0.12m below the grip origin (actual 0.720, -0.120).
+PASS User axe presentation contains no collision or rigidbody gameplay physics.
+PASS User axe presentation contains no gameplay component; mechanics remain on the player root.
+PASS LMB command equips the user axe and starts a gameplay swing.
+PASS Actual LMB swing hits the temporary layer-8 target through the existing gameplay query.
+PASS Holding LMB chains more than one complete axe swing cycle.
+PASS Releasing LMB stops the swing while keeping the axe equipped.
+PASS RMB switches presentation to the hose: axe hidden and nozzle visible.
+PASS Simultaneous clicks keep the specified RMB hose priority.
+PASS Axe visual returns when switching back from hose.
+PASS Disabling the new axe visual during Play Mode does not stop core axe hits or alter its target query.

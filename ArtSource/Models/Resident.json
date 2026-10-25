@@ -1,0 +1,23 @@
+{
+  "asset": "Resident",
+  "triangles": 3312,
+  "meshes": 20,
+  "dimensions_xyz": [
+    0.9688,
+    0.672,
+    1.6
+  ],
+  "min_xyz": [
+    -0.4844,
+    -0.332,
+    0.0
+  ],
+  "materials": [
+    "FR_Charcoal",
+    "FR_CivilianPants",
+    "FR_CivilianShirt",
+    "FR_Eye",
+    "FR_Hair",
+    "FR_Skin"
+  ]
+}

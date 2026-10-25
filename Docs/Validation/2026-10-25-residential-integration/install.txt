@@ -1,0 +1,2 @@
+RESIDENTIAL_INSTALL_PASS
+Saved/reloaded references, 3m limit, door collision separation, two object fires, idempotent install.

@@ -1,0 +1,18 @@
+USER_LEVEL_ONE_PLAYMODE_FAIL
+PASS Saved user layout is active.
+PASS Old map preserved but inactive.
+PASS One active player, no overlapping old scene actors.
+PASS All 11 source architecture meshes have independent physics.
+PASS No permanent text or UI added.
+PASS No missing scripts; Visual owns no colliders.
+PASS Half-metre navigation/fire grid, no future lesson seeds.
+PASS Front door from outdoor spawn: actual command/controller at (5.74, 0.02, -4.86)
+PASS Main room to left doorway: actual command/controller at (0.26, 0.02, -4.64)
+PASS Left room door: actual command/controller at (-2.67, 0.02, -4.64)
+PASS Existing resident approachable in left room.
+PASS Left door return: actual command/controller at (0.16, 0.02, -4.64)
+PASS Main room to bathroom door: actual command/controller at (0.20, 0.02, 2.36)
+System.Exception: Bathroom door: actual command/controller at (-1.11, 0.03, 2.40)
+  at FireRescue.Editor.UserLevelOneValidationDriver.Check (System.Boolean ok, System.String label) [0x00020] in D:\Documents\畢專\Assets\FireRescue\Editor\UserLevelOneValidation.cs:224 
+  at FireRescue.Editor.UserLevelOneValidationDriver+<Walk>d__16.MoveNext () [0x001fe] in D:\Documents\畢專\Assets\FireRescue\Editor\UserLevelOneValidation.cs:182 
+  at FireRescue.Editor.UserLevelOneValidationDriver.Update () [0x0002a] in D:\Documents\畢專\Assets\FireRescue\Editor\UserLevelOneValidation.cs:74 

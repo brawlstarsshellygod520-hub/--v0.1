@@ -1,0 +1,20 @@
+{
+  "asset": "Shower",
+  "triangles": 724,
+  "meshes": 8,
+  "dimensions_xyz": [
+    0.9,
+    0.9,
+    1.75
+  ],
+  "min_xyz": [
+    -0.45,
+    -0.45,
+    0.0
+  ],
+  "materials": [
+    "FR_Cream",
+    "FR_Metal",
+    "FR_Plastic"
+  ]
+}

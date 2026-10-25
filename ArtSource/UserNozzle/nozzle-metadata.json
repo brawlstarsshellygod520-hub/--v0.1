@@ -1,0 +1,21 @@
+{
+  "coordinateSystem": "Unity local coordinates: Y-up, +Z-forward",
+  "muzzle": [
+    0.0,
+    0.090184,
+    0.270324
+  ],
+  "hoseInlet": [
+    -0.0,
+    0.090183,
+    -0.277877
+  ],
+  "grip": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lengthMeters": 0.55,
+  "triangleCount": 4247,
+  "sourceSha256": "158D98C1380AA118DD0ABA11284F557CA032111BFF707B0F69DE36004ADA67B1"
+}

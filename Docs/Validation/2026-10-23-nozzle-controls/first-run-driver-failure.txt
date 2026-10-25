@@ -1,0 +1,16 @@
+NOZZLE_CONTROLS_PLAYMODE_FAIL (preserved before corrected rerun)
+
+Cause classification: test-driver defect, not a gameplay failure.
+The prior driver reached the correct constrained position but incorrectly required
+the intentionally out-of-range goal (-7.00, 0.00, 2.00) to be reached.
+
+Checks passed before failure: 39
+Observed constrained position: (-6.22, 0.02, 2.18)
+Prior failed assertion:
+  Walk into the 3m hose limit in clear bathroom space: pointer movement reached (-6.22, 0.02, 2.18).
+
+The original generated failure capture is retained beside this record as failure.png.
+The complete original Unity batch log is retained at Logs/nozzle-controls-playmode.log.
+The corrected driver now sustains movement into the constraint and asserts that
+the final 45 frames settle, while retaining the existing UsedLength, position,
+and source-ring-hidden assertions.

@@ -1,0 +1,45 @@
+NOZZLE_CONTROLS_PLAYMODE_PASS
+Pointer-command checks=43
+PASS First RMB equips the hose and consumes the entire held click without connecting or spraying.
+PASS Holding the equip click cannot advance into connection or spray.
+PASS Second RMB connects the reachable NearbySource and still does not spray.
+PASS Third RMB starts hose spray only after equip and connection are complete.
+PASS Releasing RMB stops spray immediately.
+PASS First LMB equips the axe and holding it does not begin a swing.
+PASS A held axe equip click remains inert until a new press.
+PASS Second LMB starts one complete axe swing.
+PASS Releasing a short axe click finishes one complete stroke and its one hit without another queued attack.
+PASS Holding the armed axe repeats complete swings.
+PASS Simultaneous LMB/RMB gives RMB priority, cancels the axe swing, and its first hose equip does not spray.
+PASS After switching back to hose, the following RMB press (not the equip press) sprays.
+PASS A hose with no candidate source cannot spray.
+PASS Connected hose can be re-armed before interruption checks.
+PASS Focus loss stops and disarms hose; recovered held input needs a new press.
+PASS Pause stops and disarms hose; resumed held input needs a new press.
+PASS Disabling input stops and disarms hose; re-enabled held input needs a new press.
+PASS Zero-delta command stops and disarms hose; a held frame cannot restart it.
+PASS A layer-8 wall blocks the candidate, hides its proximity ring, and prevents connection.
+PASS An out-of-range source has no proximity ring and cannot become NearbySource.
+PASS The closest reachable source alone owns the Gold proximity ring.
+PASS Disabled source Visual does not block connection or spray, and a connected candidate ring is Blue.
+PASS White hose line uses source port to HoseInletPosition, not the separate nozzle tip.
+PASS A fixture source-window fold with prefix below 3m routes successfully under the new default limit.
+PASS Routed movement respects the remaining 3m hose length after the source-window prefix.
+PASS Residential scene contains the real pointer stack, water source, nozzle mount/model, and window route fixture.
+PASS User nozzle model is presentation-only and the original nozzle model remains disabled as backup.
+PASS Enter the front door from spawn: pointer movement reached (5.74, 0.02, -4.92).
+PASS Cross the main room: pointer movement reached (0.26, 0.02, -4.60).
+PASS Reach bathroom doorway: pointer movement reached (0.20, 0.02, 2.34).
+PASS Reach toilet source without F: pointer movement reached (-2.24, 0.02, 2.41).
+PASS Real first RMB equips the nozzle at the bathroom source without using F.
+PASS Real second RMB connects water but does not spray.
+PASS Step clear of the source body for the real nozzle ray: pointer movement reached (-2.39, 0.02, 2.07).
+PASS Game camera screen-point aim resolves to the temporary ordinary water target.
+PASS Real third RMB sprays water through the scene command path even when source Visual is disabled.
+PASS Real RMB release stops the stream.
+PASS Real FirefighterToolsView shows the axe and hides the nozzle mount after axe equip.
+PASS Real FirefighterToolsView restores nozzle mount visibility after hose re-equip.
+PASS Walk into the 3m hose limit in clear bathroom space: sustained input settles at (-6.22, 0.02, 2.18) instead of reaching the out-of-range goal.
+PASS The 3m hose circle stops before the west wall and leaving 2m hides the source ring.
+PASS Real white hose line terminates at HoseInlet while the nozzle tip remains a distinct spray origin.
+PASS The authored west window is rejected because its source-window prefix alone exceeds the new 3m hose limit.

@@ -1,0 +1,27 @@
+WATER_REACTIONS_PLAYMODE_PASS
+Actual Play Mode checks: 25
+PASS: Real prefab player, emitter, reaction, water source, rigidbody, floor, and fixed obstacle are available.
+PASS: Real prefab fixture includes physical colliders.
+PASS: Real player can connect its real hose to the moved real water source.
+PASS: Disconnected right spray has no active stream or impact.
+PASS: Disconnected spray cannot wet or extinguish the fire field while simulation is disabled.
+PASS: Disconnected spray cannot push a real Rigidbody.
+PASS: Test reconnects the real water source.
+PASS: Connected stream reaches the real prefab floor directly, not a source or support in its beam.
+PASS: Continuous direct floor water decreases fire intensity and increases wetness.
+PASS: Continuous direct floor water extinguishes the targeted fire.
+PASS: Test reconnects the real water source.
+PASS: Connected stream directly impacts the actual dynamic Rigidbody fixture.
+PASS: 60 Hz grounded push >.1m: (103.0000, 0.0000, 100.5000) -> (103.4441, 0.0000, 100.5000), velocity=(1.6167, 0.0000, 0.0000), impact=(102.8330, 0.5348, 100.5000), push=48, physicsTime=0.500.
+PASS: Test reconnects the real water source.
+PASS: The thin layer-8 wall receives the actual stream before objects behind it.
+PASS: A wall blocks water splash and extinguishing for fire within the .95m radius behind it.
+PASS: A wall blocks water push on the real Rigidbody behind it.
+PASS: Test reconnects the real water source.
+PASS: Direct floor water still wets adjacent cells on the same side of the wall.
+PASS: The radius-leak check is a direct floor impact in front of the thin wall.
+PASS: Floor water continues to affect the reachable front cell.
+PASS: Direct floor water cannot radius-leak through the wall to the fire behind it.
+PASS: Real fire prefab supplies an optional FireFieldView presentation.
+PASS: Test reconnects the real water source.
+PASS: Disabled fire presentation does not prevent real water reactions.

@@ -1,0 +1,28 @@
+{
+  "baselineCount": 419,
+  "unchanged": 413,
+  "changed": [
+    "Assets/FireRescue/Runtime/Hose/HoseConnection.cs",
+    "Assets/FireRescue/Runtime/Hose/HoseView.cs",
+    "Assets/FireRescue/Runtime/Hose/SprayEmitter.cs",
+    "Assets/FireRescue/Runtime/Player/FirefighterTools.cs",
+    "Assets/FireRescue/Runtime/Player/LocalPlayerInput.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "deleted": [],
+  "added": [
+    "Assets/FireRescue/Runtime/Source/SourceHighlightView.cs.meta",
+    "Assets/FireRescue/Runtime/Source/SourceHighlightView.cs",
+    "Assets/FireRescue/Art/UserNozzle.meta",
+    "Assets/FireRescue/Editor/UserNozzleSetup.cs.meta",
+    "Assets/FireRescue/Editor/UserNozzleSetup.cs",
+    "Assets/FireRescue/Editor/NozzleControlsValidation.cs.meta",
+    "Assets/FireRescue/Editor/NozzleControlsValidation.cs",
+    "Assets/FireRescue/Art/UserNozzle/Nozzle.prefab.meta",
+    "Assets/FireRescue/Art/UserNozzle/Nozzle.prefab",
+    "Assets/FireRescue/Art/UserNozzle/nozzle.fbx.meta",
+    "Assets/FireRescue/Art/UserNozzle/nozzle.fbx"
+  ],
+  "currentCount": 430,
+  "originalBlendHash": "2A096C28F51585842E3E5403C0D1AAF89302AB106E08408457C179B1D0591B3B"
+}

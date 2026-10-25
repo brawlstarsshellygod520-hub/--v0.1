@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-12T00:50:26.7626796+08:00",
+  "protectedFileCount": 220,
+  "unchangedFileCount": 220,
+  "changedProtectedFiles": [],
+  "baselineExit": 0,
+  "creationValidationExit": 0,
+  "repeatValidationExit": 0,
+  "editorChecks": 16,
+  "backupPath": "Archive/GreyboxBaseline-2026-10-12-0042",
+  "backupFileCount": 224,
+  "playModeRun": false,
+  "playerBuildRun": false
+}

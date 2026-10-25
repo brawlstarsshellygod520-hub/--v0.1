@@ -1,0 +1,6 @@
+HANDLING_BASELINE
+Connect across 0.72m wall within 2m: True (should be false)
+Calm across 0.72m wall within 1.8m: True (should be false)
+Oil held-input velocity after 0.5s: 1.100 m/s
+Velocity into wall after collision: (4.00, 0.00, 0.00)
+First reverse input displacement after collision: 0.0000 m (should be negative)

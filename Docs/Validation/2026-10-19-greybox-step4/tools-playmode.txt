@@ -1,0 +1,39 @@
+FIREFIGHTER_TOOLS_PLAYMODE_PASS
+Actual Play Mode checks: 37
+PASS: Test assembly exposes the real player motor, hose, and emitter.
+PASS: Command input remains enabled while physical-device reads are disabled.
+PASS: W is screen-up.
+PASS: S is screen-down.
+PASS: A is screen-left.
+PASS: D is screen-right.
+PASS: W+D remains camera-relative.
+PASS: Diagonal command is normalized and no faster than cardinal input.
+PASS: Actual TickCommand W displacement follows screen-up on the supporting ground.
+PASS: Actual TickCommand diagonal movement is camera-relative and no faster than W.
+PASS: Left command repeatedly drives exactly two full axe swing cycles.
+PASS: Each axe cycle skips its owner and stops at the nearest wall instead of hitting through it.
+PASS: Right command equips the hose but cannot spray without a connected source.
+PASS: Test connects the real water source before hose-command checks.
+PASS: Connected right command sprays without swinging the axe.
+PASS: Switching from hose to axe immediately stops spray.
+PASS: Switching from axe to connected hose is mutually exclusive and sprays.
+PASS: Simultaneous holds deterministically give right-click hose priority.
+PASS: Release stops both actions while retaining the selected tool.
+PASS: F command attaches at the authored water-source coordinates.
+PASS: F command swaps to the authored oil-source coordinates.
+PASS: F command detaches when used again at the connected source.
+PASS: Reach fixture reconnects water.
+PASS: Actual FirefighterMotor movement reaches but never exceeds the 13m hose constraint.
+PASS: F command excludes a source behind the temporary low wall.
+PASS: Stop checks reconnect water.
+PASS: Focus loss immediately stops tool actions.
+PASS: Application pause immediately stops tool actions.
+PASS: Paused command input cannot restart tools.
+PASS: Disabling command input immediately stops tool actions.
+PASS: Zero-delta command stops tool actions.
+PASS: Re-enabled focused command input resumes tool actions.
+PASS: Legacy six-argument TickCommand remains callable while input is disabled.
+PASS: Visible axe swings forward in the strike direction; hose model is hidden.
+PASS: Tool view switches from axe to hose.
+PASS: Hidden or destroyed presentation visuals do not prevent core axe swings or hits.
+PASS: Destroyed presentation visuals do not prevent core hose spray.

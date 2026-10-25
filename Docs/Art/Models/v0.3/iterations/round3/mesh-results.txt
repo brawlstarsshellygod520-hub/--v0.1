@@ -1,0 +1,17 @@
+CHARACTER_MESH_FAIL
+PASS: Firefighter: two feet and hip attachment joints
+PASS: Firefighter: closed hat/hair shells have outward face winding; no double-sided shader workaround
+FAIL: Firefighter: baked height=1.560m, head fraction=0.347
+PASS: Firefighter: Idle feet contact ground, upper min=0.0127m
+PASS: Firefighter: Run baked meshes do not penetrate floor, min=0.0239m
+FAIL: Firefighter: Run has visible ground contact in 2/24 sampled poses
+PASS: Firefighter: hip origins remain inside torso silhouette envelope, gap=0.0000m
+PASS: Firefighter: reflector colour belongs to skinned surface triangles (288)
+PASS: Resident: two feet and hip attachment joints
+PASS: Resident: closed hat/hair shells have outward face winding; no double-sided shader workaround
+PASS: Resident: baked height=1.575m, head fraction=0.380
+PASS: Resident: Idle feet contact ground, upper min=0.0085m
+PASS: Resident: Run baked meshes do not penetrate floor, min=0.0208m
+FAIL: Resident: Run has visible ground contact in 4/24 sampled poses
+PASS: Resident: hip origins remain inside torso silhouette envelope, gap=0.0000m
+Mesh quality criteria failed; full measurements in Logs/character-v3-mesh-results.txt.

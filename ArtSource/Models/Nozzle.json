@@ -1,0 +1,19 @@
+{
+  "asset": "Nozzle",
+  "triangles": 420,
+  "meshes": 7,
+  "dimensions_xyz": [
+    0.166,
+    0.3545,
+    0.19
+  ],
+  "min_xyz": [
+    -0.083,
+    -0.35,
+    -0.0
+  ],
+  "materials": [
+    "FR_Charcoal",
+    "FR_Metal"
+  ]
+}

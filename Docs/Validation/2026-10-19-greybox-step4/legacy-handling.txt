@@ -1,0 +1,28 @@
+HANDLING_PLAYMODE_PASS
+PASS: ResidentialFire exposes the real motor, hose, emitter, input and CharacterController.
+PASS: W resolves to screen-up ground direction.
+PASS: S resolves to screen-down ground direction.
+PASS: A resolves to screen-left ground direction.
+PASS: D resolves to screen-right ground direction.
+PASS: Diagonal commands remain screen-relative and normalized.
+PASS: An unconnected hose cannot spray through the shared TickCommand entry point.
+PASS: The shared F command connects the real hose to the nearby unobstructed fixture source.
+PASS: Nearer-than-minimum aim keeps the current forward direction instead of reversing the spray.
+PASS: Held spray immediately faces a 180-degree ground aim point.
+PASS: Releasing shared TickCommand stops spray and clears its impact state.
+PASS: Disabling LocalPlayerInput or SprayEmitter immediately stops spray and clears impact state.
+PASS: Losing application focus immediately stops spray.
+PASS: TryConnect and Interact reject a source beyond two horizontal metres.
+PASS: TryConnect and Interact reject a source behind a 0.72m low wall.
+PASS: The source collider and the fixture supporting its low endpoint do not falsely block TryConnect or Interact.
+PASS: The temporary field applies oil beneath the real motor before steering checks.
+PASS: Half a second of held input on oil reaches approximately 3m/s.
+PASS: Oil steering preserves momentum for an immediate opposite-direction command.
+PASS: Controller collision removes velocity and impulse directed into the wall.
+PASS: After a wall hit, opposite input immediately moves the firefighter away from the wall.
+PASS: The shared E command cannot calm a resident through a 0.72m wall within 1.8m.
+PASS: The shared E command calms the resident after moving to the same side of the wall.
+PASS: A nearby resident on the same side of the wall can be calmed.
+PASS: The calmed resident first obtains a safe route along the clear one-cell corridor.
+PASS: A true player CharacterController physically stops the resident on an existing route without invalidating its BFS path.
+PASS: After the player leaves, direct NPC Tick completes the original route to the exit without teleporting the resident.

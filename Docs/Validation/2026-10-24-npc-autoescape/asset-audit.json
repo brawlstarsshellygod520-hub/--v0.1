@@ -1,0 +1,21 @@
+{
+  "baselineCount": 430,
+  "unchanged": 421,
+  "changed": [
+    "Assets/FireRescue/Runtime/Player/LocalPlayerInput.cs",
+    "Assets/FireRescue/Runtime/NPC/RescueNpc.cs",
+    "Assets/FireRescue/Editor/UserLevelOneValidation.cs",
+    "Assets/FireRescue/Editor/TutorialGreyboxLayoutValidation.cs",
+    "Assets/FireRescue/Editor/ResidentialPrototypeValidation.cs",
+    "Assets/FireRescue/Editor/HandlingValidation.cs",
+    "Assets/FireRescue/Editor/GreyboxSeparationValidation.cs",
+    "Assets/FireRescue/Editor/FirePrototypeValidation.cs",
+    "Assets/FireRescue/Editor/CharacterAnimationValidation.cs"
+  ],
+  "deleted": [],
+  "added": [
+    "Assets/FireRescue/Editor/NpcAutoEscapeValidation.cs.meta",
+    "Assets/FireRescue/Editor/NpcAutoEscapeValidation.cs"
+  ],
+  "currentCount": 432
+}

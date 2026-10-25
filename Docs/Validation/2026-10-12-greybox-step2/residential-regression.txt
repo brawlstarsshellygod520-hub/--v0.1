@@ -1,0 +1,41 @@
+RESIDENTIAL_PLAYMODE_PASS
+PASS: Residential scene exposes the real fire, motor, hose, emitter, NPC, sources and reactions.
+PASS: Scene contains the Bedroom 1 development marker.
+PASS: Scene contains the Bedroom 2 development marker.
+PASS: Scene contains the Bedroom 3 development marker.
+PASS: Scene contains the Living Room development marker.
+PASS: Scene contains the Bathroom development marker.
+PASS: Scene contains the Kitchen development marker.
+PASS: Room markers are scene names, not runtime TextMesh UI.
+PASS: Scene contains exactly the water and oil FluidSource components.
+PASS: Sources are attached to the toilet and salad-oil prefabs instead of industrial source props.
+PASS: Both sources use authored outlet transforms; the oil outlet remains at the raised bottle mouth, not fallback height.
+PASS: Every wall, partition and Ground Block visual matches its BoxCollider bounds within 0.06m.
+PASS: NPC-clear neighbouring grid cells never connect through a fixed wall.
+PASS: The firefighter uses an imported character mesh with a valid shader, not a Capsule visual.
+PASS: The resident uses an imported character mesh with a valid shader, not a Capsule visual.
+PASS: Resident's initial route cell has enough clearance from beds and fixed obstacles.
+PASS: Residential field matches the 16 by 18 metre authoring grid.
+PASS: Only the two authored doorway fire cells start burning and neither is a non-flammable wall cell.
+PASS: Firefighter starts with an unconnected hose.
+PASS: An unconnected hose cannot spray.
+PASS: Real motor reaches and connects to the toilet water source.
+PASS: Connected hose enforces its 13 metre movement constraint.
+PASS: Firefighter can calm the nearby resident through the real interaction path.
+PASS: Both fires still block the resident's route after calming.
+PASS: Water emitter obtains physical ground impacts while treating the fires.
+PASS: Alternating actual water spray extinguishes both doorway fire cells.
+PASS: Autonomous resident physically routes through the opened doorway, corridor and living room to the front exit. State: rescued=True, safePath=False, position=(0.50, 0.02, -6.50), observed=True/True/True, burning=0; fire=
+PASS: The game manager records the resident exactly once.
+PASS: Releasing the water control stops emission.
+PASS: Spray impact on a wall cannot directly apply water to a cell behind the wall.
+PASS: Residential collision geometry provides a wall-blocking spray negative case.
+PASS: Coffee Table is a pushable Rigidbody furniture object.
+PASS: Water reaction physically pushes the Coffee Table Rigidbody.
+PASS: Water reaction applies an external impulse to the real firefighter motor.
+PASS: Oil remains an accelerant in an isolated reaction field.
+PASS: Water remains capable of extinguishing and wetting an isolated fire cell.
+PASS: Firefighter can disconnect and connect to the salad oil source.
+PASS: Actual oil spray deposits oil onto nearby open floor.
+PASS: Oil on the open floor produces the motor's real slippery response.
+PASS: Releasing the oil control stops emission.

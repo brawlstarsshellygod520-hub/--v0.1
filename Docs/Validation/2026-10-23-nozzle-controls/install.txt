@@ -1,0 +1,5 @@
+NOZZLE_INSTALL_PASS
+Unity 6000.5.0b9
+Model import + saved reload + 3m override + muzzle/inlet anchors + source ring + idempotence PASS
+Model local length=.55m; exported FBX triangles=4247
+Source SHA256=158D98C1380AA118DD0ABA11284F557CA032111BFF707B0F69DE36004ADA67B1
