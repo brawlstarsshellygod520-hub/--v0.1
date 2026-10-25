@@ -1,4 +1,4 @@
-# 公開測試版交付（2026-10-25）
+# 炎上消防隊：公開測試版交付（2026-10-25）
 
 - 公開專案與操作說明：https://github.com/brawlstarsshellygod520-hub/--v0.1
 - 測試版頁面：https://github.com/brawlstarsshellygod520-hub/--v0.1/releases/tag/v0.1.0-prototype
