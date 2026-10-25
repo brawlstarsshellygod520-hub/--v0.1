@@ -2,9 +2,7 @@
 
 ## 下載與執行
 
-- Windows 玩家版：到 [v0.1 Prototype 下載頁](https://github.com/brawlstarsshellygod520-hub/--v0.1/releases/tag/v0.1.0-prototype)，下載 **`FireRescue-v0.1-Windows-x64.zip`**。先完整解壓縮，**保留 `FireRescue_Data`、`MonoBleedingEdge` 資料夾與所有 DLL 檔案**，再執行 `FireRescue.exe`；不要直接在壓縮檔內開遊戲。
-- GitHub 的 **Source code ZIP 不是可直接執行的遊戲**。若要從原始碼開啟：解壓後以 Unity Hub「Add」選取專案資料夾，使用 Unity **6000.5.0b9** 開啟 `Assets/FireRescue/Scenes/TutorialGreybox.unity`，按 Play。
-- Unity Editor 中可停止後再次 Play 重置本局；Windows 版請關閉 `FireRescue.exe` 後重新開啟（Alt+F4 可關閉）。現階段沒有主選單或重開按鈕。
+Windows 玩家版：到 [v0.1 Prototype 下載頁](https://github.com/brawlstarsshellygod520-hub/--v0.1/releases/tag/v0.1.0-prototype)，下載 **`FireRescue-v0.1-Windows-x64.zip`**。先完整解壓縮，**保留 `FireRescue_Data`、`MonoBleedingEdge` 資料夾與所有 DLL 檔案**，再執行 `FireRescue.exe`
 
 ## 操作
 
