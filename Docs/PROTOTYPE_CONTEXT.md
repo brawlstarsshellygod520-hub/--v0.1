@@ -2,6 +2,8 @@
 
 更新日期：2026-10-25。專案：`D:\Documents\畢專`。
 
+公開交付已完成：沿用 `brawlstarsshellygod520-hub/--v0.1`，程式提交 `b0a45fb`、Release `v0.1.0-prototype`，提供Windows ZIP與公開操作README。發布資訊見 `Docs/PUBLIC_RELEASE.md`。這不改變實體鍵鼠驗收尚未完成的狀態。
+
 ## 最新：破門＋3m整關整合（2026-10-25）
 
 - 現在 TutorialGreybox 可從出生步行進屋、三刀破浴室門、接水清 NPC 路線、以 3m 管經北窗滅戶外物件火、清主室地板火、換乾粉滅油鍋。NPC 自動抵出口，沒有安撫／E。

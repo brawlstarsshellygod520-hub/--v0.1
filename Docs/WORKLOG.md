@@ -8,6 +8,7 @@
 - 補齊住宅整合 RESULT。最終測試數為64項（原60項再加4項F窗口邊界），Windows build為0錯誤／0警告；Windows實體鍵鼠操作被使用者Escape中斷，未標示為通過。
 - 發布分開為 Unity 原始碼與 Windows x64 ZIP；不提交 Library／Temp／Logs／UserSettings／Builds／Archive，另排除Python快取、Blender自動備份、原始process log與環境密鑰檔。未加入或替使用者決定開源授權。
 - 公開提交使用該 GitHub 帳號的 noreply 作者信箱，避免新增提交公開個人郵箱；不改全域 Git 身分。既有已公開歷史不重寫。
+- 已完成公開推送，程式提交 `b0a45fb`，發布標籤 `v0.1.0-prototype`；Windows ZIP共64,470,412 bytes。匿名下載與README均HTTP200，遠端大小／SHA-256一致。連結與發布證據見 `Docs/PUBLIC_RELEASE.md`。
 
 ## 消防遊戲 v0.1 — 2026-10-25（破門、3m整關、逃生與統計）
 
