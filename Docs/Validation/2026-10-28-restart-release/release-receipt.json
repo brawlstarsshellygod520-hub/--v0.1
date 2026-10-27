@@ -1,0 +1,19 @@
+{
+  "tag": "v0.2.0-prototype",
+  "releaseId": 426054189,
+  "url": "https://github.com/xin-hw/--v0.1/releases/tag/v0.2.0-prototype",
+  "sourceCommit": "f9307a6768adfdd852346d557c2493c4dedf7e31",
+  "draft": false,
+  "prerelease": true,
+  "assetId": 683070324,
+  "asset": "FireRescue-v0.2-Windows-x64.zip",
+  "bytes": 65760394,
+  "sha256": "5b26fcbe3591a2325c5692c100ef0c5b16fb3f03d54c8ae8baf2074a6f92d470",
+  "githubDigest": "sha256:5b26fcbe3591a2325c5692c100ef0c5b16fb3f03d54c8ae8baf2074a6f92d470",
+  "download": "https://github.com/xin-hw/--v0.1/releases/download/v0.2.0-prototype/FireRescue-v0.2-Windows-x64.zip",
+  "published": "2026-10-27T22:27:52Z",
+  "anonymousMetadataVerified": true,
+  "anonymousDownloadStatus": 200,
+  "anonymousDownloadSha256": "5b26fcbe3591a2325c5692c100ef0c5b16fb3f03d54c8ae8baf2074a6f92d470",
+  "tagCommitVerified": true
+}

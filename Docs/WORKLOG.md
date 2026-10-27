@@ -9,6 +9,7 @@
 - 首版減半火苗仍擁擠；自行檢視Unity前後渲染，改交錯三分之一、降低高度／寬度。每個活火格保留暖色地面標記，修正標記位於地板下的高度；孤立格仍有火苗，避免不可見危險。僅改View，不改傷害／傳播／接水與粉末規則。
 - Scene遞迴資產核對只引用授權庭院材質，沒有舊AI美術模型。不刪歷史Blend、FBX與GUID；不把團隊模型的程式綁骨／配色誤認成AI原創。
 - 驗證與交付證據集中Docs/Validation/2026-10-28-restart-release；完整結果見RESULT.md。Windows人工按鈕點擊、初見難度與操作手感仍須使用者驗收；背景命令通關不能宣稱人工試玩。
+- 最終79項整關PASS、Windows建置0錯誤0警告、Latest及ZIP重新解壓包各28項D3D11 PASS。提交f9307a6已推送原master；公開發布v0.2.0-prototype，Windows ZIP 65,760,394 bytes。未登入實際下載HTTP200、SHA256與本機／GitHub digest一致；v0.1保留。README已含完整操作、更新、其澔／飛魚／風信子等模型署名與第一關說明。發行收據見PUBLIC_RELEASE.md與release-receipt.json；本輪未操作使用者畫面。
 
 ## 炎上消防隊 v0.1 — 2026-10-28（兩秒封廚房、鍋熱復燃、10m與E／F情境提示）
 
