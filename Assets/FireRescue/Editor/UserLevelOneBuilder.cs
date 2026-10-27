@@ -12,7 +12,7 @@ namespace FireRescue.Editor
     public static class UserLevelOneBuilder
     {
         public const string LayoutName = "Step4 User Layout";
-        public const string Folder = "Assets/FireRescue/Greybox/LevelOne";
+        public const string Folder = "Assets/FireRescue/Art/UserProvided/LevelOne";
         public const string Evidence = "Docs/Validation/2026-10-19-greybox-step4";
         [Serializable] public sealed class Geometry { public float scale; public float cutHeight; public Part[] meshes; public Door[] doors; }
         [Serializable] public sealed class Part { public string name; public string kind; public Vector3[] vertices; public int[] triangles; }
@@ -45,7 +45,7 @@ namespace FireRescue.Editor
             {
                 if (refreshExport)
                 {
-                    var data = JsonUtility.FromJson<Geometry>(File.ReadAllText("ArtSource/LevelOne/level-one.geometry.json"));
+                    var data = JsonUtility.FromJson<Geometry>(File.ReadAllText("ArtSource/UserProvided/LevelOne/level-one.geometry.json"));
                     foreach (Part part in data.meshes)
                     foreach (string suffix in new[] { "Visual", "Collision" })
                     {
@@ -92,7 +92,7 @@ namespace FireRescue.Editor
             var scene = EditorSceneManager.OpenScene(TutorialGreyboxSetup.ScenePath);
             var root = scene.GetRootGameObjects().Single(x => x.name == "TutorialGreybox").transform;
             if (root.Find(LayoutName)) return; // Never overwrite the user's later edits.
-            var data = JsonUtility.FromJson<Geometry>(File.ReadAllText("ArtSource/LevelOne/level-one.geometry.json"));
+            var data = JsonUtility.FromJson<Geometry>(File.ReadAllText("ArtSource/UserProvided/LevelOne/level-one.geometry.json"));
             if (data.meshes.Length != 11 || data.doors.Length != 5) throw new Exception("Unexpected source export.");
             EnsureFolder(Folder);
             root.Find(TutorialGreyboxLayoutBuilder.LayoutName).gameObject.SetActive(false);

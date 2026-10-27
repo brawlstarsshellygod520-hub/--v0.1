@@ -1,0 +1,47 @@
+HOUSEHOLD_OUTLINE_PASS
+Checks=45
+PASS Six household area groups persist in the active tutorial
+PASS StorageCabinet has replaceable Visual and independent root collision
+PASS BakingSodaJar has replaceable Visual and independent root collision
+PASS WashingMachine has replaceable Visual and independent root collision
+PASS Shower has replaceable Visual and independent root collision
+PASS Toilet has replaceable Visual and independent root collision
+PASS BathroomSink has replaceable Visual and independent root collision
+PASS Bed has replaceable Visual and independent root collision
+PASS Wardrobe has replaceable Visual and independent root collision
+PASS Desk has replaceable Visual and independent root collision
+PASS Chair has replaceable Visual and independent root collision
+PASS LowCabinet has replaceable Visual and independent root collision
+PASS RecyclingBin has replaceable Visual and independent root collision
+PASS TrashBin has replaceable Visual and independent root collision
+PASS Fridge has replaceable Visual and independent root collision
+PASS KitchenCounter has replaceable Visual and independent root collision
+PASS Stove has replaceable Visual and independent root collision
+PASS KitchenSink has replaceable Visual and independent root collision
+PASS Sofa has replaceable Visual and independent root collision
+PASS Armchair has replaceable Visual and independent root collision
+PASS CoffeeTable has replaceable Visual and independent root collision
+PASS TvStand has replaceable Visual and independent root collision
+PASS Television has replaceable Visual and independent root collision
+PASS EntryShoeCabinet has replaceable Visual and independent root collision
+PASS SodaCart has replaceable Visual and independent root collision
+PASS SaladOilBottle has replaceable Visual and independent root collision
+PASS Old primitive blocks remain hidden backups
+PASS Original pushable coffee-table mechanics stay on the unchanged root
+PASS Water source position and 3m hose preserved
+PASS No persistent room or item debug text added
+PASS Built-in outline shader compiles without errors
+PASS Real scene selects only nearby toilet source outline
+PASS Real source connects with unchanged hose API
+PASS Old ground proximity circle is not created
+PASS Only nearest source builds visible outline copies for its two Visual meshes
+PASS Nearby unconnected source uses gold visual-only outline without copying collision
+PASS Read/Write-disabled replacement mesh safely retains a visible outline fallback
+PASS Fixture connects through unchanged hose API
+PASS Connected source changes the existing outline to blue without recreating source gameplay
+PASS Changing nearest source hides the old object and selects only the new source
+PASS Explicit refresh rebuilds outline cache after Visual replacement without adding gameplay colliders
+PASS Disabling one authored renderer hides only its matching outline clone
+PASS Inactive source immediately clears outline and selection
+PASS Disabling presentation leaves no ghost outline
+PASS Outline preserves source collider and actor anchors

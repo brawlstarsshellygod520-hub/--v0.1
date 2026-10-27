@@ -1,0 +1,3 @@
+FIRE_LOOP_V2_INSTALLED
+Indoor spawn; independent ordinary floor fire; fast then slow propagation; water/oil burst and scorched food; actor defeat; HUD hints removed; stable hose particles.
+House/models/camera/15m unchanged.

@@ -1,0 +1,27 @@
+{
+  "baselineCount": 494,
+  "unchanged": 491,
+  "changed": [
+    "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+    "Assets/FireRescue/Runtime/Player/RescueCamera.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "missing": [],
+  "new": [
+    "Assets/FireRescue/Art/PlayerWhitebox.meta",
+    "Assets/FireRescue/Art/PlayerWhitebox/Character1.fbx",
+    "Assets/FireRescue/Art/PlayerWhitebox/Character1.fbx.meta",
+    "Assets/FireRescue/Art/PlayerWhitebox/PlayerCharacter1.prefab",
+    "Assets/FireRescue/Art/PlayerWhitebox/PlayerCharacter1.prefab.meta",
+    "Assets/FireRescue/Art/PlayerWhitebox/Whitebox.mat",
+    "Assets/FireRescue/Art/PlayerWhitebox/Whitebox.mat.meta",
+    "Assets/FireRescue/Editor/PlayerWhiteboxSetup.cs",
+    "Assets/FireRescue/Editor/PlayerWhiteboxSetup.cs.meta",
+    "Assets/FireRescue/Editor/PlayerWhiteboxValidation.cs",
+    "Assets/FireRescue/Editor/PlayerWhiteboxValidation.cs.meta"
+  ],
+  "missingMeta": [],
+  "sourceSha256": "1171EC5F05F29731BEB0916A9591A3E4396C9AAFA476466AFA70EA78EB2A7147",
+  "importSha256": "1171EC5F05F29731BEB0916A9591A3E4396C9AAFA476466AFA70EA78EB2A7147",
+  "copySha256": "1171EC5F05F29731BEB0916A9591A3E4396C9AAFA476466AFA70EA78EB2A7147"
+}

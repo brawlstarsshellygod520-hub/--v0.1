@@ -9,11 +9,11 @@ namespace FireRescue.Editor
 {
     public static class UserNozzleSetup
     {
-        public const string Folder = "Assets/FireRescue/Art/UserNozzle";
+        public const string Folder = "Assets/FireRescue/Art/UserProvided/Tools/Nozzle";
         public const string ModelPath = Folder + "/nozzle.fbx";
         public const string PrefabPath = Folder + "/Nozzle.prefab";
         public const string Evidence = "Docs/Validation/2026-10-23-nozzle-controls";
-        const string MetadataPath = "ArtSource/UserNozzle/nozzle-metadata.json";
+        const string MetadataPath = "ArtSource/UserProvided/Nozzle/nozzle-metadata.json";
         static double readyAt;
 
         [Serializable]

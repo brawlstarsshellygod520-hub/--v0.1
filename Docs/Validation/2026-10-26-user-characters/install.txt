@@ -1,0 +1,5 @@
+USER_CHARACTER_INSTALL_PASS
+Unity 6000.5.0b9
+Generic rig / Idle+Run / 7 material palette / 1.5m feet alignment / +Z facing / visual-only boundary PASS
+Gameplay snapshot unchanged; saved scene reload; repeated install does not overwrite assets PASS
+Supplied FBX contains ONE resident. Firefighter and all gameplay prefabs untouched.

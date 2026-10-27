@@ -1,0 +1,18 @@
+FAIL
+InvalidOperationException: PASS TutorialGreybox contains the actual player motor
+PASS Player has the installed User Player Model presentation
+PASS New static FBX retains all ten mesh pieces
+PASS New visual has no collision, rigidbody, or behaviour authority
+PASS Old capsule body and helmet remain inactive backups
+PASS Existing User Resident 2 NPC presentation remains in the tutorial
+PASS Current camera is orthographic at size 6
+PASS Current camera uses pitch 50 and yaw 0
+PASS Actual LocalPlayerInput and CharacterController remain on the gameplay player
+PASS Physical device reads are disabled for deterministic command testing
+PASS TickPointerCommand W moves camera-relative forward along world +Z near the spawn
+PASS TickPointerCommand D moves camera-relative right along world +X
+PASS Turning the firefighter through the real input path does not rotate the camera
+FAIL Gameplay player still moves while the presentation visual is disabled
+FireRescue.Editor.PlayerWhiteboxCameraDriver.Check (System.Boolean value, System.String label) (at Assets/FireRescue/Editor/PlayerWhiteboxValidation.cs:81)
+FireRescue.Editor.PlayerWhiteboxCameraDriver+<Scenario>d__6.MoveNext () (at Assets/FireRescue/Editor/PlayerWhiteboxValidation.cs:136)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

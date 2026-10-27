@@ -1,0 +1,2 @@
+NPC_LAYOUT_PROBE
+Rescued=True state=Rescued safe=False pos=(5.7500, 0.0250, -8.2500) index=48

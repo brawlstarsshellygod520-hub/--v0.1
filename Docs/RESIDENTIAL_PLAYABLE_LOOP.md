@@ -1,5 +1,11 @@
 # 住宅 Greybox 整關測試（2026-10-25）
 
+**目前統一入口：**專案根目錄 `PlayLatest.cmd` → `Builds/Latest/FireRescue.exe`。預設建置已改為TutorialGreybox，Player Prefab／Scene都是5m，NPC Prefab／Scene都套色。模型新分類及交付差異見 `Docs/ASSET_CLASSIFICATION.md`，舊版本路徑只作歷史保留。
+
+**2026-10-27目前版本：**管長已改為 **5m**，茶几兩側單椅改朝內、待救者已套橘黃色參考配色。最新本機版 `Builds/ResidentColor5m/FireRescue.exe`，原操作與來源／火點位置不變。後文3m與舊玩家版路徑為歷史紀錄；最新證據 `Docs/Validation/2026-10-27-resident-color-5m/RESULT.md`。
+
+2026-10-27最新修正見 `Docs/HOSE_FLUID_PHYSICS.md`：本機版改為 `Builds/HoseFluidPhysics/FireRescue.exe`；下方6.5m舊噴射距離已由各來源Profile取代。3m管長不變，新增沿線牆阻；窗口固定點已移到室內窗緣，原操作與整關流程保留。
+
 目前場景：`Assets/FireRescue/Scenes/TutorialGreybox.unity`。
 Windows 執行檔：`Builds/ResidentialPrototype/FireRescue.exe`；請保留旁邊的 Data、DLL 等完整資料夾。
 

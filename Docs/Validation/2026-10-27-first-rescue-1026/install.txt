@@ -1,0 +1,5 @@
+FIRST_RESCUE_INSTALL_PASS
+40 source meshes; Boolean helpers excluded; original doors authored open; independent full collision + cutaway visual.
+One toilet source, user characters/tools, no AI furnishings. Hose 5m, explicit bathroom door guide.
+Fire seeds=19
+Source SHA256 d68d113f535f89d4dc28246005413e4f14746c537dfea0921dd3321d44cf142c

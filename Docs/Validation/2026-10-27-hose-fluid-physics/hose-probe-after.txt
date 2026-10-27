@@ -1,0 +1,6 @@
+HOSE_BASELINE
+Optional collision API=True
+Initial connected=True
+Desired=(1.60, 0.00, 2.00) constrained=(0.60, 0.00, 2.00) crosses wall footprint=False
+UsedLength at planar radius3 and y2=3
+Disabled source still connected=False

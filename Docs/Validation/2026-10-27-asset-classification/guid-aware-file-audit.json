@@ -1,0 +1,68 @@
+{
+  "baseline": 639,
+  "unchangedAfterRemap": 624,
+  "changed": [
+    {
+      "before": "Assets/FireRescue/Art/RoleSwapRig/Role1.prefab",
+      "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Role1.prefab"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/CharacterArtSetup.cs",
+      "after": "Assets/FireRescue/Editor/CharacterArtSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/CharacterSwapSetup.cs",
+      "after": "Assets/FireRescue/Editor/CharacterSwapSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/HouseholdPropCatalog.cs",
+      "after": "Assets/FireRescue/Editor/HouseholdPropCatalog.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/PlayerWhiteboxSetup.cs",
+      "after": "Assets/FireRescue/Editor/PlayerWhiteboxSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/ResidentialArtCatalog.cs",
+      "after": "Assets/FireRescue/Editor/ResidentialArtCatalog.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+      "after": "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/ResidentialTuningValidation.cs",
+      "after": "Assets/FireRescue/Editor/ResidentialTuningValidation.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/ResidentPaletteSetup.cs",
+      "after": "Assets/FireRescue/Editor/ResidentPaletteSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/UserAxeSetup.cs",
+      "after": "Assets/FireRescue/Editor/UserAxeSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/UserCharacterSetup.cs",
+      "after": "Assets/FireRescue/Editor/UserCharacterSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/UserLevelOneBuilder.cs",
+      "after": "Assets/FireRescue/Editor/UserLevelOneBuilder.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Editor/UserNozzleSetup.cs",
+      "after": "Assets/FireRescue/Editor/UserNozzleSetup.cs"
+    },
+    {
+      "before": "Assets/FireRescue/Greybox/Prefabs/Player.prefab",
+      "after": "Assets/FireRescue/Greybox/Prefabs/Player.prefab"
+    },
+    {
+      "before": "ProjectSettings/EditorBuildSettings.asset",
+      "after": "ProjectSettings/EditorBuildSettings.asset"
+    }
+  ],
+  "missing": [],
+  "preservedGuidCount": 163
+}

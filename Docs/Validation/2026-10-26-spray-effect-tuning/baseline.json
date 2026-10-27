@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-26",
+  "note": "Dirty directional-spray work preserved; scoped baseline, no commit or reset",
+  "files": [
+    {
+      "path": "Assets/FireRescue/Runtime/Hose/SprayProfile.cs",
+      "sha256": "86D05F380DBBE1764D6CD8F4C6DD89EC1FCFBE8D4CEB5A08E74ADFA45196D1C4"
+    },
+    {
+      "path": "Assets/FireRescue/Runtime/Hose/SprayEmitter.cs",
+      "sha256": "EC2DC8BF7FFE2EEE6486128160BD5326B3E7101CA4DC6F855696DF9B7C34C1FC"
+    },
+    {
+      "path": "Assets/FireRescue/Runtime/Source/FluidSource.cs",
+      "sha256": "19279C69C9488733FE5B8CE33DDA74883486BA6A7256E222E077F25997D94B27"
+    },
+    {
+      "path": "Assets/FireRescue/Runtime/Reaction/ElementReaction.cs",
+      "sha256": "3F68E1A7D903004C2F8A3C09B257FE9A96805EB0404281DA766DB4F0B0371770"
+    },
+    {
+      "path": "Assets/FireRescue/Runtime/Fire/FireField.cs",
+      "sha256": "B5EE1DC3D863C42B3FF86810384AF9894B247C8C78C1D7A792BBC386392AD44F"
+    },
+    {
+      "path": "Assets/FireRescue/Settings/Sprays/Water.asset",
+      "sha256": "5E2416E5C4B769B6C50A9BD21456978706AFA6E60CA68465C40C337F1F69718B"
+    },
+    {
+      "path": "Assets/FireRescue/Settings/Sprays/Oil.asset",
+      "sha256": "9D8D57A35D4DCA065450D37DFA9F177DF6FCEB4DAD27EB8A8792D6A57BE54EF3"
+    },
+    {
+      "path": "Assets/FireRescue/Settings/Sprays/DryPowder.asset",
+      "sha256": "42082852185045171DB8312013652696587C7F1EE1A1DB636C2D6C7BCA84BD45"
+    },
+    {
+      "path": "Assets/FireRescue/Scenes/TutorialGreybox.unity",
+      "sha256": "6962554576AA91DB94D0870FFAE407C0A5345E8A0F82DC92736BA7AA0DE44A3C"
+    },
+    {
+      "path": "Docs/DIRECTIONAL_SPRAY.md",
+      "sha256": "9989FE583B17DC9FB7E688717C550E2191C496FE16F749451B9073908FF579B9"
+    },
+    {
+      "path": "Docs/PROTOTYPE_CONTEXT.md",
+      "sha256": "FA1287ACC486554D5F227CC1B97AB00A4CDE159E12FCC7AFC168653078C9BEA2"
+    },
+    {
+      "path": "Docs/WORKLOG.md",
+      "sha256": "DB00F0803586E326FBCB82B3BD7F222DB0A217D7DDA12928306D7690DC27CD7A"
+    }
+  ]
+}

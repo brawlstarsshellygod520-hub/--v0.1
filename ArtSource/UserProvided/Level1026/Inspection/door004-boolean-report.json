@@ -1,0 +1,144 @@
+{
+  "source": {
+    "path": "D:\\Documents\\畢專\\ArtSource\\UserProvided\\Level1026\\Source.blend",
+    "sha256Before": "d68d113f535f89d4dc28246005413e4f14746c537dfea0921dd3321d44cf142c",
+    "sha256After": "d68d113f535f89d4dc28246005413e4f14746c537dfea0921dd3321d44cf142c",
+    "unchanged": true
+  },
+  "mapping": "Unity=(10*Blender.y,10*Blender.z,-10*Blender.x)+translation",
+  "translation": [
+    6.449464,
+    0.093485,
+    -6.029598
+  ],
+  "wallModifiers": [
+    {
+      "name": "實體化",
+      "type": "SOLIDIFY",
+      "showViewport": true,
+      "showRender": true
+    },
+    {
+      "name": "布林",
+      "type": "BOOLEAN",
+      "showViewport": true,
+      "showRender": true,
+      "operation": "DIFFERENCE",
+      "solver": "EXACT",
+      "operandType": "COLLECTION",
+      "object": null,
+      "collection": "牆上"
+    }
+  ],
+  "wall": {
+    "evaluatedWorldBounds": {
+      "min": [
+        -1.2011942863464355,
+        -1.2906386852264404,
+        0.0
+      ],
+      "max": [
+        -0.004725245293229818,
+        -0.009981920011341572,
+        0.12999999523162842
+      ]
+    },
+    "evaluatedUnityBounds": {
+      "min": [
+        -6.456923484802246,
+        0.09348499774932861,
+        -5.9823455810546875
+      ],
+      "max": [
+        6.349644660949707,
+        1.3934849500656128,
+        5.982344627380371
+      ]
+    },
+    "counts": {
+      "rawVertices": 39,
+      "rawPolygons": 21,
+      "evaluatedVertices": 136,
+      "evaluatedPolygons": 124
+    }
+  },
+  "ctrlHole004": {
+    "worldBounds": {
+      "min": [
+        -0.6954502463340759,
+        -0.6677829027175903,
+        0.0002715169102884829
+      ],
+      "max": [
+        -0.6727935075759888,
+        -0.5733797550201416,
+        0.19851820170879364
+      ]
+    },
+    "unityBounds": {
+      "min": [
+        -0.2283649444580078,
+        0.09620016813278198,
+        0.6983366012573242
+      ],
+      "max": [
+        0.7156662940979004,
+        2.078667163848877,
+        0.9249043464660645
+      ]
+    },
+    "dimensionsLocal": [
+      0.094403,
+      0.022657,
+      0.198247
+    ],
+    "locationWorld": [
+      -0.672794,
+      -0.620581,
+      0.000272
+    ],
+    "localAxesWorld": {
+      "localX": [
+        -0.0,
+        0.094403,
+        0.0
+      ],
+      "localY": [
+        -0.094403,
+        -0.0,
+        0.0
+      ],
+      "localZ": [
+        0.0,
+        0.0,
+        0.094403
+      ]
+    }
+  },
+  "rayReproduction": {
+    "originUnity": [
+      0.24,
+      0.6,
+      -0.18
+    ],
+    "directionUnity": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "hit": {
+      "location": [
+        0.24,
+        0.6,
+        0.924904
+      ],
+      "normal": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "triangleIndex": 272,
+      "distance": 1.104904
+    }
+  }
+}

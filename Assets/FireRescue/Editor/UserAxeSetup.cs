@@ -11,7 +11,7 @@ namespace FireRescue.Editor
     // Only presentation is replaced. The existing pivot, input and strike query are unchanged.
     public static class UserAxeSetup
     {
-        public const string Folder = "Assets/FireRescue/Art/UserFireAxe";
+        public const string Folder = "Assets/FireRescue/Art/UserProvided/Tools/FireAxe";
         public const string ModelPath = Folder + "/fire_axe.fbx";
         public const string PrefabPath = Folder + "/FireAxe.prefab";
         public const string ModelName = "Fire Axe Model";

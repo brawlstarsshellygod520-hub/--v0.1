@@ -1,0 +1,26 @@
+{
+  "baselineCount": 505,
+  "unchanged": 497,
+  "changed": [
+    "Assets/FireRescue/Editor/DirectionalSprayValidation.cs",
+    "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+    "Assets/FireRescue/Editor/SprayEffectTuningValidation.cs",
+    "Assets/FireRescue/Runtime/Hose/HoseConnection.cs",
+    "Assets/FireRescue/Runtime/Hose/HoseView.cs",
+    "Assets/FireRescue/Runtime/Hose/SprayEmitter.cs",
+    "Assets/FireRescue/Runtime/Player/FirefighterMotor.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "missing": [],
+  "new": [
+    "Assets/FireRescue/Editor/FluidPhysicsValidation.cs",
+    "Assets/FireRescue/Editor/FluidPhysicsValidation.cs.meta",
+    "Assets/FireRescue/Editor/HoseFluidPhysicsBuilder.cs",
+    "Assets/FireRescue/Editor/HoseFluidPhysicsBuilder.cs.meta",
+    "Assets/FireRescue/Editor/HosePhysicsBaseline.cs",
+    "Assets/FireRescue/Editor/HosePhysicsBaseline.cs.meta",
+    "Assets/FireRescue/Editor/HosePhysicsValidation.cs",
+    "Assets/FireRescue/Editor/HosePhysicsValidation.cs.meta"
+  ],
+  "missingMeta": []
+}

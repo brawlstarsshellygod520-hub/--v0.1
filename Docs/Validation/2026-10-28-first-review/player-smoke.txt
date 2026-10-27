@@ -1,0 +1,17 @@
+Windows D3D11 runtime verification
+PASS Real graphics device: Direct3D11
+PASS Latest starts the requested review scene
+PASS Local input exists
+PASS 15m automatic wrap is in packaged scene
+PASS Continuous 3D physical tube replaces old line presentation
+PASS Updated game product title
+PASS New gait, request state and HUD are included
+PASS Two sources and burning oil pan loaded
+PASS All packaged character skins/bones resolve
+PASS Resident overhead request tag loaded
+PASS Diffuse-only plaster shader compiled for Windows
+PASS Screenshot file written (visual content requires separate review)
+NOTE black hidden-window capture; this run does NOT validate visuals/UI
+PASS One-minute countdown advances in actual player
+PASS Oil-spill growth blocks pudding in actual Windows runtime after 2s
+REVIEW_PLAYER_PASS

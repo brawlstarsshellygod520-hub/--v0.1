@@ -1,0 +1,1918 @@
+{
+  "source": {
+    "path": "D:\\Documents\\畢專\\ArtSource\\UserProvided\\Level1026\\Source.blend",
+    "sha256": "d68d113f535f89d4dc28246005413e4f14746c537dfea0921dd3321d44cf142c",
+    "bytes": 346260
+  },
+  "scene": {
+    "name": "Scene",
+    "objectCount": 45,
+    "meshCount": 40,
+    "units": {
+      "system": "METRIC",
+      "scaleLength": 1.0
+    },
+    "coordinateConvention": "Blender native: X/Y horizontal plan; Z vertical/up.",
+    "cameras": []
+  },
+  "overallMeshBoundsWorld": {
+    "min": [
+      -1.20119,
+      -1.29064,
+      -0.00935
+    ],
+    "max": [
+      -0.00473,
+      0.00075,
+      0.19871
+    ],
+    "size": [
+      1.19646,
+      1.29139,
+      0.20806
+    ]
+  },
+  "meshes": [
+    {
+      "name": "CTRL_Baseboard",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.25017,
+          -0.03702,
+          -0.00898
+        ],
+        "max": [
+          -0.15577,
+          0.00075,
+          0.02878
+        ],
+        "size": [
+          0.0944,
+          0.03776,
+          0.03776
+        ]
+      },
+      "location": [
+        -0.20297,
+        -0.03702,
+        -0.00898
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "hidden_material"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 8,
+        "polygons": 2
+      }
+    },
+    {
+      "name": "CTRL_Baseboard.001",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.001",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.7059,
+          -0.1644,
+          -0.00898
+        ],
+        "max": [
+          -0.66814,
+          -0.07,
+          0.02878
+        ],
+        "size": [
+          0.03776,
+          0.0944,
+          0.03776
+        ]
+      },
+      "location": [
+        -0.66814,
+        -0.1172,
+        -0.00898
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.001"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 8,
+        "polygons": 2
+      }
+    },
+    {
+      "name": "CTRL_Baseboard.002",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.002",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.5387,
+          -1.0108,
+          -0.00898
+        ],
+        "max": [
+          -0.50094,
+          -0.9164,
+          0.02878
+        ],
+        "size": [
+          0.03776,
+          0.0944,
+          0.03776
+        ]
+      },
+      "location": [
+        -0.50094,
+        -0.9636,
+        -0.00898
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.002"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 8,
+        "polygons": 2
+      }
+    },
+    {
+      "name": "CTRL_Baseboard.003",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.003",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.96092,
+          -1.23889,
+          -0.00935
+        ],
+        "max": [
+          -0.92316,
+          -1.14449,
+          0.02841
+        ],
+        "size": [
+          0.03776,
+          0.0944,
+          0.03776
+        ]
+      },
+      "location": [
+        -0.92316,
+        -1.19169,
+        -0.00935
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.003"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 8,
+        "polygons": 2
+      }
+    },
+    {
+      "name": "CTRL_Baseboard.004",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.004",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.70521,
+          -0.66778,
+          -0.00898
+        ],
+        "max": [
+          -0.66744,
+          -0.57338,
+          0.02878
+        ],
+        "size": [
+          0.03776,
+          0.0944,
+          0.03776
+        ]
+      },
+      "location": [
+        -0.66744,
+        -0.62058,
+        -0.00898
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.004"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 8,
+        "polygons": 2
+      }
+    },
+    {
+      "name": "CTRL_Hole",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group",
+      "collections": [
+        "牆上"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.25017,
+          -0.03167,
+          0.00027
+        ],
+        "max": [
+          -0.15577,
+          -0.00901,
+          0.19852
+        ],
+        "size": [
+          0.0944,
+          0.02266,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.20297,
+        -0.03167,
+        0.00027
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "hidden_material"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "CTRL_Hole.001",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.001",
+      "collections": [
+        "牆上"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.69615,
+          -0.1644,
+          0.00027
+        ],
+        "max": [
+          -0.67349,
+          -0.07,
+          0.19852
+        ],
+        "size": [
+          0.02266,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.67349,
+        -0.1172,
+        0.00027
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.001"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "CTRL_Hole.002",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.002",
+      "collections": [
+        "牆上"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.52895,
+          -1.0108,
+          0.00027
+        ],
+        "max": [
+          -0.50629,
+          -0.9164,
+          0.19852
+        ],
+        "size": [
+          0.02266,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.50629,
+        -0.9636,
+        0.00027
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.002"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "CTRL_Hole.003",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.003",
+      "collections": [
+        "牆上"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.95116,
+          -1.23889,
+          -0.0001
+        ],
+        "max": [
+          -0.92851,
+          -1.14449,
+          0.19815
+        ],
+        "size": [
+          0.02266,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.92851,
+        -1.19169,
+        -0.0001
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.003"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "CTRL_Hole.004",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door_Group.004",
+      "collections": [
+        "牆上"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.69545,
+          -0.66778,
+          0.00027
+        ],
+        "max": [
+          -0.67279,
+          -0.57338,
+          0.19852
+        ],
+        "size": [
+          0.02266,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.67279,
+        -0.62058,
+        0.00027
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "hidden_material.004"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "Door",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "DoorFrame",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.24243,
+          -0.02242,
+          0.00084
+        ],
+        "max": [
+          -0.16351,
+          -0.01921,
+          0.19059
+        ],
+        "size": [
+          0.07892,
+          0.00321,
+          0.18975
+        ]
+      },
+      "location": [
+        -0.16351,
+        -0.02242,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "Door_material"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "Door.001",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "DoorFrame.001",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68594,
+          -0.15666,
+          0.00084
+        ],
+        "max": [
+          -0.68273,
+          -0.07774,
+          0.19059
+        ],
+        "size": [
+          0.00321,
+          0.07892,
+          0.18975
+        ]
+      },
+      "location": [
+        -0.68273,
+        -0.07774,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.001"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "Door.002",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "DoorFrame.002",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.51874,
+          -1.00306,
+          0.00084
+        ],
+        "max": [
+          -0.51553,
+          -0.92414,
+          0.19059
+        ],
+        "size": [
+          0.00321,
+          0.07892,
+          0.18975
+        ]
+      },
+      "location": [
+        -0.51553,
+        -0.92414,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.002"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "Door.003",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "DoorFrame.003",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.94096,
+          -1.23115,
+          0.00047
+        ],
+        "max": [
+          -0.93775,
+          -1.15223,
+          0.19022
+        ],
+        "size": [
+          0.00321,
+          0.07892,
+          0.18975
+        ]
+      },
+      "location": [
+        -0.93775,
+        -1.15223,
+        0.09922
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.003"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "Door.004",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "DoorFrame.004",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68525,
+          -0.66004,
+          0.00084
+        ],
+        "max": [
+          -0.68204,
+          -0.58112,
+          0.19059
+        ],
+        "size": [
+          0.00321,
+          0.07892,
+          0.18975
+        ]
+      },
+      "location": [
+        -0.68204,
+        -0.58112,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.004"
+      ],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "DoorFrame",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "Door_Group",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.25017,
+          -0.02285,
+          0.00046
+        ],
+        "max": [
+          -0.15577,
+          -0.0153,
+          0.19871
+        ],
+        "size": [
+          0.0944,
+          0.00755,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.20297,
+        -0.02034,
+        0.00046
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "Door_material"
+      ],
+      "meshStats": {
+        "vertices": 32,
+        "edges": 60,
+        "polygons": 24
+      }
+    },
+    {
+      "name": "DoorFrame.001",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "Door_Group.001",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68985,
+          -0.1644,
+          0.00046
+        ],
+        "max": [
+          -0.6823,
+          -0.07,
+          0.19871
+        ],
+        "size": [
+          0.00755,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.68482,
+        -0.1172,
+        0.00046
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.001"
+      ],
+      "meshStats": {
+        "vertices": 32,
+        "edges": 60,
+        "polygons": 24
+      }
+    },
+    {
+      "name": "DoorFrame.002",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "Door_Group.002",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.52265,
+          -1.0108,
+          0.00046
+        ],
+        "max": [
+          -0.5151,
+          -0.9164,
+          0.19871
+        ],
+        "size": [
+          0.00755,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.51762,
+        -0.9636,
+        0.00046
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.002"
+      ],
+      "meshStats": {
+        "vertices": 32,
+        "edges": 60,
+        "polygons": 24
+      }
+    },
+    {
+      "name": "DoorFrame.003",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "Door_Group.003",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.94487,
+          -1.23889,
+          9e-05
+        ],
+        "max": [
+          -0.93732,
+          -1.14449,
+          0.19834
+        ],
+        "size": [
+          0.00755,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.93984,
+        -1.19169,
+        9e-05
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.003"
+      ],
+      "meshStats": {
+        "vertices": 32,
+        "edges": 60,
+        "polygons": 24
+      }
+    },
+    {
+      "name": "DoorFrame.004",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "Door_Group.004",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68916,
+          -0.66778,
+          0.00046
+        ],
+        "max": [
+          -0.6816,
+          -0.57338,
+          0.19871
+        ],
+        "size": [
+          0.00755,
+          0.0944,
+          0.19825
+        ]
+      },
+      "location": [
+        -0.68412,
+        -0.62058,
+        0.00046
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Door_material.004"
+      ],
+      "meshStats": {
+        "vertices": 32,
+        "edges": 60,
+        "polygons": 24
+      }
+    },
+    {
+      "name": "Handle_Back",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.23947,
+          -0.02879,
+          0.09573
+        ],
+        "max": [
+          -0.22276,
+          -0.02221,
+          0.10342
+        ],
+        "size": [
+          0.01671,
+          0.00657,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.23563,
+        -0.02195,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "Handle_material"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Back.001",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.001",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68294,
+          -0.1537,
+          0.09573
+        ],
+        "max": [
+          -0.67637,
+          -0.137,
+          0.10342
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.6832,
+        -0.14986,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.001"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Back.002",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.002",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.51574,
+          -1.0001,
+          0.09573
+        ],
+        "max": [
+          -0.50917,
+          -0.9834,
+          0.10342
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.516,
+        -0.99626,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.002"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Back.003",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.003",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.93796,
+          -1.22819,
+          0.09537
+        ],
+        "max": [
+          -0.93139,
+          -1.21148,
+          0.10305
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.93822,
+        -1.22435,
+        0.09922
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.003"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Back.004",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.004",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.68225,
+          -0.65708,
+          0.09573
+        ],
+        "max": [
+          -0.67567,
+          -0.64038,
+          0.10342
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.68251,
+        -0.65324,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.004"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Front",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.23947,
+          -0.01943,
+          0.09575
+        ],
+        "max": [
+          -0.22276,
+          -0.01285,
+          0.10343
+        ],
+        "size": [
+          0.01671,
+          0.00657,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.23563,
+        -0.01969,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        -180.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [
+        "Handle_material"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Front.001",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.001",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.69231,
+          -0.1537,
+          0.09575
+        ],
+        "max": [
+          -0.68573,
+          -0.137,
+          0.10343
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.68547,
+        -0.14986,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        -180.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.001"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Front.002",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.002",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.5251,
+          -1.0001,
+          0.09575
+        ],
+        "max": [
+          -0.51853,
+          -0.9834,
+          0.10343
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.51827,
+        -0.99626,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        -180.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.002"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Front.003",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.003",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.94732,
+          -1.22819,
+          0.09538
+        ],
+        "max": [
+          -0.94075,
+          -1.21148,
+          0.10306
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.94049,
+        -1.22435,
+        0.09922
+      ],
+      "rotationEulerDegrees": [
+        -180.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.003"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "Handle_Front.004",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "Door.004",
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.69161,
+          -0.65708,
+          0.09575
+        ],
+        "max": [
+          -0.68503,
+          -0.64038,
+          0.10343
+        ],
+        "size": [
+          0.00657,
+          0.01671,
+          0.00769
+        ]
+      },
+      "location": [
+        -0.68477,
+        -0.65324,
+        0.09958
+      ],
+      "rotationEulerDegrees": [
+        -180.0,
+        -0.0,
+        90.0
+      ],
+      "materials": [
+        "Handle_material.004"
+      ],
+      "meshStats": {
+        "vertices": 146,
+        "edges": 288,
+        "polygons": 144
+      }
+    },
+    {
+      "name": "kitchen counter",
+      "type": "MESH",
+      "classification": [
+        "room"
+      ],
+      "parent": null,
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.31972,
+          -1.26879,
+          0.0
+        ],
+        "max": [
+          -0.02476,
+          -0.86793,
+          0.085
+        ],
+        "size": [
+          0.29496,
+          0.40085,
+          0.085
+        ]
+      },
+      "location": [
+        -0.05756,
+        -1.24478,
+        -0.00249
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 38,
+        "edges": 72,
+        "polygons": 36
+      }
+    },
+    {
+      "name": "refrigerator",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": null,
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.50253,
+          -1.26879,
+          0.0
+        ],
+        "max": [
+          -0.41253,
+          -1.19379,
+          0.18
+        ],
+        "size": [
+          0.09,
+          0.075,
+          0.18
+        ]
+      },
+      "location": [
+        -0.45753,
+        -1.23129,
+        0.0
+      ],
+      "rotationEulerDegrees": [
+        -0.0,
+        -180.0,
+        -0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 28,
+        "edges": 52,
+        "polygons": 26
+      }
+    },
+    {
+      "name": "refrigerator  door_down",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "refrigerator",
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.50253,
+          -1.19379,
+          0.0
+        ],
+        "max": [
+          -0.41253,
+          -1.18949,
+          0.11239
+        ],
+        "size": [
+          0.09,
+          0.00429,
+          0.11239
+        ]
+      },
+      "location": [
+        -0.50253,
+        -1.19379,
+        0.0562
+      ],
+      "rotationEulerDegrees": [
+        -0.0,
+        -180.0,
+        -0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 8,
+        "edges": 12,
+        "polygons": 6
+      }
+    },
+    {
+      "name": "refrigerator  door_up",
+      "type": "MESH",
+      "classification": [
+        "door"
+      ],
+      "parent": "refrigerator",
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.50253,
+          -1.19379,
+          0.11239
+        ],
+        "max": [
+          -0.41253,
+          -1.18949,
+          0.18
+        ],
+        "size": [
+          0.09,
+          0.00429,
+          0.06761
+        ]
+      },
+      "location": [
+        -0.50253,
+        -1.19379,
+        0.1462
+      ],
+      "rotationEulerDegrees": [
+        -0.0,
+        -180.0,
+        -0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 18,
+        "edges": 32,
+        "polygons": 16
+      }
+    },
+    {
+      "name": "refrigerator handle_down",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "refrigerator  door_down",
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.42632,
+          -1.18949,
+          0.04062
+        ],
+        "max": [
+          -0.4189,
+          -1.18227,
+          0.07177
+        ],
+        "size": [
+          0.00742,
+          0.00723,
+          0.03114
+        ]
+      },
+      "location": [
+        -0.42261,
+        -1.18227,
+        0.0562
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 54,
+        "edges": 104,
+        "polygons": 52
+      }
+    },
+    {
+      "name": "refrigerator handle_up",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "refrigerator  door_up",
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.42632,
+          -1.18949,
+          0.13062
+        ],
+        "max": [
+          -0.4189,
+          -1.18227,
+          0.16177
+        ],
+        "size": [
+          0.00742,
+          0.00723,
+          0.03114
+        ]
+      },
+      "location": [
+        -0.42261,
+        -1.18227,
+        0.1462
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 54,
+        "edges": 104,
+        "polygons": 52
+      }
+    },
+    {
+      "name": "trash can",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": null,
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.38985,
+          -1.25296,
+          0.0
+        ],
+        "max": [
+          -0.33985,
+          -1.20296,
+          0.07
+        ],
+        "size": [
+          0.05,
+          0.05,
+          0.07
+        ]
+      },
+      "location": [
+        -0.36485,
+        -1.23051,
+        0.0
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 246,
+        "edges": 482,
+        "polygons": 238
+      }
+    },
+    {
+      "name": "trash can lid",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": "trash can",
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.38985,
+          -1.25296,
+          0.07
+        ],
+        "max": [
+          -0.33985,
+          -1.20805,
+          0.0735
+        ],
+        "size": [
+          0.05,
+          0.04491,
+          0.0035
+        ]
+      },
+      "location": [
+        -0.36485,
+        -1.25296,
+        0.07
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 50,
+        "edges": 96,
+        "polygons": 48
+      }
+    },
+    {
+      "name": "wall",
+      "type": "MESH",
+      "classification": [
+        "wall"
+      ],
+      "parent": null,
+      "collections": [
+        "建築"
+      ],
+      "boundsWorld": {
+        "min": [
+          -1.20119,
+          -1.29064,
+          0.0
+        ],
+        "max": [
+          -0.00473,
+          -0.00998,
+          0.13
+        ],
+        "size": [
+          1.19647,
+          1.28066,
+          0.13
+        ]
+      },
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 39,
+        "edges": 63,
+        "polygons": 21
+      }
+    },
+    {
+      "name": "平面",
+      "type": "MESH",
+      "classification": [
+        "unclassified"
+      ],
+      "parent": null,
+      "collections": [
+        "家具"
+      ],
+      "boundsWorld": {
+        "min": [
+          -0.3063,
+          -1.26041,
+          0.085
+        ],
+        "max": [
+          -0.18963,
+          -1.21288,
+          0.09066
+        ],
+        "size": [
+          0.11668,
+          0.04753,
+          0.00566
+        ]
+      },
+      "location": [
+        -0.28254,
+        -1.23664,
+        0.08236
+      ],
+      "rotationEulerDegrees": [
+        0.0,
+        -0.0,
+        45.0
+      ],
+      "materials": [],
+      "meshStats": {
+        "vertices": 193,
+        "edges": 377,
+        "polygons": 181
+      }
+    }
+  ],
+  "namedGroups": {
+    "doors": [
+      "Door",
+      "Door.001",
+      "Door.002",
+      "Door.003",
+      "Door.004",
+      "DoorFrame",
+      "DoorFrame.001",
+      "DoorFrame.002",
+      "DoorFrame.003",
+      "DoorFrame.004",
+      "refrigerator  door_down",
+      "refrigerator  door_up"
+    ],
+    "windows": [],
+    "walls": [
+      "wall"
+    ],
+    "toilets": []
+  },
+  "oldLevelOneComparison": {
+    "available": true,
+    "path": "D:\\Documents\\畢專\\ArtSource\\UserProvided\\LevelOne\\level-one.geometry.json",
+    "keys": [
+      "cutHeight",
+      "doors",
+      "meshes",
+      "scale",
+      "source"
+    ],
+    "partCount": 11,
+    "doorCount": 5,
+    "scale": 14.0,
+    "cutHeight": 0.8,
+    "partNames": [
+      "wall",
+      "DoorFrame",
+      "Door",
+      "DoorFrame.001",
+      "Door.001",
+      "DoorFrame.002",
+      "Door.002",
+      "DoorFrame.003",
+      "Door.003",
+      "DoorFrame.004",
+      "Door.004"
+    ],
+    "bounds": {
+      "min": [
+        -8.515172958374023,
+        0.0,
+        -7.098154783248901
+      ],
+      "max": [
+        8.515172958374023,
+        0.8000001907348633,
+        11.784217834472656
+      ]
+    }
+  }
+}

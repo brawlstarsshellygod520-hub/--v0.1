@@ -1,0 +1,26 @@
+SPRAY_EFFECT_TUNING_PLAYMODE_PASS
+Checks=24
+PASS Neutral effects preserve legacy ApplySpray floor behavior.
+PASS NaN and infinity effect settings fall back safely to neutral.
+PASS Effect settings clamp independently to the 0..4 authoring range.
+PASS Water extinguish zero still leaves timed water residue.
+PASS Water residue zero still extinguishes without creating residue.
+PASS Powder extinguish zero still leaves powder residue.
+PASS Powder residue zero still extinguishes without wetting the floor.
+PASS Zero residue does not refresh an existing water timer.
+PASS ObjectFire respects zero extinguish multiplier.
+PASS Water does not extinguish CookingOil ObjectFire regardless of multiplier.
+PASS Dry powder retains CookingOil ObjectFire eligibility and uses extinguish multiplier.
+PASS Oil ignores extinguish and push multipliers.
+PASS Oil residue multiplier changes only deposited oil amount.
+PASS Water push zero applies no Rigidbody impulse.
+PASS Water push multiplier scales Rigidbody impulse independently.
+PASS Oil and powder never push Rigidbody targets.
+PASS Fixed Rigidbody targets remain immovable.
+PASS First emitter captures the shared profile's initial effects.
+PASS Packets already flying retain their captured residue multiplier after profile edits.
+PASS New packets from a second emitter use the changed shared profile effects.
+PASS Saved spray profile reloads read-only with neutral default effects: Assets/FireRescue/Settings/Sprays/Water.asset
+PASS Saved spray profile reloads read-only with neutral default effects: Assets/FireRescue/Settings/Sprays/Oil.asset
+PASS Saved spray profile reloads read-only with neutral default effects: Assets/FireRescue/Settings/Sprays/DryPowder.asset
+PASS A new unconfigured SprayProfile defaults effects to neutral.

@@ -1,0 +1,35 @@
+{
+  "baseline": 513,
+  "unchanged": 509,
+  "changed": [
+    "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+    "Assets/FireRescue/Runtime/Player/FirefighterTools.cs",
+    "Assets/FireRescue/Runtime/Player/LocalPlayerInput.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "deleted": [],
+  "added": [
+    "Assets/FireRescue/Art/RoleSwapRig.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Models.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Role1.controller",
+    "Assets/FireRescue/Art/RoleSwapRig/Role1.controller.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Role1.prefab",
+    "Assets/FireRescue/Art/RoleSwapRig/Role1.prefab.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Role2.controller",
+    "Assets/FireRescue/Art/RoleSwapRig/Role2.controller.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Role2.prefab",
+    "Assets/FireRescue/Art/RoleSwapRig/Role2.prefab.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Models/Role1.fbx",
+    "Assets/FireRescue/Art/RoleSwapRig/Models/Role1.fbx.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/Models/Role2.fbx",
+    "Assets/FireRescue/Art/RoleSwapRig/Models/Role2.fbx.meta",
+    "Assets/FireRescue/Editor/CharacterFacingValidation.cs",
+    "Assets/FireRescue/Editor/CharacterFacingValidation.cs.meta",
+    "Assets/FireRescue/Editor/CharacterSwapPreview.cs",
+    "Assets/FireRescue/Editor/CharacterSwapPreview.cs.meta",
+    "Assets/FireRescue/Editor/CharacterSwapSetup.cs",
+    "Assets/FireRescue/Editor/CharacterSwapSetup.cs.meta",
+    "Assets/FireRescue/Editor/CharacterSwapValidation.cs",
+    "Assets/FireRescue/Editor/CharacterSwapValidation.cs.meta"
+  ]
+}

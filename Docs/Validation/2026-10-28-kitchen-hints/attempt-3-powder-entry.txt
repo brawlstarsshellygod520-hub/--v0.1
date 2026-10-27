@@ -1,0 +1,66 @@
+KITCHEN_ITERATION_FAIL
+InvalidOperationException: PASS Spawn is inside living room, not ambiguous exterior entrance
+PASS Only pot is initially on fire; no full-kitchen flame carpet
+PASS Within exactly two seconds the connected kitchen floor is fully ignited
+PASS Burning kitchen plus courtyard fences block the outdoor shortcut, not an invisible objective gate
+PASS Actual ignition front begins at pot and fills the kitchen, not a frame-zero flame carpet
+PASS Early rapid propagation transitions to slower spread
+PASS Water on burning oil never extinguishes it and triggers a burst
+PASS Nearby original pudding becomes scorched
+PASS Continuous spray cannot emit an explosion every particle/frame
+PASS Water extinguishes ordinary neighboring floor cells without deleting oil fire
+PASS Water can clear stove-side fire, but ongoing pot heat quickly relights it
+PASS Water leaves a traversable wet route outside the pot heat radius
+PASS After powder puts out the pot, neighboring fire stops being relit
+PASS Poison branch prerequisites are isolated from success walkthrough
+PASS Real burnt pudding transfers to original resident's hand
+PASS Bad meal blocks rescue and enters poisoning state
+PASS Resident's actual overhead reaction says 好難吃...
+PASS Complaint has a visible delay before death
+PASS Poisoned resident dies; failure never counts as a rescue
+PASS Original resident visual falls over without moving collider root
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Walking onto live floor fire kills player and closes tool/input gates
+PASS Reload resets deaths, food quality, burst and timer
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.45, 0.10, 2.65)
+PASS Separate right presses equip and connect authored toilet
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.60, 0.10, -3.45)
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Real player reached (-2.80, 0.10, -3.45)
+PASS Real ballistic water hits floor while deliberate aiming avoids pot explosion
+PASS Hose is shortened to 10m, not silently expanded to make the test pass
+PASS Water route alone cannot safely collect pudding while the pot keeps relighting nearby fire
+PASS Hose wall contacts retain fixed particle count and continuous visibility
+PASS Wall bends do not pop a new hard node or stretch the tube into long spans
+PASS Real player reached (-2.84, 0.10, -1.55)
+PASS Real player reached (-2.84, 0.10, -0.25)
+PASS Real player reached (-5.40, 0.10, 2.80)
+PASS Real player reached (-5.40, 0.10, 3.95)
+PASS Cleared route leads to storage powder connection
+PASS Real player reached (-5.40, 0.10, 2.80)
+PASS Real player reached (-2.84, 0.10, -0.25)
+PASS Real player reached (-2.84, 0.10, -1.55)
+FAIL Real player reached (-3.65, 0.10, -2.00)
+SPREAD counts start=13 fast=179 later=179 rates=0.4 -> 0.035
+WALK (-1.45, 0.10, -3.45) actual=(-1.376, 0.125, -3.455) remaining=55.81673 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.483, 0.125, 0.140) remaining=58.70002 cells=149 dead=False hose=0
+WALK (0.45, 0.10, 2.65) actual=(0.451, 0.125, 2.583) remaining=57.95003 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.276) remaining=57.16671 cells=179 dead=False hose=3.777729
+WALK (0.60, 0.10, -3.45) actual=(0.597, 0.125, -3.385) remaining=56.08339 cells=179 dead=False hose=7.411105
+WALK (-1.45, 0.10, -3.45) actual=(-1.384, 0.125, -3.448) remaining=51.91679 cells=163 dead=False hose=7.991349
+WALK (-2.80, 0.10, -3.45) actual=(-2.727, 0.125, -3.450) remaining=47.93352 cells=129 dead=False hose=8.840816
+WATER floorAmount=21.75002 cells=179 -> 97 pot=1
+HOSE max material node displacement=0.1290567 longest=0.1093102
+WALK (-2.84, 0.10, -1.55) actual=(-2.836, 0.125, -1.625) remaining=43.80025 cells=98 dead=False hose=0
+WALK (-2.84, 0.10, -0.25) actual=(-2.840, 0.125, -0.328) remaining=43.38359 cells=98 dead=False hose=0
+WALK (-5.40, 0.10, 2.80) actual=(-5.354, 0.125, 2.744) remaining=42.21694 cells=107 dead=False hose=0
+WALK (-5.40, 0.10, 3.95) actual=(-5.398, 0.125, 3.878) remaining=41.83361 cells=109 dead=False hose=0
+WALK (-5.40, 0.10, 2.80) actual=(-5.400, 0.125, 2.866) remaining=41.43362 cells=109 dead=False hose=2.329098
+WALK (-2.84, 0.10, -0.25) actual=(-2.888, 0.125, -0.192) remaining=40.26697 cells=110 dead=False hose=6.133387
+WALK (-2.84, 0.10, -1.55) actual=(-2.842, 0.125, -1.473) remaining=39.85031 cells=110 dead=False hose=7.228924
+WALK (-3.65, 0.10, -2.00) actual=(-3.505, 0.125, -1.912) remaining=39.60031 cells=128 dead=True hose=7.976472
+FireRescue.Editor.ReviewFireLoopV2Driver.Check (System.Boolean value, System.String label) (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:32)
+FireRescue.Editor.ReviewFireLoopV2Driver+<Walk>d__29.MoveNext () (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:55)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

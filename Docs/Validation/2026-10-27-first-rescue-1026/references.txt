@@ -1,0 +1,5 @@
+FIRST_RESCUE_REFERENCE_PASS
+Missing scripts, mesh and bone references: 0
+Active generated model geometry: toilet only.
+Source BLEND unmodified; complete original collision + cutaway wall view.
+No persistent world text / old fire-grid view.

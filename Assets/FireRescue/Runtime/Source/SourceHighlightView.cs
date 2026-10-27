@@ -1,54 +1,104 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FireRescue
 {
-    // Reads the exact same reachable candidate as the connect command; no gameplay or model dependency.
+    /// <summary>
+    /// Presentation-only source feedback. It follows the exact source selected by
+    /// LocalPlayerInput and never changes reach, connection, or source ownership.
+    /// </summary>
     public sealed class SourceHighlightView : MonoBehaviour
     {
+        static readonly Color Gold = new Color(1f, .72f, .12f);
+        static readonly Color Blue = new Color(.15f, .65f, 1f);
+
         [SerializeField] LocalPlayerInput input;
         [SerializeField] HoseConnection hose;
-        [SerializeField, Min(.1f)] float radius = .65f;
-        readonly Vector3[] points = new Vector3[64];
-        LineRenderer ring;
-        Material material;
+        // Kept serialized so player builds retain the small Built-in shader even if no
+        // authoring material has been created yet.
+        [SerializeField] Shader outlineShader;
+        readonly Dictionary<FluidSource, InteractionOutlineTarget> targets = new Dictionary<FluidSource, InteractionOutlineTarget>();
+        Material goldMaterial;
+        Material blueMaterial;
+        FluidSource current;
+
+        public FluidSource CurrentSource => current;
+        public bool HasVisibleOutline => current && targets.TryGetValue(current, out InteractionOutlineTarget target) && target && target.IsVisible;
 
         public void Initialize(LocalPlayerInput owner, HoseConnection connection)
         { input = owner; hose = connection; }
 
+        /// <summary>Call after replacing a selected source's Visual child at runtime.</summary>
+        public void Refresh(FluidSource source = null)
+        {
+            if (source != null && targets.TryGetValue(source, out InteractionOutlineTarget target) && target)
+                target.Rebuild();
+            else if (source == null && current && targets.TryGetValue(current, out target) && target)
+                target.Rebuild();
+        }
+
         void Awake()
         {
-            material = new Material(Shader.Find("Sprites/Default"));
-            ring = new GameObject("Source proximity ring").AddComponent<LineRenderer>();
-            ring.transform.SetParent(transform, false);
-            ring.sharedMaterial = material;
-            ring.useWorldSpace = true;
-            ring.loop = true;
-            ring.positionCount = points.Length;
-            ring.startWidth = ring.endWidth = .045f;
-            ring.enabled = false;
+            if (!outlineShader) outlineShader = Shader.Find("FireRescue/InteractionOutline");
+            if (!outlineShader) return;
+            goldMaterial = NewMaterial("Interactable source outline (gold)", Gold);
+            blueMaterial = NewMaterial("Connected source outline (blue)", Blue);
         }
 
         void LateUpdate()
         {
-            FluidSource source = input && input.isActiveAndEnabled ? input.NearbySource : null;
-            ring.enabled = source && source.isActiveAndEnabled;
-            if (!ring.enabled) return;
-            Vector3 center = source.transform.position + Vector3.up * .045f;
-            Color color = hose && hose.Source == source ? new Color(.15f, .65f, 1f) : new Color(1f, .72f, .12f);
-            ring.startColor = ring.endColor = color;
-            for (int i = 0; i < points.Length; i++)
+            FluidSource next = input && input.isActiveAndEnabled ? input.NearbySource : null;
+            if (!next || !next.isActiveAndEnabled) next = null;
+            if (next != current)
             {
-                float angle = 2 * Mathf.PI * i / points.Length;
-                points[i] = center + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
+                HideCurrent();
+                current = next;
             }
-            ring.SetPositions(points);
+            if (!current || !outlineShader) return;
+            InteractionOutlineTarget target = TargetFor(current);
+            // SetVisible builds a newly discovered target before evaluating its renderers.
+            // Do not query HasRenderableVisual first or the first nearby source would
+            // never create its hull.
+            if (target) target.SetVisible(hose && hose.Source == current ? blueMaterial : goldMaterial);
         }
 
-        void OnDisable() { if (ring) ring.enabled = false; }
+        InteractionOutlineTarget TargetFor(FluidSource source)
+        {
+            if (targets.TryGetValue(source, out InteractionOutlineTarget existing) && existing) return existing;
+            Transform visual = source.transform.Find("Visual");
+            // Do not fall back to collision/gameplay objects. A source without a Visual
+            // simply has no presentation marker until art is supplied.
+            if (!visual || !visual.gameObject.activeInHierarchy) return null;
+            var target = visual.GetComponent<InteractionOutlineTarget>();
+            if (!target) target = visual.gameObject.AddComponent<InteractionOutlineTarget>();
+            target.SetVisualRoot(visual);
+            targets[source] = target;
+            return target;
+        }
+
+        void HideCurrent()
+        {
+            if (current && targets.TryGetValue(current, out InteractionOutlineTarget target) && target)
+                target.SetVisible(null);
+        }
+
+        Material NewMaterial(string name, Color color)
+        {
+            var material = new Material(outlineShader) { name = name, hideFlags = HideFlags.DontSave };
+            material.color = color;
+            return material;
+        }
+
+        void OnDisable()
+        {
+            HideCurrent();
+            current = null;
+        }
         void OnDestroy()
         {
-            if (ring) Destroy(ring.gameObject);
-            if (material) Destroy(material);
+            HideCurrent();
+            if (goldMaterial) Destroy(goldMaterial);
+            if (blueMaterial) Destroy(blueMaterial);
         }
     }
 }

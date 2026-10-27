@@ -429,9 +429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5017be5e411b17642abd8a7b3cc123ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireRescue.HoseConnection
-  maximumLength: 13
+  maximumLength: 5
   connectDistance: 2
   interactionOrigin: {fileID: 8509009045748578036}
+  wallOcclusion: {fileID: 0}
+  hoseInletAnchor: {fileID: 0}
 --- !u!114 &6272622097141430257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +466,12 @@ MonoBehaviour:
   hose: {fileID: 5345899534362442577}
   reactions: {fileID: 0}
   nozzleAnchor: {fileID: 7131141991930230047}
+  hoseInletAnchor: {fileID: 0}
   range: 6.5
+  directionalSpray: 0
+  automaticSimulation: 1
+  groundHeight: 0
+  wallOcclusion: {fileID: 0}
 --- !u!1 &8083972437843624572
 GameObject:
   m_ObjectHideFlags: 0

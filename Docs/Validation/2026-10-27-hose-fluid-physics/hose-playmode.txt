@@ -1,0 +1,24 @@
+HOSE_PHYSICS_PLAYMODE_PASS
+Checks=22
+PASS ConfigurePhysics is available for physical hose fixtures
+PASS IsCableBlocked remains an inspect-only cable query
+PASS Actor connects source zero before the chord-wall test
+PASS Start chord is clear but the rightward target chord crosses the low wall
+PASS Enabled HoseView emits only cable segments clear of the wall
+PASS Motor cannot pull the hose through a wall even where the body path is clear
+PASS HoseView remains wall-clear while the physical tether is blocked
+PASS Disabling HoseView cannot disable the physical tether
+PASS Re-enabled HoseView resumes a clear cable without changing the tether
+PASS Disabling that wall releases movement but retains the 3m tether
+PASS Separate fixture connects before force and planar-length checks
+PASS UsedLength and constraint both use the root XZ measure regardless of height
+PASS Outward impulse is not stored at the tether boundary
+PASS Reversing immediately leaves the tether edge
+PASS Tangential movement remains available at the tether edge
+PASS Fixture connects a source before invalidation
+PASS Disabled source clears itself with no ghost constraint
+PASS A re-enabled source can reconnect
+PASS Destroyed source also clears the connection
+PASS Manual window routing selects the permitted aperture
+PASS The routed hose constraint permits its path through the aperture
+PASS The character controller still cannot pass through the presentation wall

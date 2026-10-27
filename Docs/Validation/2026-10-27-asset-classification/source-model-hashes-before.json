@@ -1,0 +1,86 @@
+[
+  {
+    "path": "ArtSource/PlayerWhitebox/Source.fbx",
+    "hash": "1171EC5F05F29731BEB0916A9591A3E4396C9AAFA476466AFA70EA78EB2A7147"
+  },
+  {
+    "path": "ArtSource/UserCharacters2/Resident2.blend",
+    "hash": "19668BB936B5418FED8D3159A8166A011D3A63A7BB9D046DFFE9D3EC8529B999"
+  },
+  {
+    "path": "ArtSource/UserCharacters2/Source.fbx",
+    "hash": "F58CE494C875D2738B251121945D69955D1584DC24F570A80C595BEF347C7C62"
+  },
+  {
+    "path": "ArtSource/RoleSwapRig/FirefighterRole2.blend",
+    "hash": "77FEBC6A7E457A2780A6E13BA139464C0E0E5485FA88200E87D6A66D108B2E69"
+  },
+  {
+    "path": "ArtSource/RoleSwapRig/ResidentRole1.blend",
+    "hash": "F1A1B06B30154F3E9009DCC4970B988B406D5F60A4A5A55227768ABE984D898E"
+  },
+  {
+    "path": "ArtSource/FireAxe/消防斧.blend",
+    "hash": "2D5B151C556CEDAED19F1BC50B1C4D8EBFE4F41D25C0938590C3F5635D58F4EF"
+  },
+  {
+    "path": "ArtSource/FireAxe/fire_axe.fbx",
+    "hash": "F0835F686A7CAA0C04B43BC4F6F65A549DD88F06695C9E6B7F67C8759B2AB409"
+  },
+  {
+    "path": "ArtSource/UserNozzle/source.blend",
+    "hash": "158D98C1380AA118DD0ABA11284F557CA032111BFF707B0F69DE36004ADA67B1"
+  },
+  {
+    "path": "ArtSource/LevelOne/第一關.blend",
+    "hash": "CAB169D02A78BC7AF1C7416B88591E382C4444C438F7DE659429730AD6993351"
+  },
+  {
+    "path": "ArtSource/Models/Bed.blend",
+    "hash": "56E143D79B023A79BEDC2217BB35C210DBEFC31FC7178103A02B35E9D4970B5C"
+  },
+  {
+    "path": "ArtSource/Models/Block.blend",
+    "hash": "4CFA4DD06999D6EC0538F3179A28BD66376230DD042CD896363BF22017605C63"
+  },
+  {
+    "path": "ArtSource/Models/CoffeeTable.blend",
+    "hash": "FAE9FD6A49BF63ED99E77DDAB82D5BFD37F49B8D88F824446905896F191C5740"
+  },
+  {
+    "path": "ArtSource/Models/Firefighter.blend",
+    "hash": "DA2AE0836083E1988F9133D409391FBCEEC5EDD578316237FA78D16632E80403"
+  },
+  {
+    "path": "ArtSource/Models/KitchenCounter.blend",
+    "hash": "0304726C36A2794CF3FC6E9307ABE17BB303E7AC5516511E81A9FEB11FDB3D7B"
+  },
+  {
+    "path": "ArtSource/Models/Nozzle.blend",
+    "hash": "879838119EEBC288B8AAC1ED97E201EFFB3E56D9E9AB39E2C03EFB0FED115A7D"
+  },
+  {
+    "path": "ArtSource/Models/Resident.blend",
+    "hash": "921264058031361A2E8FFC49F3BE31A9E2ECE4B5B600DCE5FE0E18D33B265A97"
+  },
+  {
+    "path": "ArtSource/Models/SaladOil.blend",
+    "hash": "F9366D9F5ED609F04672C37CC3286820693294AC23C6A92F61E63C9C065369BD"
+  },
+  {
+    "path": "ArtSource/Models/Shower.blend",
+    "hash": "66BC5D78D80D28C6F8FC97D77811DBFFFD3140EB3B2169FCBB1FCB4DD1AE9AEE"
+  },
+  {
+    "path": "ArtSource/Models/Sink.blend",
+    "hash": "EBBC73A282A08A1AA5FDCE21E4BB9A36380C83C7B1AE31DC82FEC5498B201B7C"
+  },
+  {
+    "path": "ArtSource/Models/Sofa.blend",
+    "hash": "2BB9215B8733EF0A456AF43468CAE2876FD65485ACB52BCF952783C50D369281"
+  },
+  {
+    "path": "ArtSource/Models/Toilet.blend",
+    "hash": "58E835165AAAE93813DAD0DFE6DF7D8122BD7769B6F329D2AD249C717AC3C63F"
+  }
+]

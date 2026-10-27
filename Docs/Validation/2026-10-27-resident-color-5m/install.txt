@@ -1,0 +1,4 @@
+RESIDENT_TUNING_INSTALL_PASS
+Unity 6000.5.0b9
+Armchairs exchanged with rotations preserved, spatial names corrected; Role1 palette only; 5m scene override.
+Save/reload/idempotence PASS. Core snapshot preserved except authored hose length.

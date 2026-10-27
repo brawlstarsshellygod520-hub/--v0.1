@@ -1,0 +1,31 @@
+HOSE_WRAP_PASS
+Checks=29
+PASS Connect on the source side of the wall
+PASS Walk reached (-1.00, 0.00, 1.60) actual=(-1.000, 0.080, 1.561) bends=0 used=2.361
+PASS Baseline direct-chord mode stops although the actor could walk past the wall tip
+PASS Walk reached (-1.00, 0.00, 1.60) actual=(-0.962, 0.080, 1.600) bends=0 used=2.400
+PASS Walk reached (1.00, 0.00, 1.60) actual=(0.962, 0.080, 1.600) bends=1 used=3.482
+PASS Walk reached (1.00, 0.00, 0.10) actual=(1.000, 0.080, 0.138) bends=1 used=4.339
+PASS Walking around wall retains contact bends and charges their extra length
+PASS Every authoritative segment clears the thick wall
+PASS White hose renders all wrapped legs without clipping or disappearing
+PASS Idle contact path remains stable
+PASS Wrapped polyline, not source straight distance, stops at 5m
+PASS Holding outward input cannot stretch cable or store outward velocity
+PASS Walk reached (1.00, 0.00, 1.60) actual=(1.038, 0.080, 1.600) bends=1 used=3.558
+PASS Walk reached (-1.00, 0.00, 1.60) actual=(-0.943, 0.080, 1.600) bends=0 used=2.401
+PASS Walk reached (-1.00, 0.00, 0.00) actual=(-1.000, 0.080, 0.039) bends=0 used=0.839
+PASS Retracing around the tip unwraps contacts without disconnecting
+PASS Disconnect clears all transient contact state
+PASS Reconnect begins with a clean direct hose
+PASS Source disable clears stale contacts
+PASS Pillar fixture connects
+PASS Walk reached (-1.00, 0.00, -0.80) actual=(-1.000, 0.080, -0.761) bends=0 used=0.039
+PASS Walk reached (0.65, 0.00, -0.80) actual=(0.596, 0.080, -0.800) bends=0 used=1.596
+PASS Walk reached (0.65, 0.00, 0.80) actual=(0.650, 0.080, 0.761) bends=1 used=2.633
+PASS Walk reached (-1.00, 0.00, 0.80) actual=(-0.946, 0.080, 0.800) bends=2 used=3.689
+PASS Pillar loop cannot shortcut through the solid inside its swept area
+PASS Walk reached (0.65, 0.00, 0.80) actual=(0.611, 0.080, 0.800) bends=1 used=2.673
+PASS Walk reached (0.65, 0.00, -0.80) actual=(0.650, 0.080, -0.761) bends=0 used=1.651
+PASS Walk reached (-1.00, 0.00, -0.80) actual=(-0.946, 0.080, -0.800) bends=0 used=0.054
+PASS Reverse traversal unwinds the pillar loop

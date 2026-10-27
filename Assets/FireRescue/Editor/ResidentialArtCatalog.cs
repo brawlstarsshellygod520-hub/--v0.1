@@ -9,8 +9,8 @@ namespace FireRescue.Editor
     // Authoring-only import/prefab setup. Gameplay components never load model assets.
     public static class ResidentialArtCatalog
     {
-        public const string ModelPath = "Assets/FireRescue/Art/Models/";
-        public const string PrefabPath = "Assets/FireRescue/Art/Prefabs/";
+        public const string ModelPath = "Assets/FireRescue/Art/AIGenerated/Models/";
+        public const string PrefabPath = "Assets/FireRescue/Art/AIGenerated/Prefabs/";
         public static readonly string[] Models = { "Firefighter", "Resident", "Toilet", "SaladOil",
             "Nozzle", "Sofa", "CoffeeTable", "Bed", "KitchenCounter", "Sink", "Shower", "Block" };
         static readonly Dictionary<string, Color> Palette = new Dictionary<string, Color>
@@ -30,7 +30,7 @@ namespace FireRescue.Editor
         public static void Prepare(string[] selectedModels = null)
         {
             Directory.CreateDirectory(PrefabPath);
-            Directory.CreateDirectory("Assets/FireRescue/Art/Materials");
+            Directory.CreateDirectory("Assets/FireRescue/Art/AIGenerated/Materials");
             AssetDatabase.Refresh();
             var report = new List<string>();
             foreach (string name in selectedModels ?? Models)
@@ -108,7 +108,7 @@ namespace FireRescue.Editor
 
         public static Material Material(string name, Color color)
         {
-            string path = "Assets/FireRescue/Art/Materials/" + name + ".mat";
+            string path = "Assets/FireRescue/Art/AIGenerated/Materials/" + name + ".mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (!mat) { mat = new Material(Shader.Find("Standard")); AssetDatabase.CreateAsset(mat, path); }
             mat.color = color;

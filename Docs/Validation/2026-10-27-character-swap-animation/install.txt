@@ -1,0 +1,4 @@
+CHARACTER_SWAP_INSTALL_PASS
+Unity 6000.5.0b9
+Player=Role2/1.6m; NPC=Role1/1.5m; Generic Idle/Walk; +Z front; feet Y0.
+Saved reload and idempotence PASS; gameplay/anchors/camera snapshot unchanged except explicit input policy.

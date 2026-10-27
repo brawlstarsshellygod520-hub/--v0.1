@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace FireRescue
@@ -17,7 +18,12 @@ namespace FireRescue
         [SerializeField] private FireKind kind = FireKind.Ordinary;
         [SerializeField, Min(0f)] private float initialIntensity = 1f;
         [SerializeField, Min(0f)] private float escapeHazardRadius = .7f;
+        // Optional exhibition rule. Existing ordinary/oil fires keep their previous behaviour.
+        [SerializeField, Min(0f)] private float waterGrowth;
+        [SerializeField, Min(1f)] private float maximumIntensity = 3f;
         private float intensity = 1f;
+        public float WaterApplied { get; private set; }
+        public event Action<float> OilContactedByWater;
 
         public FireKind Kind => kind;
         public float InitialIntensity => initialIntensity;
@@ -41,7 +47,11 @@ namespace FireRescue
             kind = fireKind;
             initialIntensity = PositiveFiniteOrZero(value);
             intensity = initialIntensity;
+            WaterApplied = 0f;
         }
+
+        public void ConfigureWaterEscalation(float growth, float cap)
+        { waterGrowth = PositiveFiniteOrZero(growth); maximumIntensity = Mathf.Max(initialIntensity, PositiveFiniteOrZero(cap)); }
 
         public void Ignite(float value = 1f)
         {
@@ -55,6 +65,11 @@ namespace FireRescue
 
             switch (element)
             {
+                case ElementKind.Water when kind == FireKind.CookingOil:
+                    WaterApplied += amount;
+                    if (waterGrowth > 0) intensity = Mathf.Min(maximumIntensity, intensity + amount * waterGrowth);
+                    OilContactedByWater?.Invoke(amount);
+                    break;
                 case ElementKind.DryPowder:
                     Reduce(amount);
                     break;

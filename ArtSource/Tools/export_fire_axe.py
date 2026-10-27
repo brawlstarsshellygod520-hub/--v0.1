@@ -17,7 +17,7 @@ from mathutils import Matrix, Vector
 
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "FireAxe"
+OUTPUT = ROOT / "UserProvided" / "FireAxe"
 INSPECTION = OUTPUT / "inspection.json"
 FBX = OUTPUT / "fire_axe.fbx"
 PREVIEW = OUTPUT / "preview.png"

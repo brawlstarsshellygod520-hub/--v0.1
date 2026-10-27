@@ -1,0 +1,16 @@
+RESIDENT_5M_PASS
+Checks=14
+PASS Two armchairs exchanged and now face inward without narrowing their footprints
+PASS Current Role1 resident uses the orange/yellow/skin/eye reference palette
+PASS Existing rig and Idle/Walk remain attached with no root motion
+PASS All ten original resident mesh parts remain visual-only
+PASS Actual tutorial player uses the saved 5m hose override
+PASS Existing camera presentation remains unchanged
+PASS Historical prefab/default contract remains 3m; only current scene is migrated
+PASS 5m fixture connects using the existing source API
+PASS Real CharacterController movement passes old 3m boundary and settles at 5m
+PASS Holding outward input cannot stretch the 5m cable or retain outward momentum
+PASS Walking back immediately releases the 5m boundary
+PASS Direct free-space cable constraint clamps to exactly 5m
+PASS 5m cable can still be explicitly routed through a nearby window
+PASS Window prefix and remaining cable share one 5m budget, not two 5m segments

@@ -1,0 +1,15 @@
+STARTUP_PASS
+Minimum actor y=0.1 frames=12906
+ReadDevices=True focused=False ground=True trigger=False bounds=Center: (0.00, -0.05, 0.00), Extents: (24.00, 0.15, 24.00)
+frame=1 dt=0.0543 rootY=0.1000 grounded=True hipsY=0.4362 visibleMinY=1.0750 floorHit=Ground hitY=0.1000
+frame=1130 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4640 visibleMinY=1.1027 floorHit=Ground hitY=0.1000
+frame=2196 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4608 visibleMinY=1.0995 floorHit=Ground hitY=0.1000
+frame=3282 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4580 visibleMinY=1.0968 floorHit=Ground hitY=0.1000
+frame=4392 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4608 visibleMinY=1.0996 floorHit=Ground hitY=0.1000
+frame=5430 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4640 visibleMinY=1.1028 floorHit=Ground hitY=0.1000
+frame=6475 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4616 visibleMinY=1.1004 floorHit=Ground hitY=0.1000
+frame=7537 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4581 visibleMinY=1.0969 floorHit=Ground hitY=0.1000
+frame=8634 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4600 visibleMinY=1.0988 floorHit=Ground hitY=0.1000
+frame=9696 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4638 visibleMinY=1.1025 floorHit=Ground hitY=0.1000
+frame=10794 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4624 visibleMinY=1.1012 floorHit=Ground hitY=0.1000
+frame=11891 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4584 visibleMinY=1.0972 floorHit=Ground hitY=0.1000

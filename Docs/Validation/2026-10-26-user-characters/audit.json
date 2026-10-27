@@ -1,0 +1,42 @@
+{
+  "baselineCount": 466,
+  "unchanged": 464,
+  "changed": [
+    "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "missing": [],
+  "new": [
+    "Assets/FireRescue/Art/UserCharacters2.meta",
+    "Assets/FireRescue/Art/Animations/UserResident2.controller",
+    "Assets/FireRescue/Art/Animations/UserResident2.controller.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Resident2.fbx",
+    "Assets/FireRescue/Art/UserCharacters2/Resident2.fbx.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Resident2.prefab",
+    "Assets/FireRescue/Art/UserCharacters2/Resident2.prefab.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Dark.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Dark.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Eye.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Eye.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Hair.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Hair.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Pants.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Pants.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Shirt.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Shirt.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Skin.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Skin.mat.meta",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Trim.mat",
+    "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Trim.mat.meta",
+    "Assets/FireRescue/Editor/UserCharacterPreview.cs",
+    "Assets/FireRescue/Editor/UserCharacterPreview.cs.meta",
+    "Assets/FireRescue/Editor/UserCharacterSetup.cs",
+    "Assets/FireRescue/Editor/UserCharacterSetup.cs.meta",
+    "Assets/FireRescue/Editor/UserCharacterValidation.cs",
+    "Assets/FireRescue/Editor/UserCharacterValidation.cs.meta"
+  ],
+  "missingMeta": [],
+  "sourceSha256": "F58CE494C875D2738B251121945D69955D1584DC24F570A80C595BEF347C7C62",
+  "sourceCopySha256": "F58CE494C875D2738B251121945D69955D1584DC24F570A80C595BEF347C7C62"
+}

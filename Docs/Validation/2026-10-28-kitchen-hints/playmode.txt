@@ -1,0 +1,106 @@
+KITCHEN_ITERATION_PASS
+Checks=72
+PASS Spawn is inside living room, not ambiguous exterior entrance
+PASS Only pot is initially on fire; no full-kitchen flame carpet
+PASS Within exactly two seconds the connected kitchen floor is fully ignited
+PASS Burning kitchen plus courtyard fences block the outdoor shortcut, not an invisible objective gate
+PASS Actual ignition front begins at pot and fills the kitchen, not a frame-zero flame carpet
+PASS Early rapid propagation transitions to slower spread
+PASS Water on burning oil never extinguishes it and triggers a burst
+PASS Nearby original pudding becomes scorched
+PASS Continuous spray cannot emit an explosion every particle/frame
+PASS Water extinguishes ordinary neighboring floor cells without deleting oil fire
+PASS Water can clear stove-side fire, but ongoing pot heat quickly relights it
+PASS Water leaves a traversable wet route outside the pot heat radius
+PASS After powder puts out the pot, neighboring fire stops being relit
+PASS Poison branch prerequisites are isolated from success walkthrough
+PASS Real burnt pudding transfers to original resident's hand
+PASS Bad meal blocks rescue and enters poisoning state
+PASS Resident's actual overhead reaction says 好難吃...
+PASS Complaint has a visible delay before death
+PASS Poisoned resident dies; failure never counts as a rescue
+PASS Original resident visual falls over without moving collider root
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Walking onto live floor fire kills player and closes tool/input gates
+PASS Reload resets deaths, food quality, burst and timer
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.45, 0.10, 2.65)
+PASS Separate right presses equip and connect authored toilet
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.60, 0.10, -3.45)
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Real player reached (-2.80, 0.10, -3.45)
+PASS Real ballistic water hits floor while deliberate aiming avoids pot explosion
+PASS Hose is shortened to 10m, not silently expanded to make the test pass
+PASS Water route alone cannot safely collect pudding while the pot keeps relighting nearby fire
+PASS Hose wall contacts retain fixed particle count and continuous visibility
+PASS Wall bends do not pop a new hard node or stretch the tube into long spans
+PASS Real player reached (-2.84, 0.10, -1.55)
+PASS Real player reached (-2.84, 0.10, -0.25)
+PASS Real player reached (-5.40, 0.10, 2.80)
+PASS Real player reached (-5.40, 0.10, 3.95)
+PASS Cleared route leads to storage powder connection
+PASS Real player reached (-5.40, 0.10, 2.80)
+PASS Real player reached (-2.84, 0.10, -0.25)
+PASS Real player reached (-2.84, 0.10, -1.55)
+PASS Real player reached (-3.65, 0.10, -2.00)
+PASS Actual powder extinguishes oil while pudding remains edible
+PASS Real player reached (-4.78, 0.10, -4.09)
+PASS Reachable pudding has the same gold outline and contextual E badge
+PASS E picks safe original pudding after clearing fire
+PASS Pickup outline and E disappear immediately when held
+PASS Real player reached (-1.45, 0.10, -3.00)
+PASS Real player reached (5.28, 0.10, -0.05)
+PASS Place pudding safely before using axe; no tool action while carrying
+PASS Existing axe still breaks door in exactly three hits
+PASS Original pudding can be picked up again after breaking door
+PASS Real player reached (5.28, 0.10, 1.65)
+PASS Real player reached (4.15, 0.10, 2.30)
+PASS Edible pudding reaches actual NPC hand before deadline
+PASS Real player reached (2.70, 0.10, 4.40)
+PASS Resident actually walks directly via the front door, never loops through the back yard
+PASS Safe route and real evacuation complete first level exactly once
+PASS Repeated completion observation never awards a second rescue
+PASS Invalid deadline deltas leave the timer unchanged
+PASS Exact timeout rejects late pudding delivery
+PASS 10m tension displays the contextual F disconnect warning
+PASS Backing away from tension removes warning
+PASS Actual pointer F disconnects even beside a different source; warning disappears
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.45, 0.10, 2.65)
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Real player reached (-3.90, 0.10, -3.46)
+PASS Actual swept water packets hit authored pot and scorch pudding, not just direct Receive tests
+SPREAD counts start=13 fast=179 later=179 rates=0.4 -> 0.035
+WALK (-1.45, 0.10, -3.45) actual=(-1.376, 0.125, -3.455) remaining=55.81673 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.483, 0.125, 0.140) remaining=58.70002 cells=149 dead=False hose=0
+WALK (0.45, 0.10, 2.65) actual=(0.451, 0.125, 2.583) remaining=57.95003 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.276) remaining=57.16671 cells=179 dead=False hose=3.777729
+WALK (0.60, 0.10, -3.45) actual=(0.597, 0.125, -3.385) remaining=56.08339 cells=179 dead=False hose=7.411105
+WALK (-1.45, 0.10, -3.45) actual=(-1.384, 0.125, -3.448) remaining=51.91679 cells=163 dead=False hose=7.991349
+WALK (-2.80, 0.10, -3.45) actual=(-2.727, 0.125, -3.450) remaining=47.93352 cells=129 dead=False hose=8.840816
+WATER floorAmount=21.75002 cells=179 -> 97 pot=1
+HOSE max material node displacement=0.1290567 longest=0.1093102
+WALK (-2.84, 0.10, -1.55) actual=(-2.836, 0.125, -1.625) remaining=43.80025 cells=98 dead=False hose=0
+WALK (-2.84, 0.10, -0.25) actual=(-2.840, 0.125, -0.328) remaining=43.38359 cells=98 dead=False hose=0
+WALK (-5.40, 0.10, 2.80) actual=(-5.354, 0.125, 2.744) remaining=42.21694 cells=107 dead=False hose=0
+WALK (-5.40, 0.10, 3.95) actual=(-5.398, 0.125, 3.878) remaining=41.83361 cells=109 dead=False hose=0
+WALK (-5.40, 0.10, 2.80) actual=(-5.400, 0.125, 2.866) remaining=41.43362 cells=109 dead=False hose=2.329098
+WALK (-2.84, 0.10, -0.25) actual=(-2.888, 0.125, -0.192) remaining=40.26697 cells=110 dead=False hose=6.133387
+WALK (-2.84, 0.10, -1.55) actual=(-2.842, 0.125, -1.473) remaining=39.85031 cells=110 dead=False hose=7.228924
+WALK (-3.65, 0.10, -2.00) actual=(-3.584, 0.125, -1.958) remaining=35.10038 cells=75 dead=False hose=8.07318
+POWDER pot=0 cells=25 player=(-3.60, 0.12, -1.97)
+WALK (-4.78, 0.10, -4.09) actual=(-4.744, 0.125, -4.026) remaining=24.08388 cells=25 dead=False hose=0
+WALK (-1.45, 0.10, -3.00) actual=(-1.516, 0.125, -3.021) remaining=23.05056 cells=25 dead=False hose=0
+WALK (5.28, 0.10, -0.05) actual=(5.210, 0.125, -0.081) remaining=20.9506 cells=25 dead=False hose=0
+WALK (5.28, 0.10, 1.65) actual=(5.277, 0.125, 1.574) remaining=19.03396 cells=25 dead=False hose=0
+WALK (4.15, 0.10, 2.30) actual=(4.215, 0.125, 2.260) remaining=18.6173 cells=25 dead=False hose=0
+WALK (2.70, 0.10, 4.40) actual=(2.726, 0.125, 4.328) remaining=18.60063 cells=25 dead=False hose=0
+NPC distance=10.39256 maxZ=3
+WALK (0.45, 0.10, 0.20) actual=(0.483, 0.125, 0.140) remaining=58.70002 cells=149 dead=False hose=0
+WALK (0.45, 0.10, 2.65) actual=(0.451, 0.125, 2.583) remaining=57.95003 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.276) remaining=57.16671 cells=179 dead=False hose=3.777729
+WALK (-1.45, 0.10, -3.45) actual=(-1.415, 0.125, -3.382) remaining=55.96673 cells=179 dead=False hose=7.785657
+WALK (-3.90, 0.10, -3.46) actual=(-3.822, 0.125, -3.458) remaining=55.23341 cells=28 dead=False hose=9.504498
+Commands + real controllers and swept fluid. No manual input acceptance.

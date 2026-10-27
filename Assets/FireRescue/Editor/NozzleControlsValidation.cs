@@ -236,29 +236,33 @@ namespace FireRescue.Editor
             fixture.wall.SetActive(true);
             Pointer(fixture, aim);
             yield return null;
-            Check(fixture.input.NearbySource == null && !fixture.ring.enabled && !fixture.hose.TryConnect(fixture.near),
-                "A layer-8 wall blocks the candidate, hides its proximity ring, and prevents connection.");
+            Check(fixture.input.NearbySource == null && !fixture.highlight.HasVisibleOutline && !fixture.hose.TryConnect(fixture.near),
+                "A layer-8 wall blocks the candidate, hides its object outline, and prevents connection.");
             fixture.wall.SetActive(false);
             fixture.near.transform.position = fixture.player.transform.position + Vector3.forward * 2.1f;
             Physics.SyncTransforms();
             Pointer(fixture, aim);
             yield return null;
-            Check(fixture.input.NearbySource == null && !fixture.ring.enabled,
-                "An out-of-range source has no proximity ring and cannot become NearbySource.");
+            Check(fixture.input.NearbySource == null && !fixture.highlight.HasVisibleOutline,
+                "An out-of-range source has no object outline and cannot become NearbySource.");
             fixture.near.transform.position = fixture.player.transform.position + Vector3.forward * .9f;
             fixture.far.transform.position = fixture.player.transform.position + Vector3.forward * 1.5f;
             Physics.SyncTransforms();
             Pointer(fixture, aim);
             yield return null;
-            Check(fixture.input.NearbySource == fixture.near && fixture.ring.enabled && Similar(fixture.ring.startColor, new Color(1f, .72f, .12f)),
-                "The closest reachable source alone owns the Gold proximity ring.");
+            Check(fixture.input.NearbySource == fixture.near && fixture.highlight.CurrentSource == fixture.near &&
+                fixture.highlight.HasVisibleOutline && OutlineColor(fixture.near, new Color(1f, .72f, .12f)),
+                "The closest reachable source alone owns the Gold object outline.");
+            Check(fixture.hose.TryConnect(fixture.near), "Direct fixture connection keeps the source API independent of its outline.");
+            Pointer(fixture, aim);
+            yield return null;
+            Check(fixture.highlight.HasVisibleOutline && OutlineColor(fixture.near, new Color(.15f, .65f, 1f)),
+                "A connected candidate object outline is Blue while its Visual is present.");
             fixture.near.transform.Find("Visual").gameObject.SetActive(false);
             Pointer(fixture, aim, hosePressed: true, hoseHeld: true);
-            Pointer(fixture, aim);
-            Pointer(fixture, aim, hosePressed: true, hoseHeld: true);
             yield return null;
-            Check(fixture.hose.Source == fixture.near && fixture.emitter.IsSpraying && Similar(fixture.ring.startColor, new Color(.15f, .65f, 1f)),
-                "Disabled source Visual does not block connection or spray, and a connected candidate ring is Blue.");
+            Check(fixture.hose.Source == fixture.near && fixture.emitter.IsSpraying && !fixture.highlight.HasVisibleOutline,
+                "Disabled source Visual does not block connection or spray, while its presentation outline is hidden.");
             yield return null;
             Check(Vector3.Distance(fixture.hoseLine.GetPosition(0), fixture.near.Port) < .001f &&
                 Vector3.Distance(fixture.hoseLine.GetPosition(fixture.hoseLine.positionCount - 1), fixture.emitter.HoseInletPosition) < .001f,
@@ -294,8 +298,9 @@ namespace FireRescue.Editor
             Transform userNozzle = nozzleMount ? nozzleMount.Find("User Nozzle Model") : null;
             Transform oldNozzle = visual ? visual.Find("Nozzle Model") : null;
             Transform axePivot = visual ? visual.Find("Axe Pivot") : null;
+            SourceHighlightView sourceOutline = visual ? visual.GetComponent<SourceHighlightView>() : null;
             HoseWindow westWindow = layout ? layout.GetComponentsInChildren<HoseWindow>(true).FirstOrDefault() : null;
-            Check(layout && player && input && motor && tools && hose && emitter && camera && water && visual && nozzleMount && userNozzle && oldNozzle && axePivot && westWindow,
+            Check(layout && player && input && motor && tools && hose && emitter && camera && water && visual && sourceOutline && nozzleMount && userNozzle && oldNozzle && axePivot && westWindow,
                 "Residential scene contains the real pointer stack, water source, nozzle mount/model, and window route fixture.");
             Check(userNozzle.GetComponentsInChildren<Collider>(true).Length == 0 && !oldNozzle.gameObject.activeSelf,
                 "User nozzle model is presentation-only and the original nozzle model remains disabled as backup.");
@@ -358,10 +363,9 @@ namespace FireRescue.Editor
 
             yield return WalkAgainstHoseLimit(input, motor, camera, new Vector3(-7f, 0f, 2f), "Walk into the 3m hose limit in clear bathroom space");
             yield return null;
-            LineRenderer sourceRing = visual.GetComponentsInChildren<LineRenderer>(true).FirstOrDefault(line => line.name == "Source proximity ring");
             Check(Mathf.Abs(hose.UsedLength - 3f) < .08f && motor.transform.position.x < -6.1f && motor.transform.position.x > -6.35f &&
-                input.NearbySource == null && sourceRing && !sourceRing.enabled,
-                "The 3m hose circle stops before the west wall and leaving 2m hides the source ring.");
+                input.NearbySource == null && !sourceOutline.HasVisibleOutline,
+                "The 3m hose limit stops before the west wall and leaving 2m hides the source outline.");
 
             LineRenderer hoseLine = visual.GetComponentsInChildren<LineRenderer>(true).FirstOrDefault(line => line.name == "Hose tube");
             Check(hoseLine && hoseLine.enabled && hoseLine.startColor == Color.white &&
@@ -460,7 +464,7 @@ namespace FireRescue.Editor
             return new Fixture
             {
                 player = player, input = input, hose = hose, emitter = emitter, tools = tools, near = near, far = far, wall = wall,
-                window = window, ring = visual.Find("Source proximity ring").GetComponent<LineRenderer>(),
+                window = window, highlight = highlight,
                 hoseLine = visual.Find("Hose tube").GetComponent<LineRenderer>()
             };
         }
@@ -472,8 +476,26 @@ namespace FireRescue.Editor
             Transform outlet = Child(root.transform, "Outlet", Vector3.up * .55f);
             Transform interaction = Child(root.transform, "Interaction");
             source.SetOutlet(outlet); source.SetInteractionPoint(interaction);
-            Child(root.transform, "Visual");
+            Transform visual = Child(root.transform, "Visual");
+            Shape(visual, "Source body", PrimitiveType.Cube, new Vector3(0, .22f, 0), new Vector3(.28f, .42f, .22f));
+            Shape(visual, "Source cap", PrimitiveType.Cylinder, new Vector3(0, .49f, 0), new Vector3(.12f, .1f, .12f));
             return source;
+        }
+
+        static void Shape(Transform parent, string name, PrimitiveType type, Vector3 position, Vector3 scale)
+        {
+            GameObject shape = GameObject.CreatePrimitive(type); shape.name = name;
+            shape.transform.SetParent(parent, false); shape.transform.localPosition = position; shape.transform.localScale = scale;
+            Destroy(shape.GetComponent<Collider>());
+        }
+
+        static bool OutlineColor(FluidSource source, Color expected)
+        {
+            Transform visual = source ? source.transform.Find("Visual") : null;
+            if (!visual) return false;
+            Renderer[] outlines = visual.GetComponentsInChildren<Renderer>(true)
+                .Where(renderer => renderer.name.EndsWith(" outline", StringComparison.Ordinal)).ToArray();
+            return outlines.Length > 0 && outlines.All(renderer => renderer.enabled && renderer.sharedMaterial && Similar(renderer.sharedMaterial.color, expected));
         }
 
         static Transform Child(Transform parent, string name, Vector3 position = default)
@@ -528,7 +550,7 @@ namespace FireRescue.Editor
             public FluidSource far;
             public GameObject wall;
             public HoseWindow window;
-            public LineRenderer ring;
+            public SourceHighlightView highlight;
             public LineRenderer hoseLine;
         }
     }

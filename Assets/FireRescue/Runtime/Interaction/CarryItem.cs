@@ -1,0 +1,47 @@
+using UnityEngine;
+
+namespace FireRescue
+{
+    // Item identity and ownership are independent from the replaceable Visual child.
+    public sealed class CarryItem : MonoBehaviour
+    {
+        [SerializeField] string itemId = "pudding";
+        [SerializeField] string displayName = "統一布丁";
+        [SerializeField] Collider[] itemColliders;
+        [SerializeField] CookingOilArea unsafeFire;
+        [SerializeField] FireField unsafeFloor;
+        public string ItemId => itemId;
+        public string DisplayName => displayName;
+        public bool IsHeld { get; private set; }
+        public bool IsDelivered { get; private set; }
+        public bool IsBurnt { get; private set; }
+        public bool IsSafeToTake=>(!unsafeFire||!unsafeFire.IsHot(transform.position))&&(!unsafeFloor||!unsafeFloor.IsBurningAt(transform.position,.85f));
+        public void SetFireHazard(CookingOilArea hazard)=>unsafeFire=hazard;
+        public void SetFloorHazard(FireField hazard)=>unsafeFloor=hazard;
+        public void Scorch()=>IsBurnt=true;
+        public void Initialize(Collider[] colliders) => itemColliders = colliders;
+        public bool Take(Transform anchor)
+        {
+            if (!isActiveAndEnabled || IsHeld || IsDelivered || !anchor || !IsSafeToTake) return false;
+            IsHeld = true; SetCollision(false); Attach(anchor); return true;
+        }
+        public void Drop(Vector3 position)
+        {
+            if (!IsHeld || IsDelivered) return;
+            IsHeld = false; transform.SetParent(null, true); transform.position = position; SetCollision(true);
+        }
+        public bool Deliver(Transform hand)
+        {
+            if (!IsHeld || IsDelivered || !hand) return false;
+            IsHeld = false; IsDelivered = true; SetCollision(false); Attach(hand); return true;
+        }
+        void Attach(Transform anchor)
+        {
+            // Imported FBX hand bones can carry a 100x unit conversion. Preserve world
+            // size when attaching instead of silently making the delivered cup enormous.
+            transform.SetParent(anchor, true); transform.localPosition = Vector3.zero; transform.localRotation = Quaternion.identity;
+        }
+        void SetCollision(bool value)
+        { if (itemColliders != null) foreach (var c in itemColliders) if (c) c.enabled = value; }
+    }
+}

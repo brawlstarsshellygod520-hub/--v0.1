@@ -1,0 +1,26 @@
+FIRST_RESCUE_FAIL
+InvalidOperationException: PASS One toilet source and unchanged 5m tether
+PASS No old grid pillars, furniture fire or duplicate fire authority
+PASS User character meshes/rigs retained
+PASS No missing active scripts
+PASS Authored bedroom door fire blocks the first resident before water
+PASS Walk reached (5.50, 0.10, -4.00)
+PASS Walk reached (3.00, 0.10, -2.00)
+PASS Walk reached (0.24, 0.10, 0.25)
+PASS Walk reached (0.24, 0.10, 1.05)
+PASS First right press equips only
+PASS Second right press connects real toilet and does not spray
+PASS Walk reached (0.24, 0.10, 0.15)
+PASS F at bathroom doorway sets explicit bend without a wall bypass
+PASS Walk reached (3.65, 0.10, -0.20)
+PASS Player pulled the actual hose beyond 3m and below 5m
+FAIL Physical flights hit surfaces and reduce real burning cells
+WALK (7.100, 0.100, -4.000) -> (5.500, 0.100, -4.000) actual=(5.589, 0.115, -4.000) frames=31 used=0 blocked=False
+WALK (5.573, 0.115, -4.000) -> (3.000, 0.100, -2.000) actual=(3.070, 0.115, -2.055) frames=51 used=0 blocked=False
+WALK (3.052, 0.115, -2.041) -> (0.240, 0.100, 0.250) actual=(0.309, 0.115, 0.194) frames=56 used=0 blocked=False
+WALK (0.294, 0.115, 0.206) -> (0.240, 0.100, 1.050) actual=(0.241, 0.119, 0.961) frames=15 used=0 blocked=False
+WALK (0.241, 0.115, 0.995) -> (0.240, 0.100, 0.150) actual=(0.240, 0.115, 0.239) frames=19 used=1.561111 blocked=False
+WALK (0.240, 0.115, 0.219) -> (3.650, 0.100, -0.200) actual=(3.562, 0.115, -0.190) frames=55 used=4.451767 blocked=False
+FireRescue.Editor.FirstRescue1026Driver.Check (System.Boolean v, System.String s) (at Assets/FireRescue/Editor/FirstRescue1026Validation.cs:31)
+FireRescue.Editor.FirstRescue1026Driver+<Run>d__16.MoveNext () (at Assets/FireRescue/Editor/FirstRescue1026Validation.cs:85)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

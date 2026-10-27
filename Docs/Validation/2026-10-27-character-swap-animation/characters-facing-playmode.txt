@@ -1,0 +1,46 @@
+CHARACTERS_FACING_PASS
+Checks=44
+PASS Current scene roles are Player=Role2 and Resident=Role1
+PASS Previous visuals are hidden intact backups
+PASS Presentation samples the unchanged gameplay actor: Player
+PASS Presentation samples the unchanged gameplay actor: Resident
+PASS 3m hose and both gameplay colliders preserved
+PASS Aligned wider fixed camera preserved
+PASS Role1: valid Generic bones, root motion disabled
+PASS Role1: all original mesh parts have valid skin bones
+PASS Role1: Idle and Walk loop clips imported
+PASS Role1: stationary actor starts Idle
+PASS Role1: Walk deforms supplied skin vertices
+PASS Role1: Idle contains subtle skin motion
+PASS Role1: Walk skin seam under 2.5cm
+PASS Role1: animation never moves actor root
+PASS Role1: resolved actor displacement enters Walk
+PASS Role1: stopping returns to Idle
+PASS Role1: disable resets animation speed
+PASS Role1: re-enable has no displacement spike
+PASS Role2: valid Generic bones, root motion disabled
+PASS Role2: all original mesh parts have valid skin bones
+PASS Role2: Idle and Walk loop clips imported
+PASS Role2: stationary actor starts Idle
+PASS Role2: Walk deforms supplied skin vertices
+PASS Role2: Idle contains subtle skin motion
+PASS Role2: Walk skin seam under 2.5cm
+PASS Role2: animation never moves actor root
+PASS Role2: resolved actor displacement enters Walk
+PASS Role2: stopping returns to Idle
+PASS Role2: disable resets animation speed
+PASS Role2: re-enable has no displacement spike
+PASS Walking faces screen-forward movement rather than the cursor
+PASS Walking left faces screen-left movement
+PASS Walking down faces screen-back movement
+PASS Walking right faces screen-right movement
+PASS Idle preserves the previous locomotion heading
+PASS Axe equip click does not cursor-aim or swing
+PASS Active axe stroke cursor-aims before its trace
+PASS Released axe stroke keeps cursor heading until it ends
+PASS Hose equip click follows movement rather than cursor aim
+PASS Hose connect click follows movement rather than cursor aim
+PASS Actual hose spray cursor-aims before its first directional packet
+PASS After spray stops, movement retakes facing ownership
+PASS Default compatibility mode retains legacy cursor point aim
+PASS Legacy TickCommand retains cursor aim even when tutorial facing is enabled

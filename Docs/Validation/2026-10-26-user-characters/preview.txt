@@ -1,0 +1,3 @@
+OFFSCREEN_UNITY_PREVIEW_PASS
+Direct3D11
+Actual imported prefab, external Standard materials and Generic clips. No UI control or scene save.

@@ -1,0 +1,9 @@
+FLUID_PHYSICS_BASELINE_PASS
+Checks=7
+PROBE Tap .01s delivered=0.075 expectedFlow=0.03 impacts=1
+PROBE 50ms delivered: 30Hz=0.225, 60Hz=0.225, expectedFlow=.15
+PROBE Five separated 10ms taps delivered=0.375 expectedFlow=.15
+PROBE 0.5s one Tick delivered=0.8249999 expectedFlow=1.5 impacts=11
+PROBE Source swap received water=0.075 oil=0.075
+PROBE 10s Tick active=11 capacity=256
+PROBE Nearest probe: near=0.225 far=0

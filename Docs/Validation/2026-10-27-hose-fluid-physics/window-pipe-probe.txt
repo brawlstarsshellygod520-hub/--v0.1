@@ -1,0 +1,7 @@
+WINDOW_PIPE_PROBE
+Port=(-3.3000, 0.9500, 3.1000) inlet=(-4.7012, 1.0602, 2.7583) root=(-5.2000, 0.0000, 3.6000) route=(-5.2000, 1.1500, 3.2000)
+Interior offset=0 prefixBlocked=False wall=none point=(-5.2000, 1.1500, 3.2000) local=(0.4000, 1.1500, 0.0000) suffixBlocked=False wall=none point=(-4.7012, 1.0602, 2.7583)
+Interior offset=0.2 prefixBlocked=False wall=none point=(-5.2000, 1.1500, 3.0000) local=(0.6000, 1.1500, 0.0000) suffixBlocked=False wall=none point=(-4.7012, 1.0602, 2.7583)
+Interior offset=0.35 prefixBlocked=False wall=none point=(-5.2000, 1.1500, 2.8500) local=(0.7500, 1.1500, 0.0000) suffixBlocked=False wall=none point=(-4.7012, 1.0602, 2.7583)
+Interior offset=0.4 prefixBlocked=False wall=none point=(-5.2000, 1.1500, 2.8000) local=(0.8000, 1.1500, 0.0000) suffixBlocked=False wall=none point=(-4.7012, 1.0602, 2.7583)
+Interior offset=0.5 prefixBlocked=False wall=none point=(-5.2000, 1.1500, 2.7000) local=(0.9000, 1.1500, 0.0000) suffixBlocked=False wall=none point=(-4.7012, 1.0602, 2.7583)

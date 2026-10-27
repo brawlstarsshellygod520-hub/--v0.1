@@ -10,8 +10,8 @@ import bpy
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL_DIR = ROOT / 'ArtSource' / 'Models'
-FBX_DIR = ROOT / 'Assets' / 'FireRescue' / 'Art' / 'Models'
+MODEL_DIR = ROOT / 'ArtSource' / 'AIGenerated' / 'Models'
+FBX_DIR = ROOT / 'Assets' / 'FireRescue' / 'Art' / 'AIGenerated' / 'Models'
 PALETTE = {
     'Skin': (.91, .65, .42), 'Uniform': (.9, .19, .08),
     'Reflector': (1.0, .78, .22), 'Helmet': (1.0, .68, .08),

@@ -1,0 +1,6 @@
+OPENING (0.24, 0.60, 0.82)
+Ray Toilet Water Source at (0.24, 0.60, 1.38)
+OPENING (5.27, 0.60, 0.82)
+OPENING (6.26, 0.60, -4.00)
+Ray DoorFrame at (6.26, 0.60, -4.47)
+Ray wall at (6.26, 0.60, -3.53)

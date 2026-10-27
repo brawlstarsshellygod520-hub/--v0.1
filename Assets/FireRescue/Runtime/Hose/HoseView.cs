@@ -10,10 +10,11 @@ namespace FireRescue
         LineRenderer stream;
         Material material;
         readonly Vector3[] points = new Vector3[18];
-        readonly Vector3[] routedPoints = new Vector3[36];
-        bool straightInitialized;
+        readonly Vector3[] routedPoints = new Vector3[18*(HoseConnection.MaximumPathPoints-1)];
         bool routedInitialized;
         HoseWindow routedWindow;
+        FluidSource drawnSource;
+        int drawnPathCount;
         public void Initialize(SprayEmitter spray) => emitter = spray;
 
         void Awake()
@@ -40,53 +41,60 @@ namespace FireRescue
         {
             bool connected = emitter && emitter.Connection && emitter.Connection.IsConnected;
             cable.enabled = connected;
-            stream.enabled = connected && emitter.IsSpraying;
+            // Directional particles have their own read-only view; never draw the old instant laser.
+            stream.enabled = connected && emitter.IsSpraying && !emitter.UsesDirectionalSpray;
             if (!connected)
             {
-                straightInitialized = false;
                 routedInitialized = false;
                 routedWindow = null;
+                drawnSource = null;
                 return;
             }
-            Vector3 start = emitter.Connection.Source.Port;
-            Vector3 end = emitter.HoseInletPosition;
-            float slack = Mathf.Clamp01(1 - emitter.Connection.UsedLength / emitter.Connection.MaximumLength);
-            HoseWindow window = emitter.Connection.ActiveWindow;
-            if (window)
+            if (drawnSource != emitter.Connection.Source)
             {
-                if (routedWindow != window)
-                {
-                    routedWindow = window;
-                    routedInitialized = false;
-                }
-                straightInitialized = false;
-                Vector3 route = window.RoutePosition;
-                FillSegment(routedPoints, start, route, 0, slack, routedInitialized, true);
-                FillSegment(routedPoints, route, end, points.Length, slack, routedInitialized, true);
-                // Route vertices are never interpolated: visual routing always passes the window.
-                routedPoints[0] = start;
-                routedPoints[points.Length - 1] = route;
-                routedPoints[points.Length] = route;
-                routedPoints[routedPoints.Length - 1] = end;
-                cable.positionCount = routedPoints.Length;
-                cable.SetPositions(routedPoints);
-                routedInitialized = true;
-            }
-            else
-            {
+                // A new source must not interpolate a cable across the old source's room.
+                drawnSource = emitter.Connection.Source;
                 routedInitialized = false;
                 routedWindow = null;
-                FillSegment(points, start, end, 0, slack, straightInitialized);
-                points[0] = start;
-                points[points.Length - 1] = end;
-                cable.positionCount = points.Length;
-                cable.SetPositions(points);
-                straightInitialized = true;
             }
+            float slack = Mathf.Clamp01(1 - emitter.Connection.UsedLength / emitter.Connection.MaximumLength);
+            HoseWindow window = emitter.Connection.ActiveWindow;
+            int count=emitter.Connection.PathPointCount;
+            bool smooth=routedInitialized && drawnPathCount==count && routedWindow==window;
+            bool clear=true;
+            for(int segment=0;segment<count-1;segment++)
+            {
+                Vector3 start=emitter.Connection.GetPathPoint(segment);
+                Vector3 end=segment==count-2?emitter.HoseInletPosition:emitter.Connection.GetPathPoint(segment+1);
+                int offset=segment*points.Length;
+                FillSegment(routedPoints,start,end,offset,slack,smooth,count>2);
+                // Contact nodes are authoritative and never interpolated through a wall.
+                routedPoints[offset]=start;routedPoints[offset+points.Length-1]=end;
+                clear &= KeepClear(routedPoints,offset,start,end);
+            }
+            cable.enabled=clear;cable.positionCount=(count-1)*points.Length;
+            for(int i=0;i<cable.positionCount;i++)cable.SetPosition(i,routedPoints[i]);
+            routedInitialized=true;drawnPathCount=count;routedWindow=window;
             Color fluid = emitter.Connection.Source.Element == ElementKind.Water ? new Color(.15f, .8f, 1) :
                 emitter.Connection.Source.Element == ElementKind.DryPowder ? new Color(.96f, .94f, .8f) : new Color(.3f, .2f, .08f);
             stream.startColor = stream.endColor = fluid;
             stream.SetPosition(0, emitter.NozzlePosition); stream.SetPosition(1, emitter.ImpactPoint);
+        }
+
+        bool KeepClear(Vector3[] destination, int offset, Vector3 start, Vector3 end)
+        {
+            var connection = emitter.Connection;
+            if (!connection.HasCollisionGeometry) return true;
+            for (int i = 1; i < points.Length; i++)
+            {
+                if (!connection.IsCableBlocked(destination[offset + i - 1], destination[offset + i])) continue;
+                // Slack/smoothing may clip a window sill or corner even when the route is valid.
+                // Pull this section straight rather than drawing through authored solid geometry.
+                for (int j = 0; j < points.Length; j++)
+                    destination[offset + j] = Vector3.Lerp(start, end, j / (float)(points.Length - 1));
+                return !connection.IsCableBlocked(start, end);
+            }
+            return true;
         }
 
         void FillSegment(Vector3[] destination, Vector3 start, Vector3 end, int offset, float slack, bool smooth, bool routed = false)
@@ -117,9 +125,9 @@ namespace FireRescue
         {
             if (cable) cable.enabled = false;
             if (stream) stream.enabled = false;
-            straightInitialized = false;
             routedInitialized = false;
             routedWindow = null;
+            drawnSource = null;
         }
 
         void OnDestroy() { if (material) Destroy(material); }

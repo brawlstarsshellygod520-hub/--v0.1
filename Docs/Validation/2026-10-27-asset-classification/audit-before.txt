@@ -1,0 +1,18 @@
+DELIVERY_AUDIT
+Scene=Assets/FireRescue/Scenes/TutorialGreybox.unity
+SceneHose=5
+PlayerPrefabHose=13
+EnabledBuildScenes=Assets/FireRescue/Scenes/ResidentialFire.unity
+Left armchair pos=(1.650, 0.000, -2.500) yaw=270
+Right armchair pos=(5.650, 0.000, -2.500) yaw=90
+NPC 圓形=R1_EyeBlack
+NPC 圓形.001=R1_BrowOrange
+NPC 球體=R1_HairOrange
+NPC 立方體=R1_Skin
+NPC 立方體.001=R1_HairOrange
+NPC 立方體.002=R1_ShirtPaleOrange
+NPC 立方體.003=R1_TrimLightYellow
+NPC 立方體.004=R1_TrimLightYellow
+NPC 立方體.005=R1_HairOrange
+NPC 立方體.006=R1_HairOrange
+ResidentPrefab=Assets/FireRescue/Art/RoleSwapRig/Role1.prefab colors=1

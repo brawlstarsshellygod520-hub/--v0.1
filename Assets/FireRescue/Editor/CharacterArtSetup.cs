@@ -11,7 +11,8 @@ namespace FireRescue.Editor
     // Updates only the two character visuals; never rebuilds the house or gameplay modules.
     public static class CharacterArtSetup
     {
-        const string AnimationPath = "Assets/FireRescue/Art/Animations/";
+        const string GeneratedAnimationPath = "Assets/FireRescue/Art/AIGenerated/Animations/";
+        const string UserResident2AnimationPath = "Assets/FireRescue/Art/UserProvided/Characters/Character2/Animations/";
 
         public static void ConfigureImport(ModelImporter importer)
         {
@@ -48,9 +49,9 @@ namespace FireRescue.Editor
                 .Where(clip => !clip.name.StartsWith("__preview__", StringComparison.Ordinal)).ToArray();
             var idle = clips.Single(clip => clip.name == "Idle");
             var run = clips.Single(clip => clip.name == "Run");
-            Directory.CreateDirectory(AnimationPath);
+            string path = (name == "UserResident2" ? UserResident2AnimationPath : GeneratedAnimationPath) + name + ".controller";
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
             AssetDatabase.Refresh();
-            string path = AnimationPath + name + ".controller";
             var controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(path);
             if (!controller) controller = AnimatorController.CreateAnimatorControllerAtPath(path);
             if (!controller.parameters.Any(p => p.name == "Speed")) controller.AddParameter("Speed", AnimatorControllerParameterType.Float);

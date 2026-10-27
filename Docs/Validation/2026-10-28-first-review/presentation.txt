@@ -1,0 +1,4 @@
+REVIEW_PRESENTATION_PASS
+Ground coverage at spawn: all 4 corners for 16:9 and 21:9.
+Only existing outdoor ground expanded to 48m; user house unchanged.
+Product title: 炎上消防隊. Missing component references: 0.

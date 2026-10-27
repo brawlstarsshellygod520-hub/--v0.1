@@ -1,0 +1,30 @@
+STARTUP_PASS
+Minimum actor y=0.1 real-input frames=12149
+ReadDevices=True focused=False ground=True trigger=False bounds=Center: (0.00, -0.05, 0.00), Extents: (24.00, 0.15, 24.00)
+frame=1 dt=0.0346 rootY=0.1250 grounded=True hipsY=0.4612 visibleMinY=1.1000 floorHit=Ground hitY=0.1000
+frame=1018 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4640 visibleMinY=1.1028 floorHit=Ground hitY=0.1000
+frame=1951 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4609 visibleMinY=1.0997 floorHit=Ground hitY=0.1000
+frame=2991 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4580 visibleMinY=1.0968 floorHit=Ground hitY=0.1000
+frame=4058 dt=0.0004 rootY=0.1250 grounded=True hipsY=0.4607 visibleMinY=1.0994 floorHit=Ground hitY=0.1000
+frame=5028 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4639 visibleMinY=1.1027 floorHit=Ground hitY=0.1000
+frame=5990 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4618 visibleMinY=1.1005 floorHit=Ground hitY=0.1000
+frame=7007 dt=0.0007 rootY=0.1250 grounded=True hipsY=0.4582 visibleMinY=1.0969 floorHit=Ground hitY=0.1000
+frame=8043 dt=0.0006 rootY=0.1250 grounded=True hipsY=0.4598 visibleMinY=1.0986 floorHit=Ground hitY=0.1000
+frame=9098 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4637 visibleMinY=1.1025 floorHit=Ground hitY=0.1000
+frame=10130 dt=0.0005 rootY=0.1250 grounded=True hipsY=0.4625 visibleMinY=1.1013 floorHit=Ground hitY=0.1000
+frame=11162 dt=0.0014 rootY=0.1250 grounded=True hipsY=0.4585 visibleMinY=1.0973 floorHit=Ground hitY=0.1000
+Idle dt=0.03333334 y=0.1249999 grounded=True
+Idle dt=0.01666667 y=0.1249999 grounded=True
+Idle dt=0.006944444 y=0.1249999 grounded=True
+Idle dt=0.1 y=0.1249999 grounded=True
+Idle dt=0.333 y=0.1249999 grounded=True
+Idle dt=1 y=0.1249993 grounded=True
+Door crossing dt=0.03333334 pos=(5.5699, 0.1250, -4.9000)
+Door crossing dt=0.03333334 pos=(7.0210, 0.1250, -4.9000)
+Door crossing dt=0.006944444 pos=(5.5879, 0.1250, -4.9000)
+Door crossing dt=0.006944444 pos=(7.0166, 0.1250, -4.9000)
+Door crossing dt=0.1 pos=(5.4893, 0.1250, -4.9000)
+Door crossing dt=0.1 pos=(7.1220, 0.1250, -4.9000)
+Door crossing dt=0.333 pos=(4.7244, 0.1250, -4.9000)
+Door crossing dt=0.333 pos=(7.1220, 0.1250, -4.9000)
+Requested tag text=好想吃布丁...

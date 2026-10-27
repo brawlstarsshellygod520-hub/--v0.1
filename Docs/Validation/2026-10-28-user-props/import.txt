@@ -1,0 +1,13 @@
+USER_PROPS_IMPORT_PASS
+Source SHA256=7f7c3bb7170a0787c79d2bc4e9a1c29425a1523a45db8c187e1524c295229504
+House geometry unchanged; source blend never saved by exporter.
+Toilet=(-0.65907, 0.12636, 3.88725)
+Soda=(-5.60250, 0.12647, 5.35217)
+Oil surface=(-5.79357, 1.31121, -3.46286)
+Pudding=(-5.83156, 1.02176, -4.08973)
+All 4 visuals use only authored geometry at original world positions; basic colors and Blender corner normals preserved. Water/oil downward faces corrected in derived mesh only.
+Excluded detached test objects: 立方體, 立方體.001. Existing old generated asset files retained; no longer used by active prop visuals.
+PASS Toilet Water Source meshes=4
+PASS Soda Powder Source meshes=1
+PASS Oil Pan Fire meshes=3
+PASS Pudding Item meshes=3

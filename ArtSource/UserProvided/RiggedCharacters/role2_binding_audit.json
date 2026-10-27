@@ -1,0 +1,69 @@
+{
+  "mesh_weights": [
+    {
+      "object": "圓形",
+      "vertices": 48,
+      "groups": {
+        "Head": 48
+      }
+    },
+    {
+      "object": "立方體",
+      "vertices": 145,
+      "groups": {
+        "Head": 145
+      }
+    },
+    {
+      "object": "立方體.001",
+      "vertices": 806,
+      "groups": {
+        "Chest": 86,
+        "Head": 331,
+        "L_Thigh": 24,
+        "R_Thigh": 16,
+        "Spine": 121,
+        "R_Hand": 72,
+        "R_Foot": 20,
+        "R_Shin": 14,
+        "R_UpperArm": 7,
+        "Hips": 2,
+        "L_Hand": 72,
+        "L_Foot": 20,
+        "L_Shin": 14,
+        "L_UpperArm": 7
+      }
+    },
+    {
+      "object": "立方體.002",
+      "vertices": 116,
+      "groups": {
+        "L_Thigh": 9,
+        "R_Thigh": 7,
+        "Chest": 36,
+        "Spine": 44,
+        "Hips": 8,
+        "R_UpperArm": 2,
+        "R_Hand": 4,
+        "L_UpperArm": 2,
+        "L_Hand": 4
+      }
+    },
+    {
+      "object": "立方體.003",
+      "vertices": 6,
+      "groups": {
+        "Spine": 6
+      }
+    },
+    {
+      "object": "立方體.004",
+      "vertices": 6,
+      "groups": {
+        "Hips": 4,
+        "R_Thigh": 1,
+        "L_Thigh": 1
+      }
+    }
+  ]
+}

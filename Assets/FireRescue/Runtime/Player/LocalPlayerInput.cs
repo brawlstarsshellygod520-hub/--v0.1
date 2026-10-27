@@ -13,6 +13,13 @@ namespace FireRescue
         [SerializeField] Camera view;
         [SerializeField] FluidSource[] sources;
         [SerializeField] HoseWindow[] hoseWindows;
+        // Opt-in for the tutorial: locomotion owns facing except while an actual tool action is active.
+        // False preserves existing point-aim scenes and scripted command callers.
+        [SerializeField] bool faceMovementWhenIdle;
+        [SerializeField] PlayerCarryInteraction carry;
+        [SerializeField] FirstReviewMission mission;
+        public void SetMissionInteraction(PlayerCarryInteraction interaction, FirstReviewMission state)
+        {carry=interaction;mission=state;}
         const float MinimumAimDistance = .75f;
         bool inputFocused = true;
         bool applicationPaused;
@@ -20,6 +27,11 @@ namespace FireRescue
         // Tests can submit commands directly without having Update read a physical keyboard or mouse.
         public bool ReadDevices { get; set; } = true;
         public FluidSource NearbySource { get; private set; }
+
+        public void SetLocomotionFacingDuringPointerInput(bool enabled)
+        {
+            faceMovementWhenIdle = enabled;
+        }
 
         // The survivors argument is retained for existing scene builders; NPCs now own their escape without input.
         public void Initialize(FirefighterMotor movement, HoseConnection connection, SprayEmitter spray,
@@ -35,6 +47,9 @@ namespace FireRescue
         void Update()
         {
             if (!ReadDevices) return;
+            if (mission && Input.GetKeyDown(KeyCode.R))
+            { mission.RestartRound(); return; }
+            if (mission && !mission.AllowsInput) { StopActions(); return; }
             if (!Application.isFocused)
             {
                 SetInputFocus(false);
@@ -42,6 +57,7 @@ namespace FireRescue
                 return;
             }
             inputFocused = true;
+            if(carry){carry.RefreshNearby();if(Input.GetKeyDown(KeyCode.E))carry.Interact();}
             Vector2 input = new Vector2((Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0),
                 (Input.GetKey(KeyCode.W) ? 1 : 0) - (Input.GetKey(KeyCode.S) ? 1 : 0));
             // Ground targeting makes spraying at burning floor patches easy in the angled view.
@@ -59,19 +75,22 @@ namespace FireRescue
                     Input.GetMouseButton(0),Time.deltaTime);
         }
 
-        // Raised targets (e.g. a pan on a counter) can be aimed at directly. Keep
-        // the established ground-plane aim everywhere else; walls still occlude selection.
+        // Directional mode projects the cursor onto nozzle height for a screen-readable heading.
+        // It never snaps to a receiver or uses cursor distance to control the trajectory.
+        // Historical scenes retain their ground/raised-target point aim.
         public Vector3 ResolveAimPoint(Vector2 screenPoint)
         {
             Vector3 target = transform.position + transform.forward * 4;
             if (!view) return target;
             Ray ray = view.ScreenPointToRay(screenPoint);
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f, ~((1 << 9) | (1 << 11)), QueryTriggerInteraction.Ignore))
+            if ((!emitter || !emitter.UsesDirectionalSpray) &&
+                Physics.Raycast(ray, out RaycastHit hit, 100f, ~((1 << 9) | (1 << 11)), QueryTriggerInteraction.Ignore))
             {
                 var receiver = hit.collider.GetComponentInParent<ElementReceiver>();
                 if (receiver && receiver.isActiveAndEnabled) return hit.point;
             }
-            if (new Plane(Vector3.up, Vector3.up * .04f).Raycast(ray, out float distance)) target = ray.GetPoint(distance);
+            float aimHeight = emitter && emitter.UsesDirectionalSpray ? emitter.NozzlePosition.y : .04f;
+            if (new Plane(Vector3.up, Vector3.up * aimHeight).Raycast(ray, out float distance)) target = ray.GetPoint(distance);
             return target;
         }
 
@@ -122,24 +141,37 @@ namespace FireRescue
         public void TickPointerCommand(Vector2 movement, Vector3 aimPoint, bool interact, bool calm,
             bool axePressed, bool axeHeld, bool hosePressed, bool hoseHeld, float dt)
         {
-            if (!isActiveAndEnabled || !inputFocused || applicationPaused || dt <= 0)
+            if (!isActiveAndEnabled || !inputFocused || applicationPaused || dt <= 0 || (mission && !mission.AllowsInput))
             {
                 StopActions();
                 return;
             }
-            RunCommand(movement, ref aimPoint, interact, hoseHeld, dt);
+            if(carry && carry.IsCarrying)
+            {
+                if(tools)tools.Stow();
+                // Carrying must not trap the player on a still-connected hose.
+                if(interact&&hose)hose.Disconnect();
+                RunCommand(movement,ref aimPoint,false,false,dt,true,false);
+                return;
+            }
+            // Establish action heading before the first axe trace or spray packet is produced.
+            bool actionAiming = tools && tools.WillPointerAimAtCursor(axePressed, axeHeld, hosePressed, hoseHeld);
+            RunCommand(movement, ref aimPoint, interact, hoseHeld, dt, true, actionAiming);
             if (tools) tools.TickPointer(aimPoint, axePressed, axeHeld, hosePressed, hoseHeld, NearbySource, dt);
             else if (emitter && emitter.isActiveAndEnabled) emitter.Tick(aimPoint, hoseHeld, dt);
         }
 
-        void RunCommand(Vector2 movement, ref Vector3 aimPoint, bool interact, bool sprayHeld, float dt)
+        void RunCommand(Vector2 movement, ref Vector3 aimPoint, bool interact, bool sprayHeld, float dt,
+            bool isPointerCommand = false, bool pointerActionAiming = false)
         {
             Vector3 planarAim = aimPoint - transform.position;
             planarAim.y = 0;
             if (planarAim.sqrMagnitude < MinimumAimDistance * MinimumAimDistance)
             {
                 float aimHeight = aimPoint.y;
-                aimPoint = transform.position + transform.forward * MinimumAimDistance;
+                Vector3 heading = emitter && emitter.UsesDirectionalSpray && planarAim.sqrMagnitude > .000001f
+                    ? planarAim.normalized : transform.forward;
+                aimPoint = transform.position + heading * MinimumAimDistance;
                 aimPoint.y = aimHeight;
             }
 
@@ -147,10 +179,27 @@ namespace FireRescue
             {
                 Vector3 direction = view ? ViewRelativeDirection(movement,view.transform) : Vector3.zero;
                 motor.Move(direction,dt);
-                // While using the hose, align the mesh/nozzle immediately rather than spraying during a turn.
-                motor.Face(aimPoint,dt,sprayHeld);
+                if (!isPointerCommand || !faceMovementWhenIdle)
+                {
+                    // Historical command paths retain point aim, including their immediate hose turn.
+                    motor.Face(aimPoint,dt,sprayHeld);
+                }
+                else if (pointerActionAiming)
+                {
+                    // Tool gameplay traces transform.forward, so action aim settles before TickPointer.
+                    motor.Face(aimPoint,dt,true);
+                }
+                else if (direction.sqrMagnitude > .0001f)
+                {
+                    // No input leaves the previous heading intact and avoids idle jitter.
+                    motor.Face(transform.position + direction,dt,false);
+                }
             }
-            if (interact && hose && hose.isActiveAndEnabled) hose.Interact(sources, hoseWindows);
+            if (interact && hose && hose.isActiveAndEnabled)
+            {
+                if(isPointerCommand)hose.Disconnect();
+                else hose.Interact(sources,hoseWindows); // Historical low-level window/interaction commands.
+            }
             NearbySource = hose && hose.isActiveAndEnabled ? hose.FindNearestSource(sources) : null;
         }
 

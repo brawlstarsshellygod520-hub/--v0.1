@@ -1,0 +1,496 @@
+using System;
+using UnityEngine;
+
+namespace FireRescue
+{
+    /// <summary>
+    /// Deterministic, floor-grid fire simulation. This component owns only gameplay state;
+    /// FireFieldView may be absent or disabled without changing fire, oil, or water behaviour.
+    /// </summary>
+    public sealed class FireField : MonoBehaviour
+    {
+        [Min(1)] public int Width = 12;
+        [Min(1)] public int Height = 12;
+        [Min(.1f)] public float CellSize = 1f;
+        public Vector3 Origin;
+
+        [SerializeField] private Vector2Int[] ignitionSeeds = { new Vector2Int(6, 6) };
+        [SerializeField] private Vector2Int[] nonFlammableCells = Array.Empty<Vector2Int>();
+        [SerializeField, Min(0f)] private float fuelBurnRate = .035f;
+        [SerializeField, Min(0f)] private float naturalIntensityLoss = .018f;
+        [SerializeField, Min(.01f)] private float fireSpreadRate = .032f;
+        [SerializeField, Min(1f)] private float oilSpreadMultiplier = 3f;
+        [SerializeField, Min(.01f)] private float oilBurnRate = .035f;
+        [SerializeField, Min(.01f)] private float oilFlameGain = .16f;
+        [SerializeField, Min(.01f)] private float wetnessDryRate = .3f;
+        [SerializeField, Min(.01f)] private float waterExtinguishRate = .45f;
+
+        private FireCellState[] cells = Array.Empty<FireCellState>();
+        private FireCellState[] nextCells = Array.Empty<FireCellState>();
+        private bool configured;
+
+        public bool Simulate { get; set; } = true;
+        public float SpreadRate => fireSpreadRate;
+        public void SetSpreadRate(float rate)
+        { if(IsFinite(rate)&&rate>=0)fireSpreadRate=rate; }
+        // Shared, model-independent contact query for actors and carried food.
+        public bool IsBurningAt(Vector3 world,float radius=0,Predicate<Vector3> canReach=null)
+        {
+            if(!IsFinite(world.x)||!IsFinite(world.y)||!IsFinite(world.z)||!IsFinite(radius)||radius<0)return false;
+            EnsureInitialized();
+            int x0=Mathf.Max(0,Mathf.FloorToInt((world.x-radius-Origin.x)/CellSize));
+            int x1=Mathf.Min(Width-1,Mathf.FloorToInt((world.x+radius-Origin.x)/CellSize));
+            int z0=Mathf.Max(0,Mathf.FloorToInt((world.z-radius-Origin.z)/CellSize));
+            int z1=Mathf.Min(Height-1,Mathf.FloorToInt((world.z+radius-Origin.z)/CellSize));
+            for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)
+            {
+                if(!cells[Index(x,z)].IsBurning)continue;
+                Vector3 c=CellCenter(x,z);float dx=Mathf.Max(0,Mathf.Abs(c.x-world.x)-CellSize*.5f),dz=Mathf.Max(0,Mathf.Abs(c.z-world.z)-CellSize*.5f);
+                if(dx*dx+dz*dz<=radius*radius&&(canReach==null||canReach(c)))return true;
+            }
+            return false;
+        }
+
+        public int BurningCount
+        {
+            get
+            {
+                EnsureInitialized();
+                var count = 0;
+                for (var i = 0; i < cells.Length; i++)
+                {
+                    if (cells[i].IsBurning)
+                        count++;
+                }
+
+                return count;
+            }
+        }
+
+        private void Awake()
+        {
+            ResetSimulation();
+        }
+
+        private void Update()
+        {
+            if (Simulate)
+                Step(Time.deltaTime);
+        }
+
+        /// <summary>Sets a rectangular grid whose Origin is its minimum X/Z corner.</summary>
+        public void Configure(Vector3 origin, int width, int height, float cellSize)
+        {
+            Origin = origin;
+            Width = Mathf.Max(1, width);
+            Height = Mathf.Max(1, height);
+            CellSize = Mathf.Max(.1f, cellSize);
+            configured = true;
+            ResetSimulation();
+        }
+
+        /// <summary>Replaces the authored ignition points used by ResetSimulation.</summary>
+        public void SetIgnitionSeeds(Vector2Int[] seeds)
+        {
+            ignitionSeeds = seeds == null ? Array.Empty<Vector2Int>() : (Vector2Int[])seeds.Clone();
+        }
+
+        /// <summary>
+        /// Marks cells such as exterior paving and walls as non-flammable. The new authoring
+        /// layout is applied immediately by resetting the simulation.
+        /// </summary>
+        public void SetNonFlammableCells(Vector2Int[] cellsToDisable)
+        {
+            nonFlammableCells = cellsToDisable == null
+                ? Array.Empty<Vector2Int>()
+                : (Vector2Int[])cellsToDisable.Clone();
+            ResetSimulation();
+        }
+
+        public void ResetSimulation()
+        {
+            Width = Mathf.Max(1, Width);
+            Height = Mathf.Max(1, Height);
+            CellSize = Mathf.Max(.1f, CellSize);
+            EnsureGrid();
+
+            for (var i = 0; i < cells.Length; i++)
+                cells[i] = new FireCellState { Fuel = 1f };
+
+            for (var i = 0; i < nonFlammableCells.Length; i++)
+            {
+                var cell = nonFlammableCells[i];
+                if (InBounds(cell.x, cell.y))
+                    cells[Index(cell.x, cell.y)].Fuel = 0f;
+            }
+
+            for (var i = 0; i < ignitionSeeds.Length; i++)
+            {
+                var seed = ignitionSeeds[i];
+                if (InBounds(seed.x, seed.y) && cells[Index(seed.x, seed.y)].Fuel > 0f)
+                    cells[Index(seed.x, seed.y)].Intensity = .7f;
+            }
+        }
+
+        public FireCellState GetCell(int x, int z)
+        {
+            EnsureInitialized();
+            return InBounds(x, z) ? cells[Index(x, z)] : default;
+        }
+
+        public bool TryGetCell(Vector3 world, out Vector2Int cell)
+        {
+            var x = Mathf.FloorToInt((world.x - Origin.x) / CellSize);
+            var z = Mathf.FloorToInt((world.z - Origin.z) / CellSize);
+            cell = new Vector2Int(x, z);
+            return InBounds(x, z);
+        }
+
+        public Vector3 CellCenter(int x, int z)
+        {
+            return new Vector3(Origin.x + (x + .5f) * CellSize, Origin.y, Origin.z + (z + .5f) * CellSize);
+        }
+
+        public bool IsSafe(Vector2Int cell)
+        {
+            EnsureInitialized();
+            return InBounds(cell.x, cell.y) && !cells[Index(cell.x, cell.y)].IsBurning;
+        }
+
+        public float GetOilAt(Vector3 world)
+        {
+            EnsureInitialized();
+            return TryGetCell(world, out var cell) ? cells[Index(cell.x, cell.y)].Oil : 0f;
+        }
+
+        public void ApplyWater(Vector3 world, float amount, float radius = .7f)
+            => ApplyWater(world, amount, radius, null);
+
+        /// <summary>
+        /// The reaction layer may filter reachable cells. The grid itself has no dependency
+        /// on physics or presentation, and direct simulation callers retain the original API.
+        /// </summary>
+        public void ApplyWater(Vector3 world, float amount, float radius, Predicate<Vector3> canReach)
+            => ApplySuppressant(world, amount, radius, canReach, waterExtinguishRate, true);
+
+        /// <summary>
+        /// Suppresses fire and keeps the resulting wetness until its per-cell timer expires.
+        /// Reapplication uses the larger of the current and incoming remaining durations.
+        /// </summary>
+        public void ApplyTimedWater(Vector3 world, float amount, float radius, float duration, Predicate<Vector3> canReach = null)
+            => ApplyTimedWater(world, amount, radius, duration, 1f, 1f, canReach);
+
+        public void ApplyTimedWater(Vector3 world, float amount, float radius, float duration,
+            float extinguishMultiplier, float residueMultiplier, Predicate<Vector3> canReach = null)
+        {
+            if (!HasValidTimedInput(world, amount, radius, duration) || !ValidMultipliers(extinguishMultiplier, residueMultiplier))
+                return;
+
+            ApplyTimedSuppressant(world, amount, radius, canReach, waterExtinguishRate, duration, true, extinguishMultiplier, residueMultiplier);
+        }
+
+        // Powder suppresses ordinary floor fire without creating water or oil patches.
+        public void ApplyDryPowder(Vector3 world, float amount, float radius = .7f, Predicate<Vector3> canReach = null)
+            => ApplySuppressant(world, amount, radius, canReach, .5f, false);
+
+        /// <summary>
+        /// Suppresses fire once and leaves visual-only powder residue until its per-cell timer expires.
+        /// Reapplication uses the larger of the current and incoming remaining durations.
+        /// </summary>
+        public void ApplyTimedDryPowder(Vector3 world, float amount, float radius, float duration, Predicate<Vector3> canReach = null)
+            => ApplyTimedDryPowder(world, amount, radius, duration, 1f, 1f, canReach);
+
+        public void ApplyTimedDryPowder(Vector3 world, float amount, float radius, float duration,
+            float extinguishMultiplier, float residueMultiplier, Predicate<Vector3> canReach = null)
+        {
+            if (!HasValidTimedInput(world, amount, radius, duration) || !ValidMultipliers(extinguishMultiplier, residueMultiplier))
+                return;
+
+            ApplyTimedSuppressant(world, amount, radius, canReach, .5f, duration, false, extinguishMultiplier, residueMultiplier);
+        }
+
+        void ApplySuppressant(Vector3 world, float amount, float radius, Predicate<Vector3> canReach, float rate, bool wet)
+        {
+            if (amount <= 0f || float.IsNaN(amount) || float.IsInfinity(amount) || radius < 0f)
+                return;
+
+            EnsureInitialized();
+            int minX = Mathf.Max(0, Mathf.CeilToInt((world.x - radius - Origin.x) / CellSize - .5f));
+            int maxX = Mathf.Min(Width - 1, Mathf.FloorToInt((world.x + radius - Origin.x) / CellSize - .5f));
+            int minZ = Mathf.Max(0, Mathf.CeilToInt((world.z - radius - Origin.z) / CellSize - .5f));
+            int maxZ = Mathf.Min(Height - 1, Mathf.FloorToInt((world.z + radius - Origin.z) / CellSize - .5f));
+            // Check only the small splash neighbourhood; avoid a per-spray closure allocation.
+            for (int z = minZ; z <= maxZ; z++)
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector3 center = CellCenter(x, z);
+                float dx = center.x - world.x, dz = center.z - world.z;
+                if (dx * dx + dz * dz > radius * radius || (canReach != null && !canReach(center))) continue;
+                int index = Index(x, z);
+                var state = cells[index];
+                state.Intensity = Mathf.Max(0f, state.Intensity - amount * rate);
+                if (wet) state.Wetness = Mathf.Clamp01(state.Wetness + amount * .8f);
+                cells[index] = state;
+            }
+        }
+
+        private void ApplyTimedSuppressant(Vector3 world, float amount, float radius, Predicate<Vector3> canReach,
+            float rate, float duration, bool wet, float extinguishMultiplier, float residueMultiplier)
+        {
+            EnsureInitialized();
+            bool hasHitCell = TryGetCell(world, out var hitCell);
+            int minX = Mathf.Max(0, Mathf.FloorToInt((world.x - radius - Origin.x) / CellSize));
+            int maxX = Mathf.Min(Width - 1, Mathf.FloorToInt((world.x + radius - Origin.x) / CellSize));
+            int minZ = Mathf.Max(0, Mathf.FloorToInt((world.z - radius - Origin.z) / CellSize));
+            int maxZ = Mathf.Min(Height - 1, Mathf.FloorToInt((world.z + radius - Origin.z) / CellSize));
+            float radiusSquared = radius * radius;
+            for (int z = minZ; z <= maxZ; z++)
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector3 center = CellCenter(x, z);
+                float dx = center.x - world.x, dz = center.z - world.z;
+                bool isHitCell = hasHitCell && hitCell.x == x && hitCell.y == z;
+                if ((!isHitCell && dx * dx + dz * dz > radiusSquared) || (canReach != null && !canReach(center)))
+                    continue;
+
+                int index = Index(x, z);
+                var state = cells[index];
+                state.Intensity = Mathf.Max(0f, state.Intensity - amount * rate * extinguishMultiplier);
+                if (wet && duration > 0f && residueMultiplier > 0f)
+                {
+                    state.Wetness = Mathf.Clamp01(state.Wetness + amount * .8f * residueMultiplier);
+                    state.WaterRemaining = Mathf.Max(state.WaterRemaining, duration);
+                }
+                else if (!wet && duration > 0f && residueMultiplier > 0f)
+                {
+                    state.Powder = Mathf.Clamp01(state.Powder + amount * residueMultiplier);
+                    state.PowderRemaining = Mathf.Max(state.PowderRemaining, duration);
+                }
+                cells[index] = state;
+            }
+        }
+
+        public void ApplyOil(Vector3 world, float amount, float radius = .7f)
+        {
+            if (amount <= 0f || radius < 0f)
+                return;
+
+            EnsureInitialized();
+            ForCellsInRadius(world, radius, (index, _) =>
+            {
+                var state = cells[index];
+                state.Oil = Mathf.Clamp01(state.Oil + amount);
+                cells[index] = state;
+            });
+        }
+
+        /// <summary>
+        /// Adds oil that remains flammable until its per-cell timer expires or it burns away.
+        /// Reapplication uses the larger of the current and incoming remaining durations.
+        /// </summary>
+        public void ApplyTimedOil(Vector3 world, float amount, float radius, float duration, Predicate<Vector3> canReach = null)
+        {
+            if (!HasValidTimedInput(world, amount, radius, duration) || duration <= 0f)
+                return;
+
+            EnsureInitialized();
+            bool hasHitCell = TryGetCell(world, out var hitCell);
+            int minX = Mathf.Max(0, Mathf.FloorToInt((world.x - radius - Origin.x) / CellSize));
+            int maxX = Mathf.Min(Width - 1, Mathf.FloorToInt((world.x + radius - Origin.x) / CellSize));
+            int minZ = Mathf.Max(0, Mathf.FloorToInt((world.z - radius - Origin.z) / CellSize));
+            int maxZ = Mathf.Min(Height - 1, Mathf.FloorToInt((world.z + radius - Origin.z) / CellSize));
+            float radiusSquared = radius * radius;
+            for (int z = minZ; z <= maxZ; z++)
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector3 center = CellCenter(x, z);
+                float dx = center.x - world.x, dz = center.z - world.z;
+                bool isHitCell = hasHitCell && hitCell.x == x && hitCell.y == z;
+                if ((!isHitCell && dx * dx + dz * dz > radiusSquared) || (canReach != null && !canReach(center)))
+                    continue;
+
+                int index = Index(x, z);
+                var state = cells[index];
+                state.Oil = Mathf.Clamp01(state.Oil + amount);
+                state.OilRemaining = Mathf.Max(state.OilRemaining, duration);
+                cells[index] = state;
+            }
+        }
+
+        public void Ignite(Vector3 world, float intensity = .7f)
+        {
+            if (intensity <= 0f || !TryGetCell(world, out var cell))
+                return;
+
+            EnsureInitialized();
+            var index = Index(cell.x, cell.y);
+            var state = cells[index];
+            if ((state.Fuel <= 0f && state.Oil <= 0f) || state.Wetness >= .7f)
+                return;
+
+            state.Intensity = Mathf.Clamp01(Mathf.Max(state.Intensity, intensity * (1f - state.Wetness)));
+            cells[index] = state;
+        }
+
+        /// <summary>Runs one deterministic simulation step. A non-positive delta is ignored.</summary>
+        public void Step(float dt)
+        {
+            if (dt <= 0f)
+                return;
+
+            EnsureInitialized();
+            Array.Copy(cells, nextCells, cells.Length);
+
+            for (var z = 0; z < Height; z++)
+            {
+                for (var x = 0; x < Width; x++)
+                {
+                    var index = Index(x, z);
+                    var current = cells[index];
+                    var updated = nextCells[index];
+
+                    if (current.WaterRemaining > 0f)
+                    {
+                        updated.WaterRemaining = Mathf.Max(0f, current.WaterRemaining - dt);
+                        updated.Wetness = updated.WaterRemaining > 0f ? current.Wetness : 0f;
+                    }
+                    else
+                    {
+                        updated.WaterRemaining = 0f;
+                        updated.Wetness = Mathf.Max(0f, current.Wetness - wetnessDryRate * dt);
+                    }
+
+                    bool timedOilExpires = false;
+                    if (current.OilRemaining > 0f)
+                    {
+                        updated.OilRemaining = Mathf.Max(0f, current.OilRemaining - dt);
+                        timedOilExpires = updated.OilRemaining <= 0f;
+                    }
+                    else
+                    {
+                        updated.OilRemaining = 0f;
+                    }
+
+                    if (current.PowderRemaining > 0f)
+                    {
+                        updated.PowderRemaining = Mathf.Max(0f, current.PowderRemaining - dt);
+                        updated.Powder = updated.PowderRemaining > 0f ? current.Powder : 0f;
+                    }
+                    else
+                    {
+                        updated.PowderRemaining = 0f;
+                        updated.Powder = 0f;
+                    }
+                    if (current.IsBurning)
+                    {
+                        var fuelLoss = fuelBurnRate * (1f + current.Oil) * dt;
+                        updated.Fuel = Mathf.Max(0f, current.Fuel - fuelLoss);
+                        updated.Oil = Mathf.Max(0f, current.Oil - oilBurnRate * dt);
+                        updated.Intensity = Mathf.Max(0f, current.Intensity - naturalIntensityLoss * dt);
+                        updated.Intensity += current.Oil * oilFlameGain * dt;
+                        if (updated.Fuel <= 0f && updated.Oil <= 0f)
+                            updated.Intensity = 0f;
+                        else
+                            updated.Intensity = Mathf.Clamp01(updated.Intensity);
+                    }
+                    if (timedOilExpires)
+                    {
+                        updated.Oil = 0f;
+                        if (updated.Fuel <= 0f)
+                            updated.Intensity = 0f;
+                    }
+                    nextCells[index] = updated;
+                }
+            }
+
+            // Spread is intentionally separate from burn-down. Each source reads the same
+            // cells snapshot, then contributes to nextCells, so update order cannot erase a
+            // previously received neighbour contribution.
+            for (var z = 0; z < Height; z++)
+            {
+                for (var x = 0; x < Width; x++)
+                {
+                    var current = cells[Index(x, z)];
+                    if (!current.IsBurning)
+                        continue;
+
+                    var oilFactor = 1f + current.Oil * oilSpreadMultiplier;
+                    SpreadTo(x - 1, z, current.Intensity, oilFactor, dt);
+                    SpreadTo(x + 1, z, current.Intensity, oilFactor, dt);
+                    SpreadTo(x, z - 1, current.Intensity, oilFactor, dt);
+                    SpreadTo(x, z + 1, current.Intensity, oilFactor, dt);
+                }
+            }
+
+            var swap = cells;
+            cells = nextCells;
+            nextCells = swap;
+        }
+
+        private void SpreadTo(int x, int z, float sourceIntensity, float sourceOilFactor, float dt)
+        {
+            if (!InBounds(x, z))
+                return;
+
+            var index = Index(x, z);
+            var target = cells[index];
+            if ((target.Fuel <= 0f && target.Oil <= 0f) || target.Wetness > .08f)
+                return;
+
+            var targetOilFactor = 1f + target.Oil * oilSpreadMultiplier;
+            var spread = fireSpreadRate * sourceIntensity * Mathf.Max(sourceOilFactor, targetOilFactor) * dt;
+            var updated = nextCells[index];
+            updated.Intensity = Mathf.Clamp01(updated.Intensity + spread);
+            nextCells[index] = updated;
+        }
+
+        private void EnsureGrid()
+        {
+            var cellCount = Width * Height;
+            if (configured && cells.Length == cellCount && nextCells.Length == cellCount)
+                return;
+
+            cells = new FireCellState[cellCount];
+            nextCells = new FireCellState[cellCount];
+            configured = true;
+        }
+
+        private void EnsureInitialized()
+        {
+            var expectedCellCount = Mathf.Max(1, Width) * Mathf.Max(1, Height);
+            if (!configured || cells.Length != expectedCellCount || nextCells.Length != expectedCellCount)
+                ResetSimulation();
+        }
+
+        private void ForCellsInRadius(Vector3 world, float radius, Action<int, Vector3> apply)
+        {
+            var radiusSquared = radius * radius;
+            for (var z = 0; z < Height; z++)
+            {
+                for (var x = 0; x < Width; x++)
+                {
+                    var center = CellCenter(x, z);
+                    var dx = center.x - world.x;
+                    var dz = center.z - world.z;
+                    if (dx * dx + dz * dz <= radiusSquared)
+                        apply(Index(x, z), center);
+                }
+            }
+        }
+
+        private bool InBounds(int x, int z) => x >= 0 && x < Width && z >= 0 && z < Height;
+
+        private int Index(int x, int z) => z * Width + x;
+
+        private static bool HasValidTimedInput(Vector3 world, float amount, float radius, float duration)
+        {
+            return IsFinite(world.x) && IsFinite(world.y) && IsFinite(world.z) &&
+                IsFinite(amount) && IsFinite(radius) && IsFinite(duration) &&
+                amount > 0f && radius >= 0f && duration >= 0f;
+        }
+
+        private static bool IsFinite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
+        private static bool ValidMultipliers(float extinguish, float residue) =>
+            IsFinite(extinguish) && IsFinite(residue) && extinguish >= 0f && extinguish <= 4f && residue >= 0f && residue <= 4f;
+    }
+}

@@ -1,0 +1,5 @@
+ZIP=D:\Documents\畢專\Builds\FireRescue-v0.2-Windows-x64.zip
+Bytes=65760394
+Entries=246
+SHA256=5b26fcbe3591a2325c5692c100ef0c5b16fb3f03d54c8ae8baf2074a6f92d470
+Required files present; no traversal paths; diagnostic smoke/startup directories excluded.

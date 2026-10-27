@@ -1,0 +1,188 @@
+{
+  "assets": [
+    {
+      "role": "NPC resident",
+      "source": "D:/Downloads/角色1.fbx",
+      "source_sha256": "1171ec5f05f29731beb0916a9591a3e4396c9aafa476466afa70ea78eb2a7147",
+      "source_mesh_vertex_counts": {
+        "圓形": 48,
+        "圓形.001": 48,
+        "球體": 92,
+        "立方體": 783,
+        "立方體.001": 302,
+        "立方體.002": 116,
+        "立方體.003": 6,
+        "立方體.004": 6,
+        "立方體.005": 12,
+        "立方體.006": 12
+      },
+      "source_bounds": {
+        "min": [
+          4.672081,
+          -0.73817,
+          -1.226354
+        ],
+        "max": [
+          6.128565,
+          0.836559,
+          1.251221
+        ],
+        "height": 2.477575
+      },
+      "derived_fbx": "Assets/FireRescue/Art/RoleSwapRig/Models/Role1.fbx",
+      "coordinates": {
+        "source_front": "+X",
+        "source_up": "Z",
+        "derived_local_face_marker": "-Y",
+        "feet_y": 0,
+        "height_m": 1.5,
+        "root_motion": false
+      },
+      "materials": [
+        "R1_White",
+        "R1_Light",
+        "R1_Dark"
+      ],
+      "bones": [
+        "Root",
+        "Hips",
+        "Spine",
+        "Chest",
+        "Neck",
+        "Head",
+        "L_UpperArm",
+        "L_LowerArm",
+        "L_Hand",
+        "R_UpperArm",
+        "R_LowerArm",
+        "R_Hand",
+        "L_Thigh",
+        "L_Shin",
+        "L_Foot",
+        "R_Thigh",
+        "R_Shin",
+        "R_Foot",
+        "Tail_1",
+        "Tail_2"
+      ],
+      "clips": [
+        {
+          "name": "ResidentRole1_Idle",
+          "frames": [
+            1,
+            61
+          ],
+          "fps": 24,
+          "seconds": 2.5,
+          "loop": true
+        },
+        {
+          "name": "ResidentRole1_Walk",
+          "frames": [
+            1,
+            31
+          ],
+          "fps": 24,
+          "seconds": 1.25,
+          "loop": true
+        }
+      ],
+      "markers": [
+        "FaceForward",
+        "HeadCenter"
+      ],
+      "notes": "Topology was not recreated. Procedural weights bind original supplied meshes; gameplay colliders, tool anchors and root motion remain Unity-side."
+    },
+    {
+      "role": "Player firefighter",
+      "source": "D:/Downloads/角色2.fbx",
+      "source_sha256": "f58ce494c875d2738b251121945d69955d1584dc24f570a80c595bef347c7c62",
+      "source_mesh_vertex_counts": {
+        "圓形": 48,
+        "立方體": 145,
+        "立方體.001": 806,
+        "立方體.002": 116,
+        "立方體.003": 6,
+        "立方體.004": 6
+      },
+      "source_bounds": {
+        "min": [
+          1.545774,
+          -0.8134,
+          -1.226354
+        ],
+        "max": [
+          3.199616,
+          0.8134,
+          1.276428
+        ],
+        "height": 2.502781
+      },
+      "derived_fbx": "Assets/FireRescue/Art/RoleSwapRig/Models/Role2.fbx",
+      "coordinates": {
+        "source_front": "+X",
+        "source_up": "Z",
+        "derived_local_face_marker": "-Y",
+        "feet_y": 0,
+        "height_m": 1.6,
+        "root_motion": false
+      },
+      "materials": [
+        "U2_Skin",
+        "U2_Hair",
+        "U2_Shirt",
+        "U2_Trim",
+        "U2_Pants",
+        "U2_Dark",
+        "U2_Eye"
+      ],
+      "bones": [
+        "Root",
+        "Hips",
+        "Spine",
+        "Chest",
+        "Neck",
+        "Head",
+        "L_UpperArm",
+        "L_LowerArm",
+        "L_Hand",
+        "R_UpperArm",
+        "R_LowerArm",
+        "R_Hand",
+        "L_Thigh",
+        "L_Shin",
+        "L_Foot",
+        "R_Thigh",
+        "R_Shin",
+        "R_Foot"
+      ],
+      "clips": [
+        {
+          "name": "FirefighterRole2_Idle",
+          "frames": [
+            1,
+            61
+          ],
+          "fps": 24,
+          "seconds": 2.5,
+          "loop": true
+        },
+        {
+          "name": "FirefighterRole2_Walk",
+          "frames": [
+            1,
+            31
+          ],
+          "fps": 24,
+          "seconds": 1.25,
+          "loop": true
+        }
+      ],
+      "markers": [
+        "FaceForward",
+        "HeadCenter"
+      ],
+      "notes": "Topology was not recreated. Procedural weights bind original supplied meshes; gameplay colliders, tool anchors and root motion remain Unity-side."
+    }
+  ]
+}

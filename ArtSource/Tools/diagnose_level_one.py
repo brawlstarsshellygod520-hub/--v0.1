@@ -3,7 +3,8 @@ import json
 from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
-data = json.loads(Path(r'D:/Documents/畢專/ArtSource/LevelOne/level-one.geometry.json').read_text(encoding='utf-8'))
+ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / 'ProjectSettings').is_dir())
+data = json.loads((ROOT / 'ArtSource/UserProvided/LevelOne/level-one.geometry.json').read_text(encoding='utf-8'))
 trees = [(p['name'], BVHTree.FromPolygons([Vector((v['x'], v['y'], v['z'])) for v in p['vertices']],
           [tuple(p['triangles'][i:i+3]) for i in range(0, len(p['triangles']), 3)], all_triangles=True)) for p in data['meshes']]
 for door in data['doors']:

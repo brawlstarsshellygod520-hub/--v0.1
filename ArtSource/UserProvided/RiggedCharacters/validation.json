@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "asset": "Role1",
+      "meshes": 10,
+      "bones": 20,
+      "height": 1.5,
+      "actions": [
+        "ResidentRole1_Root|ResidentRole1_Root|ResidentRole1_Idle",
+        "ResidentRole1_Root|ResidentRole1_Root|ResidentRole1_Walk"
+      ],
+      "markers": [
+        "FaceForward",
+        "HeadCenter"
+      ]
+    },
+    {
+      "asset": "Role2",
+      "meshes": 6,
+      "bones": 18,
+      "height": 1.6,
+      "actions": [
+        "FirefighterRole2_Root|FirefighterRole2_Root|FirefighterRole2_Idle",
+        "FirefighterRole2_Root|FirefighterRole2_Root|FirefighterRole2_Walk"
+      ],
+      "markers": [
+        "FaceForward",
+        "HeadCenter"
+      ]
+    }
+  ]
+}

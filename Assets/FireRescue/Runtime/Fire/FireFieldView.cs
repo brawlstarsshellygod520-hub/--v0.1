@@ -11,9 +11,11 @@ namespace FireRescue
         private GameObject[] firePillars;
         private GameObject[] oilPatches;
         private GameObject[] wetPatches;
+        private GameObject[] powderPatches;
         private Material fireMaterial;
         private Material oilMaterial;
         private Material wetMaterial;
+        private Material powderMaterial;
 
         public void Initialize(FireField fireField)
         {
@@ -30,6 +32,7 @@ namespace FireRescue
             firePillars = new GameObject[count];
             oilPatches = new GameObject[count];
             wetPatches = new GameObject[count];
+            powderPatches = new GameObject[count];
             for (var z = 0; z < field.Height; z++)
             {
                 for (var x = 0; x < field.Width; x++)
@@ -64,6 +67,10 @@ namespace FireRescue
                     var center = field.CellCenter(x, z);
                     UpdatePatch(oilPatches[index], center, state.Oil, .012f);
                     UpdatePatch(wetPatches[index], center, state.Wetness, .02f);
+                    // Most cells never receive powder; allocate only first use, then reuse.
+                    if (state.Powder > .01f && !powderPatches[index])
+                        powderPatches[index] = CreatePrimitive("Powder", powderMaterial);
+                    if (powderPatches[index]) UpdatePatch(powderPatches[index], center, state.Powder, .016f);
                     UpdateFire(firePillars[index], center, state.Intensity);
                 }
             }
@@ -120,6 +127,7 @@ namespace FireRescue
             fireMaterial = CreateMaterial(new Color(1f, .24f, .02f), true);
             oilMaterial = CreateMaterial(new Color(.08f, .045f, .015f), false);
             wetMaterial = CreateMaterial(new Color(.05f, .38f, .9f), false);
+            powderMaterial = CreateMaterial(new Color(.82f, .78f, .64f), false);
         }
 
         private static Material CreateMaterial(Color color, bool emission)
@@ -140,12 +148,15 @@ namespace FireRescue
             DestroyVisuals(firePillars);
             DestroyVisuals(oilPatches);
             DestroyVisuals(wetPatches);
+            DestroyVisuals(powderPatches);
             firePillars = null;
             oilPatches = null;
             wetPatches = null;
+            powderPatches = null;
             DestroyMaterial(ref fireMaterial);
             DestroyMaterial(ref oilMaterial);
             DestroyMaterial(ref wetMaterial);
+            DestroyMaterial(ref powderMaterial);
         }
 
         private static void DestroyVisuals(GameObject[] visuals)

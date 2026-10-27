@@ -1,0 +1,17 @@
+USER_CHARACTER_PLAYMODE_PASS
+Checks=15
+PASS Real supplied model has a valid Generic rig without root motion
+PASS All six supplied mesh parts are present and skinned
+PASS New visual owns no collision or NPC authority
+PASS Hair, skin, clothing, trim, trousers and facial colors remain separate
+PASS Idle and Run are imported looping clips
+PASS NPC waits in Idle while the complete route is burning
+PASS Run deforms the supplied body vertices, not only a floating object root
+PASS Run start/end skin poses loop within 2.5cm
+PASS Sampling Run never moves the gameplay root
+PASS Idle contains subtle body motion
+PASS Clearing the route triggers autonomous NPC movement and Run without interaction
+PASS Stopping resolved NPC movement returns to Idle
+PASS Disabling presentation resets animation speed
+PASS Re-enabling presentation remains Idle without motion spikes
+PASS Disabling the replacement model does not prevent NPC rescue or duplicate the event

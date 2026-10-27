@@ -1,0 +1,128 @@
+REVIEW_PLAYMODE_PASS
+Checks=81
+PASS Approved 15m routed hose enabled only in new scene
+PASS One toilet + one soda source; only oil pan is burning
+PASS No permanent world debug labels
+PASS Request is a screen-projected name tag attached above resident
+PASS Wall uses diffuse-only plaster shader, with no metal/specular lobe
+PASS User skins and bones intact
+PASS Resident waits for actual item and door/fire conditions
+PASS Pudding starts outside initial small fire footprint
+PASS At 2s fire reaches pudding and authoritative pickup refuses hot item
+PASS Walk reached (5.50, 0.10, -4.90)
+PASS Walk reached (3.00, 0.10, -2.00)
+PASS Walk reached (0.45, 0.10, 0.20)
+PASS Walk reached (0.45, 0.10, 1.05)
+PASS Right press 1 only equips nozzle
+PASS Right press 2 connects toilet without firing
+PASS Connected hose is one continuous 8-sided 3D mesh, not billboard line
+PASS Walk reached (0.45, 0.10, 0.20)
+PASS Walk reached (-1.40, 0.10, -3.40)
+PASS Walk reached (-3.90, 0.10, -3.40)
+PASS Walk reached (-3.90, 0.10, -3.10)
+PASS Real player pulls water hose around bathroom/kitchen walls within budget
+PASS Actual swept water packets strike pan and increase oil fire
+PASS F disconnects old source and clears route
+PASS Walk reached (-2.84, 0.10, -1.55)
+PASS Walk reached (-2.84, 0.10, -0.25)
+PASS Walk reached (-4.00, 0.10, 1.10)
+PASS Walk reached (-5.40, 0.10, 2.80)
+PASS Walk reached (-5.40, 0.10, 3.95)
+PASS Existing nozzle connects storage soda on a separate press
+PASS Walk reached (-5.40, 0.10, 2.80)
+PASS Walk reached (-4.00, 0.10, 1.10)
+PASS Walk reached (-2.84, 0.10, -0.25)
+PASS Walk reached (-2.84, 0.10, -1.55)
+PASS Walk reached (-3.90, 0.10, -3.10)
+PASS Storage-to-kitchen physical route fits approved length
+PASS Real powder packets extinguish the water-enlarged oil fire
+PASS Extinguishing connected oil spill clears heat gate for pudding
+PASS Wall bends and changing route topology never blank the complete 3D hose
+PASS Physical tube node spacing stays bounded and mesh vertices finite
+PASS Fire out alone never bypasses pudding and closed door
+PASS Walk reached (-3.30, 0.10, -3.40)
+PASS Walk reached (-1.50, 0.10, -3.40)
+PASS Walk reached (5.28, 0.10, -0.05)
+PASS First left click equips without damaging door
+PASS Three strokes break user door once per swing; route collider removed
+PASS Door/fire clear but missing pudding still blocks escape
+PASS Walk reached (2.50, 0.10, -2.50)
+PASS Walk reached (-1.40, 0.10, -3.00)
+PASS Walk reached (-3.55, 0.10, -4.35)
+PASS Pudding on existing user counter is reachable with E
+PASS E picks one item, disables its collision and stows tools
+PASS Cannot swing a tool through carried pudding
+PASS Walk reached (-1.40, 0.10, -3.00)
+PASS Walk reached (3.50, 0.10, -1.40)
+PASS Walk reached (5.28, 0.10, 0.05)
+PASS Outside bedroom cannot deliver through distant wall
+PASS Walk reached (5.28, 0.10, 1.65)
+PASS Walk reached (4.15, 0.10, 2.30)
+PASS Player reaches resident before 60s deadline
+PASS E transfers pudding to resident and stops request deadline
+PASS Delivered pudding is attached to actual hand bone
+PASS FBX 100x hand-bone units never resize the delivered pudding
+PASS Walk reached (2.70, 0.10, 4.40)
+PASS NPC walks through broken door and outside exit; first level completes exactly once
+PASS One-minute requirement timer remains frozen after valid delivery
+PASS Distance-driven gait follows actual resolved movement
+PASS Idle stops gait phase and smoothly settles body
+PASS Invalid/nonpositive timer deltas are ignored
+PASS Exact 60s timeout rejects late delivery and tools
+PASS Late notification cannot turn a failure into success
+PASS Fresh scene has clean request/deadline state
+PASS Fresh scene resets door, fire, hose and pudding ownership
+PASS Idle hose wrists reach authored grip targets within 3cm
+PASS Straight-walk stance foot remains planted (mean slide below 0.15m/s)
+PASS Moving hose grip stays within 6cm without changing gameplay anchors
+PASS Disposable carry fixture can hold item while still connected
+PASS F can disconnect while carrying, without dropping pudding or enabling tools
+PASS Historical oil fire with growth disabled stays unchanged under water
+PASS Nonfinite spray amount never poisons oil fire state
+PASS Water escalation saturates at authored cap
+PASS Powder extinguishes cap fire; later water never resurrects it
+WALK (5.50, 0.10, -4.90) actual=(5.575, 0.125, -4.900) used=0 bends=0 frames=29 time=57.4967
+WALK (3.00, 0.10, -2.00) actual=(3.053, 0.125, -2.061) used=0 bends=0 frames=66 time=56.38005
+WALK (0.45, 0.10, 0.20) actual=(0.503, 0.125, 0.154) used=0 bends=0 frames=59 time=55.38007
+WALK (0.45, 0.10, 1.05) actual=(0.453, 0.125, 0.979) used=0 bends=0 frames=17 time=55.08007
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.266) used=1.376185 bends=0 frames=16 time=54.73008
+WALK (-1.40, 0.10, -3.40) actual=(-1.365, 0.125, -3.332) used=5.243406 bends=1 frames=70 time=53.54676
+WALK (-3.90, 0.10, -3.40) actual=(-3.824, 0.125, -3.399) used=6.993145 bends=2 frames=44 time=52.79678
+WALK (-3.90, 0.10, -3.10) actual=(-3.890, 0.125, -3.183) used=7.104764 bends=2 frames=7 time=52.66344
+WATER intensity=3 amount=4.249999 nozzle=(-4.39, 0.98, -3.13)
+WALK (-2.84, 0.10, -1.55) actual=(-2.877, 0.125, -1.607) used=0 bends=0 frames=35 time=49.2635
+WALK (-2.84, 0.10, -0.25) actual=(-2.841, 0.125, -0.329) used=0 bends=0 frames=24 time=48.84684
+WALK (-4.00, 0.10, 1.10) actual=(-3.951, 0.125, 1.041) used=0 bends=0 frames=32 time=48.29684
+WALK (-5.40, 0.10, 2.80) actual=(-5.349, 0.125, 2.738) used=0 bends=0 frames=39 time=47.63019
+WALK (-5.40, 0.10, 3.95) actual=(-5.398, 0.125, 3.880) used=0 bends=0 frames=22 time=47.24686
+WALK (-5.40, 0.10, 2.80) actual=(-5.400, 0.125, 2.867) used=1.337099 bends=0 frames=21 time=46.84687
+WALK (-4.00, 0.10, 1.10) actual=(-4.050, 0.125, 1.162) used=3.322163 bends=1 frames=39 time=46.18021
+WALK (-2.84, 0.10, -0.25) actual=(-2.890, 0.125, -0.192) used=5.105993 bends=1 frames=32 time=45.63022
+WALK (-2.84, 0.10, -1.55) actual=(-2.842, 0.125, -1.474) used=6.204872 bends=1 frames=24 time=45.21356
+WALK (-3.90, 0.10, -3.10) actual=(-3.860, 0.125, -3.040) used=8.039558 bends=2 frames=34 time=44.63023
+WALK (-3.30, 0.10, -3.40) actual=(-3.355, 0.125, -3.366) used=0 bends=0 frames=14 time=38.98032
+WALK (-1.50, 0.10, -3.40) actual=(-1.571, 0.125, -3.399) used=0 bends=0 frames=33 time=38.41366
+WALK (5.28, 0.10, -0.05) actual=(5.216, 0.125, -0.081) used=0 bends=0 frames=129 time=36.24703
+WALK (2.50, 0.10, -2.50) actual=(2.557, 0.125, -2.449) used=0 bends=0 frames=63 time=33.7804
+WALK (-1.40, 0.10, -3.00) actual=(-1.324, 0.125, -2.990) used=0 bends=0 frames=68 time=32.63042
+WALK (-3.55, 0.10, -4.35) actual=(-3.487, 0.125, -4.311) used=0 bends=0 frames=45 time=31.86376
+WALK (-1.40, 0.10, -3.00) actual=(-1.458, 0.125, -3.037) used=0 bends=0 frames=44 time=31.09711
+WALK (3.50, 0.10, -1.40) actual=(3.434, 0.125, -1.422) used=0 bends=0 frames=89 time=29.59713
+WALK (5.28, 0.10, 0.05) actual=(5.222, 0.125, 0.004) used=0 bends=0 frames=41 time=28.89714
+WALK (5.28, 0.10, 1.65) actual=(5.278, 0.125, 1.574) used=0 bends=0 frames=29 time=28.39715
+WALK (4.15, 0.10, 2.30) actual=(4.215, 0.125, 2.260) used=0 bends=0 frames=24 time=27.98049
+WALK (2.70, 0.10, 4.40) actual=(2.727, 0.125, 4.325) used=0 bends=0 frames=81 time=27.96382
+Hips rootLocal=(0.0000, 0.3350, 0.0000) scale=(100.0000, 100.0000, 100.0000)
+Chest rootLocal=(0.0000, 0.6870, 0.0000) scale=(100.0000, 100.0000, 100.0000)
+L_UpperArm rootLocal=(0.2640, 0.7350, 0.0000) scale=(100.0000, 99.9999, 100.0000)
+L_LowerArm rootLocal=(0.3188, 0.5981, 0.0017) scale=(100.0000, 100.0000, 100.0000)
+L_Hand rootLocal=(0.3490, 0.4830, 0.0000) scale=(100.0000, 100.0000, 100.0000)
+R_UpperArm rootLocal=(-0.2640, 0.7350, 0.0000) scale=(100.0000, 99.9999, 100.0000)
+R_LowerArm rootLocal=(-0.3188, 0.5981, 0.0017) scale=(100.0000, 100.0000, 100.0000)
+R_Hand rootLocal=(-0.3490, 0.4830, 0.0000) scale=(100.0000, 100.0000, 100.0000)
+L_Thigh rootLocal=(0.1760, 0.3750, 0.0000) scale=(99.9999, 100.0001, 100.0001)
+L_Shin rootLocal=(0.2242, 0.1894, 0.0146) scale=(99.9999, 100.0001, 100.0001)
+L_Foot rootLocal=(0.2560, 0.0672, 0.0000) scale=(100.0000, 100.0001, 100.0000)
+HOSE grips left=0 right=0
+GAIT mean stance planar speed=0.0006326039 samples=18
+Scripted commands + real CharacterController/swept spray; not manual keyboard acceptance.

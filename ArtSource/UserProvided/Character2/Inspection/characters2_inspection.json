@@ -1,0 +1,757 @@
+{
+  "source": "D:\\Downloads\\角色2.fbx",
+  "scene_bounds_world": {
+    "min": [
+      1.545774,
+      -0.8134,
+      -1.226354
+    ],
+    "max": [
+      3.199616,
+      0.8134,
+      1.276428
+    ],
+    "size": [
+      1.653842,
+      1.626799,
+      2.502781
+    ],
+    "center": [
+      2.372695,
+      0.0,
+      0.025037
+    ]
+  },
+  "mesh_objects": [
+    {
+      "object": "圓形",
+      "parent": null,
+      "vertices": 48,
+      "edges": 88,
+      "polygons": 44,
+      "bounds_world": {
+        "min": [
+          2.891792,
+          -0.254256,
+          0.298432
+        ],
+        "max": [
+          2.913985,
+          0.254256,
+          0.363646
+        ],
+        "size": [
+          0.022194,
+          0.508512,
+          0.065214
+        ],
+        "center": [
+          2.902889,
+          0.0,
+          0.331039
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 176
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 24,
+          "bounds_world": {
+            "min": [
+              2.891792,
+              0.192234,
+              0.298432
+            ],
+            "max": [
+              2.913985,
+              0.254256,
+              0.363646
+            ],
+            "size": [
+              0.022194,
+              0.062023,
+              0.065214
+            ],
+            "center": [
+              2.902889,
+              0.223245,
+              0.331039
+            ]
+          }
+        },
+        {
+          "vertices": 24,
+          "bounds_world": {
+            "min": [
+              2.891792,
+              -0.254256,
+              0.298432
+            ],
+            "max": [
+              2.913985,
+              -0.192234,
+              0.363646
+            ],
+            "size": [
+              0.022194,
+              0.062023,
+              0.065214
+            ],
+            "center": [
+              2.902889,
+              -0.223245,
+              0.331039
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "object": "立方體",
+      "parent": null,
+      "vertices": 145,
+      "edges": 276,
+      "polygons": 132,
+      "bounds_world": {
+        "min": [
+          1.545774,
+          -0.8134,
+          -0.191667
+        ],
+        "max": [
+          3.199616,
+          0.8134,
+          1.276428
+        ],
+        "size": [
+          1.653842,
+          1.626799,
+          1.468095
+        ],
+        "center": [
+          2.372695,
+          0.0,
+          0.54238
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 528
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 145,
+          "bounds_world": {
+            "min": [
+              1.545774,
+              -0.8134,
+              -0.191667
+            ],
+            "max": [
+              3.199616,
+              0.8134,
+              1.276428
+            ],
+            "size": [
+              1.653842,
+              1.626799,
+              1.468095
+            ],
+            "center": [
+              2.372695,
+              0.0,
+              0.54238
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "object": "立方體.001",
+      "parent": null,
+      "vertices": 806,
+      "edges": 1610,
+      "polygons": 806,
+      "bounds_world": {
+        "min": [
+          1.768201,
+          -0.744932,
+          -1.226354
+        ],
+        "max": [
+          2.932793,
+          0.744932,
+          1.083064
+        ],
+        "size": [
+          1.164592,
+          1.489863,
+          2.309417
+        ],
+        "center": [
+          2.350497,
+          0.0,
+          -0.071645
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 3220
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 806,
+          "bounds_world": {
+            "min": [
+              1.768201,
+              -0.744932,
+              -1.226354
+            ],
+            "max": [
+              2.932793,
+              0.744932,
+              1.083064
+            ],
+            "size": [
+              1.164592,
+              1.489863,
+              2.309417
+            ],
+            "center": [
+              2.350497,
+              0.0,
+              -0.071645
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "object": "立方體.002",
+      "parent": null,
+      "vertices": 116,
+      "edges": 214,
+      "polygons": 96,
+      "bounds_world": {
+        "min": [
+          1.97308,
+          -0.607894,
+          -0.723067
+        ],
+        "max": [
+          2.855972,
+          0.607894,
+          -0.028137
+        ],
+        "size": [
+          0.882892,
+          1.215788,
+          0.694931
+        ],
+        "center": [
+          2.414526,
+          0.0,
+          -0.375602
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 384
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 116,
+          "bounds_world": {
+            "min": [
+              1.97308,
+              -0.607894,
+              -0.723067
+            ],
+            "max": [
+              2.855972,
+              0.607894,
+              -0.028137
+            ],
+            "size": [
+              0.882892,
+              1.215788,
+              0.694931
+            ],
+            "center": [
+              2.414526,
+              0.0,
+              -0.375602
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "object": "立方體.003",
+      "parent": null,
+      "vertices": 6,
+      "edges": 7,
+      "polygons": 2,
+      "bounds_world": {
+        "min": [
+          2.675786,
+          -0.120422,
+          -0.285485
+        ],
+        "max": [
+          2.751447,
+          0.120421,
+          -0.185232
+        ],
+        "size": [
+          0.075661,
+          0.240843,
+          0.100253
+        ],
+        "center": [
+          2.713616,
+          -0.0,
+          -0.235358
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 8
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 6,
+          "bounds_world": {
+            "min": [
+              2.675786,
+              -0.120422,
+              -0.285485
+            ],
+            "max": [
+              2.751447,
+              0.120421,
+              -0.185232
+            ],
+            "size": [
+              0.075661,
+              0.240843,
+              0.100253
+            ],
+            "center": [
+              2.713616,
+              -0.0,
+              -0.235358
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "object": "立方體.004",
+      "parent": null,
+      "vertices": 6,
+      "edges": 7,
+      "polygons": 2,
+      "bounds_world": {
+        "min": [
+          2.733396,
+          -0.120422,
+          -0.483032
+        ],
+        "max": [
+          2.792795,
+          0.120421,
+          -0.384065
+        ],
+        "size": [
+          0.059399,
+          0.240843,
+          0.098967
+        ],
+        "center": [
+          2.763095,
+          -0.0,
+          -0.433548
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 8
+        }
+      ],
+      "has_custom_normals": true,
+      "auto_smooth": null,
+      "attributes": [
+        {
+          "name": ".select_vert",
+          "domain": "POINT",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "position",
+          "domain": "POINT",
+          "type": "FLOAT_VECTOR"
+        },
+        {
+          "name": ".corner_vert",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".corner_edge",
+          "domain": "CORNER",
+          "type": "INT"
+        },
+        {
+          "name": ".select_poly",
+          "domain": "FACE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "UV貼圖",
+          "domain": "CORNER",
+          "type": "FLOAT2"
+        },
+        {
+          "name": ".select_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": ".edge_verts",
+          "domain": "EDGE",
+          "type": "INT32_2D"
+        },
+        {
+          "name": "custom_normal",
+          "domain": "CORNER",
+          "type": "INT16_2D"
+        },
+        {
+          "name": "sharp_edge",
+          "domain": "EDGE",
+          "type": "BOOLEAN"
+        }
+      ],
+      "islands": [
+        {
+          "vertices": 6,
+          "bounds_world": {
+            "min": [
+              2.733396,
+              -0.120422,
+              -0.483032
+            ],
+            "max": [
+              2.792795,
+              0.120421,
+              -0.384065
+            ],
+            "size": [
+              0.059399,
+              0.240843,
+              0.098967
+            ],
+            "center": [
+              2.763095,
+              -0.0,
+              -0.433548
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "armatures": [],
+  "all_actions": [],
+  "axis_note": "FBX importer coordinates; dimensions alone cannot authoritatively identify facing direction. Preview camera is from world Y-negative toward origin."
+}

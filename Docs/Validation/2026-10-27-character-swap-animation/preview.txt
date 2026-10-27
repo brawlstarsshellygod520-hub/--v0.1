@@ -1,0 +1,3 @@
+UNITY_RENDER_PASS
+Direct3D11
+Actual Generic skins, Idle/Walk controllers, external Standard materials.

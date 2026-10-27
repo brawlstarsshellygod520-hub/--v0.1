@@ -1,0 +1,168 @@
+using UnityEngine;
+
+namespace FireRescue
+{
+    /// <summary>
+    /// One watertight-style continuous tube mesh, with bounded Verlet/PBD display nodes.
+    /// HoseConnection remains the sole route/length authority. Visual collision never
+    /// disconnects the source or turns the entire hose off for a one-frame corner contact.
+    /// </summary>
+    [DefaultExecutionOrder(80)]
+    public sealed class PhysicalHoseTube:MonoBehaviour
+    {
+        const int BaseSamples=128,Capacity=BaseSamples+HoseConnection.MaximumPathPoints;
+        const int Sides=8;
+        [SerializeField] SprayEmitter emitter;
+        [SerializeField] float radius=.035f;
+        [SerializeField] float floorHeight=.1f;
+        readonly Vector3[] route=new Vector3[HoseConnection.MaximumPathPoints];
+        readonly float[] routeDistance=new float[HoseConnection.MaximumPathPoints];
+        readonly Vector3[] guide=new Vector3[Capacity],nodes=new Vector3[Capacity],previous=new Vector3[Capacity],scratch=new Vector3[Capacity];
+        readonly float[] times=new float[Capacity];
+        readonly bool[] pinned=new bool[Capacity];
+        readonly Vector3[] vertices=new Vector3[Capacity*Sides],normals=new Vector3[Capacity*Sides];
+        readonly Vector2[] uvs=new Vector2[Capacity*Sides];
+        readonly int[] triangles=new int[(Capacity-1)*Sides*6];
+        readonly Collider[] contacts=new Collider[16];
+        Mesh mesh;MeshRenderer tubeRenderer;Material fabric;SphereCollider probe;
+        FluidSource lastSource;int count;bool initialized;
+        public int NodeCount=>count;
+        public bool IsVisible=>tubeRenderer&&tubeRenderer.enabled;
+        public Mesh DisplayMesh=>mesh;
+        public int ConnectedVisibleFrames {get;private set;}
+        public int UnexpectedHiddenFrames {get;private set;}
+        public float LongestSegment {get;private set;}
+        public float MaximumNodeStep {get;private set;}
+        public Vector3 NodePosition(int index)=>nodes[Mathf.Clamp(index,0,Mathf.Max(0,count-1))];
+        public void Initialize(SprayEmitter source)=>emitter=source;
+        void Awake()
+        {
+            var go=new GameObject("Continuous 3D hose mesh");go.transform.SetParent(transform,false);
+            mesh=new Mesh{name="Procedural continuous hose"};mesh.MarkDynamic();go.AddComponent<MeshFilter>().sharedMesh=mesh;tubeRenderer=go.AddComponent<MeshRenderer>();
+            fabric=new Material(Shader.Find("Standard")){name="White hose fabric",color=new Color(.89f,.88f,.81f)};
+            fabric.SetFloat("_Metallic",0);fabric.SetFloat("_Glossiness",.12f);tubeRenderer.sharedMaterial=fabric;tubeRenderer.enabled=false;
+            var proxy=new GameObject("Hose collision query shape"){hideFlags=HideFlags.HideAndDontSave};proxy.transform.SetParent(transform,false);
+            probe=proxy.AddComponent<SphereCollider>();probe.radius=radius;probe.enabled=false;
+        }
+        void LateUpdate()
+        {
+            var connection=emitter?emitter.Connection:null;
+            if(!connection||!connection.IsConnected){tubeRenderer.enabled=false;initialized=false;lastSource=null;return;}
+            if(initialized&&lastSource==connection.Source&&!tubeRenderer.enabled)UnexpectedHiddenFrames++;
+            bool continuous=initialized&&lastSource==connection.Source;
+            if(continuous)for(int i=0;i<count;i++)scratch[i]=nodes[i];
+            BuildGuides(connection);
+            if(count<2)return;
+            if(!initialized||lastSource!=connection.Source)
+            {for(int i=0;i<count;i++)nodes[i]=previous[i]=guide[i];initialized=true;lastSource=connection.Source;}
+            float dt=Mathf.Clamp(Time.deltaTime,0,.04f);int substeps=Mathf.Max(1,Mathf.CeilToInt(dt/.016f));
+            for(int step=0;step<substeps;step++)Simulate(connection,dt/substeps);
+            if(continuous)for(int i=2;i<count-2;i++)MaximumNodeStep=Mathf.Max(MaximumNodeStep,Vector3.Distance(nodes[i],scratch[i]));
+            BuildMesh();tubeRenderer.enabled=true;ConnectedVisibleFrames++;
+        }
+        void BuildGuides(HoseConnection connection)
+        {
+            int routeCount=connection.PathPointCount;float total=0;
+            for(int i=0;i<routeCount;i++){route[i]=connection.GetPathPoint(i);if(i==routeCount-1)route[i]=emitter.HoseInletPosition;if(i>0)total+=Vector3.Distance(route[i],route[i-1]);routeDistance[i]=total;}
+            // Fixed material particles: wall contacts change a guide, never insert a
+            // hard-pinned vertex into the visible hose or renumber downstream particles.
+            int written=0,leg=0;
+            for(int sample=0;sample<BaseSamples;sample++)
+            {
+                float distance=total*sample/(BaseSamples-1f);
+                while(leg<routeCount-2&&routeDistance[leg+1]<distance)leg++;
+                float length=routeDistance[leg+1]-routeDistance[leg];
+                float t=length>.0001f?(distance-routeDistance[leg])/length:0;
+                bool pin=sample==0||sample==BaseSamples-1;
+                var point=Vector3.Lerp(route[leg],route[leg+1],t);
+                if(!pin)
+                {
+                    // Long runs lie on the floor; only the first/last 65cm rise to a
+                    // raised source/nozzle. A straight-height guide looked like a wire.
+                    float floor=floorHeight+radius+.001f;
+                    float liftA=Mathf.Max(0,route[0].y-floor)*(1-Mathf.SmoothStep(0,1,distance/.65f));
+                    float liftB=Mathf.Max(0,route[routeCount-1].y-floor)*(1-Mathf.SmoothStep(0,1,(total-distance)/.65f));
+                    point.y=floor+Mathf.Max(liftA,liftB);
+                }
+                Append(point,sample/(BaseSamples-1f),pin,ref written);
+            }
+            count=written;
+        }
+        void Append(Vector3 point,float time,bool pin,ref int written)
+        {
+            if(written>0&&(guide[written-1]-point).sqrMagnitude<.00000001f){pinned[written-1]|=pin;return;}
+            if(written>=Capacity)return;
+            guide[written]=point;times[written]=time;pinned[written]=pin;written++;
+        }
+        void Simulate(HoseConnection connection,float dt)
+        {
+            float minY=floorHeight+radius;
+            for(int i=0;i<count;i++)
+            {
+                if(pinned[i]){nodes[i]=previous[i]=guide[i];continue;}
+                Vector3 p=nodes[i];Vector3 velocity=Vector3.ClampMagnitude((p-previous[i])*.88f,.08f);previous[i]=p;
+                nodes[i]=Vector3.Lerp(p+velocity+Vector3.down*(9.81f*dt*dt),guide[i],1-Mathf.Exp(-5*dt));
+                nodes[i].y=Mathf.Max(minY,nodes[i].y);
+            }
+            float slack=Mathf.Clamp(connection.MaximumLength-connection.UsedLength,0,.5f);
+            for(int iteration=0;iteration<7;iteration++)
+            {
+                for(int i=1;i<count;i++)
+                {
+                    Vector3 d=nodes[i]-nodes[i-1];float length=d.magnitude;if(length<.00001f)continue;
+                    float rest=Vector3.Distance(guide[i],guide[i-1])+slack/(count-1);
+                    // Rope is a maximum-distance constraint, not a rod that pushes every
+                    // short span apart. Compression here created high-frequency zigzags.
+                    if(length<=rest)continue;
+                    Vector3 correction=d*((length-rest)/length);
+                    if(pinned[i-1]&&!pinned[i])nodes[i]-=correction;
+                    else if(!pinned[i-1]&&pinned[i])nodes[i-1]+=correction;
+                    else if(!pinned[i-1]&&!pinned[i]){nodes[i-1]+=correction*.5f;nodes[i]-=correction*.5f;}
+                }
+                for(int i=1;i<count-1;i++)if(!pinned[i])
+                {
+                    nodes[i]=Vector3.Lerp(nodes[i],(nodes[i-1]+nodes[i+1])*.5f,.25f);
+                    nodes[i].y=Mathf.Max(minY,nodes[i].y);ResolveCollision(i,connection);
+                }
+                for(int i=0;i<count;i++)if(pinned[i])nodes[i]=guide[i];
+            }
+            // Bends are included exactly. If a simulated section grazes a wall, use its
+            // valid guide section for that section only; never blank the complete hose.
+            for(int i=1;i<count;i++)
+                if(connection.IsCableBlocked(nodes[i-1],nodes[i],radius))
+                {nodes[i-1]=previous[i-1]=guide[i-1];nodes[i]=previous[i]=guide[i];}
+        }
+        void ResolveCollision(int i,HoseConnection connection)
+        {
+            int found=Physics.OverlapSphereNonAlloc(nodes[i],radius,contacts,(1<<8)|(1<<0),QueryTriggerInteraction.Ignore);
+            for(int j=0;j<found;j++)
+            {
+                var obstacle=contacts[j];if(!obstacle||obstacle==probe||obstacle.transform.IsChildOf(emitter.transform))continue;
+                if(connection.Source&&obstacle.transform.IsChildOf(connection.Source.transform)&&i<5)continue;
+                if(Physics.ComputePenetration(probe,nodes[i],Quaternion.identity,obstacle,obstacle.transform.position,obstacle.transform.rotation,out var normal,out float distance))
+                    nodes[i]+=normal*Mathf.Min(distance+.001f,.12f);
+            }
+        }
+        void BuildMesh()
+        {
+            Vector3 side=Vector3.right;LongestSegment=0;
+            for(int i=0;i<count;i++)
+            {
+                Vector3 tangent=nodes[Mathf.Min(count-1,i+1)]-nodes[Mathf.Max(0,i-1)];if(tangent.sqrMagnitude<.000001f)tangent=Vector3.forward;tangent.Normalize();
+                side=Vector3.ProjectOnPlane(side,tangent).normalized;if(side.sqrMagnitude<.01f)side=Vector3.Cross(tangent,Vector3.forward).normalized;if(side.sqrMagnitude<.01f)side=Vector3.right;
+                Vector3 up=Vector3.Cross(tangent,side).normalized;
+                if(i>0)LongestSegment=Mathf.Max(LongestSegment,Vector3.Distance(nodes[i],nodes[i-1]));
+                for(int j=0;j<Sides;j++)
+                {
+                    float a=j*Mathf.PI*2/Sides;Vector3 normal=side*Mathf.Cos(a)+up*Mathf.Sin(a);int k=i*Sides+j;
+                    vertices[k]=transform.InverseTransformPoint(nodes[i]+normal*radius);normals[k]=transform.InverseTransformDirection(normal);uvs[k]=new Vector2(times[i]*8,j/(float)Sides);
+                }
+            }
+            int index=0;for(int i=0;i<count-1;i++)for(int j=0;j<Sides;j++)
+            {int a=i*Sides+j,b=i*Sides+(j+1)%Sides,c=a+Sides,d=b+Sides;triangles[index++]=a;triangles[index++]=b;triangles[index++]=c;triangles[index++]=b;triangles[index++]=d;triangles[index++]=c;}
+            if(mesh.vertexCount!=count*Sides)mesh.Clear(false);mesh.SetVertices(vertices,0,count*Sides);mesh.SetNormals(normals,0,count*Sides);mesh.SetUVs(0,uvs,0,count*Sides);mesh.SetTriangles(triangles,0,index,0);mesh.RecalculateBounds();
+        }
+        void OnDisable(){if(tubeRenderer)tubeRenderer.enabled=false;initialized=false;}
+        void OnDestroy(){if(mesh)Destroy(mesh);if(fabric)Destroy(fabric);if(probe)Destroy(probe.gameObject);}
+    }
+}

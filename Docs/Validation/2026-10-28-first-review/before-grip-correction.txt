@@ -1,0 +1,84 @@
+REVIEW_FAIL
+InvalidOperationException: PASS Approved 15m routed hose enabled only in new scene
+PASS One toilet + one soda source; only oil pan is burning
+PASS No permanent world debug labels
+PASS User skins and bones intact
+PASS Resident waits for actual item and door/fire conditions
+PASS Walk reached (5.50, 0.10, -4.90)
+PASS Walk reached (3.00, 0.10, -2.00)
+PASS Walk reached (0.45, 0.10, 0.20)
+PASS Walk reached (0.45, 0.10, 1.05)
+PASS Right press 1 only equips nozzle
+PASS Right press 2 connects toilet without firing
+PASS Walk reached (0.45, 0.10, 0.20)
+PASS Walk reached (-1.40, 0.10, -3.40)
+PASS Walk reached (-3.90, 0.10, -3.40)
+PASS Walk reached (-3.90, 0.10, -3.10)
+PASS Real player pulls water hose around bathroom/kitchen walls within budget
+PASS Actual swept water packets strike pan and increase oil fire
+PASS F disconnects old source and clears route
+PASS Walk reached (-2.84, 0.10, -1.55)
+PASS Walk reached (-2.84, 0.10, -0.25)
+PASS Walk reached (-4.00, 0.10, 1.10)
+PASS Walk reached (-5.40, 0.10, 2.80)
+PASS Walk reached (-5.40, 0.10, 3.95)
+PASS Existing nozzle connects storage soda on a separate press
+PASS Walk reached (-5.40, 0.10, 2.80)
+PASS Walk reached (-4.00, 0.10, 1.10)
+PASS Walk reached (-2.84, 0.10, -0.25)
+PASS Walk reached (-2.84, 0.10, -1.55)
+PASS Walk reached (-3.90, 0.10, -3.10)
+PASS Storage-to-kitchen physical route fits approved length
+PASS Real powder packets extinguish the water-enlarged oil fire
+PASS Fire out alone never bypasses pudding and closed door
+PASS Walk reached (-3.30, 0.10, -3.40)
+PASS Walk reached (-1.50, 0.10, -3.40)
+PASS Walk reached (5.28, 0.10, -0.05)
+PASS First left click equips without damaging door
+PASS Three strokes break user door once per swing; route collider removed
+PASS Door/fire clear but missing pudding still blocks escape
+PASS Walk reached (2.50, 0.10, -2.50)
+PASS Walk reached (-1.40, 0.10, -3.00)
+PASS Walk reached (-3.55, 0.10, -4.35)
+PASS Pudding on existing user counter is reachable with E
+PASS E picks one item, disables its collision and stows tools
+PASS Cannot swing a tool through carried pudding
+PASS Walk reached (-1.40, 0.10, -3.00)
+PASS Walk reached (3.50, 0.10, -1.40)
+PASS Walk reached (5.28, 0.10, 0.05)
+PASS Outside bedroom cannot deliver through distant wall
+PASS Walk reached (5.28, 0.10, 1.65)
+PASS Walk reached (4.15, 0.10, 2.30)
+PASS Player reaches resident before 60s deadline
+PASS E transfers pudding to resident and stops request deadline
+PASS Delivered pudding is attached to actual hand bone
+PASS Walk reached (2.70, 0.10, 4.40)
+PASS NPC walks through broken door and outside exit; first level completes exactly once
+PASS One-minute requirement timer remains frozen after valid delivery
+PASS Distance-driven gait follows actual resolved movement
+PASS Idle stops gait phase and smoothly settles body
+PASS Invalid/nonpositive timer deltas are ignored
+PASS Exact 60s timeout rejects late delivery and tools
+PASS Late notification cannot turn a failure into success
+PASS Fresh scene has clean request/deadline state
+PASS Fresh scene resets door, fire, hose and pudding ownership
+FAIL Idle hose wrists reach authored grip targets within prototype tolerance
+WALK (-2.84, 0.10, -0.25) actual=(-2.890, 0.125, -0.192) used=5.105993 bends=1 frames=32 time=47.63019
+WALK (-2.84, 0.10, -1.55) actual=(-2.842, 0.125, -1.474) used=6.204872 bends=1 frames=24 time=47.21353
+WALK (-3.90, 0.10, -3.10) actual=(-3.860, 0.125, -3.040) used=8.039558 bends=2 frames=34 time=46.6302
+WALK (-3.30, 0.10, -3.40) actual=(-3.355, 0.125, -3.366) used=0 bends=0 frames=14 time=40.98029
+WALK (-1.50, 0.10, -3.40) actual=(-1.571, 0.125, -3.399) used=0 bends=0 frames=33 time=40.41363
+WALK (5.28, 0.10, -0.05) actual=(5.216, 0.125, -0.081) used=0 bends=0 frames=129 time=38.247
+WALK (2.50, 0.10, -2.50) actual=(2.557, 0.125, -2.449) used=0 bends=0 frames=63 time=35.78037
+WALK (-1.40, 0.10, -3.00) actual=(-1.324, 0.125, -2.990) used=0 bends=0 frames=68 time=34.63039
+WALK (-3.55, 0.10, -4.35) actual=(-3.487, 0.125, -4.311) used=0 bends=0 frames=45 time=33.86373
+WALK (-1.40, 0.10, -3.00) actual=(-1.458, 0.125, -3.037) used=0 bends=0 frames=44 time=33.09708
+WALK (3.50, 0.10, -1.40) actual=(3.434, 0.125, -1.422) used=0 bends=0 frames=89 time=31.5971
+WALK (5.28, 0.10, 0.05) actual=(5.222, 0.125, 0.004) used=0 bends=0 frames=41 time=30.89711
+WALK (5.28, 0.10, 1.65) actual=(5.278, 0.125, 1.574) used=0 bends=0 frames=29 time=30.39712
+WALK (4.15, 0.10, 2.30) actual=(4.215, 0.125, 2.260) used=0 bends=0 frames=24 time=29.98046
+WALK (2.70, 0.10, 4.40) actual=(2.727, 0.125, 4.325) used=0 bends=0 frames=81 time=29.96379
+HOSE grips left=0.1791813 right=0.1402255
+FireRescue.Editor.FirstReview1027Driver.Check (System.Boolean condition, System.String message) (at Assets/FireRescue/Editor/FirstReview1027Validation.cs:46)
+FireRescue.Editor.FirstReview1027Driver+<PoseChecks>d__24.MoveNext () (at Assets/FireRescue/Editor/FirstReview1027Validation.cs:137)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

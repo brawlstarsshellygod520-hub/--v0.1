@@ -1,0 +1,15 @@
+PLAYER_STARTUP_PASS
+minimumY=0.1 frames=15732 groundedFrames=15732
+ReadDevices=True focused=True collider=True trigger=False bounds=Center: (0.00, -0.05, 0.00), Extents: (24.00, 0.15, 24.00) playerLayer=9 groundLayer=0 ignored=False
+frame=1 dt=0.02000 position=(7.1000, 0.1000, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=1471 dt=0.00034 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=2912 dt=0.00046 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=4258 dt=0.00036 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=5579 dt=0.00044 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=6803 dt=0.00036 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=8092 dt=0.00035 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=9380 dt=0.00034 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=10655 dt=0.00035 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=11928 dt=0.00039 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=13234 dt=0.00039 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000
+frame=14514 dt=0.00038 position=(7.1000, 0.1250, -4.9000) grounded=True detect=True floor=Ground floorY=0.1000

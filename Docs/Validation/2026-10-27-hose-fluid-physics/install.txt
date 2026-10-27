@@ -1,0 +1,4 @@
+HOSE_FLUID_PHYSICS_INSTALL_PASS
+Unity 6000.5.0b9
+Current hose wall/inlet references and known interior window hook migrated; 3m, whitebox, camera, sources and other gameplay wiring preserved.
+Saved reload and repeated installation PASS.

@@ -10,7 +10,7 @@ from pathlib import Path
 from mathutils import Vector, Matrix
 from math import pi
 
-ROOT = Path(r'D:/Documents/畢專')
+ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / 'ProjectSettings').is_dir())
 SCALE = 14.0
 CUT_HEIGHT = .8
 wall = bpy.data.objects['wall']
@@ -94,7 +94,7 @@ for source in list(bpy.context.scene.objects):
     bm.free()
     obj.to_mesh_clear()
 
-output = ROOT / 'ArtSource/LevelOne/level-one.geometry.json'
+output = ROOT / 'ArtSource/UserProvided/LevelOne/level-one.geometry.json'
 output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
 print('LEVEL_ONE_EXPORT', json.dumps({'meshes': len(result['meshes']), 'doors': result['doors'],

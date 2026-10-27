@@ -1,0 +1,3 @@
+POLISH_INSTALLED
+First kitchen wave=5 seconds. Restart button and shared scene restart handler. Rounded context frame top-down GUI / bottom-up texture mapping corrected.
+Legacy AI art dependencies=0; authorized procedural courtyard material retained. Historical source assets preserved, not deleted.

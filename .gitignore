@@ -26,5 +26,8 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+# Local MCP runtime downloads, not project source
+/Tools/UnityMCP/bin/
+/Tools/UnityMCP/uv.zip
 .env
 .env.*

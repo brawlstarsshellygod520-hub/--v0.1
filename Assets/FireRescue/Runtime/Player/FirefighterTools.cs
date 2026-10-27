@@ -28,6 +28,30 @@ namespace FireRescue
         public int HitCount { get; private set; }
         public RaycastHit LastHit { get; private set; }
 
+        // Input adapters use this before TickPointer so an axe trace or the first spray packet
+        // is emitted after the actor has already turned. It only mirrors pointer-state gates;
+        // it never advances tool state.
+        public bool WillPointerAimAtCursor(bool axePressed, bool axeHeld, bool hosePressed, bool hoseHeld)
+        {
+            if (!isActiveAndEnabled) return false;
+
+            // Right input has the same priority as TickPointer. Equipping and connecting are
+            // interactions, not a spray action.
+            if (hosePressed || hoseHeld)
+            {
+                HoseConnection connection = emitter ? emitter.Connection : null;
+                if (hosePressed)
+                    return SelectedTool == Tool.Hose && connection && connection.IsConnected && hoseHeld;
+                return SelectedTool == Tool.Hose && sprayArmed && connection &&
+                    connection.IsConnected && connection.Source == firingSource && hoseHeld;
+            }
+
+            // A click starts a stroke only after the axe was already equipped. Once started,
+            // release still completes that stroke and therefore continues to target the cursor.
+            if (IsSwinging) return true;
+            return axePressed && SelectedTool == Tool.Axe;
+        }
+
         public void Initialize(SprayEmitter spray)
         {
             if (emitter && emitter != spray) emitter.Stop();
@@ -126,6 +150,8 @@ namespace FireRescue
             StopSwing();
             if (emitter) emitter.Stop();
         }
+
+        public void Stow() { Stop(); SelectedTool = Tool.None; }
 
         void TickSpray(Vector3 aimPoint, float dt)
         {

@@ -1,0 +1,42 @@
+DIRECTIONAL_SPRAY_PLAYMODE_PASS
+Checks=40
+PASS Directional spray remains opt-in for legacy serialized scenes.
+PASS Tick emits manually simulated packets but cannot damage at spawn.
+PASS Live directional packets never exceed the fixed capacity bound.
+PASS Already emitted packets age and impact after Stop and disconnect.
+PASS Aim/source changes are captured per packet and affect only newly emitted packets.
+PASS A disabled source cannot emit.
+PASS Disabling the emitter clears all live packets.
+PASS Near, far, and high-Y cursor aims with one azimuth share a trajectory.
+PASS LocalPlayerInput preserves heading for a near cursor instead of forcing the old facing.
+PASS Packet endpoint ownership starts at the nozzle/player, never at the cursor.
+PASS An early fixed wall stops spray and creates no residue behind it.
+PASS A nozzle initially inside a wall cannot launch material through it.
+PASS Without a floor, a packet expires at AirLifetime without producing residue.
+PASS Low cutaway wall blocks the projected high-nozzle path as authored geometry.
+PASS A real flight is stopped by the low cutaway wall rather than passing above its visible mesh.
+PASS A Y-90 hose-window opening permits its aperture but not the wall outside it.
+PASS A high-arc flight can cross only the explicit rotated window opening.
+PASS A nozzle extending through a wall is clipped back by player-to-nozzle occlusion before launch.
+PASS The clipped launch cannot escape through the wall on its first flight segment.
+PASS Water ground impact uses its configured radius and lifetime.
+PASS Oil ground impact uses its configured radius and lifetime.
+PASS DryPowder ground impact uses its configured radius and lifetime.
+PASS Water hits ordinary ObjectFire and powder hits cooking-oil ObjectFire.
+PASS Timed residue refreshes to the maximum duration.
+PASS Timed water expires and clears wetness.
+PASS Zero-duration oil creates no new puddle and preserves old state.
+PASS Timed oil and powder expire independently.
+PASS Disabled FireFieldView cannot disable simulation state.
+PASS Disabling FireFieldView does not stop an independent emitter flight.
+PASS Reset clears residue state.
+PASS 30Hz versus 60Hz Tick+Advance preserves emitted, impacts, and unclamped residue within one packet.
+PASS NaN and Infinity spray parameters are clamped to finite validated settings.
+PASS Default source profiles have distinct airborne and ground lifetimes.
+PASS Tiny footprints at a cell corner still affect the directly hit cell.
+PASS Hit-cell fallback never bypasses the occlusion predicate.
+PASS Zero-lifetime water and powder suppress a corner hit without creating residue.
+PASS Water, oil, and powder profiles retain distinct range, spread, and arc contracts.
+PASS Water particle view count matches the active directional flights.
+PASS Oil particle view count matches the active directional flights.
+PASS DryPowder particle view count matches the active directional flights.

@@ -1,0 +1,42 @@
+FIRST_RESCUE_PLAYMODE_PASS
+Checks=38
+PASS One toilet source and unchanged 5m tether
+PASS No old grid pillars, furniture fire or duplicate fire authority
+PASS User character meshes/rigs retained
+PASS No missing active scripts
+PASS Authored bedroom door fire blocks the first resident before water
+PASS Walk reached (5.50, 0.10, -4.00)
+PASS Walk reached (3.00, 0.10, -2.00)
+PASS Walk reached (0.24, 0.10, 0.25)
+PASS Walk reached (0.24, 0.10, 1.05)
+PASS First right press equips only
+PASS Second right press connects real toilet and does not spray
+PASS Walk reached (0.24, 0.10, 0.15)
+PASS F at bathroom doorway sets explicit bend without a wall bypass
+PASS Walk reached (3.15, 0.10, -0.60)
+PASS Player pulled the actual hose beyond 3m and below 5m
+PASS Physical flights hit surfaces and reduce real burning cells
+PASS Water cleared a complete bedroom-to-exit route; no teleport or direct ApplyWater used
+PASS Resident walked from bedroom through both real doorways to outside; completion exactly once
+PASS A route around a blocked corner stays valid instead of selecting the blocked centre cell.
+PASS The detour reaches the exit without a controller collision stall.
+PASS wide doorway admits the controller-sized resident.
+PASS The admitted doorway remains traversable while moving.
+PASS narrow doorway rejects the controller-sized resident.
+PASS A clear straight route starts in Escaping.
+PASS A newly burning route cell cancels the current route before movement through it.
+PASS Clearing the fire rebuilds the route without a player command.
+PASS The resident finishes the rebuilt route exactly by walking it.
+PASS Ballistic water advances forward while gravity lowers its vertical velocity.
+PASS Sixty fixed advances and one large advance produce the same analytic ballistic sample.
+PASS Stopping the hose leaves an already emitted water packet in flight.
+PASS A ground strike raises exactly one impact event for its packet.
+PASS Impact notification amount equals the funded emitted water amount.
+PASS A wall intercepts the water before it can travel through the far side.
+PASS Impact events do not duplicate or create water beyond the positive source flow budget.
+PASS: billboard mode can be selected without a gameplay source
+PASS: droplet-mesh mode can be selected without a gameplay source
+PASS: disabling presentation clears visuals without changing emitter or FireField state
+PASS All bounded presentation probes passed
+Water shots=102 impacts=102
+No GUI/device automation. Scripted input uses the same pointer command path as gameplay.

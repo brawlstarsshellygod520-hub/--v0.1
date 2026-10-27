@@ -1,0 +1,401 @@
+{
+  "source": "D:\\Downloads\\角色1.fbx",
+  "scene_bounds_world": {
+    "min": [
+      4.672081,
+      -0.73817,
+      -1.226354
+    ],
+    "max": [
+      6.128565,
+      0.836559,
+      1.251221
+    ],
+    "size": [
+      1.456485,
+      1.574729,
+      2.477575
+    ],
+    "center": [
+      5.400323,
+      0.049194,
+      0.012434
+    ]
+  },
+  "mesh_objects": [
+    {
+      "object": "圓形",
+      "parent": null,
+      "vertices": 48,
+      "edges": 88,
+      "polygons": 44,
+      "bounds_world": {
+        "min": [
+          5.999709,
+          -0.254256,
+          0.298432
+        ],
+        "max": [
+          6.021904,
+          0.254256,
+          0.363646
+        ],
+        "size": [
+          0.022194,
+          0.508512,
+          0.065214
+        ],
+        "center": [
+          6.010806,
+          0.0,
+          0.331039
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 176
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "圓形.001",
+      "parent": null,
+      "vertices": 48,
+      "edges": 88,
+      "polygons": 44,
+      "bounds_world": {
+        "min": [
+          6.006774,
+          -0.270209,
+          0.482899
+        ],
+        "max": [
+          6.032415,
+          0.270209,
+          0.550246
+        ],
+        "size": [
+          0.025641,
+          0.540419,
+          0.067347
+        ],
+        "center": [
+          6.019594,
+          0.0,
+          0.516572
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 176
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "球體",
+      "parent": null,
+      "vertices": 92,
+      "edges": 186,
+      "polygons": 96,
+      "bounds_world": {
+        "min": [
+          5.703667,
+          -0.090762,
+          -0.1472
+        ],
+        "max": [
+          5.860871,
+          0.090762,
+          0.013886
+        ],
+        "size": [
+          0.157205,
+          0.181524,
+          0.161086
+        ],
+        "center": [
+          5.782269,
+          -0.0,
+          -0.066657
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 372
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體",
+      "parent": null,
+      "vertices": 783,
+      "edges": 1565,
+      "polygons": 784,
+      "bounds_world": {
+        "min": [
+          4.684956,
+          -0.73817,
+          -1.226354
+        ],
+        "max": [
+          6.053785,
+          0.836559,
+          1.083064
+        ],
+        "size": [
+          1.368829,
+          1.574729,
+          2.309417
+        ],
+        "center": [
+          5.369371,
+          0.049194,
+          -0.071645
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 3130
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.001",
+      "parent": null,
+      "vertices": 302,
+      "edges": 571,
+      "polygons": 270,
+      "bounds_world": {
+        "min": [
+          4.672081,
+          -0.713225,
+          -0.048451
+        ],
+        "max": [
+          6.128565,
+          0.713225,
+          1.251221
+        ],
+        "size": [
+          1.456485,
+          1.426449,
+          1.299672
+        ],
+        "center": [
+          5.400323,
+          0.0,
+          0.601385
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 1094
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.002",
+      "parent": null,
+      "vertices": 116,
+      "edges": 214,
+      "polygons": 96,
+      "bounds_world": {
+        "min": [
+          5.080998,
+          -0.607894,
+          -0.723067
+        ],
+        "max": [
+          5.96389,
+          0.607894,
+          -0.035538
+        ],
+        "size": [
+          0.882892,
+          1.215788,
+          0.687529
+        ],
+        "center": [
+          5.522444,
+          0.0,
+          -0.379302
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 384
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.003",
+      "parent": null,
+      "vertices": 6,
+      "edges": 7,
+      "polygons": 2,
+      "bounds_world": {
+        "min": [
+          5.796237,
+          -0.120422,
+          -0.285485
+        ],
+        "max": [
+          5.871897,
+          0.120421,
+          -0.185232
+        ],
+        "size": [
+          0.07566,
+          0.240843,
+          0.100253
+        ],
+        "center": [
+          5.834067,
+          -0.0,
+          -0.235358
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 8
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.004",
+      "parent": null,
+      "vertices": 6,
+      "edges": 7,
+      "polygons": 2,
+      "bounds_world": {
+        "min": [
+          5.853846,
+          -0.120422,
+          -0.483032
+        ],
+        "max": [
+          5.913246,
+          0.120421,
+          -0.384065
+        ],
+        "size": [
+          0.0594,
+          0.240843,
+          0.098967
+        ],
+        "center": [
+          5.883546,
+          -0.0,
+          -0.433548
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 8
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.005",
+      "parent": null,
+      "vertices": 12,
+      "edges": 20,
+      "polygons": 10,
+      "bounds_world": {
+        "min": [
+          6.003139,
+          0.32655,
+          0.551965
+        ],
+        "max": [
+          6.085312,
+          0.449764,
+          0.655605
+        ],
+        "size": [
+          0.082173,
+          0.123213,
+          0.103639
+        ],
+        "center": [
+          6.044225,
+          0.388157,
+          0.603785
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 40
+        }
+      ],
+      "vertex_groups": []
+    },
+    {
+      "object": "立方體.006",
+      "parent": null,
+      "vertices": 12,
+      "edges": 20,
+      "polygons": 10,
+      "bounds_world": {
+        "min": [
+          6.003139,
+          0.357657,
+          0.507527
+        ],
+        "max": [
+          6.085312,
+          0.48087,
+          0.611167
+        ],
+        "size": [
+          0.082173,
+          0.123213,
+          0.103639
+        ],
+        "center": [
+          6.044225,
+          0.419263,
+          0.559347
+        ]
+      },
+      "materials": [],
+      "uv_layers": [
+        {
+          "name": "UV貼圖",
+          "data_points": 40
+        }
+      ],
+      "vertex_groups": []
+    }
+  ],
+  "armatures": [],
+  "action_names": [],
+  "animation_note": "No actions are authored or modified by this inspection.",
+  "coordinate_note": "FBX-importer coordinates. Preview cameras cover +X and +X/+Y; use the visible face anatomy to confirm front."
+}

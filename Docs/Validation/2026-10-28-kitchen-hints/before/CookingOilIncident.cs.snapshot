@@ -1,0 +1,47 @@
+using UnityEngine;
+
+namespace FireRescue
+{
+    // Oil pot and ordinary floor fire have separate state. No renderer participates in reactions.
+    public sealed class CookingOilIncident : MonoBehaviour
+    {
+        [SerializeField] ObjectFire pot;
+        [SerializeField] FireField floor;
+        [SerializeField] CarryItem pudding;
+        [SerializeField] Vector3 spillStart=new Vector3(-5.05f,.1f,-3.46f);
+        [SerializeField] float fastSeconds=2,fastSpread=.4f,slowSpread=.035f;
+        float age,waterDose;
+        bool seeded,subscribed;
+        public bool AutomaticTick {get;set;}=true;
+        public int ExplosionCount {get;private set;}
+        public float ExplosionAge {get;private set;}=100;
+        public void Initialize(ObjectFire source,FireField field,CarryItem food)
+        {Unsubscribe();pot=source;floor=field;pudding=food;Subscribe();}
+        void OnEnable()=>Subscribe();
+        void OnDisable()=>Unsubscribe();
+        void Subscribe(){if(!subscribed&&pot){pot.OilContactedByWater+=OnWater;subscribed=true;}}
+        void Unsubscribe(){if(subscribed&&pot)pot.OilContactedByWater-=OnWater;subscribed=false;}
+        void Update(){if(AutomaticTick)Tick(Time.deltaTime);}
+        public void Tick(float dt)
+        {
+            if(dt<=0||float.IsNaN(dt)||float.IsInfinity(dt))return;
+            age+=dt;ExplosionAge+=dt;
+            if(!floor)return;
+            floor.SetSpreadRate(age<fastSeconds?fastSpread:slowSpread);
+            if(!seeded&&age>=.2f&&pot&&pot.IsBurning){floor.Ignite(spillStart,.95f);seeded=true;}
+        }
+        void OnWater(float amount)
+        {
+            waterDose+=amount;if(ExplosionCount!=0||waterDose<.08f)return;
+            ExplosionCount++;ExplosionAge=0;
+            if(pudding)
+            {
+                Vector3 d=pudding.transform.position-transform.position;d.y=0;
+                if(d.sqrMagnitude<1.5f*1.5f)pudding.Scorch();
+            }
+            // Burst ignites a local footprint, not the whole kitchen. Wet cleared cells resist ignition.
+            if(floor)for(int z=-2;z<=2;z++)for(int x=-2;x<=2;x++)
+                if(x*x+z*z<=4)floor.Ignite(spillStart+new Vector3(x*floor.CellSize,0,z*floor.CellSize),1);
+        }
+    }
+}

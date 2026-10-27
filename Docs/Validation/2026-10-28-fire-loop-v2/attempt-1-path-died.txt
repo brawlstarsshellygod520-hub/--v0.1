@@ -1,0 +1,38 @@
+FIRE_LOOP_V2_FAIL
+InvalidOperationException: PASS Spawn is inside living room, not ambiguous exterior entrance
+PASS Only pot is initially on fire; no full-kitchen flame carpet
+PASS Actual cell fire grows from pot locally rather than starting everywhere
+PASS Early rapid propagation transitions to slower spread
+PASS Water on burning oil never extinguishes it and triggers a burst
+PASS Nearby original pudding becomes scorched
+PASS Continuous spray cannot emit an explosion every particle/frame
+PASS Water extinguishes ordinary neighboring floor cells without deleting oil fire
+PASS Wet cleared ground resists immediate re-ignition
+PASS Poison fixture has a passable door
+PASS Burnt food is accepted, rather than silently rejected
+PASS Bad meal blocks rescue and enters poisoning state
+PASS Complaint has a visible delay before death
+PASS Poisoned resident dies; failure never counts as a rescue
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Walking onto live floor fire kills player and closes tool/input gates
+PASS Reload resets deaths, food quality, burst and timer
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.45, 0.10, 2.65)
+PASS Separate right presses equip and connect authored toilet
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Real ballistic water hits floor while deliberate aiming avoids pot explosion
+PASS Hose wall contacts retain fixed particle count and continuous visibility
+FAIL Real player reached (-2.84, 0.10, -1.55)
+SPREAD counts start=6 fast=86 later=156 rates=1.5 -> 0.14
+WALK (-1.45, 0.10, -3.45) actual=(-1.376, 0.125, -3.455) remaining=55.81673 cells=139 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.483, 0.125, 0.140) remaining=58.70002 cells=54 dead=False hose=0
+WALK (0.45, 0.10, 2.65) actual=(0.451, 0.125, 2.583) remaining=57.95003 cells=119 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.276) remaining=57.16671 cells=125 dead=False hose=3.777729
+WALK (-1.45, 0.10, -3.45) actual=(-1.415, 0.125, -3.382) remaining=55.96673 cells=139 dead=False hose=7.785657
+WATER floorAmount=8.800004 cells=139 -> 122 pot=1
+HOSE max material node displacement=0.1844307 longest=0.09950446
+WALK (-2.84, 0.10, -1.55) actual=(-2.218, 0.125, -2.418) remaining=50.38348 cells=177 dead=True hose=0
+FireRescue.Editor.ReviewFireLoopV2Driver.Check (System.Boolean value, System.String label) (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:32)
+FireRescue.Editor.ReviewFireLoopV2Driver+<Walk>d__29.MoveNext () (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:55)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

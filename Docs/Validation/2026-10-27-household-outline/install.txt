@@ -1,0 +1,4 @@
+HOUSEHOLD_INSTALL_PASS
+Unity 6000.5.0b9
+25 catalog prefabs, six room groups, Visual/collider separation; idempotent scene save/reload.
+Core systems, source/fire/window anchors and 3m hose unchanged. Shader explicitly serialized.

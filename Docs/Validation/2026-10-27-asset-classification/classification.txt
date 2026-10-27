@@ -1,0 +1,4 @@
+ASSET_CLASSIFICATION_PASS
+Preserved 163 existing GUIDs.
+User source and derived rigs grouped under UserProvided; procedural art under AIGenerated.
+Shared shader and gameplay prefabs stay separate from model provenance. No models regenerated.

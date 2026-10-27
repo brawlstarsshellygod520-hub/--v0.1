@@ -1,0 +1,819 @@
+{
+    "assets": [
+        {
+            "guid": "3b39a2af9b6fcf742b3640af97d437e5",
+            "before": "Assets/FireRescue/Art/Animations",
+            "after": "Assets/FireRescue/Art/AIGenerated/Animations"
+        },
+        {
+            "guid": "418288ffc5ca1e943bbf17fb6808e718",
+            "before": "Assets/FireRescue/Art/Materials",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials"
+        },
+        {
+            "guid": "9f75286a1ceb29f469fd61dd4aaae2e2",
+            "before": "Assets/FireRescue/Art/Models",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models"
+        },
+        {
+            "guid": "ff8e628cfb3cea348ac96f109592249d",
+            "before": "Assets/FireRescue/Art/PlayerWhitebox",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character1"
+        },
+        {
+            "guid": "ad3bed134bf6303439a0a5f67f2a0742",
+            "before": "Assets/FireRescue/Art/Prefabs",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs"
+        },
+        {
+            "guid": "a52fa77b687281c49a4f44db1ec36c0f",
+            "before": "Assets/FireRescue/Art/RoleSwapRig",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged"
+        },
+        {
+            "guid": "ed285c2209575284a995ba61fb7dbdc1",
+            "before": "Assets/FireRescue/Art/Shaders",
+            "after": "Assets/FireRescue/Art/Shaders"
+        },
+        {
+            "guid": "e5024d6acb018d546b92006ba117d866",
+            "before": "Assets/FireRescue/Art/UserCharacters2",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2"
+        },
+        {
+            "guid": "f8c14359cf94d894c8d03f1159111d38",
+            "before": "Assets/FireRescue/Art/UserFireAxe",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/FireAxe"
+        },
+        {
+            "guid": "228d0091f6c910548a246af368a774e3",
+            "before": "Assets/FireRescue/Art/UserNozzle",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/Nozzle"
+        },
+        {
+            "guid": "54eef01050bd67945969192d1b900f4d",
+            "before": "Assets/FireRescue/Art/Animations/Firefighter.controller",
+            "after": "Assets/FireRescue/Art/AIGenerated/Animations/Firefighter.controller"
+        },
+        {
+            "guid": "e78f797fe2900884fa21244f4018d518",
+            "before": "Assets/FireRescue/Art/Animations/Resident.controller",
+            "after": "Assets/FireRescue/Art/AIGenerated/Animations/Resident.controller"
+        },
+        {
+            "guid": "97c18ceee3671c847b07fecdc7878916",
+            "before": "Assets/FireRescue/Art/Animations/UserResident2.controller",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Animations/UserResident2.controller"
+        },
+        {
+            "guid": "210ed7feb78f74e4bab37f011178b002",
+            "before": "Assets/FireRescue/Art/Materials/BathroomFloor.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/BathroomFloor.mat"
+        },
+        {
+            "guid": "2246fccd6e2d1684c895aa3be3e54cae",
+            "before": "Assets/FireRescue/Art/Materials/Blanket.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Blanket.mat"
+        },
+        {
+            "guid": "72e5b0f2e0d9e7845a7140719530b82c",
+            "before": "Assets/FireRescue/Art/Materials/Charcoal.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Charcoal.mat"
+        },
+        {
+            "guid": "12ad25f446054c748bfa0ad65b8eda68",
+            "before": "Assets/FireRescue/Art/Materials/CivilianPants.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/CivilianPants.mat"
+        },
+        {
+            "guid": "751dab113b21e2d428d15f8a0c1ae020",
+            "before": "Assets/FireRescue/Art/Materials/CivilianShirt.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/CivilianShirt.mat"
+        },
+        {
+            "guid": "f58b59d839b9be84a8ce8204bd1e8152",
+            "before": "Assets/FireRescue/Art/Materials/Cream.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Cream.mat"
+        },
+        {
+            "guid": "ad6c1616a349eab47ab9aaab7085c274",
+            "before": "Assets/FireRescue/Art/Materials/DoorWood.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/DoorWood.mat"
+        },
+        {
+            "guid": "847d5e80c0c494849a11e6e7118801af",
+            "before": "Assets/FireRescue/Art/Materials/Eye.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Eye.mat"
+        },
+        {
+            "guid": "e78064523a117eb46956ef67fcef20ba",
+            "before": "Assets/FireRescue/Art/Materials/Hair.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Hair.mat"
+        },
+        {
+            "guid": "f832e579750c6ed46aafdff48b0d4542",
+            "before": "Assets/FireRescue/Art/Materials/Helmet.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Helmet.mat"
+        },
+        {
+            "guid": "03d54dfae5bbba344b5b48186e234efc",
+            "before": "Assets/FireRescue/Art/Materials/HouseFloor.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/HouseFloor.mat"
+        },
+        {
+            "guid": "e10b2ab414042ee43bbc4c819a5dc393",
+            "before": "Assets/FireRescue/Art/Materials/HouseWall.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/HouseWall.mat"
+        },
+        {
+            "guid": "3a3c23a1acf9dda40b5402932715f082",
+            "before": "Assets/FireRescue/Art/Materials/Label.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Label.mat"
+        },
+        {
+            "guid": "dbfdcb50d63566b42922b62ca51557d1",
+            "before": "Assets/FireRescue/Art/Materials/Metal.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Metal.mat"
+        },
+        {
+            "guid": "d6271d870c585eb4ab753b325f33d615",
+            "before": "Assets/FireRescue/Art/Materials/Oil.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Oil.mat"
+        },
+        {
+            "guid": "bad15d3c1e7a7f3449d7d8f6a84bf90e",
+            "before": "Assets/FireRescue/Art/Materials/Pillow.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Pillow.mat"
+        },
+        {
+            "guid": "07d0ed4696ec2f547b272978f66495ec",
+            "before": "Assets/FireRescue/Art/Materials/Plastic.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Plastic.mat"
+        },
+        {
+            "guid": "332e9262467bb654e8bd5bcd2be83af4",
+            "before": "Assets/FireRescue/Art/Materials/Reflector.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Reflector.mat"
+        },
+        {
+            "guid": "e17f12a9fa4b8174fac17fc9ccdf74ad",
+            "before": "Assets/FireRescue/Art/Materials/Skin.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Skin.mat"
+        },
+        {
+            "guid": "ecf862acc5bbd714381dcca117759fde",
+            "before": "Assets/FireRescue/Art/Materials/Sofa.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Sofa.mat"
+        },
+        {
+            "guid": "15493ef505dde3845b0eb6c2fad2134d",
+            "before": "Assets/FireRescue/Art/Materials/Uniform.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Uniform.mat"
+        },
+        {
+            "guid": "120b9463c2595b640a353b619f27606e",
+            "before": "Assets/FireRescue/Art/Materials/Water.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Water.mat"
+        },
+        {
+            "guid": "472f4a16c8aece6419584e8ec6adef18",
+            "before": "Assets/FireRescue/Art/Materials/White.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/White.mat"
+        },
+        {
+            "guid": "2be7d376c2f752c439f6e19170eb638e",
+            "before": "Assets/FireRescue/Art/Materials/Wood.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Materials/Wood.mat"
+        },
+        {
+            "guid": "f3e8695e4b2a3ee4880a62fad57fe210",
+            "before": "Assets/FireRescue/Art/Models/Bed.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Bed.fbx"
+        },
+        {
+            "guid": "d0897f209dc25494a92ceee34ab096c8",
+            "before": "Assets/FireRescue/Art/Models/Block.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Block.fbx"
+        },
+        {
+            "guid": "05edf41bb8a972b459982a6ac5e4a05d",
+            "before": "Assets/FireRescue/Art/Models/CoffeeTable.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/CoffeeTable.fbx"
+        },
+        {
+            "guid": "78bd47ee18ac21447acf36f1b5626982",
+            "before": "Assets/FireRescue/Art/Models/Firefighter.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Firefighter.fbx"
+        },
+        {
+            "guid": "a59d59a0283f4404f997d883dc3ec6c7",
+            "before": "Assets/FireRescue/Art/Models/KitchenCounter.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/KitchenCounter.fbx"
+        },
+        {
+            "guid": "f0063f3d5b50cb64dae58f20a261a75f",
+            "before": "Assets/FireRescue/Art/Models/Nozzle.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Nozzle.fbx"
+        },
+        {
+            "guid": "df7443af10c63fe4e926228908554323",
+            "before": "Assets/FireRescue/Art/Models/Resident.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Resident.fbx"
+        },
+        {
+            "guid": "cfea9dfac1540bb479c369d7e8c6ad39",
+            "before": "Assets/FireRescue/Art/Models/SaladOil.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/SaladOil.fbx"
+        },
+        {
+            "guid": "6f8ff88d06bc5244b9ab74da0548dc81",
+            "before": "Assets/FireRescue/Art/Models/Shower.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Shower.fbx"
+        },
+        {
+            "guid": "6a3785d737f346f4988ab50750395b7d",
+            "before": "Assets/FireRescue/Art/Models/Sink.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Sink.fbx"
+        },
+        {
+            "guid": "6b2328534c9f878459c3b4b6ac643b1e",
+            "before": "Assets/FireRescue/Art/Models/Sofa.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Sofa.fbx"
+        },
+        {
+            "guid": "f084ab21edfe298498539eb53afbf605",
+            "before": "Assets/FireRescue/Art/Models/Toilet.fbx",
+            "after": "Assets/FireRescue/Art/AIGenerated/Models/Toilet.fbx"
+        },
+        {
+            "guid": "7cf92960674d3f3438039efdc6952b54",
+            "before": "Assets/FireRescue/Art/PlayerWhitebox/Character1.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character1/Character1.fbx"
+        },
+        {
+            "guid": "f3b6a2497ee04cc4cb2dcc17e41ead87",
+            "before": "Assets/FireRescue/Art/PlayerWhitebox/PlayerCharacter1.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character1/PlayerCharacter1.prefab"
+        },
+        {
+            "guid": "94861baa7fb6bd749a95a2beaa9fec4d",
+            "before": "Assets/FireRescue/Art/PlayerWhitebox/Whitebox.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character1/Whitebox.mat"
+        },
+        {
+            "guid": "b295a7b1062c2cd4fb61e0ee9836ad3a",
+            "before": "Assets/FireRescue/Art/Prefabs/Bed.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Bed.prefab"
+        },
+        {
+            "guid": "43ffdf168a429154c8d8b1ec0da0ede6",
+            "before": "Assets/FireRescue/Art/Prefabs/Block.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Block.prefab"
+        },
+        {
+            "guid": "ce81a282b52737d43b528cb8aab65565",
+            "before": "Assets/FireRescue/Art/Prefabs/CoffeeTable.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/CoffeeTable.prefab"
+        },
+        {
+            "guid": "3928c638b9443794dbad906caf7cc883",
+            "before": "Assets/FireRescue/Art/Prefabs/Firefighter.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Firefighter.prefab"
+        },
+        {
+            "guid": "197dcc1f0a3f7ac469ff84ed3ff9f9a1",
+            "before": "Assets/FireRescue/Art/Prefabs/KitchenCounter.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/KitchenCounter.prefab"
+        },
+        {
+            "guid": "64794479b8e40c24fbb3c2bde86a7612",
+            "before": "Assets/FireRescue/Art/Prefabs/Nozzle.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Nozzle.prefab"
+        },
+        {
+            "guid": "eb93b9dd78d90b140a81d7e80e80b7be",
+            "before": "Assets/FireRescue/Art/Prefabs/Resident.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Resident.prefab"
+        },
+        {
+            "guid": "134637280ccc69946b701ea63b1cc33f",
+            "before": "Assets/FireRescue/Art/Prefabs/SaladOil.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/SaladOil.prefab"
+        },
+        {
+            "guid": "883d80beccf23ea42a786b642564b1d6",
+            "before": "Assets/FireRescue/Art/Prefabs/Shower.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Shower.prefab"
+        },
+        {
+            "guid": "a0e71b145edcef543870656f35fd3827",
+            "before": "Assets/FireRescue/Art/Prefabs/Sink.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Sink.prefab"
+        },
+        {
+            "guid": "51280e1ec1a14474b9fd37b5d0aa57e6",
+            "before": "Assets/FireRescue/Art/Prefabs/Sofa.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Sofa.prefab"
+        },
+        {
+            "guid": "d2e2f7475e6ed614d96b0ef8a04f301b",
+            "before": "Assets/FireRescue/Art/Prefabs/Toilet.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Prefabs/Toilet.prefab"
+        },
+        {
+            "guid": "9ce031a1ad3e7484b81e1205007d3c9c",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Models",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Models"
+        },
+        {
+            "guid": "8af5ab56c4a360744915495058180187",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette"
+        },
+        {
+            "guid": "1167d2cd56a6f9c41b05fc205f278b10",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Role1.controller",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Role1.controller"
+        },
+        {
+            "guid": "8dfcab96e9676f04da516855eeff9730",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Role1.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Role1.prefab"
+        },
+        {
+            "guid": "0632d08775ce39046ac568506c2d3dc7",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Role2.controller",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Role2.controller"
+        },
+        {
+            "guid": "3c72af299e372cc4a81ddd25303caf92",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Role2.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Role2.prefab"
+        },
+        {
+            "guid": "b0c8bb75452014645b5dad357409d34b",
+            "before": "Assets/FireRescue/Art/Shaders/InteractionOutline.shader",
+            "after": "Assets/FireRescue/Art/Shaders/InteractionOutline.shader"
+        },
+        {
+            "guid": "364c7cd73b4981b47ac4116b73e0770b",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials"
+        },
+        {
+            "guid": "22990ae875733f2488e8dc61bb0932e8",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Resident2.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Resident2.fbx"
+        },
+        {
+            "guid": "d967fab5e7e71cb458634e71b32158c8",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Resident2.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Resident2.prefab"
+        },
+        {
+            "guid": "445815a5a9c33704e9669ec548c2c07d",
+            "before": "Assets/FireRescue/Art/UserFireAxe/FireAxe.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/FireAxe/FireAxe.prefab"
+        },
+        {
+            "guid": "18f79f2eb1a594e4e89a67cf3b21914d",
+            "before": "Assets/FireRescue/Art/UserFireAxe/fire_axe.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/FireAxe/fire_axe.fbx"
+        },
+        {
+            "guid": "f45c2a0f86779c34790878656795ce13",
+            "before": "Assets/FireRescue/Art/UserNozzle/nozzle.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/Nozzle/nozzle.fbx"
+        },
+        {
+            "guid": "356ac80a425b88741b54cf055448cb3b",
+            "before": "Assets/FireRescue/Art/UserNozzle/Nozzle.prefab",
+            "after": "Assets/FireRescue/Art/UserProvided/Tools/Nozzle/Nozzle.prefab"
+        },
+        {
+            "guid": "e6cec6c4120c7b94dbf7888df56621ae",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Models/Role1.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Models/Role1.fbx"
+        },
+        {
+            "guid": "771e6c1ced86d554992730d83083dd37",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/Models/Role2.fbx",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/Models/Role2.fbx"
+        },
+        {
+            "guid": "6975552b90294f34e91f3d9ed187caea",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_BrowOrange.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_BrowOrange.mat"
+        },
+        {
+            "guid": "64af6c67657cf054896454b19b38e8ef",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_EyeBlack.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_EyeBlack.mat"
+        },
+        {
+            "guid": "45b2c973570e67a4c855e85e8dc30903",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_HairOrange.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_HairOrange.mat"
+        },
+        {
+            "guid": "959ee4c50f2046f4685bbc7f8ff70907",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_ShirtPaleOrange.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_ShirtPaleOrange.mat"
+        },
+        {
+            "guid": "2f627e3211fb19548b3693f3f9546f9e",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_Skin.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_Skin.mat"
+        },
+        {
+            "guid": "3a8d70cc46d092849a6ed48f7f3a1e63",
+            "before": "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_TrimLightYellow.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Rigged/ResidentPalette/R1_TrimLightYellow.mat"
+        },
+        {
+            "guid": "c35f06a2eb7fe4d46bec45920f355fae",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Dark.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Dark.mat"
+        },
+        {
+            "guid": "25af6795e07b849479e45e88092dae2f",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Eye.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Eye.mat"
+        },
+        {
+            "guid": "2bc6d1ab340555a46a8eb5d0d7eea3fb",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Hair.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Hair.mat"
+        },
+        {
+            "guid": "fa31037cb3958f8478f4cf93cfee5e38",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Pants.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Pants.mat"
+        },
+        {
+            "guid": "bbd5f04c9cc4e8943bbb8ce5f2320796",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Shirt.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Shirt.mat"
+        },
+        {
+            "guid": "f19c3465dc028184ba85373c80b85f3f",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Skin.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Skin.mat"
+        },
+        {
+            "guid": "9fe8c3567b52283499dd3b304f986dc9",
+            "before": "Assets/FireRescue/Art/UserCharacters2/Materials/U2_Trim.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/Characters/Character2/Materials/U2_Trim.mat"
+        },
+        {
+            "guid": "87b3b8946c9b7d74e8c2e2d716a006b4",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Annex floor.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Annex floor.mat"
+        },
+        {
+            "guid": "4db32979d48f1f24691f120d785ee054",
+            "before": "Assets/FireRescue/Greybox/LevelOne/AxeSteel.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/AxeSteel.mat"
+        },
+        {
+            "guid": "a2e23d04d0ba12c48b35504a916088d7",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Bathroom floor.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Bathroom floor.mat"
+        },
+        {
+            "guid": "69eae4acd2b99094ba67d1d2f1fd886e",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door-Collision.asset"
+        },
+        {
+            "guid": "233b492b9327f8b419642d5859f25d55",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door-Visual.asset"
+        },
+        {
+            "guid": "7b2c8c80c80a3104e9950484dddeacff",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.001-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.001-Collision.asset"
+        },
+        {
+            "guid": "66fb3f1f7d4525a40b262b5af4494a15",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.001-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.001-Visual.asset"
+        },
+        {
+            "guid": "4d236d070eab50e49a3947675a8c5918",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.002-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.002-Collision.asset"
+        },
+        {
+            "guid": "b73dbd65b812a444c82b06b58bbe6610",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.002-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.002-Visual.asset"
+        },
+        {
+            "guid": "84e8f86374634d94b9b3c1579bb3b019",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.003-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.003-Collision.asset"
+        },
+        {
+            "guid": "92d6b52e17378fa47a2318b1a8568a1d",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.003-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.003-Visual.asset"
+        },
+        {
+            "guid": "7e82e827f65f5294ea4d87b76c4d90cf",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.004-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.004-Collision.asset"
+        },
+        {
+            "guid": "d138afb3031e2344c90fadbfff083784",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.004-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.004-Visual.asset"
+        },
+        {
+            "guid": "e3e1ba940cf044842b9805478badc778",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Door.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Door.mat"
+        },
+        {
+            "guid": "b27a0ed6bfa66bf4987f47d4146e67a1",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame-Collision.asset"
+        },
+        {
+            "guid": "ed7f842e802ca22459d2135ebd5d634a",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame-Visual.asset"
+        },
+        {
+            "guid": "d4f1b3c467aa0c54c928f479a89ac0b0",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.001-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.001-Collision.asset"
+        },
+        {
+            "guid": "bbda83ec77b4026498b91e2e0da0ecf5",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.001-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.001-Visual.asset"
+        },
+        {
+            "guid": "4b4b17d5550e55c45945ae2d01d6b544",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.002-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.002-Collision.asset"
+        },
+        {
+            "guid": "921a44dbf4f90ac4ea3e8cc2a98e5d3c",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.002-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.002-Visual.asset"
+        },
+        {
+            "guid": "b1b582adbb7ecd6419961c8c28ed89e7",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.003-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.003-Collision.asset"
+        },
+        {
+            "guid": "003c2340f005f4e48b2f3b0a0012fcd3",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.003-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.003-Visual.asset"
+        },
+        {
+            "guid": "6bb7e1a0099826c4c86fbd3746fd32c5",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.004-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.004-Collision.asset"
+        },
+        {
+            "guid": "e9ec29db70849504fac284030521ac4a",
+            "before": "Assets/FireRescue/Greybox/LevelOne/DoorFrame.004-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/DoorFrame.004-Visual.asset"
+        },
+        {
+            "guid": "6157e3db61d390845941269e153d8d73",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Furniture.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Furniture.mat"
+        },
+        {
+            "guid": "c1c5acacf6c35d045a0f302f6a423058",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Left room floor.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Left room floor.mat"
+        },
+        {
+            "guid": "e0921af0a16fc3b4e8865761ab16ee70",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Main room floor.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Main room floor.mat"
+        },
+        {
+            "guid": "e8819b0d19edb314d8f726e65f523647",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Paving.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Paving.mat"
+        },
+        {
+            "guid": "9d58b61975834714e891f62373c87184",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Rear room floor.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Rear room floor.mat"
+        },
+        {
+            "guid": "e34e05d3241481244b2238d4b44cdd29",
+            "before": "Assets/FireRescue/Greybox/LevelOne/wall-Collision.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/wall-Collision.asset"
+        },
+        {
+            "guid": "22f45da951350ea4fabb1ca3aafa5b43",
+            "before": "Assets/FireRescue/Greybox/LevelOne/wall-Visual.asset",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/wall-Visual.asset"
+        },
+        {
+            "guid": "f01879e6634d0554099016c301b2d046",
+            "before": "Assets/FireRescue/Greybox/LevelOne/Wall.mat",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne/Wall.mat"
+        },
+        {
+            "guid": "01dc3d776ac8035428d80e3a3c52e7ab",
+            "before": "Assets/FireRescue/Greybox/Household/Armchair.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Armchair.prefab"
+        },
+        {
+            "guid": "2a6e716dc77dd2041a3820c971d0a550",
+            "before": "Assets/FireRescue/Greybox/Household/BakingSodaJar.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/BakingSodaJar.prefab"
+        },
+        {
+            "guid": "d4f39386a10212b4e906263aba5ff049",
+            "before": "Assets/FireRescue/Greybox/Household/BathroomSink.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/BathroomSink.prefab"
+        },
+        {
+            "guid": "3b4bb17791d9dcd4e87ceb551bee3d4b",
+            "before": "Assets/FireRescue/Greybox/Household/Bed.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Bed.prefab"
+        },
+        {
+            "guid": "c19dbfb5d080c9e45b0a267499c1274b",
+            "before": "Assets/FireRescue/Greybox/Household/Chair.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Chair.prefab"
+        },
+        {
+            "guid": "41c78ad7b75a51249b39dd90e139bd82",
+            "before": "Assets/FireRescue/Greybox/Household/CoffeeTable.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/CoffeeTable.prefab"
+        },
+        {
+            "guid": "e3a3777fd41c73a4cb19cdb7cae0d5f6",
+            "before": "Assets/FireRescue/Greybox/Household/Desk.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Desk.prefab"
+        },
+        {
+            "guid": "88e2d77b851c396428111fbfda3ba1f4",
+            "before": "Assets/FireRescue/Greybox/Household/EntryShoeCabinet.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/EntryShoeCabinet.prefab"
+        },
+        {
+            "guid": "3a6da521e5dfe6541bd69cd96bbcd8fd",
+            "before": "Assets/FireRescue/Greybox/Household/Fridge.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Fridge.prefab"
+        },
+        {
+            "guid": "2ebca01713a054e4d97d0fb69a7ce11c",
+            "before": "Assets/FireRescue/Greybox/Household/KitchenCounter.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/KitchenCounter.prefab"
+        },
+        {
+            "guid": "8552c15d862569442a1bb6b2b32e009d",
+            "before": "Assets/FireRescue/Greybox/Household/KitchenSink.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/KitchenSink.prefab"
+        },
+        {
+            "guid": "2b3c4dee87410b84ebcdf7e1901929c6",
+            "before": "Assets/FireRescue/Greybox/Household/LowCabinet.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/LowCabinet.prefab"
+        },
+        {
+            "guid": "734b1cd5b7a0a4e4db162791c79b05d0",
+            "before": "Assets/FireRescue/Greybox/Household/Materials",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials"
+        },
+        {
+            "guid": "cb9961d64ad8bef48aa1adebbd7077b5",
+            "before": "Assets/FireRescue/Greybox/Household/RecyclingBin.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/RecyclingBin.prefab"
+        },
+        {
+            "guid": "885dcdec8dc17c14baecb9c4c6296d52",
+            "before": "Assets/FireRescue/Greybox/Household/SaladOilBottle.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/SaladOilBottle.prefab"
+        },
+        {
+            "guid": "551f46691245a4749974d585d930803b",
+            "before": "Assets/FireRescue/Greybox/Household/Shower.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Shower.prefab"
+        },
+        {
+            "guid": "407a0477bf951ff4b803c489d79931ec",
+            "before": "Assets/FireRescue/Greybox/Household/SodaCart.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/SodaCart.prefab"
+        },
+        {
+            "guid": "6a439ef7c5bd2e845aecbafd295641cc",
+            "before": "Assets/FireRescue/Greybox/Household/Sofa.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Sofa.prefab"
+        },
+        {
+            "guid": "3923fff2b4201e340a5abde2184f4857",
+            "before": "Assets/FireRescue/Greybox/Household/StorageCabinet.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/StorageCabinet.prefab"
+        },
+        {
+            "guid": "d441e0865e9f76842b033a151cea8cb7",
+            "before": "Assets/FireRescue/Greybox/Household/Stove.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Stove.prefab"
+        },
+        {
+            "guid": "db3a9e2fa377a1143b74f6acbce3a912",
+            "before": "Assets/FireRescue/Greybox/Household/Television.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Television.prefab"
+        },
+        {
+            "guid": "390bf70c58579de4e9b85e76692cb9f1",
+            "before": "Assets/FireRescue/Greybox/Household/Toilet.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Toilet.prefab"
+        },
+        {
+            "guid": "10f5aa68185f9804a90af67efdee9aad",
+            "before": "Assets/FireRescue/Greybox/Household/TrashBin.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/TrashBin.prefab"
+        },
+        {
+            "guid": "d81dcbbe4dbd5764da7a825e31b5cb9d",
+            "before": "Assets/FireRescue/Greybox/Household/TvStand.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/TvStand.prefab"
+        },
+        {
+            "guid": "3fe16588e01a7e7498eba14e3ce99d9e",
+            "before": "Assets/FireRescue/Greybox/Household/Wardrobe.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Wardrobe.prefab"
+        },
+        {
+            "guid": "be8692061b731e44f8e111c3503cb2cb",
+            "before": "Assets/FireRescue/Greybox/Household/WashingMachine.prefab",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/WashingMachine.prefab"
+        },
+        {
+            "guid": "e53dd6b3b31b29a4fa85839ba2674069",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/ApplianceWhite.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/ApplianceWhite.mat"
+        },
+        {
+            "guid": "279c42f289e02744d81a361a97020e3c",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/BathroomBlue.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/BathroomBlue.mat"
+        },
+        {
+            "guid": "afe70f2cc0251b94bbf3e9c6c0c6049e",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/CapRed.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/CapRed.mat"
+        },
+        {
+            "guid": "20994cfbd198ac44491e2505045355ec",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/Cream.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/Cream.mat"
+        },
+        {
+            "guid": "7aa54673c78e4234c845744d4d7d3b5a",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/LightWood.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/LightWood.mat"
+        },
+        {
+            "guid": "eec1c78986350104eb2f9c3a343e4d1f",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/OilYellow.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/OilYellow.mat"
+        },
+        {
+            "guid": "648153cddfd323645adb9b7f09d199a2",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/RecycleGreen.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/RecycleGreen.mat"
+        },
+        {
+            "guid": "79d24ffccb64bf946a0ed583bcf208e5",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/ScreenDark.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/ScreenDark.mat"
+        },
+        {
+            "guid": "d715d8f519affc845940a74a1738e450",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/Steel.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/Steel.mat"
+        },
+        {
+            "guid": "ca335e5691497e2438d0ec295705e11b",
+            "before": "Assets/FireRescue/Greybox/Household/Materials/Wood.mat",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household/Materials/Wood.mat"
+        },
+        {
+            "guid": "67dbd06dc647cf4418bc7b4d2fdfaf6b",
+            "before": "Assets/FireRescue/Greybox/LevelOne",
+            "after": "Assets/FireRescue/Art/UserProvided/LevelOne"
+        },
+        {
+            "guid": "6d3df1feda81f4d45a46086248861e38",
+            "before": "Assets/FireRescue/Greybox/Household",
+            "after": "Assets/FireRescue/Art/AIGenerated/Household"
+        }
+    ]
+}

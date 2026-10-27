@@ -1,0 +1,31 @@
+{
+  "baseline": 620,
+  "unchanged": 617,
+  "changed": [
+    "Assets/FireRescue/Editor/HouseholdLayoutSetup.cs",
+    "Assets/FireRescue/Editor/ResidentialIntegrationValidation.cs",
+    "Assets/FireRescue/Scenes/TutorialGreybox.unity"
+  ],
+  "deleted": [],
+  "added": [
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_BrowOrange.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_BrowOrange.mat.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_EyeBlack.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_EyeBlack.mat.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_HairOrange.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_HairOrange.mat.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_ShirtPaleOrange.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_ShirtPaleOrange.mat.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_Skin.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_Skin.mat.meta",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_TrimLightYellow.mat",
+    "Assets/FireRescue/Art/RoleSwapRig/ResidentPalette/R1_TrimLightYellow.mat.meta",
+    "Assets/FireRescue/Editor/ResidentialTuningSetup.cs",
+    "Assets/FireRescue/Editor/ResidentialTuningSetup.cs.meta",
+    "Assets/FireRescue/Editor/ResidentialTuningValidation.cs",
+    "Assets/FireRescue/Editor/ResidentialTuningValidation.cs.meta",
+    "Assets/FireRescue/Editor/ResidentPaletteSetup.cs",
+    "Assets/FireRescue/Editor/ResidentPaletteSetup.cs.meta"
+  ]
+}

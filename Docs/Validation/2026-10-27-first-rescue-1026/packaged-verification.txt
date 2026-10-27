@@ -1,0 +1,8 @@
+PACKAGED_BUILD_PASS
+Scene=Assets/FireRescue/Scenes/FirstRescue1026.unity
+Hose=5m
+ResidentColors=6
+Graphics=Direct3D11
+Generic rig / new user house + toilet ballistic water PASS
+DataPath=D:/Documents/畢專/Builds/Latest/FireRescue_Data
+No UI or device input exercised.

@@ -2,6 +2,192 @@
 
 > 後續每次修改請在此檔案新增一筆版本紀錄，不覆蓋舊紀錄。
 
+## 炎上消防隊 v0.2 — 2026-10-28（重新開始、5秒首波、圓角修復與較疏火苗）
+
+- 使用者要求失敗按鈕、首波2秒改5秒、修正提示框上下反向，完成後上傳同一GitHub專案。另要求v0.2操作／全部更新摘要／其澔與飛魚、風信子等模型署名／第一關玩法。確認只移除舊AI美術，保留管線、水火、臨時圍牆；後續補充火苗過密，按截圖方向調整。
+- 小範圍修改：場景fastSeconds=5；ReviewMissionHud失敗按鈕與R共用場景重載；PickupContextView改用RoundedContextFrame。舊9-slice將GUI頂部採到Texture底部，實際重建出與使用者相同錯框，修正UV後圓角連續。
+- 首版減半火苗仍擁擠；自行檢視Unity前後渲染，改交錯三分之一、降低高度／寬度。每個活火格保留暖色地面標記，修正標記位於地板下的高度；孤立格仍有火苗，避免不可見危險。僅改View，不改傷害／傳播／接水與粉末規則。
+- Scene遞迴資產核對只引用授權庭院材質，沒有舊AI美術模型。不刪歷史Blend、FBX與GUID；不把團隊模型的程式綁骨／配色誤認成AI原創。
+- 驗證與交付證據集中Docs/Validation/2026-10-28-restart-release；完整結果見RESULT.md。Windows人工按鈕點擊、初見難度與操作手感仍須使用者驗收；背景命令通關不能宣稱人工試玩。
+
+## 炎上消防隊 v0.1 — 2026-10-28（兩秒封廚房、鍋熱復燃、10m與E／F情境提示）
+
+- 本輪新增要求：粉末應可滅全部火種與鍋旁地面火、兩秒燒滿廚房封路、NPC應走正門、布丁金色外輪廓＋圓角E提示、滿管顯示F解除提示。使用者再補充：鍋旁不是水免疫，而是滅掉會被油鍋快速點燃；縮短管線，水只清往倉庫的路，粉末滅鍋後才能安全取布丁。使用者明確同意以簡單圍牆封屋外捷徑。
+- 使用Unity問題調查／功能整合／建置驗證流程；不做螢幕控制，不新增套件、不改模型／相機、不推送GitHub。前狀態保存於 `Docs/Validation/2026-10-28-kitchen-hints/before`。
+- **粉末根因**：ApplySpray命中ObjectFire後直接return，因此打鍋只減鍋強度、鄰格仍燒。新版opt-in PowderSurfaceSplash：命中鍋／固定表面也有粉雲覆蓋，採「水平擴散→往地面沉降」兩段LOS，牆仍阻擋，不把水改成穿櫃濺射。隔離原分支重現：dose4後鍋0、鄰格1；新分支鍋0、鄰格0。ReviewSoda滅火倍率.65，普通地面約.325/unit、水.45/unit，粉較慢；粉末殘留20秒抑制普通鄰火回燒。
+- **兩秒封路**：CookingOilIncident按廚房相連可燃格的洪水距離安排首波火線，約.12秒開始、2秒抵達所有179個可燃走道格；不是大幅抬高全局spread或第一幀整片點燃。後續保留慢速鄰格延燒，水濕區仍可壓制。
+- **鍋熱復燃**：鍋未熄時，1.55m內已滅地面格約.28秒會被持續熱源再點燃。測試明確驗立即水滅成功、稍後復燃，並驗遠處水路不受鍋熱強制點火；粉末滅掉鍋後停止這個新點火源。沒有設定「只有水永遠滅不了這一格」。水打鍋爆燃／黑布丁／NPC中毒與踩火即死保留。
+- **NPC繞路根因**：正門Boolean孔底比地板高約2.7mm，CC可跨，貼地放大的導航capsule卻判堵門。只把查詢底部的25mm視為CC步階容差，不改模型洞口、門寬或CC。重現舊貼地查詢路線173格，新47格；完整操作NPC實走約10.39m、最大z=3，未繞後院。證據reaction-route-probe.txt。
+- **管長／外牆**：當前Scene由15縮10m，舊關預設／歷史Prefab不改。庭院西／北／東三面簡單Cube牆封住從屋外繞入倉庫；全火時有牆無路、暫停牆有路的正負尋路對照PASS，非任務旗標或隱形牆。牆group獨立 `Prototype Courtyard Boundary`，材質歸AIGenerated/ReviewBoundaries，使用者住宅網格未更動；新牆納入管線壁面。
+- **近端噴射可玩性**：整關測到舊初速65%下限會飛越腳前火，留下清路斷帶；新增SpraySettings.MinimumSpeedFraction，舊資料0仍回退.65。只ReviewWater設.2、落點半徑.9；ReviewSoda設.3、半徑1.35；保留真初速／重力／碰撞、不依鼠標距離命中，不增加射程作弊。粉末也要先清腳前通路再前進，不能穿火走到鍋前。
+- **情境呈現**：PickupContextView讀同一Carry.NearbyItem，只有安全可拿的最近布丁顯示同款金色Mesh外輪廓與物件旁圓角E框；拿起／離開／失敗消失。管長接近10m顯示「管線不夠長了！按 F 解除綁定！」，退回或拔管即消失，有.2m退出遲滯避免抖動。未恢復整排操作說明、物價或油水警告。
+- 收尾核對F語意：滑鼠模式舊RunCommand仍沿用Interact，站在另一來源旁可能改接而非拔管。改為pointer F一律Disconnect，右鍵才接來源；歷史TickCommand／窗口低階API保留。72項最終重測含「滿管且旁有另一來源，真正F命令仍斷線並立即收提示」，不是只在測試直接呼叫Disconnect。最終記錄kitchen-final-validation.log／kitchen-final-build.log。
+- 保留測試失敗：attempt-1/2近端水落點斷帶；attempt-3/4粉末進場近端未清；attempt-5先破門再回來踩到鄰火。修近端分布與粉末殘留，正常驗收採滅鍋後先取布丁→門前放下→三刀破門→再拿起交付，未關閉死亡或直接清掉正常流程的火求通過。交付約剩18.617秒，仍需初見玩家難度驗收。
+- 最終整關 **72項PASS**、噴射相容回歸 **40項PASS**。Windows Latest新建置0錯誤0警告，實際D3D11包 **25項PASS**，正常ReadDevices啟動6秒14191 grounded frames（Hidden時focused=false）。離線圖已看圍牆、179格全火、清路、布丁實體外輪廓；OnGUI的E與F提示只驗字串／條件／元件，Hidden黑圖不算像素驗收。
+- 最新證據 `Docs/Validation/2026-10-28-kitchen-hints/RESULT.md`。完成時無Unity／玩家程序；舊生成資產、原Blend／FBX／GUID不刪。下一步請使用者驗收兩個情境提示的位置／字級與無其他提示下的60秒難度。
+
+## 炎上消防隊 v0.1 — 2026-10-28（地面火／油鍋分離、黑布丁與死亡、管線連續性）
+
+- 使用者Windows截圖與回饋：管線遇牆浮出V形節點，火開局鋪滿廚房且不能逐區滅、入口不清楚；新增水碰油鍋爆燃燒黑布丁、黑布丁毒死NPC、踩火死與不顯示提示文字。全程不做螢幕控制；使用者自行關閉舊玩家版後才更新Latest。
+- 根因核對：舊CookingOilArea只是半徑熱區，72個視覺火共用一個ObjectFire；地板FireField實際全不可燃，水不可能逐格清理那些展示火。新Scene停用舊Area／patch呈現，地面改既有FireField獨立強度、濕度、相鄰蔓延；油鍋保留ObjectFire，只接受粉末滅火。ElementReaction沿用原命中邊界，不把鍋與地面混為同一個火。
+- CookingOilIncident於0.2秒從鍋旁第一個地面位置引燃；前2秒spread=.4，之後=.035。原型可燃範圍只廚房走道，牆／櫃體／戶外不可燃。實測約.35秒4格、1.65秒13格、6秒22格；不是開場整片火。地面火可被水／粉末逐區熄滅，水濕痕5秒阻止立刻復燃。火VFX容量由Scene設512，避免活火超過舊48個可視上限造成不可見危險。
+- 油鍋累積水劑量.08觸發一次爆燃：短時火焰擴張、局部引燃、1.5m內布丁Scorch。連續水粒子不每幀重複爆；水永不滅油鍋。焦黑是CarryItem狀態，BurntFoodView以renderer property block把布丁／焦糖變黑、盤子仍白，不寫回使用者材質。換View不改毒性，洗水／拿放不還原品質。
+- NpcItemRequest收黑布丁後先顯示「好難吃...」，1.4秒後IsDead與ResidentPoisoned失敗，不可逃生或計救援。正常布丁仍需油鍋熄滅、門破、安全路線與實際走出出口。PlayerFireContact沿實際移動路徑檢查地面火，踩入立即死亡、收工具、掉持物、鎖玩法輸入；R仍重開。ActorDefeatView只使Visual倒地，CC不加Rigidbody／不移動玩法root。
+- 完成條件本關改為NPC實際逃出＋油鍋熄滅，不要求遠離逃生路線的每格火全滅；以Scene選項保留舊關完整清火契約。60秒仍是布丁交付期限，失敗不能補交；完成只觸發一次。
+- 管線原本每次contact新增硬釘住的bend ring、下游粒子重排。PhysicalHoseTube改固定128材質節點，只有來源／入管口固定，內部碰撞／距離上限／彎曲平滑控制形狀，只有兩端65cm升起、不再沿每個內部路由點升起。隱藏的HoseConnection接觸折線仍負責15m／繞牆拓樸，不改成穿牆捷徑。實測接觸期間不變更節點數、不閃斷、最大單幀內點位移.1845m、最長段.0996m；仍是簡化PBD，不是完整軟管PhysX。
+- 出生改客廳(2.6,.1,-3.7)，出口保持戶外。HUD去除底部操作、E／接來源等互動提示、油水警告、重來提示；只留倒數、NPC心聲／反應、簡短成功／失敗。沒有更動模型、戶型、相機、門血量、管長或新增教學。
+- 為使固定方向噴射能落到地面，本Scene的Water改初速7／重力16，粉末6／重力8，仰角仍18°、空中壽命1.5秒；只改兩份Review profile，不改滑鼠成點選命中。實測實際飛行水可清地面且可命中鍋觸發爆燃，粉末實際命中鍋熄火。
+- 首輪新測試抓到擴張過快與靠牆隔火誤殺：保留attempt-1-path-died.txt，降低快／慢速率、接觸加固定障礙LOS後重測。最新**59項PASS**，正常通關全程pointer commands／真CC／真噴射，交付約剩30.18秒。毒性分支注入門／安全前提以隔離NPC狀態；另有真水粒子打鍋分支，只預清地面避免人物先死。這些不是人工鍵鼠通關。
+- Windows Latest新建置0錯誤0警告，實際D3D11玩家**22項PASS**；真ReadDevices啟動6秒室內落地穩定。已看實際Unity離線圖：局部延燒、清路、白管連續、黑布丁、NPC倒地；Hidden玩家擷取黑圖仍不算UI驗收。證據 `Docs/Validation/2026-10-28-fire-loop-v2/RESULT.md`。未commit／push／發布；請使用者驗收管線轉角、噴射距離與無提示下的一分鐘難度。
+
+## 炎上消防隊 v0.1 — 2026-10-28（使用者正式四件道具替換）
+
+- 最新 Downloads/第一關1027.blend SHA256 `7f7c3bb7170a0787c79d2bc4e9a1c29425a1523a45db8c187e1524c295229504`，唯讀快照保存於 `ArtSource/UserProvided/Level1027/PropsUpdate20261028/Source.blend`；舊 Source.blend 不覆蓋。逐頂點及三角面核對：原戶型／家具沒有變，只新增道具；不重建地圖。
+- 四組使用者幾何：馬桶本體／馬桶座／水箱／水；立方體.002（倉庫粉末袋）；油鍋／握把／油；盤子／布丁／黑糖。依原擺位、原比例替換目前四個 Root 的 Visual，簡單象牙白／水藍／粉袋藍／深灰鍋／琥珀油／黃色布丁與焦糖配色。衍生 Mesh、材質、純外觀 Prefab 歸 `Art/UserProvided/Level1027/Props20261028`，不是 AIGenerated。遠處兩個大型測試立方體不放進場景，原檔仍保留。
+- 保留 FluidSource/Profile、CarryItem 身分、門／NPC／60秒規則。水箱東側接管口、粉袋前側接管口、油面火點、布丁盤中心和獨立碰撞按新擺位對齊。沒有放寬15m或改射程。原生成外觀已從活躍道具撤換，歷史生成資產不刪。
+- 視覺檢查抓到水／油平面朝下；只修 Unity 衍生網格的面向與法線，原 Blend 不回寫。保留 Blender corner normals，避免將平面稜角全平滑。匯入當次的 GPU cache 預覽未更新，重開背景 Unity 後重新渲染確認鍋內油面與新材質。馬桶低角度水面仍會被碗身遮擋，不擅改使用者幾何。
+- 新場景 Play Mode **85項 PASS**：真 CharacterController 行走、新馬桶連接、15m繞牆、水增火、粉末滅火、三刀破門、近鍋布丁禁拿／滅火後拿取、交手／尺寸、NPC逃出、60秒及重開。腳本路線改為新位置，不搬回舊擺位求通過。交付約剩26.5秒，但這不是人工操作難度驗收。
+- Windows Latest建置 **0錯誤／0警告**，真正D3D11玩家程式 **19項 PASS**，包括四組正式模型在包內。首個 `-batchmode` Windows測試無法擷取畫面而失敗，保留證據；改正常圖形模式 Hidden 執行同一包後通過。Hidden截圖仍黑，明確不當成UI驗收；已人工查看實際Unity RenderTexture的道具與整關離線圖。
+- 工作證據 `Docs/Validation/2026-10-28-user-props/RESULT.md`。全程未螢幕控制、未關閉使用者正在編輯的Blender、未commit／push／發布。下一步請從檔案總管啟動同一 Latest，驗收接管提示、噴射命中距離與布丁交付的實際手感。
+
+## 炎上消防隊 v0.1 — 2026-10-28（NPC布丁心聲標籤／啟動落地調查）
+
+- 使用者提供How to Fish截圖，NPC預設心聲改為精確文字「好想吃布丁...」；移除「居民」前綴，改細白框、淡色透明底、白字、布丁淡黃重點字與輕微文字陰影。標籤錨點由1.9m降至1.65m，仍隨NPC／攝影機投影，不做螢幕控制。
+- 使用者回報啟動就穿地、持續下墜。先查：48×.3×48 Ground的BoxCollider啟用、非Trigger，玩家CC與floor layer碰撞未被忽略，出生點在範圍內；沒有加Rigidbody或亂改質量、重力、Physics設定。
+- 舊smoke關了ReadDevices，不涵蓋正常啟動更新，因此新增ReviewStartupValidation／明確旗標--verify-startup的ReviewStartupProbe，保留真LocalPlayerInput.Update，不在測試內SyncTransforms或傳送求通過。原Editor6秒與真正Windows玩家6秒均穩定：玩家y=.1→.125、持續grounded；另補30/60/144Hz及.1/.333/1秒長幀、進出正門檢查通過。
+- **使用者後續明確回覆「已經沒這問題」**。掉落未在本機重現、根因未確認，不能回報「修掉地板bug」；本輪不變動地板或玩法，只更新標籤並保留啟動回歸。證據 `Docs/Validation/2026-10-28-grounding-tag/`。Windows更新／最終smoke狀態見該目錄RESULT.md。
+- Latest已重建0錯誤／0警告，Windows實際D3D11 smoke15項PASS（含新字串）。只做背景程序、不送鍵鼠；完成時無Unity／玩家程序。未commit／push／發布。
+
+## 炎上消防隊 v0.1 — 2026-10-28（一審住宅／布丁救援與管線修整）
+
+- 使用 `第一關1027.blend` 建新 `FirstReview1027.unity`，舊 Scene 不覆蓋。原檔及專案備份 SHA256 都是 `30a764941f7df43e12341048c539cead3ffaece8a82d1882ec6f7226342ecdff`，未回寫。住宅、角色、斧頭、噴槍皆使用者模型；只暫用馬桶、蘇打粉盒、油鍋、布丁，未放生成桌椅。布丁放現有廚房檯面。離屋的樣品門把／流理臺保留來源，不擺入場景。
+- 新流程：馬桶水使油鍋強度提高（上限3）→倉庫蘇打粉滅火→三刀破臥室門→E拿／交布丁→NPC安全走出正門，完成只觸發一次。使用者確認展示關改15m，保留戶型比例，舊5m關不動。60秒是布丁交付期限，成功交付後倒數凍結，仍需消防／門／安全路線才可逃生；超時失敗，R重來。
+- 可替換邊界：CarryItem所有權／碰撞、PlayerCarryInteraction距離與隔牆判定、NpcItemRequest條件、FirstReviewMission狀態／時間、Hud純呈現。布丁附到FBX的100x骨頭時保持世界尺寸；持物可F拔管，避免卡在舊連線。不是恢復安撫功能。
+- 玩家3.6m/s、乾地加速40／煞車48、轉身960°/s；新距離相位步態、站立腳IK、起停／轉向重心與工具姿勢。診斷到Role2經正面校正後L/R骨頭與actor左右相反，修正交叉拉手；衣襬／飾條不再跟腿、補前臂蒙皮權重。新增四份UserProvided衍生Skin，原頂點／三角面／FBX不改。舊Animator與舊sampling只在新玩家停用，NPC沿用原Idle/Walk。斧刃外傾，避開大頭。直線步態站立腳平均平移約0.00063m/s；不宣稱轉向與所有姿勢零滑步／零穿插。
+- 使用者追加：牆面專用Lambert霧面（無金屬／鏡面瓣）；開局2秒連續油火區擴大到布丁，CarryItem本身拒絕熱區拿取，清火恢復；NPC要求改頭上Name Tag，左上要求面板移除。油火區是同一油鍋火源的有限連通範圍，不是72個獨立燃燒狀態；目前無角色傷害系統。
+- 管線閃斷根因：舊HoseView的任一小段擦牆會把整條LineRenderer隱藏。新Scene停用舊呈現，改PhysicalHoseTube單一連續八邊形3D網格，128基礎節點＋牆接觸點、Verlet／距離上限／彎曲平滑／地板與物件碰撞，局部修正不整條隱藏。壓縮約束曾造成鋸齒，改只限最大距離；長段貼地，來源與噴槍附近才升起。15m與自動繞牆仍由HoseConnection唯一控制，非完整軟管剛體模擬。
+- 首次一審整關63項通過後另查出握持／100x交付尺寸／持物拔管等邊界，逐項補測；最新Play Mode 81項（同pointer command、真CharacterController／飛行噴射／門碰撞／NPC步行與重開），本輪舊管線22、繞牆29、門與統計21通過。實際結果、建置與玩家smoke見 `Docs/Validation/2026-10-28-first-review/RESULT.md`，不以早期數字替代最新版證據。
+- 一度使用電腦控制技能觀察Windows UI，確認繁中、倒數與實按R回到01:00；使用者Escape中止，立即停用，後明確要求先不螢幕控制。**其後只背景作業，未再送鍵鼠／關視窗。** 使用者自行關閉遊戲後再更新Latest。背景ScreenCapture黑圖不算UI驗收；後續新NameTag未真人畫面驗收。
+- 原平台22m，出生跟隨鏡頭拍到右側灰底，依使用者截圖修為48m地面，16:9／21:9四角覆蓋通過；戶型不改。Windows名稱同步炎上消防隊。說明 `Docs/FIRST_REVIEW_1027.md`；無commit／push／發布。MCP仍未接Bridge，這次未把它擴為展示關阻塞。
+- 最終Windows Latest已重建：0錯誤／0警告；實際D3D11打包exe的14項載入／設定／2秒熱區檢查PASS。黑色Hidden擷取明確標成不驗證UI，未再做螢幕控制。最後無Unity／FireRescue程序殘留。下一步請使用者從同一PlayLatest自行驗收頭標、2秒禁拿、粉末清火與3D管線手感，再換正式四件模型。
+
+## 炎上消防隊 v0.1 — 2026-10-27（進行中：自動繞牆／MCP，額度收尾）
+
+- 使用者要求管子像實體繞牆，取代先前遇牆停止。已新增HoseWrapPath接觸折線，連接HoseConnection／HoseView／SprayWallOcclusion與motor轉向inlet約束，5m改計整條繞行路徑，維持opt-in避免改壞舊場景。
+- Unity獨立Play Mode **29項PASS**：舊卡住重現、新繞行／解繞、碰撞、總長限制、來源生命週期與柱子迴圈。不將此稱第一關整合完成；fixture PNG全白，視覺驗收尚未通過。
+- **尚未套用至FirstRescue1026、尚未更新含F導管步驟的整關驗證、尚未重建Windows。PlayLatest目前仍是前一輪玩家版。**
+- 使用者加做Unity MCP並允許螢幕控制、確認安裝。畫面開啟Unity／套件管理器，但popup操作不穩與activate_window逾時，改由套件設定安裝CoplayDev固定10.3.0，已Unity匯入及編譯；uv0.13.6在Tools/UnityMCP/bin可執行。全域MCP URL原已存在未更改；本機server／Bridge／工具連線probe尚未完成，不能回報已連線。
+- 使用者要求剩餘6%先做紀錄，停止擴張。完整接續狀態、精確方法、已知限制與順序見 `Docs/HOSE_WRAPPING_HANDOFF.md`。無commit／push／發布、未改原模型；現在無Unity／玩家程序。
+
+
+## 炎上消防隊 v0.1 — 2026-10-27（1026戶型／馬桶水第一人救援）
+
+- 按新提供 `第一關1026 (1).blend` 建獨立 FirstRescue1026 Scene；40來源mesh衍生匯出、按參考圖校正方位。只保留生成馬桶，其餘生成家具不進新場景；使用者人物、消防斧與噴槍沿用。原場景、模型、來源分類均保留，未刪資料。
+- 原始Blend與專案備份hash一致。實走抓到浴室門背面封住：Boolean cutter深度剛貼齊Solidify背面。只修記憶體匯出深度，不存原檔、不擴門寬、不停用牆碰撞；五門雙向可過／旁側牆仍擋。牆視覺.72m，碰撞完整獨立。
+- 水新增opt-in初速／重力／阻力解析飛行與substep掃掠、真命中事件；沿用資金流量／來源快照／容量／停止後尾流。新馬桶water Profile獨立；舊水油粉曲線契約40項回歸通過。視覺觀察者比較2D圓粒子、方向水滴Mesh、Hybrid，選Hybrid；低模火苗／水花／濕痕不掌管碰撞或滅火。
+- 5m上限不放寬，浴室門口沿用明確F導管點，不自動繞牆。從正門真行走、兩次右鍵拿槍／連接、拉管、再按住噴水，門口火清出通道後NPC自走經兩門到屋外；不安撫、不傳送、不直接清火。片段門預先開啟，其他教學與其他房間火場未接回。
+- 修NPC格子小方塊與實體淨空不一致根因：controller尺寸capsule、格間掃掠、移動前檢查及受阻重判；窄於人身通道拒絕，不能通過是假路線。新圖格子中心對齊門洞。
+- 完整Play Mode／重開38項PASS（含獨立NPC、彈道、VFX probes），共享噴射40項PASS，不把重跑累加成更多測試。新Windows x64 Development build 0 errors/0 warnings；實際背景D3D11 exe驗新Scene／5m／六配色／骨架／初始水火smoke PASS。完整通關來自Editor命令測試，尚未真人鍵鼠或玩家版手動通關。
+- 真看過新戶型、三種水、火焰與救援後GPU圖；修過錯誤渲染enum、錯數量斷言與異原點fixture比較，不降低門檻；原水站位打門框、火數不降的失敗也留存，改用真正能從門洞噴到地面的站位。沒有用取消物理／點選清火方式求過關。
+- 交付固定 `PlayLatest.cmd` → `Builds/Latest/FireRescue.exe`，BuildSettings唯一啟用FirstRescue1026。`Docs/FIRST_RESCUE_1026.md`列操作／資料夾／水設定／限制，`Docs/Validation/2026-10-27-first-rescue-1026/RESULT.md`列證據。無螢幕控制、無commit／push／GitHub發布。
+
+
+## 炎上消防隊 v0.1 — 2026-10-27（Windows入口補齊／模型來源實體分類）
+
+- 使用者再次指出單椅、待救者配色、5m尚未完成，並要求AI生成與其提供模型分開。使用者確認看的是Windows玩家版，未提供舊exe路徑；不直接歸咎使用方式，重新檢查Scene／Prefab／預設建置／實際封裝。
+- audit-before確認當前Scene三項已有，但BuildSettings仍只啟用ResidentialFire，Player Prefab13m、Role1 Prefab只一種白模材質。這次補齊Prefab5m／六色、預設唯一啟用TutorialGreybox，舊Scenedisabled保留；單椅朝內狀態保存。固定`PlayLatest.cmd`與Builds/Latest作本機交付，不再要求使用者挑歷史Build資料夾。
+- AssetDatabase.MoveAsset搬12組資產，保留163既有GUID；Art分UserProvided和AIGenerated（使用者加工骨架屬UserProvided，不算AI原創），ArtSource也同分。21份FBX／Blend內容SHA256完全相同，沒有重生模型、換GUID或刪原檔；生成腳本改新路徑，角色從專案內Source.fbx重建，不依賴Downloads。外部噴槍比對改顯式--current，歷史metadata保留原路徑。
+- 實測首次修復入口抓到ResidentPaletteSetup以artFolder+RoleSwapRig組合的舊路徑；已改用CharacterSwapSetup.Folder，失敗log保留。原始模型GUID及新舊SourceHash檢查與唯讀獨立review通過。
+- 17針對性＋43整關重開＝60項PASS；整個Scene（含inactive）Missing Script/靜態Mesh/SkinnedMesh/Bone均0。Windows x64 Mono Development建置0錯誤／0警告，真打包exe背景D3D11啟動檢查PASS（新Scene、5m、6色、骨架、單椅朝內）。首次-nographics材質讀取假陰性已隔離：同一exe不改資產用GPU即通過，Null模式不作驗色依據並加明確guard。沒有操控螢幕或裝置輸入。
+- GUID-aware基線639檔624完全不變，15有意修改，0遺失。主要變動為路徑常數、Role1/Player Prefab、BuildSettings與測試入口；Scene本輪內容雜湊不變，原本正確資料沒反覆重做。新增只讀、明確旗標才執行的Development玩家版Probe，正常遊戲不啟動。
+- 最新本機版Builds/Latest/FireRescue.exe；沒有commit／push／發布，GitHub下載版未變；原歷史Build與使用者資料全保留。文件`Docs/ASSET_CLASSIFICATION.md`、來源README與證據`Docs/Validation/2026-10-27-asset-classification/RESULT.md`。NPC碰撞／導航落差仍是已知待辦，不因本輪通關就宣稱已修。
+
+## 炎上消防隊 v0.1 — 2026-10-27（單椅對調／待救者參考色／5m管線／品質門）
+
+- 使用者要求交換茶几左右兩張單椅、待救者參考圖上色、管長改5m；追加先不做螢幕控制，並要求說明優先修復與自我品質監督。未操作GUI，只背景Unity／離線GPU渲染；未擅自關閉原本執行中的舊玩家版。
+- 單椅實際交換位置、保留各自旋轉並更名對應空間左右，現在皆朝茶几，佔地範圍不變；Household生成配方的預設朝向同步修正。NPC角色1只加Scene共享材質override，橘髮／淡橘衣／黃飾／膚色／黑眼，原10網格、骨架、Idle／Walk與FBX保留，沒有把帽子或其他參考造型重建。新材質Ensure只補不存在者，不覆蓋之後人工調色。
+- 只當前Scene HoseConnection.maximumLength 3→5；Runtime預設／歷史Prefab仍3，牆阻、XZ計長、窗口公式不改。整關驗證新增顯式expectedHoseLength，5m入口檢查5，不把原3m歷史結果冒充新版本。
+- 背景真Unity保存重讀／冪等PASS；14針對性檢查（含真Motor過3m並停5m、持續外拉／反向、窗口合計5m）＋43整關與重開＝57項PASS。看過單椅朝向、NPC正面／Walk實際GPU圖；核心救援流程通過，未做真人鍵鼠／手感驗收。
+- 最初新增Editor驗證腳本編譯出現Component.parent錯用與Unity6000.5禁止GetInstanceID舊API，均在任何Scene遷移前修正；原始失敗log保留。最終Windows x64 Mono Development建置成功0錯誤／0警告：`Builds/ResidentColor5m/FireRescue.exe`。既有Editor CS0618過時API警告屬舊檔，不宣稱專案全部零警告。
+- 620檔基線617不變，只改HouseholdLayoutSetup、ResidentialIntegrationValidation與Scene；新增19個Assets檔含meta，無刪檔。Scene998舊段無刪除、5段修改＋2段marker新增，舊模型／Prefab／Runtime／Settings／Packages／相機均保留。未commit／push／發布。
+- 下一個優先問題建議：NPC的導航淨空與CharacterController碰撞一致。目前沙發卡角只靠擺位避開，根因尚未修，不宣稱已穩定支援任意新家具；其後優先噴射／拉管手感，不先增系統。`Docs/QUALITY_GATES.md`定需求／行為／畫面三道門，證據分級、失敗留存、數量不等於品質。這輪沒暗中實作新NPC系統。
+- 證據：`Docs/Validation/2026-10-27-resident-color-5m/RESULT.md`；最新狀態已補入PROTOTYPE_CONTEXT與整關說明。
+
+## 炎上消防隊 v0.1 — 2026-10-27（室內家具簡模／來源物體外框）
+
+- 依使用者室內圖製作25種最簡Primitive Prefab，配置儲物間、浴室、臥室、廚房、客廳玄關與戶外汽水攤；床／桌椅／衣櫃／冰箱／洗衣機／淋浴／水槽／灶爐／L型流理臺／沙發／電視櫃／垃圾與回收桶／鞋櫃等可辨識輪廓。保留Root碰撞、Visual獨立；舊床沙發色塊停用備份，茶几Rigidbody及來源Root不換。
+- SourceHighlightView不再建地面LineRenderer圓圈，改在同一NearbySource的Visual外膨脹約3.5cm輪廓，未接金色／已接藍色，離開／牆阻／停用隱藏，原物件材質不改。InteractionOutlineTarget快取外觀副本，硬邊Mesh平均法線、多submesh、skin與不可讀FBX安全fallback，SourceHighlightView.Refresh供動態換Visual，Shader明確序列化防build剔除。
+- 只補擺設，不搬動已驗證來源／火點／NPC／門／窗口；因此活躍油瓶油鍋仍在原客廳後側測試檯，新廚房水槽／蘇打粉／汽水攤是外觀佔位，新窗框不是導管接點。沒有暗加新元素、教學或UI。
+- 初次整關NPC卡新沙發前緣，診斷為格子判可走而實體半徑重疊，NPC停在(2.750,0.025,-1.7932)。只主沙發向後移.35m、右單椅側移.2m修通；另一次孤立probe停在出口是玩家站出生點擋路，移開測試玩家後NPC自動抵出口，未改尋路或3m。
+- 真Unity保存重讀／冪等PASS；家具與外框45＋整關重開43＝88項PASS。首次失敗與NPC位置／附近碰撞診斷保留，最終原生步行破門／水與乾粉／窗口／NPC單次救援／重開完整通過。已看金藍外框與各房間、俯視配置的實際Unity GPU圖。
+- Windows x64 Mono Development成功，0錯誤／0警告，本機`Builds/HouseholdGreybox/FireRescue.exe`；未做真人鍵鼠手感或啟動玩家視窗，未commit／push／發布。舊NozzleControls圓環斷言已遷移，該歷史入口未重跑，不能併入通過項數。
+- 基線535檔531不變，只改SourceHighlightView、兩個Editor驗證入口與Scene；新增85個Assets檔含meta、無刪除／缺meta。Scene文字大量移動實為Unity檔段重排；按fileID核對777舊段無刪除，僅9段有變（舊Visual停用／附加、Shader引用、群組子節點），新增221段。相機／角色／核心Fire與Reaction／NPC程式／Profiles／Packages／Settings未變。
+- 文件：`Docs/HOUSEHOLD_GREYBOX.md`及素材需求更新；證據`Docs/Validation/2026-10-27-household-outline/RESULT.md`。下一步請使用者驗收擺設與輪廓，再安排正式模型或依新圖搬動玩法熱點。
+
+## 炎上消防隊 v0.1 — 2026-10-27（雙角色交換／骨架／Idle與Walk／移動朝向）
+
+- 依使用者要求交換：玩家使用角色2長髮基本色，NPC使用角色1貓耳白模。原始FBX不動，另產生RoleSwapRig：玩家1.6m／18骨、NPC1.5m／20骨含尾巴，原六／十個網格拓樸保留。雙方Generic骨架、Idle 2.5s／Walk 1.25s，Root Motion關閉；舊場景Visual僅停用保留。
+- 初次離線權重稽核發現角色1側髮少量誤綁手臂，修為302頂點全Head、眼眉亦全Head。每段Action建立前清零Pose並重產／重匯驗證。首次通過的44項報告另存before-hair-fix，最終資產再重跑，未隱藏證據。
+- LocalPlayerInput新增當前場景專用opt-in，平常移動朝走路、停住維持朝向；斧頭實際一刀含鬆鍵收尾／實際噴射才朝鼠標。第一次拿工具、接來源及其長按不誤判。FirefighterTools提供唯讀動作預判，發射前先轉身；legacy TickCommand保留舊瞄準，WASD相機相對合約不變。
+- 真Unity保存重讀／冪等PASS；雙角色朝向／skin／動畫44＋整關重開43＝87項PASS。整關實際三刀破門、3m窗口導管、普通火用水／油鍋用乾粉、NPC自行逃生和單次完成均通過。看過兩角色Idle／Walk與遊戲鏡頭離線Unity渲染。
+- Windows x64 Mono Development建置成功，0錯誤／0警告：`Builds/CharacterSwap/FireRescue.exe`。未聲稱本輪實體鍵鼠手感／多人或正式全身工具動畫已完成；本機版未發布。
+- 513檔基線509完全不變，只改2Runtime＋整關驗證入口＋Scene，新增22個Assets檔含meta，無刪檔。碰撞、槍口／管入口、3m、窗口、相機、火焰／反應／NPC程式、Profiles、Packages與Settings保留。
+- 交付：`Docs/LEVEL_ASSET_REQUIREMENTS.md`分類已有、原型替代及正式需求，涵蓋角色／Idle／Walk、火焰、水／油／乾粉、工具、來源及門窗家具；`Docs/CHARACTER_SWAP_ANIMATION.md`記架構與手動驗收。證據 `Docs/Validation/2026-10-27-character-swap-animation/RESULT.md`。
+
+## 炎上消防隊 v0.1 — 2026-10-27（消防管牆阻／3m張力與液體流量）
+
+- 使用者要求繼續修消防管／液體物理。先採遇牆卡管的簡化方案，保留手動窗口，不擴充自動繞牆、流體引擎、新元素或多人；保留白模與正向較遠Camera。
+- 修前真Unity量測：管線穿牆候選位置照樣通過、XZ半徑3但高度2時UsedLength3.605551、停用來源仍有連線；液體0.01秒點按實收0.075而應0.03、五次點按0.375而應0.15、0.5秒單幀約0.825而應1.5。證據保留，不只憑症狀猜修。
+- HoseConnection新增明確牆阻／入管點，3m先限長再檢查前後段，阻擋時回到可行位置；統一XZ度量、無效來源清理。Motor清除被約束的外向動量；HoseView曲線碰牆改拉直，換來源不從舊位置插值。展示停用不會取消限制。
+- SprayEmitter維持短按立即發射，但每批Amount改由FlowRate*dt分配；移除0.25截量；Stop／換來源補一次舊快照尾量，來源銷毀也不把舊水變新油。發射迴圈有界256，極端飽和用DroppedAmount記未發量；不改Reaction、FireField、Profiles或碰撞演算法。
+- 首次整關窗口固定失敗，量出舊外框Route讓來源到窗點的斜線碰在孔洞旁1.34m；只把Route內移0.4m至室內窗緣，未放寬3m／孔洞或搬水源。保留失敗報告／圖，最終整關與重開通過，折線約2.37m。
+- 22管線＋11流量＋24效果＋40方向＋43整關重開＝140項PASS；保存重開／冪等PASS；Windows x64 Mono Development建置0錯誤／0警告，已檢視實際Camera圖。真人長按／手感、多人與效能未驗收。
+- 505檔基線497不變，只改4Runtime＋3Editor驗證入口＋Scene；新增8個Assets檔含meta、無刪檔／缺meta。舊Prefab／模型、Camera、角色、Profiles、Packages／Settings保留。新本機版 `Builds/HoseFluidPhysics/FireRescue.exe`；未commit／push／發布。
+- 說明：`Docs/HOSE_FLUID_PHYSICS.md`；證據：`Docs/Validation/2026-10-27-hose-fluid-physics/RESULT.md`。仍不是精確3D弧長軟管、自動繞角、家具全面管線碰撞或真實流體。
+
+## 炎上消防隊 v0.1 — 2026-10-27（主角換角色1白模；正向較遠相機）
+
+- 使用者提供角色1／角色2，要求先換其中一個主角、上色版之後提供。檢查後選角色1貓耳／尾巴白模；角色2與先前來源SHA相同，既有長髮居民NPC及動畫保留。
+- 角色1原檔10 Mesh／1425頂點，無材質／rig／動畫；原檔、ArtSource副本及Unity匯入檔SHA一致。只用外層縮放／偏移／旋轉對齊1.6m、feet0、+Z，加中性白材質，不重做造型、上色或新增動作。主角舊Capsule／Helmet停用保留；Root碰撞、工具和管線接點全保留。
+- 使用者確認視角為「對齊房屋的正向俯視」。相機Pitch50不變，Yaw40→0，正交Size4.5→6，可見寬高約增加33%；沿用.18s平滑跟隨、不跟角色轉。RescueCamera角度改序列化設定，舊場景預設50/40不變。
+- 保存重讀／冪等與Gameplay快照PASS；新17項角色／相機＋43項整關／重開＝60項PASS。首版測試走到門旁牆後誤測Visual關閉不能移動，依戶型改朝無阻擋戶外重測，未改Gameplay／放寬斷言，保留失敗證據。
+- 主代理檢視實際渲染與Scene diff；Windows x64 Mono Development建置0錯誤／0警告，再用Computer Use實際啟動確認模型／視角，Player.log錯誤0並正常關閉。長按鍵鼠／手感仍待玩家驗收。
+- 494檔基線中491不變，只改RescueCamera、當前Scene與整關報告入口；新增11 Assets檔含meta，無刪檔／缺meta。Packages／Settings／其餘Runtime／舊Prefab／模型未變，未commit／push／發布。
+- 新本機版 `Builds/PlayerWhitebox/FireRescue.exe`；說明 `Docs/PLAYER_WHITEBOX_CAMERA.md`；證據 `Docs/Validation/2026-10-27-player-whitebox-camera/RESULT.md`。
+
+## 炎上消防隊 v0.1 — 2026-10-27（允許畫面控制，玩家版點擊檢查）
+
+- 使用者解除先前不控制畫面的限制，使用 Computer Use 開啟現有 UserCharacters 玩家版，實際檢視住宅外出生／斜角視野與使用者斧、噴槍模型，測首次左鍵拿斧、第二次揮斧、右鍵切噴槍及未接來源不噴。
+- 本輪畫面工具無持續按住 WASD／右鍵介面，短按無法穩定維持 held 狀態，因此未虛報整關／NPC／噴射手感驗收；不為了操作工具改變遊戲輸入規則。保留上一輪58項自動測試與本輪UI檢查的證據區別。
+- Player.log未見Exception／NullReference／Shader error／Error（0），正常關閉進入Shutdown。未更動程式、Scene、模型或數值，不重複建置；未commit／push／發布。證據：`Docs/Validation/2026-10-27-player-ui-smoke/RESULT.md`。
+
+## 炎上消防隊 v0.1 — 2026-10-27（使用者角色白模接入；10-26實作驗證）
+
+- `角色2.fbx` 實際只有一位長髮居民，6 Mesh、1127 原始頂點、無材質／骨架／動畫。使用者同意先用這份；保留原檔及 SHA 相同副本，不虛構第二種角色。消防員保持既有外觀。
+- 衍生模型保留原拓樸、加七種基本色、18 骨 Generic Rig 與 Idle／Run 循環，對齊 1.5m、腳底 y=0、+Z 朝向。首輪分色／權重錯把臉和手當衣服，按實際大頭短身比例修正，已檢視修正後 Blender 與 Unity 離線圖。
+- 只接入 TutorialGreybox 目前住宅 NPC 的 `Visual/User Resident 2`，舊 Capsule 停用保留；重用 CharacterLocomotionAnimation，不新增或修改 Runtime。NPC Controller、尋路、救援、消防員／工具／管線／噴射皆保留。
+- Unity 初次驗證修正兩個 Editor API 編譯錯誤；另查明 BakeMesh 預設縮放加 TransformPoint 重複套用 .599 倍，依本機 Unity API 文件改用補償縮放檢查，沒有改錯原模型尺寸或放寬斷言。失敗日誌保留在 Logs。
+- 保存重讀／重跑冪等 PASS；角色動畫 15＋整關／重新 Play 43＝58 項 PASS。Windows x64 Mono Development 建置 0 錯誤／0 警告，`Builds/UserCharacters/FireRescue.exe`。離線 Direct3D11 渲染已人工看圖，沒有操作使用者視窗或啟動玩家版；硬體輸入／手感待使用者驗收。
+- 466 檔基線中 464 不變，只修改當前 Tutorial 場景與整關驗證的報告入口；新增 28 個 Assets 檔含 meta，沒有刪除或缺 meta。原始角色 SHA 與副本一致，舊 Prefab／模型／Runtime／Packages／Settings 不變。未 commit／push／發布。
+- 模型文件：`Docs/USER_CHARACTERS.md`；人工清單：`Docs/PLAYER_ACCEPTANCE_2026-10-26.md`；證據：`Docs/Validation/2026-10-26-user-characters/RESULT.md`。下一步等玩家試玩噴射與角色，再依回饋調參，暫不新增大型系統。
+
+## 炎上消防隊 v0.1 — 2026-10-26（噴射效果獨立調校；無畫面控制）
+
+- 每種 SprayProfile 新增獨立的滅火力、推力與落地殘留量倍率（0～4），預設全為 1，保留原關卡數值、方向射程與接管操作。只有水能推動物體；油不滅火、水不滅油鍋、乾粉不加濕。
+- 飛行樣本保存發射當下的效果設定，修改 Profile 不會追溯改動已在空中的噴射。殘留量 0 不新增／刷新殘留計時，但可獨立滅火。歷史 API 保留中性倍率相容。
+- Unity 6000.5.0b9 背景編譯、三資產保存重讀／冪等驗證、24 項效果測試＋43 項住宅整關與重開全部通過。Windows x64 Mono Development 建置 0 錯誤／0 警告，`Builds/SprayEffectTuning/FireRescue.exe`。
+- 本輪不操作畫面、不截圖、不啟動玩家視窗，不宣稱鍵鼠／視覺／手感驗收。未改場景、碰撞、模型、Prefab、Packages 或 ProjectSettings；未發布。參數見 `Docs/DIRECTIONAL_SPRAY.md`，證據 `Docs/Validation/2026-10-26-spray-effect-tuning`。
+
+## 炎上消防隊 v0.1 — 2026-10-26（方向噴射、飛行與殘留；10-25開始）
+
+- 依使用者澄清，「持續多久」指空中／地面停留，不是長按上限。滑鼠只決定方向，移近移遠不指定落點；水、油、乾粉各有獨立 ScriptableObject 設定射程、擴散、弧線、空中時間及殘留時間，保留按住連噴與原分段裝備／接管控制。
+- 新增有上限的飛行樣本、逐段球形碰撞與只讀 Particle View；鬆手、換工具、斷管後已噴出的內容繼續飛行。落地後由 FireField 計時，不依賴美術。水保留濕度、油可滑／燃燒且到期清除，粉末殘留僅呈現、不新增持續滅火。
+- 審查修正近游標被舊 deadzone 強制改朝向、小 footprint 在格角無反應、密集碰撞查詢滿額漏近處物體。新增剖面牆專用遮擋，保留人物／家具真實碰撞及明確窗口開孔；噴嘴伸牆後也不生出穿牆水。
+- 住宅實景第一次新牆阻回歸失敗：窗口框在外側，實際內牆距框 0.353m，原開孔深度不足。依量測擴充開孔深度並存為場景 override；沒有放寬窗口寬高、3m 管長或跳過滅火斷言。最終整關與重新 Play 通過。
+- 依 Unity 實作／驗證流程保留歷史場景 opt-in 相容，只有 TutorialGreybox 啟用新模式。主代理檢查實際 diff、住宅噴射畫面及三類自由飛行圖；自動 Play Mode 40＋43＋25＋21＝129 項 PASS，Windows x64 Mono Development 建置 0 錯誤／0 警告。
+- 445 檔修改前基線中 434 hash 不變，只變動 9 Runtime、1 Editor 驗證與 Tutorial 場景，無刪除；新增腳本／設定與 meta。既有模型、Prefab、GUID、Packages、ProjectSettings 保留。尚未做本輪實體鍵鼠手感／多人／效能量測；目前僅簡化點狀噴射視覺。
+- 本機測試版：`Builds/DirectionalSpray/FireRescue.exe`。參數與限制：`Docs/DIRECTIONAL_SPRAY.md`；完整證據：`Docs/Validation/2026-10-26-directional-spray/RESULT.md`。未 commit／push／更新 README 或 GitHub Release，已發布下載版未覆蓋。
+
 ## 炎上消防隊 v0.1 — 2026-10-25（精簡F鍵說明）
 
 - 依使用者要求，README與Release操作表刪除窗口固定／解除說明，F僅保留「在來源旁接管、改接或拔管」。本輪只改公開文字，不移除窗口機制或重建遊戲。

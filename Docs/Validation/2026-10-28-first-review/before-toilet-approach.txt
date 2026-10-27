@@ -1,0 +1,17 @@
+REVIEW_FAIL
+InvalidOperationException: PASS Approved 15m routed hose enabled only in new scene
+PASS One toilet + one soda source; only oil pan is burning
+PASS No permanent world debug labels
+PASS User skins and bones intact
+PASS Resident waits for actual item and door/fire conditions
+PASS Walk reached (5.50, 0.10, -4.90)
+PASS Walk reached (3.00, 0.10, -2.00)
+PASS Walk reached (0.45, 0.10, 0.20)
+FAIL Walk reached (0.45, 0.10, 1.30)
+WALK (5.50, 0.10, -4.90) actual=(5.575, 0.125, -4.900) used=0 bends=0 frames=29 time=59.49667
+WALK (3.00, 0.10, -2.00) actual=(3.053, 0.125, -2.061) used=0 bends=0 frames=66 time=58.38002
+WALK (0.45, 0.10, 0.20) actual=(0.503, 0.125, 0.154) used=0 bends=0 frames=59 time=57.38004
+WALK (0.45, 0.10, 1.30) actual=(0.450, 0.125, 1.170) used=0 bends=0 frames=450 time=49.86349
+FireRescue.Editor.FirstReview1027Driver.Check (System.Boolean condition, System.String message) (at Assets/FireRescue/Editor/FirstReview1027Validation.cs:46)
+FireRescue.Editor.FirstReview1027Driver+<Walk>d__28.MoveNext () (at Assets/FireRescue/Editor/FirstReview1027Validation.cs:132)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

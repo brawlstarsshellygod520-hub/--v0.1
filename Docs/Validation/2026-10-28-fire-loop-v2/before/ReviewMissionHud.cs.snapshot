@@ -1,0 +1,48 @@
+using UnityEngine;
+
+namespace FireRescue
+{
+    public sealed class ReviewMissionHud : MonoBehaviour
+    {
+        [SerializeField] FirstReviewMission mission;
+        [SerializeField] LocalPlayerInput input;
+        [SerializeField] PlayerCarryInteraction carry;
+        [SerializeField] HoseConnection hose;
+        Font font;GUIStyle timer,text,small,prompt;
+        public void Initialize(FirstReviewMission state,LocalPlayerInput controls,PlayerCarryInteraction items,HoseConnection connection)
+        {mission=state;input=controls;carry=items;hose=connection;}
+        void Awake(){font=Font.CreateDynamicFontFromOSFont("Microsoft JhengHei",22);}
+        void OnDestroy(){if(font)Destroy(font);}
+        void OnGUI()
+        {
+            if(!mission)return;
+            if(timer==null)
+            {
+                text=new GUIStyle(GUI.skin.label){font=font,fontSize=20,normal={textColor=Color.white}};
+                timer=new GUIStyle(text){fontSize=36,alignment=TextAnchor.MiddleCenter,fontStyle=FontStyle.Bold};
+                small=new GUIStyle(text){fontSize=14,normal={textColor=new Color(.82f,.85f,.87f)}};
+                prompt=new GUIStyle(text){alignment=TextAnchor.MiddleCenter,wordWrap=true};
+            }
+            var old=GUI.matrix;GUI.matrix=Matrix4x4.Scale(new Vector3(Screen.width/1280f,Screen.height/720f,1));
+            int seconds=Mathf.CeilToInt(mission.Remaining);
+            Box(new Rect(550,12,180,64));GUI.Label(new Rect(550,12,180,60),$"{seconds/60:00}:{seconds%60:00}",timer);
+            if(mission.OilFire.WaterApplied>.05f && mission.OilFire.IsBurning)
+            {Box(new Rect(440,92,400,45));GUI.Label(new Rect(440,95,400,40),"水讓油鍋火變大了！換蘇打粉",prompt);}
+            string hint="";
+            if(carry.IsCarrying)hint=carry.CanDeliver?"[E] 將布丁交給居民":"[E] 放下布丁　｜　拿物品時需先放下才能使用工具";
+            else if(carry.NearbyItem)hint="[E] 拿起統一布丁";
+            else if(carry.NearbyUnsafeItem)hint="布丁周圍火勢太大！先用蘇打粉滅火";
+            else if(input.NearbySource)hint= hose.Source==input.NearbySource?"已接來源　｜　按住右鍵噴射　[F] 拔管":
+                (input.NearbySource.Element==ElementKind.Water?"馬桶水箱":"蘇打粉（遊戲滅火粉末）")+"　｜　右鍵拿噴槍，再按右鍵接上";
+            if(hint!=""){Box(new Rect(250,612,780,48));GUI.Label(new Rect(260,616,760,40),hint,prompt);}
+            if(mission.CurrentStatus==FirstReviewMission.Status.Won || mission.CurrentStatus==FirstReviewMission.Status.Failed)
+            {
+                Box(new Rect(360,260,560,160));GUI.Label(new Rect(380,280,520,65),mission.CurrentStatus==FirstReviewMission.Status.Won?"第一關完成！":"時間到，布丁還沒送到",timer);
+                GUI.Label(new Rect(380,355,520,40),"按 R 重新開始",prompt);
+            }
+            GUI.Label(new Rect(24,682,1220,28),"WASD 移動　左鍵拿斧／再按揮砍　右鍵拿噴槍／接來源／按住噴射　F 拔管　E 拿取／交付　R 重來",small);
+            GUI.matrix=old;
+        }
+        static void Box(Rect r){Color old=GUI.color;GUI.color=new Color(.07f,.10f,.14f,.88f);GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=old;}
+    }
+}

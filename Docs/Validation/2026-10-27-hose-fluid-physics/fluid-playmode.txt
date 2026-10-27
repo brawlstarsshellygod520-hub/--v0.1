@@ -1,0 +1,13 @@
+FLUID_PHYSICS_VALIDATE_PASS
+Checks=11
+PASS A .01s tap delivers actual FlowRate*dt, not a whole free packet.
+PASS Equal held time delivers equal receiver amount at 30/60/120Hz.
+PASS Separated short taps deliver the same total fluid as their combined held duration.
+PASS A .5s hitch preserves the same delivered flow as 30Hz ticks.
+PASS Packets and stop-flush keep their captured source element after its old source is destroyed.
+PASS A saturated fixed capacity stays bounded and reports the newly dropped fluid instead of replaying it later.
+PASS Nearest collider alone receives each flight impact.
+PASS Repeated Stop cannot duplicate a final fractional packet.
+PASS A huge finite Tick remains bounded without float-to-int overflow or non-finite diagnostics.
+PASS An emitted packet retains its captured effects after its profile changes.
+PASS NaN flow cannot create a packet or receiver effect.

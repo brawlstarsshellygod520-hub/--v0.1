@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36a80f58e5468b40a042140a46f5b3c, type: 3}
+  m_Name: Oil
+  m_EditorClassIdentifier: Assembly-CSharp::FireRescue.SprayProfile
+  settings:
+    MinimumRange: 0.8
+    MaximumRange: 3.2
+    AirLifetime: 1.1
+    GroundLifetime: 18
+    SpreadAngle: 12
+    CollisionRadius: 0.11
+    ImpactRadius: 0.65
+    ArcHeight: 0.12
+    PacketsPerSecond: 24
+  effects:
+    ExtinguishMultiplier: 1
+    PushMultiplier: 1
+    ResidueMultiplier: 1

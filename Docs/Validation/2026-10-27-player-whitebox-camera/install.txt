@@ -1,0 +1,5 @@
+PLAYER_WHITEBOX_INSTALL_PASS
+Unity 6000.5.0b9
+Original 10 meshes, white material, feet=0, height=1.6m, +Z-facing; no new rig/animation.
+Gameplay/physics/anchors snapshot unchanged; NPC and tools preserved; saved reload/idempotence PASS.
+Camera: orthographic size=6 (previous 4.5), pitch=50 yaw=0; fixed smooth follow preserved.

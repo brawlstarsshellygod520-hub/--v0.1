@@ -1,0 +1,3 @@
+PACKAGED_BUILD_FAIL
+System.InvalidOperationException: Packaged resident still has whitebox-only materials.
+  at FireRescue.PrototypeBuildProbe+<Start>d__1.MoveNext () [0x00164] in D:\Documents\畢專\Assets\FireRescue\Runtime\Presentation\PrototypeBuildProbe.cs:33 

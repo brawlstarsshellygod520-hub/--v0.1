@@ -1,0 +1,19 @@
+PLAYER_WHITEBOX_CAMERA_PLAYMODE_PASS
+Checks=17
+PASS TutorialGreybox contains the actual player motor
+PASS Player has the installed User Player Model presentation
+PASS New static FBX retains all ten mesh pieces
+PASS New visual has no collision, rigidbody, or behaviour authority
+PASS Old capsule body and helmet remain inactive backups
+PASS Existing User Resident 2 NPC presentation remains in the tutorial
+PASS Current camera is orthographic at size 6
+PASS Current camera uses pitch 50 and yaw 0
+PASS Actual LocalPlayerInput and CharacterController remain on the gameplay player
+PASS Physical device reads are disabled for deterministic command testing
+PASS TickPointerCommand W moves camera-relative forward along world +Z near the spawn
+PASS TickPointerCommand D moves camera-relative right along world +X
+PASS Turning the firefighter through the real input path does not rotate the camera
+PASS Gameplay player still moves into the clear exterior while the presentation visual is disabled
+PASS Re-enabling visual leaves the same gameplay authority intact
+PASS Fixed-angle smooth follow settles root plus 0.7m near viewport centre
+PASS A new RescueCamera without ConfigureView preserves legacy 50/40 view angles

@@ -1,0 +1,28 @@
+Windows D3D11 runtime verification
+PASS Real graphics device: Direct3D11
+PASS Latest starts the requested review scene
+PASS Local input exists
+PASS 10m automatic wrap is in packaged scene
+PASS Continuous 3D physical tube replaces old line presentation
+PASS Updated game product title
+PASS New gait, request state and HUD are included
+PASS Packaged player spawns inside living room
+PASS Independent floor/oil reactions and player fire contact included
+PASS Contextual pickup outline/E and hose-limit warning presenter packaged
+PASS Authorized courtyard walls block the outdoor shortcut
+PASS Near-range water droplets included without cursor-distance targeting
+PASS Two sources and burning oil pan loaded
+PASS User-authored model packaged: Toilet Water Source
+PASS User-authored model packaged: Soda Powder Source
+PASS User-authored model packaged: Oil Pan Fire
+PASS User-authored model packaged: Pudding Item
+PASS All packaged character skins/bones resolve
+PASS Resident overhead request tag loaded
+PASS Requested pudding thought text included in build
+PASS Diffuse-only plaster shader compiled for Windows
+PASS Screenshot file written (visual content requires separate review)
+NOTE black hidden-window capture; this run does NOT validate visuals/UI
+PASS One-minute countdown advances in actual player
+PASS Connected first wave fills the kitchen in packaged runtime
+PASS Ordinary floor fire gates pudding; no spontaneous oil explosion in packaged player
+REVIEW_PLAYER_PASS

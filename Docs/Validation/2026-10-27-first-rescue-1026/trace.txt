@@ -1,0 +1,16 @@
+WALK (7.100, 0.100, -4.000) -> (5.500, 0.100, -4.000) actual=(5.589, 0.115, -4.000) frames=31 used=0 blocked=False
+WALK (5.573, 0.115, -4.000) -> (3.000, 0.100, -2.000) actual=(3.070, 0.115, -2.055) frames=51 used=0 blocked=False
+WALK (3.052, 0.115, -2.041) -> (0.240, 0.100, 0.250) actual=(0.309, 0.115, 0.194) frames=56 used=0 blocked=False
+WALK (0.294, 0.115, 0.206) -> (0.240, 0.100, 1.050) actual=(0.241, 0.119, 0.961) frames=15 used=0 blocked=False
+WALK (0.241, 0.115, 0.995) -> (0.240, 0.100, 0.150) actual=(0.240, 0.115, 0.239) frames=19 used=1.561111 blocked=False
+WALK (0.240, 0.115, 0.219) -> (3.150, 0.100, -0.600) actual=(3.064, 0.115, -0.576) frames=49 used=4.130656 blocked=False
+Nozzle=(3.52, 1.16, -1.05) settings={"MinimumRange":1.5,"MaximumRange":5.5,"AirLifetime":1.2999999523162842,"GroundLifetime":8.0,"SpreadAngle":6.0,"CollisionRadius":0.054999999701976779,"ImpactRadius":0.800000011920929,"ArcHeight":0.0,"PacketsPerSecond":40.0,"PhysicalBallistics":true,"MuzzleSpeed":10.5,"LaunchAngle":-10.0,"Gravity":9.8100004196167,"AirDrag":0.07999999821186066}
+HIT 1 (5.655, 0.449, 0.844) n=(-1.00, 0.00, 0.00)
+HIT 2 (5.655, 0.390, 0.831) n=(-0.84, 0.00, -0.55)
+HIT 3 (5.487, 0.090, 1.013) n=(0.00, 1.00, 0.00)
+HIT 4 (6.149, 0.167, 1.468) n=(-1.00, 0.00, 0.00)
+HIT 5 (5.742, 0.090, 1.057) n=(0.00, 1.00, 0.00)
+HIT 6 (5.655, 0.499, 0.844) n=(-1.00, 0.00, 0.00)
+HIT 7 (6.027, 0.090, 1.344) n=(0.00, 1.00, 0.00)
+AFTER shots=102 impacts=90 burning 17 -> 10 npc=Escaping pos=(3.25, 0.12, 3.25)
+HIT 100 (5.714, 0.090, 1.092) n=(0.00, 1.00, 0.00)
