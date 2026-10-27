@@ -1,0 +1,4 @@
+ZIP=FireRescue-v0.2.1-Windows-x64.zip
+Bytes=65761438
+SHA256=52f4da84532d8e98082838db2d347037a2eca6821bc8e8db0ff43ddedee2ef59
+No Windows launch or unpacked play test; additional validation stopped at user request.

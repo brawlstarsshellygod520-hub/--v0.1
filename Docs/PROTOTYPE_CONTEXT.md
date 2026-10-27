@@ -1,6 +1,17 @@
-# 炎上消防隊 v0.2：開發上下文
+# 炎上消防隊 v0.2.1：開發上下文
 
 更新日期：2026-10-28。專案：`D:\Documents\畢專`。
+
+## v0.2.1 最新：文字重開、透明外牆、E統一互動與較長水流
+
+本節取代下方v0.2的按鈕／F拔管／實心庭院牆／水初速7設定。使用者自行關閉玩家版；本輪仍不做螢幕控制，背景Unity與獨立Windows驗證後發新Release。
+
+- ReviewMissionHud失敗只顯示小文字「失敗」「按 R 即可重來」，無GUI.Button。R經LocalPlayerInput.TryRestartRound共用重載命令；限時、死亡與完成規則不改。
+- LocalPlayerInput只讀E，不再讀F：持物／安全候選物品優先拿放與交付，其餘已接則拔管、未接則找同一個最近可達來源接管並裝備噴槍。拿起物品自動收工具並斷管，避免雙手持物卻被線綁住；同一次E不能又拿又放或同時噴水。右鍵原分階段接管／噴射保留。
+- 三面庭院牆只關閉Renderer，Collider與SprayWallOcclusion依然有效，不改UserProvided戶型與NPC導航條件。
+- ReviewWater最高初速10、MinimumSpeedFraction=.14、MainStreamSpeedFraction=.7，保留近中程1.4/2.8/4.2/5.6m/s，只有最遠組7→10m/s；60包/s，可視倍率1.65，流量／滅火倍率不變。新MainStreamSpeedFraction缺省0回退1，舊場景保持原分布；粉末不改。管長仍10m，不是把管子加長。
+- 安全失敗證據保留於Docs/Validation/2026-10-28-v021/attempt-*.txt。驗證入口ReviewFireLoopV2Validation.BatchRun；舊噴射回歸用DirectionalSprayValidation.BatchRunPatch021，兩者寫本輪資料夾，不覆蓋v0.2歷史。
+- GitHub同一儲存庫ID1306325166已依使用者要求改名Enjo-Fire-Brigade（https://github.com/xin-hw/Enjo-Fire-Brigade），origin同步，不建立另一庫、不搬本機專案資料夾。歷史tag／下載保留，新增v0.2.1-prototype。發布完成以PUBLIC_RELEASE.md及真Release為準。
 
 ## v0.2 最新：五秒延燒／失敗重開／提示框／火苗減量
 

@@ -34,6 +34,7 @@ namespace FireRescue
         [SerializeField, Range(1, 512)] int fireCapacity = DefaultFireCapacity;
         [SerializeField] bool showFire = true;
         [SerializeField] bool spaciousFire;
+        [SerializeField, Range(1f,3f)] float waterVisualScale=1f;
         [SerializeField, Min(.1f)] float wetMarkLifetime = 2.4f;
 
         ParticleSystem waterParticles;
@@ -66,6 +67,7 @@ namespace FireRescue
         public int ActiveFireVisualCount { get; private set; }
         public int ActiveFlameCount { get; private set; }
         public int ActiveHeatMarkCount { get; private set; }
+        public float WaterVisualScale=>waterVisualScale;
         public bool IsSubscribed => subscribed;
 
         /// <summary>Idempotent explicit wiring for scene setup code and replaceable level assets.</summary>
@@ -164,7 +166,7 @@ namespace FireRescue
                     {
                         position = sample.Position,
                         startColor = new Color(.57f, .88f, 1f, .92f),
-                        startSize = Mathf.Max(.06f, sample.Radius * 1.8f),
+                        startSize = Mathf.Max(.06f, sample.Radius * 1.8f)*waterVisualScale,
                         remainingLifetime = 1f,
                         startLifetime = 1f,
                         velocity = sample.Velocity
@@ -185,7 +187,7 @@ namespace FireRescue
                     Vector3 velocity = sample.Velocity;
                     drop.position = sample.Position;
                     if (velocity.sqrMagnitude > .0001f) drop.rotation = Quaternion.LookRotation(velocity.normalized, Vector3.up);
-                    float radius = Mathf.Max(.035f, sample.Radius * 1.15f);
+                    float radius = Mathf.Max(.035f, sample.Radius * 1.15f)*waterVisualScale;
                     drop.localScale = new Vector3(radius, radius, Mathf.Max(radius * 1.8f, velocity.magnitude * .025f));
                     dropletRenderers[ActiveDropletCount].enabled = true;
                     ActiveDropletCount++;

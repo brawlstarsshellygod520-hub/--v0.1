@@ -1,0 +1,5 @@
+PATCH_021_INSTALLED
+Boundary renderers off; all three colliders retained.
+Water far tier 7 -> 10m/s; main speed fraction .7 / minimum .14 preserves 1.4,2.8,4.2,5.6m/s near/mid tiers. 40 -> 60 packets/s, visual scale 1.65; gravity, flow rate, reaction authority, powder and 10m hose unchanged.
+E=context pickup/drop/deliver, otherwise connect/disconnect. Picking up stows and disconnects the hose. Right-click staged connection retained; F no longer read.
+Failure presents small R hint, not a button.

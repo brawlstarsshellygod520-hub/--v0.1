@@ -31,15 +31,19 @@ namespace FireRescue
             Need(hose&&hose.MaximumLength==10&&hose.AutomaticWallWrapping,"10m automatic wrap is in packaged scene");
             Need(input.GetComponent<PhysicalHoseTube>()&&!input.GetComponentInChildren<HoseView>(true).enabled,"Continuous 3D physical tube replaces old line presentation");
             Need(Application.productName=="炎上消防隊","Updated game product title");
-            Need(Application.version=="0.2.0","v0.2.0 is the packaged application version");
-            Need(!FindAnyObjectByType<ReviewMissionHud>().CanRestart,"Restart control is not exposed during active gameplay");
+            Need(Application.version=="0.2.1","v0.2.1 is the packaged application version");
+            Need(!FindAnyObjectByType<ReviewMissionHud>().IsRestartHintVisible&&ReviewMissionHud.RestartHint=="按 R 即可重來","Small R hint is hidden during active gameplay");
             Need(motion&&state&&FindAnyObjectByType<ReviewMissionHud>(),"New gait, request state and HUD are included");
             Need(input.transform.position.x<5&&input.transform.position.z>-5.5f,"Packaged player spawns inside living room");
             Need(FindAnyObjectByType<CookingOilIncident>()&&input.GetComponent<PlayerFireContact>(),"Independent floor/oil reactions and player fire contact included");
             Need(input.GetComponent<PickupContextView>(),"Contextual pickup outline/E and hose-limit warning presenter packaged");
             var boundary=GameObject.Find("First Review 1027/Prototype Courtyard Boundary");
             Need(boundary&&boundary.GetComponentsInChildren<Collider>().Length==3,"Authorized courtyard walls block the outdoor shortcut");
-            Need(FindObjectsByType<FluidSource>().Single(s=>s.Element==ElementKind.Water).Profile.Settings.MinimumSpeedFraction==.2f,"Near-range water droplets included without cursor-distance targeting");
+            Need(boundary&&boundary.GetComponentsInChildren<Renderer>(true).All(r=>!r.enabled)&&boundary.GetComponentsInChildren<Collider>().All(c=>c.enabled),"Invisible courtyard barriers retain physical collision");
+            Need(FindObjectsByType<FluidSource>().Single(s=>s.Element==ElementKind.Water).Profile.Settings.MinimumSpeedFraction==.14f,"Near-range water droplets included without cursor-distance targeting");
+            var water=FindObjectsByType<FluidSource>().Single(s=>s.Element==ElementKind.Water).Profile.Settings;
+            Need(water.MuzzleSpeed==10&&water.PacketsPerSecond==60&&water.MainStreamSpeedFraction==.7f&&FindAnyObjectByType<FirstRescueEffects>().WaterVisualScale==1.65f,"Longer, denser water configuration packaged");
+            Need(PickupContextView.LimitMessage.Contains("按 E"),"Length warning uses unified E action, not F");
             Need(FindObjectsByType<FluidSource>().Length==2&&FindAnyObjectByType<ObjectFire>().IsBurning,"Two sources and burning oil pan loaded");
             foreach(var pair in new[]{("Toilet Water Source","馬桶本體"),("Soda Powder Source","立方體.002"),("Oil Pan Fire","油鍋"),("Pudding Item","布丁")})
             {

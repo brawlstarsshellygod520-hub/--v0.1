@@ -152,6 +152,7 @@ namespace FireRescue
         }
 
         public void Stow() { Stop(); SelectedTool = Tool.None; }
+        public void EquipHose() { Stop(); SelectedTool = Tool.Hose; }
 
         void TickSpray(Vector3 aimPoint, float dt)
         {

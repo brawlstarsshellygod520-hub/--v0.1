@@ -26,11 +26,11 @@ namespace FireRescue.Editor
         {try{Install();EditorApplication.Exit(0);}catch(Exception e){Debug.LogException(e);EditorApplication.Exit(1);}}
         public static void BatchBuild()
         {
-            Directory.CreateDirectory(ReleasePolishSetup.Evidence);Directory.CreateDirectory("Builds/Latest");
-            PlayerSettings.bundleVersion="0.2.0";AssetDatabase.SaveAssets();
+            Directory.CreateDirectory(Patch021Setup.Evidence);Directory.CreateDirectory("Builds/Latest");
+            PlayerSettings.bundleVersion="0.2.1";AssetDatabase.SaveAssets();
             var r=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},locationPathName="Builds/Latest/FireRescue.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
-            File.WriteAllText(ReleasePolishSetup.Evidence+"/build.txt",r.summary.result+"\nErrors="+r.summary.totalErrors+" Warnings="+r.summary.totalWarnings+"\nScene="+ScenePath);
-            File.WriteAllText("Builds/Latest/BUILD_INFO.txt","炎上消防隊 v0.2｜2026-10-28\nScene="+ScenePath+"\n五秒廚房延燒／稀疏火苗與燃燒地面色／水可清路但鍋旁快速復燃／粉末可滅全部火種／10m消防管\n失敗重新開始按鈕／修正圓角提示框上下方向\n倉庫圍牆／NPC正門直走／布丁外輪廓與E方框／管長極限F提示\n室內出生／60秒布丁交付／焦黑布丁中毒／踩火死亡\n使用團隊提供模型；保留程式管線、水火與臨時圍牆。\n");
+            File.WriteAllText(Patch021Setup.Evidence+"/build.txt",r.summary.result+"\nErrors="+r.summary.totalErrors+" Warnings="+r.summary.totalWarnings+"\nScene="+ScenePath);
+            File.WriteAllText("Builds/Latest/BUILD_INFO.txt","炎上消防隊 v0.2.1｜2026-10-28\nScene="+ScenePath+"\n失敗小文字：按 R 即可重來，沒有按鈕\n外圍透明阻擋牆，保留碰撞\n水初速10m/s、60水包/s、可視大小1.65倍；10m管線不變\nE拿放／交付；否則接管／拔管，拿物自動收管；右鍵仍能接管／噴射，取消F\n5秒首波／水清路／粉末滅鍋／60秒布丁交付／NPC正門逃生規則不變\n");
             EditorApplication.Exit(r.summary.result==BuildResult.Succeeded?0:1);
         }
         public static void BatchPolishMechanics()

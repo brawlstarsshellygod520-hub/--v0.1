@@ -14,8 +14,9 @@ namespace FireRescue.Editor
     {
         const string SessionKey = "FireRescue.DirectionalSprayValidation";
         static bool PhysicsRun => SessionState.GetBool(SessionKey + ".Physics", false);
-        static string ReportPath => PhysicsRun ? HoseFluidPhysicsBuilder.Evidence + "/directional-regression.txt" : "Docs/Validation/2026-10-26-directional-spray/playmode.txt";
-        public static string EvidencePath => PhysicsRun ? HoseFluidPhysicsBuilder.Evidence + "/DirectionalVisuals" : "Docs/Validation/2026-10-26-directional-spray/Evidence";
+        static bool PatchRun=>SessionState.GetBool(SessionKey+".Patch021",false);
+        static string ReportPath => PatchRun ? Patch021Setup.Evidence+"/spray-regression.txt" : PhysicsRun ? HoseFluidPhysicsBuilder.Evidence + "/directional-regression.txt" : "Docs/Validation/2026-10-26-directional-spray/playmode.txt";
+        public static string EvidencePath => PatchRun ? Patch021Setup.Evidence+"/SprayVisuals" : PhysicsRun ? HoseFluidPhysicsBuilder.Evidence + "/DirectionalVisuals" : "Docs/Validation/2026-10-26-directional-spray/Evidence";
         static bool finished;
         static double readyAt;
 
@@ -35,6 +36,7 @@ namespace FireRescue.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode || !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             SessionState.SetBool(SessionKey + ".Physics", false);
+            SessionState.SetBool(SessionKey + ".Patch021", false);
             BeginWhenReady();
         }
 
@@ -43,10 +45,13 @@ namespace FireRescue.Editor
         {
             if (!Application.isBatchMode) throw new InvalidOperationException("BatchRun is intended for Unity batch mode.");
             SessionState.SetBool(SessionKey + ".Physics", false);
+            SessionState.SetBool(SessionKey + ".Patch021", false);
             BeginWhenReady();
         }
         public static void BatchRunPhysics()
-        { SessionState.SetBool(SessionKey + ".Physics", true); BeginWhenReady(); }
+        { SessionState.SetBool(SessionKey + ".Patch021",false);SessionState.SetBool(SessionKey + ".Physics", true); BeginWhenReady(); }
+        public static void BatchRunPatch021()
+        { SessionState.SetBool(SessionKey+".Patch021",true);SessionState.SetBool(SessionKey+".Physics",true);BeginWhenReady(); }
 
         static void BeginWhenReady()
         {

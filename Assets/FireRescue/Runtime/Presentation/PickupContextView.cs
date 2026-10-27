@@ -5,7 +5,7 @@ namespace FireRescue
     [DefaultExecutionOrder(100)]
     public sealed class PickupContextView:MonoBehaviour
     {
-        public const string LimitMessage="管線不夠長了！按 F 解除綁定！";
+        public const string LimitMessage="管線不夠長了！按 E 拔除管線！";
         [SerializeField] PlayerCarryInteraction carry;
         [SerializeField] HoseConnection hose;
         [SerializeField] FirstReviewMission mission;

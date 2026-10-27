@@ -198,8 +198,10 @@ namespace FireRescue
             float reach = Mathf.Lerp(snapshot.Settings.MinimumRange, snapshot.Settings.MaximumRange, tier);
             Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * snapshot.Direction;
             float elevation = snapshot.Settings.LaunchAngle * Mathf.Deg2Rad;
+            // Preserve the authored near/mid stream while extending only the farthest tier.
+            float speed=tier>=1?1:Mathf.Lerp(snapshot.Settings.MinimumSpeedFraction,snapshot.Settings.MainStreamSpeedFraction,tier);
             Vector3 velocity = (direction * Mathf.Cos(elevation) + Vector3.up * Mathf.Sin(elevation)) *
-                snapshot.Settings.MuzzleSpeed * Mathf.Lerp(snapshot.Settings.MinimumSpeedFraction, 1f, tier);
+                snapshot.Settings.MuzzleSpeed * speed;
             flights[flightCount++] = new Flight
             {
                 Origin = snapshot.Origin, Position = snapshot.Origin, Previous = snapshot.Origin,

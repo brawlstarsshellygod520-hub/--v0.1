@@ -21,10 +21,11 @@ MonoBehaviour:
     CollisionRadius: 0.06
     ImpactRadius: 0.9
     ArcHeight: 0
-    PacketsPerSecond: 40
+    PacketsPerSecond: 60
     PhysicalBallistics: 1
-    MuzzleSpeed: 7
-    MinimumSpeedFraction: 0.2
+    MuzzleSpeed: 10
+    MinimumSpeedFraction: 0.14
+    MainStreamSpeedFraction: 0.7
     LaunchAngle: 18
     Gravity: 16
     AirDrag: 0.08

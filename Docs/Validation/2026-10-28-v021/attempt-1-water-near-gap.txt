@@ -1,0 +1,61 @@
+PATCH_021_FAIL
+InvalidOperationException: PASS Small R restart hint is hidden during active play
+PASS Courtyard walls are invisible, not removed from physics
+PASS Spawn is inside living room, not ambiguous exterior entrance
+PASS Only pot is initially on fire; no full-kitchen flame carpet
+PASS At two seconds fire is spreading, not already filling the entire kitchen
+PASS By five seconds the connected kitchen floor is fully ignited
+PASS Spacious flame presentation reduces clusters while every hazardous cell keeps a floor footprint
+PASS Changing flame density does not change fire or contact gameplay
+PASS Burning kitchen plus courtyard fences block the outdoor shortcut, not an invisible objective gate
+PASS Actual ignition front begins at pot and fills the kitchen, not a frame-zero flame carpet
+PASS Early rapid propagation transitions to slower spread
+PASS Water on burning oil never extinguishes it and triggers a burst
+PASS Nearby original pudding becomes scorched
+PASS Continuous spray cannot emit an explosion every particle/frame
+PASS Water extinguishes ordinary neighboring floor cells without deleting oil fire
+PASS Water can clear stove-side fire, but ongoing pot heat quickly relights it
+PASS Water leaves a traversable wet route outside the pot heat radius
+PASS After powder puts out the pot, neighboring fire stops being relit
+PASS Poison branch prerequisites are isolated from success walkthrough
+PASS Real burnt pudding transfers to original resident's hand
+PASS Bad meal blocks rescue and enters poisoning state
+PASS Resident's actual overhead reaction says 好難吃...
+PASS Complaint has a visible delay before death
+PASS Poisoned resident dies; failure never counts as a rescue
+PASS Original resident visual falls over without moving collider root
+PASS Poison failure shows R hint and the same R command reloads the real scene
+PASS R restart resets poison, food, mission and timer
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Walking onto live floor fire kills player and closes tool/input gates
+PASS Player fire death also restarts through the R command
+PASS R restart resets death, food, burst, hose and timer
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.45, 0.10, 2.65)
+PASS Separate right presses equip and connect authored toilet
+PASS E disconnects the real toilet connection
+PASS E reconnects the real source and equips without spraying
+PASS Real player reached (0.45, 0.10, 0.20)
+PASS Real player reached (0.60, 0.10, -3.45)
+PASS Real player reached (-1.45, 0.10, -3.45)
+PASS Real player reached (-2.80, 0.10, -3.45)
+PASS Real ballistic water hits floor while deliberate aiming avoids pot explosion
+PASS Hose is shortened to 10m, not silently expanded to make the test pass
+PASS Water route alone cannot safely collect pudding while the pot keeps relighting nearby fire
+PASS Hose wall contacts retain fixed particle count and continuous visibility
+PASS Wall bends do not pop a new hard node or stretch the tube into long spans
+FAIL Real player reached (-2.84, 0.10, -1.55)
+SPREAD counts start=4 fast=179 later=179 rates=0.4 -> 0.035
+WALK (-1.45, 0.10, -3.45) actual=(-1.376, 0.125, -3.455) remaining=53.81676 cells=179 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.483, 0.125, 0.140) remaining=58.70002 cells=36 dead=False hose=0
+WALK (0.45, 0.10, 2.65) actual=(0.451, 0.125, 2.583) remaining=57.95003 cells=78 dead=False hose=0
+WALK (0.45, 0.10, 0.20) actual=(0.450, 0.125, 0.276) remaining=57.13338 cells=138 dead=False hose=3.777729
+WALK (0.60, 0.10, -3.45) actual=(0.597, 0.125, -3.385) remaining=56.05006 cells=170 dead=False hose=7.411105
+WALK (-1.45, 0.10, -3.45) actual=(-1.384, 0.125, -3.448) remaining=51.88346 cells=170 dead=False hose=7.991349
+WALK (-2.80, 0.10, -3.45) actual=(-2.727, 0.125, -3.450) remaining=47.90018 cells=129 dead=False hose=8.840816
+WATER floorAmount=18.825 cells=170 -> 109 pot=1
+HOSE max material node displacement=0.1290567 longest=0.1093103
+WALK (-2.84, 0.10, -1.55) actual=(-2.775, 0.125, -2.744) remaining=44.11691 cells=133 dead=True hose=0
+FireRescue.Editor.ReviewFireLoopV2Driver.Check (System.Boolean value, System.String label) (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:32)
+FireRescue.Editor.ReviewFireLoopV2Driver+<Walk>d__29.MoveNext () (at Assets/FireRescue/Editor/ReviewFireLoopV2Validation.cs:55)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at <45311e8ef3c14e41beb8c7dcd27b7c82>:0)

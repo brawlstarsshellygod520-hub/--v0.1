@@ -48,6 +48,8 @@ namespace FireRescue
         public float MuzzleSpeed;
         [Range(.1f,1f),Tooltip("最低水滴初速比例；缺省0沿用舊版65%。可用低速水滴補近端落點。")]
         public float MinimumSpeedFraction;
+        [Range(.1f,1f),Tooltip("一般水滴的速度範圍上限比例；最遠一組仍用最高初速。缺省0沿用1。")]
+        public float MainStreamSpeedFraction;
         [Range(-15f, 45f)] public float LaunchAngle;
         [Min(.1f)] public float Gravity;
         [Min(0f)] public float AirDrag;
@@ -66,6 +68,7 @@ namespace FireRescue
             s.PacketsPerSecond = Safe(s.PacketsPerSecond, 1f, 60f, 40f);
             s.MuzzleSpeed = Safe(s.MuzzleSpeed <= 0 ? 12f : s.MuzzleSpeed, .1f, 30f, 12f);
             s.MinimumSpeedFraction = Safe(s.MinimumSpeedFraction<=0?.65f:s.MinimumSpeedFraction,.1f,1f,.65f);
+            s.MainStreamSpeedFraction=Safe(s.MainStreamSpeedFraction<=0?1:s.MainStreamSpeedFraction,s.MinimumSpeedFraction,1,1);
             s.LaunchAngle = Safe(s.LaunchAngle, -15f, 45f, 3f);
             s.Gravity = Safe(s.Gravity <= 0 ? 9.81f : s.Gravity, .1f, 30f, 9.81f);
             s.AirDrag = Safe(s.AirDrag, 0f, 5f, .08f);
@@ -80,7 +83,7 @@ namespace FireRescue
             var s = new SpraySettings { MinimumRange = 1.5f, MaximumRange = 5.5f, AirLifetime = .65f,
                 GroundLifetime = 6f, SpreadAngle = 4f, CollisionRadius = .07f, ImpactRadius = .85f,
                 ArcHeight = 0f, PacketsPerSecond = 40f,
-                MuzzleSpeed = 12f, MinimumSpeedFraction=.65f, LaunchAngle = 3f, Gravity = 9.81f, AirDrag = .08f };
+                MuzzleSpeed = 12f, MinimumSpeedFraction=.65f, MainStreamSpeedFraction=1, LaunchAngle = 3f, Gravity = 9.81f, AirDrag = .08f };
             if (kind == ElementKind.Oil)
             {
                 s.MinimumRange = .8f; s.MaximumRange = 3.2f; s.AirLifetime = 1.1f;
