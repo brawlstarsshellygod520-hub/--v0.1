@@ -1,4 +1,16 @@
-# 炎上消防隊：v0.2 公開測試版交付（2026-10-28）
+# 炎上消防隊：v0.2.1 公開測試版
+
+紀錄更新：2026-10-29。
+
+- 儲存庫已依使用者要求改名：[Enjo-Fire-Brigade](https://github.com/xin-hw/Enjo-Fire-Brigade)。同一ID1306325166，原歷史與Release保留，origin已更新，本機專案不搬移。
+- 最新分享／更新說明：[v0.2.1 Prototype](https://github.com/xin-hw/Enjo-Fire-Brigade/releases/tag/v0.2.1-prototype)。
+- 玩家包：[FireRescue-v0.2.1-Windows-x64.zip](https://github.com/xin-hw/Enjo-Fire-Brigade/releases/download/v0.2.1-prototype/FireRescue-v0.2.1-Windows-x64.zip)。
+- 遊戲建置提交：`6a54b86a58188381e5c066b501d9451de80f1ae4`。Release ID426080404，Asset ID683144195，公開Prerelease，非Draft。
+- ZIP 65,761,438 bytes；SHA256 `52f4da84532d8e98082838db2d347037a2eca6821bc8e8db0ff43ddedee2ef59`，GitHub回傳size與digest一致。
+- 在停止要求前取得93項整關與40項噴射回歸。Windows建置Succeeded、0錯誤0警告；依使用者要求未再啟動新版Windows玩家或解壓試玩，不引用v0.2舊28項作新版證據。
+- v0.2.1內容：R文字重開、透明外圍牆、E統一接管／拔管／物品互動、較遠且更明顯水流。正式發布收據見Validation/2026-10-28-v021/release-receipt.json。後續白地板／米牆與物理工作不包含在這份已發布ZIP。
+
+## 歷史 v0.2 公開測試版交付（2026-10-28）
 
 - 公開專案與完整操作／更新摘要／模型署名／第一關玩法：[專案README](https://github.com/xin-hw/--v0.1)。
 - 分享頁：[炎上消防隊 v0.2 Prototype](https://github.com/xin-hw/--v0.1/releases/tag/v0.2.0-prototype)。

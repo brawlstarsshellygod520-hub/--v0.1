@@ -1,0 +1,16 @@
+{
+  "repository": "xin-hw/Enjo-Fire-Brigade",
+  "tag": "v0.2.1-prototype",
+  "releaseId": 426080404,
+  "url": "https://github.com/xin-hw/Enjo-Fire-Brigade/releases/tag/v0.2.1-prototype",
+  "sourceCommit": "6a54b86a58188381e5c066b501d9451de80f1ae4",
+  "draft": false,
+  "prerelease": true,
+  "assetId": 683144195,
+  "asset": "FireRescue-v0.2.1-Windows-x64.zip",
+  "bytes": 65761438,
+  "sha256": "sha256:52f4da84532d8e98082838db2d347037a2eca6821bc8e8db0ff43ddedee2ef59",
+  "download": "https://github.com/xin-hw/Enjo-Fire-Brigade/releases/download/v0.2.1-prototype/FireRescue-v0.2.1-Windows-x64.zip",
+  "windowsPlayerTest": "Not run at user request",
+  "anonymousReleaseVisible": true
+}
